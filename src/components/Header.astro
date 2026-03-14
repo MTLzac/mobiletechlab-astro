@@ -1,0 +1,87 @@
+<header class="border-b bg-white sticky top-0 z-50">
+<div class="container mx-auto px-4">
+
+<nav class="flex items-center justify-between h-16">
+
+<a href="/" class="flex items-center">
+<img src="/assets/logo-CFQZ01r1.png" class="h-8" alt="Mobile Tech Lab">
+</a>
+
+<ul class="flex space-x-6 text-sm font-medium">
+
+<li x-data="{open:false}" class="relative">
+
+<button 
+@click="open=!open"
+@mouseenter="open=true"
+@mouseleave="open=false"
+class="hover:text-primary"
+>
+Repairs
+</button>
+
+<div
+x-show="open"
+@mouseenter="open=true"
+@mouseleave="open=false"
+class="absolute left-0 top-full mt-4 bg-white shadow-xl rounded-lg w-[600px] p-6 grid grid-cols-3 gap-6"
+>
+
+<div>
+<h3 class="font-semibold mb-2">Phones</h3>
+
+<ul class="space-y-1 text-sm">
+<li><a href="/repair/iphone">iPhone Repair</a></li>
+<li><a href="/repair/samsung">Samsung Repair</a></li>
+<li><a href="/repair/google-pixel">Google Pixel</a></li>
+<li><a href="/repair/motorola">Motorola</a></li>
+</ul>
+</div>
+
+<div>
+<h3 class="font-semibold mb-2">Tablets</h3>
+
+<ul class="space-y-1 text-sm">
+<li><a href="/repair/ipad">iPad Repair</a></li>
+<li><a href="/repair/samsung-tablet">Samsung Tablet</a></li>
+</ul>
+</div>
+
+<div>
+<h3 class="font-semibold mb-2">Gaming</h3>
+
+<ul class="space-y-1 text-sm">
+<li><a href="/repair/ps5">PS5 Repair</a></li>
+<li><a href="/repair/xbox">Xbox Repair</a></li>
+<li><a href="/repair/nintendo-switch">Nintendo Switch</a></li>
+</ul>
+</div>
+
+</div>
+
+</li>
+
+<li>
+<a href="/buy-sell" class="hover:text-primary">
+Buy / Sell
+</a>
+</li>
+
+<li>
+<a href="/locations/winnipeg" class="hover:text-primary">
+Winnipeg
+</a>
+</li>
+
+<li>
+<a href="/contact" class="hover:text-primary">
+Contact
+</a>
+</li>
+
+</ul>
+
+</nav>
+
+</div>
+</header>
