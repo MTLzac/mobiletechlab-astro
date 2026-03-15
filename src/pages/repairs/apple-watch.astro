@@ -1,0 +1,1408 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = "Apple Watch Repair Winnipeg | Screen & Battery | Mobile Tech Lab";
+const description = "Expert Apple Watch repair in Winnipeg. Screen and battery replacement for all models including Series 10, Ultra 2, and SE. Fast same-day service at Mobile Tech Lab.";
+const canonical = "https://mobiletechlab.ca/repairs/apple-watch";
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://mobiletechlab.ca/" },
+    { "@type": "ListItem", "position": 2, "name": "Repairs", "item": "https://mobiletechlab.ca/repairs" },
+    { "@type": "ListItem", "position": 3, "name": "Apple Watch Repair", "item": "https://mobiletechlab.ca/repairs/apple-watch" }
+  ]
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Apple Watch Repair Service",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Mobile Tech Lab",
+    "url": "https://mobiletechlab.ca"
+  },
+  "areaServed": { "@type": "City", "name": "Winnipeg" },
+  "serviceType": "Wearable Repair",
+  "url": "https://mobiletechlab.ca/repairs/apple-watch",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Apple Watch Repair Services",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Screen Replacement" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Battery Replacement" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Digital Crown & Button Repair" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Charging Issues" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Water Damage Recovery" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Full Diagnostics" } }
+    ]
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "How long does Apple Watch screen replacement take in Winnipeg?", "acceptedAnswer": { "@type": "Answer", "text": "Most Apple Watch screen replacements at our Winnipeg shop take 1–2 hours. We stock screens for all current Series, SE, and Ultra models so same-day repair is available for walk-ins." } },
+    { "@type": "Question", "name": "Is my Apple Watch still water resistant after a screen repair?", "acceptedAnswer": { "@type": "Answer", "text": "We reseal the display adhesive during every screen repair to restore the original water resistance rating. While we cannot guarantee the exact IP rating is fully restored, we take every precaution to maintain the seal quality." } },
+    { "@type": "Question", "name": "How much does Apple Watch battery replacement cost in Winnipeg?", "acceptedAnswer": { "@type": "Answer", "text": "Battery replacement costs vary by Apple Watch model and generation — older Series models are typically less expensive than newer ones. Contact our Winnipeg locations or use our online quote tool for an exact price on your specific model." } },
+    { "@type": "Question", "name": "Do you repair Apple Watch Ultra and Ultra 2 in Winnipeg?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — we repair both Apple Watch Ultra and Ultra 2 at our Winnipeg St. Vital location. The larger 49mm case requires specialized tools that most general repair shops don't carry, but we have them in stock." } },
+    { "@type": "Question", "name": "How do I know if my Apple Watch battery needs replacing?", "acceptedAnswer": { "@type": "Answer", "text": "Signs of a worn battery include rapid drain during normal use, unexpected shutdowns at 20–30% charge, the watch not lasting through a full day, or the watch running warm. You can check battery maximum capacity in the Watch app on your iPhone under My Watch > General > Usage > Battery Health." } },
+    { "@type": "Question", "name": "Can you fix an Apple Watch that won't turn on?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — a completely unresponsive Apple Watch is often caused by a fully depleted battery, a failed display connection, or a logic board fault. We run full diagnostics before recommending a repair so you know exactly what the issue is before spending anything." } },
+    { "@type": "Question", "name": "Do you repair Apple Watch SE in Winnipeg?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — we repair all three generations of Apple Watch SE including the 1st Gen, 2nd Gen, and 3rd Gen models. Screen and battery replacements are the most common SE repairs and are typically completed same-day." } },
+    { "@type": "Question", "name": "Can you fix Apple Watch water damage in Winnipeg?", "acceptedAnswer": { "@type": "Answer", "text": "In many cases yes — even water resistant Apple Watches can suffer damage from salt water, pool chemicals, or older degraded seals. We perform component-level cleaning and diagnostics to assess what can be recovered." } },
+    { "@type": "Question", "name": "Do you offer a warranty on Apple Watch repairs?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — screen repairs carry a 30-day to lifetime warranty depending on the part tier selected. Battery replacements include a 90-day warranty. All other repairs carry a lifetime warranty on parts and labour." } },
+    { "@type": "Question", "name": "Do I need an appointment for Apple Watch repair in Winnipeg?", "acceptedAnswer": { "@type": "Answer", "text": "No appointment is needed — both our St. Vital and Thompson locations accept walk-in Apple Watch repairs. Calling ahead is helpful to confirm we have your specific model's parts in stock, especially for newer Ultra 2 or Series 10 models." } }
+  ]
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <Fragment slot="head">
+    <meta name="robots" content="index, follow" />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
+
+  <!-- Breadcrumbs -->
+  <nav class="aw-breadcrumb-nav" aria-label="Breadcrumb">
+    <div class="aw-container">
+      <ol class="aw-breadcrumb-list">
+        <li><a href="/" class="aw-breadcrumb-link">Home</a></li>
+        <li><svg xmlns="http://www.w3.org/2000/svg" class="aw-breadcrumb-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m9 18 6-6-6-6"/></svg></li>
+        <li><a href="/repairs" class="aw-breadcrumb-link">Repairs</a></li>
+        <li><svg xmlns="http://www.w3.org/2000/svg" class="aw-breadcrumb-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m9 18 6-6-6-6"/></svg></li>
+        <li class="aw-breadcrumb-current" aria-current="page">Apple Watch Repair</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="aw-hero-section" id="hero">
+    <div class="aw-hero-inner">
+      <div class="aw-hero-content">
+        <div class="aw-hero-badge-row">
+          <span class="aw-service-badge">Professional Apple Watch Repair</span>
+          <span class="aw-location-badge">
+            <span class="aw-badge-dot"></span>
+            St. Vital — Open
+          </span>
+          <span class="aw-location-badge">
+            <span class="aw-badge-dot"></span>
+            Thompson — Opens tomorrow 10AM
+          </span>
+        </div>
+
+        <h1 class="aw-hero-headline">
+          Apple Watch Repair <span class="aw-highlight">Winnipeg</span> &amp; Manitoba
+        </h1>
+        <p class="aw-hero-subheadline">Apple Watch Screen &amp; Battery Specialists in Winnipeg</p>
+
+        <div class="aw-hero-body">
+          <p>Cracked Apple Watch screen or battery draining fast? We repair all Apple Watch models at our Winnipeg shop — from Series 3 through Series 10, both SE generations, and the rugged Ultra and Ultra 2. Common repairs include screen replacements, battery swaps, crown and button issues, and charging port problems.</p>
+          <p>Apple Watch screens require precision micro-tools and model-specific OLED panels — a repair most general electronics shops in Winnipeg cannot perform reliably. Our technicians work under magnification to ensure adhesive seals are restored and water resistance is maintained after every repair.</p>
+        </div>
+
+        <div class="aw-hero-cta-group">
+          <a href="https://shop.mobiletechlab.ca/pages/repair2" target="_blank" rel="noopener noreferrer" class="aw-cta-primary">
+            Get a Free Quote
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="tel:2045009757" class="aw-cta-secondary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Call Now
+          </a>
+        </div>
+        <p class="aw-pricing-note">Not sure what affects the cost? <a href="/pricing">How repair pricing works</a></p>
+      </div>
+
+      <div class="aw-hero-image-wrapper">
+        <img
+          src="/assets/hero-apple-watch.png"
+          alt="Apple Watch repair in Winnipeg — screen and battery replacement specialists"
+          width="500"
+          height="500"
+          loading="eager"
+        />
+        <ul class="aw-annotations-list" aria-label="Common Apple Watch issues we fix">
+          <li class="aw-annotation">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            Cracked screen
+          </li>
+          <li class="aw-annotation">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+            Battery draining fast
+          </li>
+          <li class="aw-annotation">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+            Digital Crown issues
+          </li>
+          <li class="aw-annotation">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12H19M12 5l7 7-7 7"/></svg>
+            Won't charge
+          </li>
+          <li class="aw-annotation">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Water damage
+          </li>
+          <li class="aw-annotation">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+            Unresponsive display
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Repair Services -->
+  <section class="aw-services-section" id="services">
+    <div class="aw-container">
+      <div class="aw-section-header">
+        <h2 class="aw-section-title">Apple Watch Repair Services in Winnipeg</h2>
+        <p class="aw-section-subtitle">Expert repairs for all Apple Watch models. Fast turnaround, quality parts, and warranty included.</p>
+      </div>
+      <div class="aw-services-grid">
+        <div class="aw-service-card">
+          <div class="aw-service-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="9" y1="9" x2="15" y2="9"/><line x1="9" y1="13" x2="15" y2="13"/></svg>
+          </div>
+          <h3 class="aw-service-title">Screen Replacement</h3>
+          <p class="aw-service-body">Cracked or unresponsive Apple Watch display? We replace OLED and LTPO AMOLED screens on all Apple Watch models — Series 3 through Series 10, SE, and Ultra. Each screen replacement includes precision resealing to maintain the original water resistance rating.</p>
+        </div>
+        <div class="aw-service-card">
+          <div class="aw-service-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="7" width="16" height="10" rx="2" ry="2"/><line x1="22" y1="11" x2="22" y2="13"/></svg>
+          </div>
+          <h3 class="aw-service-title">Battery Replacement</h3>
+          <p class="aw-service-body">Apple Watch not lasting all day? We replace degraded batteries with quality cells and same-day turnaround on most models. We check battery health before and after replacement and provide a 90-day warranty on every battery swap.</p>
+        </div>
+        <div class="aw-service-card">
+          <div class="aw-service-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+          </div>
+          <h3 class="aw-service-title">Digital Crown &amp; Button Repair</h3>
+          <p class="aw-service-body">Sticky or unresponsive Digital Crown, stuck side button, or haptic feedback issues. We clean and repair crown mechanisms and replace buttons on all Apple Watch models.</p>
+        </div>
+        <div class="aw-service-card">
+          <div class="aw-service-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 22V11"/><path d="M5 12H2a10 10 0 0 0 20 0h-3"/><path d="M5 5v3"/><path d="M19 5v3"/><path d="M5 8h14"/></svg>
+          </div>
+          <h3 class="aw-service-title">Charging Issues</h3>
+          <p class="aw-service-body">Apple Watch not charging or showing intermittent charging? We diagnose charging pad contact issues, port corrosion, and battery faults. Most charging issues are resolved same-day.</p>
+        </div>
+        <div class="aw-service-card">
+          <div class="aw-service-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 class="aw-service-title">Water Damage Recovery</h3>
+          <p class="aw-service-body">Despite water resistance ratings, Apple Watches can still suffer water damage from salt water, deep submersion, or older models with degraded seals. We perform full diagnostics and component-level cleaning.</p>
+        </div>
+        <div class="aw-service-card">
+          <div class="aw-service-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          </div>
+          <h3 class="aw-service-title">Full Diagnostics</h3>
+          <p class="aw-service-body">Not sure what's wrong with your Apple Watch? We run a full diagnostic before recommending any repair — so you only pay for what's actually needed.</p>
+        </div>
+      </div>
+      <div class="aw-section-cta">
+        <a href="https://shop.mobiletechlab.ca/pages/repair2" target="_blank" rel="noopener noreferrer" class="aw-cta-primary">
+          Request Repair
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Models -->
+  <section class="aw-models-section" id="models">
+    <div class="aw-container">
+      <div class="aw-section-header">
+        <h2 class="aw-section-title">All Apple Watch Models We Repair in Winnipeg</h2>
+        <p class="aw-section-subtitle">From the original Series 3 to the latest Series 10 and Ultra 2</p>
+      </div>
+      <div class="aw-models-grid">
+        <div class="aw-model-card">
+          <div class="aw-model-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+          </div>
+          <h3 class="aw-model-title">Apple Watch Series</h3>
+          <p class="aw-model-description">All standard Apple Watch Series models from Series 3 through Series 10. Screen and battery repairs available for every generation.</p>
+          <div class="aw-model-pills">
+            <span class="aw-pill">Series 10</span>
+            <span class="aw-pill">Series 9</span>
+            <span class="aw-pill">Series 8</span>
+            <span class="aw-pill">Series 7</span>
+            <span class="aw-pill">Series 6</span>
+            <span class="aw-pill">Series 5</span>
+            <span class="aw-pill">Series 4</span>
+            <span class="aw-pill">Series 3</span>
+          </div>
+          <a href="https://shop.mobiletechlab.ca/pages/repair2" target="_blank" rel="noopener noreferrer" class="aw-model-cta">
+            Get Quote
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+        <div class="aw-model-card">
+          <div class="aw-model-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+          </div>
+          <h3 class="aw-model-title">Apple Watch SE</h3>
+          <p class="aw-model-description">Budget-friendly Apple Watch repairs for all SE generations. Same quality parts and warranty as Series repairs.</p>
+          <div class="aw-model-pills">
+            <span class="aw-pill">SE (3rd Gen)</span>
+            <span class="aw-pill">SE (2nd Gen)</span>
+            <span class="aw-pill">SE (1st Gen)</span>
+          </div>
+          <a href="https://shop.mobiletechlab.ca/pages/repair2" target="_blank" rel="noopener noreferrer" class="aw-model-cta">
+            Get Quote
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+        <div class="aw-model-card">
+          <div class="aw-model-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 class="aw-model-title">Apple Watch Ultra</h3>
+          <p class="aw-model-description">Precision repairs for the rugged Ultra and Ultra 2. The larger 49mm case requires specialized tools — we have them.</p>
+          <div class="aw-model-pills">
+            <span class="aw-pill">Ultra 2</span>
+            <span class="aw-pill">Ultra</span>
+          </div>
+          <a href="https://shop.mobiletechlab.ca/pages/repair2" target="_blank" rel="noopener noreferrer" class="aw-model-cta">
+            Get Quote
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="aw-why-section" id="why-choose-us">
+    <div class="aw-container">
+      <div class="aw-section-header">
+        <h2 class="aw-section-title">The Mobile Tech Lab Advantage: Winnipeg's Apple Watch Repair Experts</h2>
+        <p class="aw-section-subtitle">Why Winnipeg customers trust us with their Apple Watch</p>
+      </div>
+      <div class="aw-pillars-grid">
+        <div class="aw-pillar-card">
+          <div class="aw-pillar-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <h3 class="aw-pillar-title">Apple Watch Specialists</h3>
+          <p class="aw-pillar-body">Apple Watch repairs require model-specific OLED panels, micro-tools, and precision resealing — skills most general repair shops don't have. Our Winnipeg technicians are trained on every Apple Watch generation from Series 3 to Ultra 2.</p>
+        </div>
+        <div class="aw-pillar-card">
+          <div class="aw-pillar-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3 class="aw-pillar-title">Same-Day Turnaround</h3>
+          <p class="aw-pillar-body">Most Apple Watch screen and battery repairs are completed in 1–2 hours at our Winnipeg shop. Drop it off and pick it up the same day — no mailing your watch away and waiting weeks.</p>
+        </div>
+        <div class="aw-pillar-card">
+          <div class="aw-pillar-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+          </div>
+          <h3 class="aw-pillar-title">Warranty on Every Repair</h3>
+          <p class="aw-pillar-body">Screen repairs carry a 30-day to lifetime warranty depending on part tier. Battery replacements are covered for 90 days. We stand behind every repair we perform.</p>
+        </div>
+        <div class="aw-pillar-card">
+          <div class="aw-pillar-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <h3 class="aw-pillar-title">Two Manitoba Locations</h3>
+          <p class="aw-pillar-body">Visit us in Winnipeg (St. Vital) or Thompson — both locations accept walk-in Apple Watch repairs. No appointment needed, though calling ahead ensures we have your model's parts in stock.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Repair Cost Options -->
+  <section class="aw-cost-section" id="pricing">
+    <div class="aw-container">
+      <div class="aw-section-header">
+        <h2 class="aw-section-title">Worried About Repair Cost? You Have Options.</h2>
+        <p class="aw-section-subtitle">Most customers use one of these options to lower their repair cost.</p>
+      </div>
+      <div class="aw-cost-grid">
+        <div class="aw-cost-card">
+          <div class="aw-cost-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="12" x2="12" y1="1" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <h3 class="aw-cost-title">We'll Match Any Local Repair Price</h3>
+          <p class="aw-cost-body">Found a lower price at another Winnipeg repair shop? We'll match it — so you don't overpay. No pressure. No hassle.</p>
+          <a href="sms:2045009757?body=Hey%20Mobile%20Tech%20Lab!%20I%20want%20a%20better%20price%20on%20a%20repair!" class="aw-price-match-btn">
+            Check If We Can Match Your Price
+          </a>
+        </div>
+        <div class="aw-cost-card">
+          <div class="aw-cost-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l4 2"/></svg>
+          </div>
+          <h3 class="aw-cost-title">Lower Your Apple Watch Repair Cost With a Trade-In</h3>
+          <p class="aw-cost-body">Trade in phones, tablets, consoles, or laptops — even broken ones — to reduce today's repair cost.</p>
+          <p class="aw-cost-note">Get paid via Cash, E-Transfer, or Store Credit</p>
+          <a href="/trade-in" class="aw-trade-in-btn">
+            Lower My Apple Watch Repair Cost &rarr;
+          </a>
+        </div>
+      </div>
+      <div class="aw-pricing-context">
+        <p class="aw-context-paragraph">Apple Watch repair costs depend on the model and generation — a Series 3 screen replacement costs significantly less than a Series 10 or Ultra 2 due to parts availability and display complexity. <a href="https://support.apple.com/en-ca/108055" target="_blank" rel="noopener noreferrer" class="aw-context-link">Apple's official battery health documentation</a> explains how to check maximum capacity before deciding whether a battery replacement makes sense for your model.</p>
+        <p class="aw-context-paragraph">Many customers are surprised to find that repairing a Series 4 or older Apple Watch can approach the cost of a refurbished SE. <a href="https://www.ifixit.com/Search?query=apple+watch+teardown" target="_blank" rel="noopener noreferrer" class="aw-context-link">iFixit's Apple Watch teardowns</a> reveal why — the precision-intensive lamination process makes screen replacement significantly more involved than a standard phone screen swap.</p>
+        <p class="aw-context-paragraph">If the repair cost doesn't make financial sense for your model, we'll walk you through alternatives — including trade-in options toward a newer model or refurbished Apple Watch from our pre-owned inventory.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Locations -->
+  <section class="aw-locations-section" id="locations">
+    <div class="aw-container">
+      <div class="aw-section-header">
+        <h2 class="aw-section-title">Apple Watch Repair Locations in Winnipeg &amp; Thompson</h2>
+        <p class="aw-section-subtitle">Two Manitoba locations. Walk-ins welcome at both.</p>
+      </div>
+      <div class="aw-locations-grid">
+        <div class="aw-location-card">
+          <span class="aw-walkin-badge">Walk-ins Welcome</span>
+          <h3 class="aw-location-name">St. Vital Location</h3>
+          <p class="aw-location-address">845 Dakota St #25, Winnipeg, MB R2M 5M3</p>
+          <div class="aw-location-hours">
+            <p>Mon–Sat: 9AM – 7PM</p>
+            <p>Sun: 12PM – 7PM</p>
+          </div>
+          <div class="aw-location-actions">
+            <a href="tel:2045009757" class="aw-location-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              (204) 500-9757
+            </a>
+            <a href="https://maps.google.com/?q=845+Dakota+St+%2325+Winnipeg+MB+R2M+5M3" target="_blank" rel="noopener noreferrer" class="aw-location-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              Get Directions
+            </a>
+          </div>
+        </div>
+        <div class="aw-location-card">
+          <span class="aw-location-badge-tag">Serving Northern Manitoba</span>
+          <h3 class="aw-location-name">Thompson Location</h3>
+          <p class="aw-location-address">300 Mystery Lake Rd #1530, Thompson, MB R8N 0M2</p>
+          <div class="aw-location-hours">
+            <p>Mon–Sat: 10AM – 6PM</p>
+            <p>Sun: Closed</p>
+          </div>
+          <div class="aw-location-actions">
+            <a href="tel:2044100262" class="aw-location-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              (204) 410-0262
+            </a>
+            <a href="https://maps.google.com/?q=300+Mystery+Lake+Rd+%231530+Thompson+MB+R8N+0M2" target="_blank" rel="noopener noreferrer" class="aw-location-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              Get Directions
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQs -->
+  <section class="aw-faq-section" id="faqs">
+    <div class="aw-container">
+      <div class="aw-section-header">
+        <h2 class="aw-section-title">Apple Watch Repair FAQs</h2>
+        <p class="aw-section-subtitle">Common questions about Apple Watch repair at Mobile Tech Lab in Winnipeg</p>
+      </div>
+      <div class="aw-faq-list">
+        <details class="aw-faq-item">
+          <summary class="aw-faq-summary">
+            <span>How long does Apple Watch screen replacement take in Winnipeg?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="aw-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <p class="aw-faq-answer">Most Apple Watch screen replacements at our Winnipeg shop take 1–2 hours. We stock screens for all current Series, SE, and Ultra models so same-day repair is available for walk-ins.</p>
+        </details>
+        <details class="aw-faq-item">
+          <summary class="aw-faq-summary">
+            <span>Is my Apple Watch still water resistant after a screen repair?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="aw-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <p class="aw-faq-answer">We reseal the display adhesive during every screen repair to restore the original water resistance rating. While we cannot guarantee the exact IP rating is fully restored, we take every precaution to maintain the seal quality.</p>
+        </details>
+        <details class="aw-faq-item">
+          <summary class="aw-faq-summary">
+            <span>How much does Apple Watch battery replacement cost in Winnipeg?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="aw-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <p class="aw-faq-answer">Battery replacement costs vary by Apple Watch model and generation — older Series models are typically less expensive than newer ones. Contact our Winnipeg locations or use our online quote tool for an exact price on your specific model.</p>
+        </details>
+        <details class="aw-faq-item">
+          <summary class="aw-faq-summary">
+            <span>Do you repair Apple Watch Ultra and Ultra 2 in Winnipeg?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="aw-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <p class="aw-faq-answer">Yes — we repair both Apple Watch Ultra and Ultra 2 at our Winnipeg St. Vital location. The larger 49mm case requires specialized tools that most general repair shops don't carry, but we have them in stock.</p>
+        </details>
+        <details class="aw-faq-item">
+          <summary class="aw-faq-summary">
+            <span>How do I know if my Apple Watch battery needs replacing?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="aw-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <p class="aw-faq-answer">Signs of a worn battery include rapid drain during normal use, unexpected shutdowns at 20–30% charge, the watch not lasting through a full day, or the watch running warm. You can check battery maximum capacity in the Watch app on your iPhone under My Watch &gt; General &gt; Usage &gt; Battery Health.</p>
+        </details>
+        <details class="aw-faq-item">
+          <summary class="aw-faq-summary">
+            <span>Can you fix an Apple Watch that won't turn on?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="aw-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <p class="aw-faq-answer">Yes — a completely unresponsive Apple Watch is often caused by a fully depleted battery, a failed display connection, or a logic board fault. We run full diagnostics before recommending a repair so you know exactly what the issue is before spending anything.</p>
+        </details>
+        <details class="aw-faq-item">
+          <summary class="aw-faq-summary">
+            <span>Do you repair Apple Watch SE in Winnipeg?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="aw-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <p class="aw-faq-answer">Yes — we repair all three generations of Apple Watch SE including the 1st Gen, 2nd Gen, and 3rd Gen models. Screen and battery replacements are the most common SE repairs and are typically completed same-day.</p>
+        </details>
+        <details class="aw-faq-item">
+          <summary class="aw-faq-summary">
+            <span>Can you fix Apple Watch water damage in Winnipeg?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="aw-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <p class="aw-faq-answer">In many cases yes — even water resistant Apple Watches can suffer damage from salt water, pool chemicals, or older degraded seals. We perform component-level cleaning and diagnostics to assess what can be recovered.</p>
+        </details>
+        <details class="aw-faq-item">
+          <summary class="aw-faq-summary">
+            <span>Do you offer a warranty on Apple Watch repairs?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="aw-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <p class="aw-faq-answer">Yes — screen repairs carry a 30-day to lifetime warranty depending on the part tier selected. Battery replacements include a 90-day warranty. All other repairs carry a lifetime warranty on parts and labour.</p>
+        </details>
+        <details class="aw-faq-item">
+          <summary class="aw-faq-summary">
+            <span>Do I need an appointment for Apple Watch repair in Winnipeg?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="aw-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <p class="aw-faq-answer">No appointment is needed — both our St. Vital and Thompson locations accept walk-in Apple Watch repairs. Calling ahead is helpful to confirm we have your specific model's parts in stock, especially for newer Ultra 2 or Series 10 models.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="aw-final-cta-section">
+    <div class="aw-container">
+      <div class="aw-final-cta-inner">
+        <h2 class="aw-final-cta-title">Ready to Fix Your Apple Watch?</h2>
+        <p class="aw-final-cta-subtitle">Get a free quote online or walk in to either of our Manitoba locations.</p>
+        <div class="aw-final-cta-group">
+          <a href="https://shop.mobiletechlab.ca/pages/repair2" target="_blank" rel="noopener noreferrer" class="aw-cta-primary">
+            Get a Free Quote
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="tel:2045009757" class="aw-cta-secondary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Call Now
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    :root {
+      --color-primary: #ef4444;
+      --color-primary-dark: #dc2626;
+      --color-primary-light: #fff1f1;
+      --color-primary-border: #fde8e8;
+      --color-primary-hover-bg: #fecaca;
+      --color-text-dark: #111827;
+      --color-text-body: #374151;
+      --color-text-muted: #6b7280;
+      --color-text-subtle: #9ca3af;
+      --color-bg-white: #ffffff;
+      --color-bg-section: linear-gradient(135deg, #fff5f5 0%, #ffffff 50%, #fff5f5 100%);
+      --color-card-border: #fde8e8;
+      --border-radius-card: 16px;
+      --border-radius-btn: 10px;
+      --shadow-card: 0 2px 16px rgba(239, 68, 68, 0.07);
+      --shadow-card-hover: 0 12px 32px rgba(239, 68, 68, 0.13);
+      --shadow-btn-hover: 0 6px 20px rgba(239, 68, 68, 0.35);
+    }
+
+    .aw-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .aw-section-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .aw-section-title {
+      font-size: clamp(1.5rem, 3vw, 1.875rem);
+      font-weight: 700;
+      color: var(--color-text-dark);
+      margin: 0 0 12px 0;
+    }
+
+    .aw-section-subtitle {
+      font-size: 15px;
+      color: var(--color-text-muted);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* Breadcrumb */
+    .aw-breadcrumb-nav {
+      border-bottom: 1px solid #e5e7eb;
+      background: var(--color-bg-white);
+    }
+
+    .aw-breadcrumb-nav .aw-container {
+      padding-top: 12px;
+      padding-bottom: 12px;
+    }
+
+    .aw-breadcrumb-list {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      color: var(--color-text-muted);
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .aw-breadcrumb-link {
+      color: var(--color-text-muted);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .aw-breadcrumb-link:hover {
+      color: var(--color-text-dark);
+    }
+
+    .aw-breadcrumb-chevron {
+      width: 12px;
+      height: 12px;
+      flex-shrink: 0;
+    }
+
+    .aw-breadcrumb-current {
+      color: var(--color-text-dark);
+      font-weight: 500;
+    }
+
+    /* Hero */
+    .aw-hero-section {
+      background: var(--color-bg-section);
+      width: 100%;
+      padding: 60px 24px 80px;
+    }
+
+    .aw-hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .aw-hero-content {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .aw-hero-badge-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .aw-service-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 5px 14px;
+      background: var(--color-primary-light);
+      border: 1px solid var(--color-primary-border);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--color-primary);
+    }
+
+    .aw-location-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 500;
+      color: #16a34a;
+    }
+
+    .aw-badge-dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: #16a34a;
+      flex-shrink: 0;
+    }
+
+    .aw-hero-headline {
+      font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+      font-weight: 900;
+      line-height: 1.1;
+      color: var(--color-text-dark);
+      margin: 0;
+    }
+
+    .aw-highlight {
+      color: var(--color-text-dark);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      text-decoration-color: var(--color-primary);
+    }
+
+    .aw-hero-subheadline {
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--color-text-body);
+      margin: 0;
+    }
+
+    .aw-hero-body {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .aw-hero-body p {
+      font-size: 15px;
+      color: #4b5563;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .aw-hero-cta-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .aw-cta-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      background: var(--color-primary);
+      color: var(--color-bg-white);
+      border: none;
+      border-radius: var(--border-radius-btn);
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+    }
+
+    .aw-cta-primary:hover {
+      background-color: var(--color-primary-dark);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-btn-hover);
+    }
+
+    .aw-cta-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 24px;
+      background: var(--color-bg-white);
+      color: var(--color-text-body);
+      border: 1.5px solid #e5e7eb;
+      border-radius: var(--border-radius-btn);
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: border-color 0.2s ease, color 0.2s ease;
+      cursor: pointer;
+    }
+
+    .aw-cta-secondary:hover {
+      border-color: var(--color-primary);
+      color: var(--color-primary);
+    }
+
+    .aw-pricing-note {
+      font-size: 13px;
+      color: var(--color-text-subtle);
+      margin: 0;
+    }
+
+    .aw-pricing-note a {
+      color: var(--color-primary);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .aw-hero-image-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .aw-hero-image-wrapper img {
+      width: 100%;
+      max-width: 420px;
+      height: auto;
+      display: block;
+      object-fit: contain;
+    }
+
+    .aw-annotations-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+    }
+
+    .aw-annotation {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      background: var(--color-primary-light);
+      border: 1px solid var(--color-primary-border);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--color-primary);
+    }
+
+    .aw-annotation svg {
+      flex-shrink: 0;
+      stroke: var(--color-primary);
+    }
+
+    /* Services */
+    .aw-services-section {
+      background: var(--color-bg-white);
+      padding: 80px 0;
+    }
+
+    .aw-services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .aw-service-card {
+      background: var(--color-bg-white);
+      border: 1px solid var(--color-card-border);
+      border-left: 4px solid var(--color-primary);
+      border-radius: var(--border-radius-card);
+      padding: 24px;
+      box-shadow: var(--shadow-card);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .aw-service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-card-hover);
+    }
+
+    .aw-service-icon-wrapper {
+      background-color: var(--color-primary-light);
+      border-radius: 10px;
+      padding: 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      width: 44px;
+      height: 44px;
+    }
+
+    .aw-service-icon-wrapper svg {
+      stroke: var(--color-primary);
+      width: 22px;
+      height: 22px;
+    }
+
+    .aw-service-card:hover .aw-service-icon-wrapper {
+      background-color: var(--color-primary-hover-bg);
+    }
+
+    .aw-service-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--color-text-dark);
+      margin: 0 0 10px 0;
+    }
+
+    .aw-service-body {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .aw-section-cta {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    /* Models */
+    .aw-models-section {
+      background: linear-gradient(135deg, #fafafa 0%, #f9fafb 100%);
+      padding: 80px 0;
+    }
+
+    .aw-models-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .aw-model-card {
+      background: var(--color-bg-white);
+      border: 1px solid var(--color-card-border);
+      border-left: 4px solid var(--color-primary);
+      border-radius: var(--border-radius-card);
+      padding: 28px;
+      box-shadow: var(--shadow-card);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .aw-model-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-card-hover);
+    }
+
+    .aw-model-icon-wrapper {
+      background-color: var(--color-primary-light);
+      border-radius: 10px;
+      padding: 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      width: 44px;
+      height: 44px;
+    }
+
+    .aw-model-icon-wrapper svg {
+      stroke: var(--color-primary);
+      width: 22px;
+      height: 22px;
+    }
+
+    .aw-model-card:hover .aw-model-icon-wrapper {
+      background-color: var(--color-primary-hover-bg);
+    }
+
+    .aw-model-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--color-text-dark);
+      margin: 0 0 8px 0;
+    }
+
+    .aw-model-description {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      line-height: 1.6;
+      margin: 0 0 16px 0;
+      flex: 1;
+    }
+
+    .aw-model-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 20px;
+    }
+
+    .aw-pill {
+      padding: 4px 10px;
+      background: #f3f4f6;
+      border: 1px solid #e5e7eb;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--color-text-body);
+    }
+
+    .aw-model-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--color-primary);
+      text-decoration: none;
+      transition: gap 0.2s ease;
+    }
+
+    .aw-model-cta:hover {
+      gap: 10px;
+    }
+
+    /* Why Choose Us */
+    .aw-why-section {
+      background: var(--color-bg-white);
+      padding: 80px 0;
+    }
+
+    .aw-pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .aw-pillar-card {
+      background: var(--color-bg-white);
+      border: 1px solid var(--color-card-border);
+      border-left: 4px solid var(--color-primary);
+      border-radius: var(--border-radius-card);
+      padding: 24px;
+      box-shadow: var(--shadow-card);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .aw-pillar-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-card-hover);
+    }
+
+    .aw-pillar-icon-wrapper {
+      background-color: var(--color-primary-light);
+      border-radius: 10px;
+      padding: 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      width: 44px;
+      height: 44px;
+    }
+
+    .aw-pillar-icon-wrapper svg {
+      stroke: var(--color-primary);
+      width: 22px;
+      height: 22px;
+    }
+
+    .aw-pillar-card:hover .aw-pillar-icon-wrapper {
+      background-color: var(--color-primary-hover-bg);
+    }
+
+    .aw-pillar-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--color-text-dark);
+      margin: 0 0 8px 0;
+    }
+
+    .aw-pillar-body {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* Repair Cost Options */
+    .aw-cost-section {
+      background: var(--color-bg-section);
+      width: 100%;
+      padding: 80px 24px;
+    }
+
+    .aw-cost-section .aw-container {
+      padding: 0;
+    }
+
+    .aw-cost-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .aw-cost-card {
+      background: var(--color-bg-white);
+      border: 1px solid var(--color-card-border);
+      border-left: 4px solid var(--color-primary);
+      border-radius: var(--border-radius-card);
+      padding: 28px;
+      box-shadow: var(--shadow-card);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .aw-cost-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-card-hover);
+    }
+
+    .aw-cost-icon-wrapper {
+      background-color: var(--color-primary-light);
+      border-radius: 10px;
+      padding: 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      width: 44px;
+      height: 44px;
+    }
+
+    .aw-cost-icon-wrapper svg {
+      stroke: var(--color-primary);
+      width: 22px;
+      height: 22px;
+    }
+
+    .aw-cost-card:hover .aw-cost-icon-wrapper {
+      background-color: var(--color-primary-hover-bg);
+    }
+
+    .aw-cost-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--color-text-dark);
+      margin: 0 0 12px 0;
+    }
+
+    .aw-cost-body {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      margin: 0 0 16px 0;
+      flex: 1;
+    }
+
+    .aw-cost-note {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--color-text-subtle);
+      margin: 0 0 20px 0;
+    }
+
+    .aw-price-match-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 14px 20px;
+      border: 1.5px solid #d1d5db;
+      border-radius: var(--border-radius-btn);
+      background: var(--color-bg-white);
+      color: var(--color-text-body);
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+      box-sizing: border-box;
+    }
+
+    .aw-price-match-btn:hover {
+      border-color: var(--color-primary);
+      color: var(--color-primary);
+      box-shadow: 0 2px 12px rgba(239, 68, 68, 0.1);
+    }
+
+    .aw-trade-in-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 14px 20px;
+      background: var(--color-primary-light);
+      color: var(--color-primary);
+      border: 1.5px solid #fca5a5;
+      border-radius: var(--border-radius-btn);
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+      box-sizing: border-box;
+    }
+
+    .aw-trade-in-btn:hover {
+      background-color: var(--color-primary-hover-bg);
+      border-color: var(--color-primary);
+      box-shadow: 0 2px 12px rgba(239, 68, 68, 0.15);
+    }
+
+    .aw-pricing-context {
+      max-width: 800px;
+      margin: 40px auto 0 auto;
+    }
+
+    .aw-context-paragraph {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .aw-context-link {
+      color: var(--color-primary);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    /* Locations */
+    .aw-locations-section {
+      background: #fafafa;
+      padding: 80px 0;
+    }
+
+    .aw-locations-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .aw-location-card {
+      background: var(--color-bg-white);
+      border: 1px solid var(--color-card-border);
+      border-radius: var(--border-radius-card);
+      padding: 28px;
+      box-shadow: var(--shadow-card);
+    }
+
+    .aw-walkin-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 12px;
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #16a34a;
+      margin-bottom: 16px;
+    }
+
+    .aw-location-badge-tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 12px;
+      background: var(--color-primary-light);
+      border: 1px solid var(--color-primary-border);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--color-primary);
+      margin-bottom: 16px;
+    }
+
+    .aw-location-name {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--color-text-dark);
+      margin: 0 0 6px 0;
+    }
+
+    .aw-location-address {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      margin: 0 0 16px 0;
+    }
+
+    .aw-location-hours {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      margin-bottom: 20px;
+      line-height: 1.7;
+    }
+
+    .aw-location-hours p {
+      margin: 0;
+    }
+
+    .aw-location-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .aw-location-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--color-primary);
+      text-decoration: none;
+      transition: gap 0.2s ease;
+    }
+
+    .aw-location-link:hover {
+      gap: 10px;
+    }
+
+    .aw-location-link svg {
+      stroke: var(--color-primary);
+    }
+
+    /* FAQs */
+    .aw-faq-section {
+      background: var(--color-bg-white);
+      padding: 80px 0;
+    }
+
+    .aw-faq-list {
+      max-width: 760px;
+      margin: 0 auto;
+      border-top: 1px solid #e5e7eb;
+    }
+
+    .aw-faq-item {
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .aw-faq-summary {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 20px 0;
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--color-text-dark);
+      list-style: none;
+    }
+
+    .aw-faq-summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .aw-faq-chevron {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      stroke: var(--color-text-muted);
+      transition: transform 0.2s ease;
+      margin-top: 2px;
+    }
+
+    details[open] .aw-faq-chevron {
+      transform: rotate(180deg);
+    }
+
+    .aw-faq-answer {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      margin: 0 0 20px 0;
+      padding-right: 34px;
+    }
+
+    /* Final CTA */
+    .aw-final-cta-section {
+      background: var(--color-primary-light);
+      border-top: 1px solid var(--color-primary-border);
+      padding: 80px 0;
+    }
+
+    .aw-final-cta-inner {
+      text-align: center;
+    }
+
+    .aw-final-cta-title {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 700;
+      color: var(--color-text-dark);
+      margin: 0 0 12px 0;
+    }
+
+    .aw-final-cta-subtitle {
+      font-size: 15px;
+      color: var(--color-text-muted);
+      margin: 0 0 32px 0;
+    }
+
+    .aw-final-cta-group {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .aw-pillars-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .aw-hero-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .aw-services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .aw-models-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .aw-services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .aw-cost-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .aw-locations-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .aw-pillars-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
+</BaseLayout>
