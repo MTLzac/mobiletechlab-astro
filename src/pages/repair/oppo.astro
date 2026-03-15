@@ -1,0 +1,420 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = "Oppo Repair Winnipeg | Find X & Reno Screen Fix | Mobile Tech Lab";
+const description = "Oppo repair in Winnipeg. Screen, battery, SUPERVOOC charging repair for Oppo Find X, Reno, A series & Realme devices. Growing market specialists.";
+const canonical = "https://mobiletechlab.ca/repair/oppo";
+
+const services = [
+  {
+    name: "Screen Replacement",
+    description: "Replace cracked AMOLED displays on Oppo Find X, Reno, and Realme devices with precision. Repair costs and timelines vary by model and part availability. For less common devices like these, parts availability can differ by model and supplier, but repairs are often still possible after evaluation. Aftermarket parts are only offered when the quality is sufficient to be reliably warrantied.",
+    iconPaths: "<path d='M13 3H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-3'/><path d='M8 21h8'/><path d='M12 17v4'/><path d='m17 8 5-5'/><path d='M17 3h5v5'/>"
+  },
+  {
+    name: "Battery Replacement",
+    description: "Restore battery performance to your Oppo or Realme phone in Winnipeg.",
+    iconPaths: "<rect width='16' height='10' x='2' y='7' rx='2' ry='2'/><line x1='22' x2='22' y1='11' y2='13'/>"
+  },
+  {
+    name: "SUPERVOOC Repair",
+    description: "Fix SUPERVOOC and VOOC fast charging issues—65W to 150W charging restored.",
+    iconPaths: "<path d='M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z'/>"
+  },
+  {
+    name: "Camera Repair",
+    description: "Repair Hasselblad-partnered cameras on flagship Oppo Find X devices.",
+    iconPaths: "<path d='M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z'/><circle cx='12' cy='13' r='3'/>"
+  },
+  {
+    name: "Speaker Repair",
+    description: "Fix Dolby Atmos speakers, earpieces, and audio quality issues.",
+    iconPaths: "<path d='M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z'/><path d='M16 9a5 5 0 0 1 0 6'/><path d='M19.364 18.364a9 9 0 0 0 0-12.728'/>"
+  },
+  {
+    name: "Charging Port Repair",
+    description: "Repair USB-C ports for reliable fast charging and data transfer.",
+    iconPaths: "<path d='M12 22v-5'/><path d='M9 8V2'/><path d='M15 8V2'/><path d='M18 8v5a6 6 0 0 1-6 6a6 6 0 0 1-6-6V8z'/>"
+  }
+];
+
+const advantages = [
+  {
+    title: "Oppo & Realme Experts",
+    description: "Specialized in the BBK family of brands including Oppo, Realme, and OnePlus devices. Repairs for these devices typically require at least one business day due to part sourcing. If you need a working phone while we complete the repair, loaner phones may be available.",
+    iconPaths: "<path d='m15 5 4 4'/><path d='M13 7 8.7 2.7a2.41 2.41 0 0 0-3.41 0L2.7 5.3a2.41 2.41 0 0 0 0 3.41L7 13'/><path d='m8 6 2-2'/><path d='m2 22 5.5-1.5L21 7a2.12 2.12 0 0 0-3-3L4.5 17.5Z'/><path d='m18 16 2-2'/><path d='m17 11 4.3 4.3a2.41 2.41 0 0 1 0 3.41l-2.6 2.6a2.41 2.41 0 0 1-3.41 0L11 17'/>"
+  },
+  {
+    title: "SUPERVOOC Specialists",
+    description: "Expert repair for 65W to 150W SUPERVOOC fast charging systems. If a repair is outside your budget or parts are not readily available, we can also attempt data recovery to help you retrieve important information.",
+    iconPaths: "<path d='M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z'/>"
+  },
+  {
+    title: "Growing Market Leaders",
+    description: "Early adopters of Oppo repair in Winnipeg, staying ahead of the curve. Most repairs for these devices are reasonably priced, but many customers don't have a baseline for what a repair should cost, so we'll explain options clearly before proceeding.",
+    iconPaths: "<polyline points='22 7 13.5 15.5 8.5 10.5 2 17'/><polyline points='16 7 22 7 22 13'/>"
+  },
+  {
+    title: "Warranty on Every Repair",
+    description: "Screen repair warranties vary by part tier (30 days to lifetime). 90-day battery warranty. Lifetime warranty on most other repairs. Warranty coverage applies to the part repaired or replaced only and does not extend to unrelated components. If a function cannot be tested prior to repair, its operation cannot be guaranteed afterward.",
+    iconPaths: "<path d='m15 5 4 4'/><path d='M13 7 8.7 2.7a2.41 2.41 0 0 0-3.41 0L2.7 5.3a2.41 2.41 0 0 0 0 3.41L7 13'/><path d='m8 6 2-2'/><path d='m2 22 5.5-1.5L21 7a2.12 2.12 0 0 0-3-3L4.5 17.5Z'/><path d='m18 16 2-2'/><path d='m17 11 4.3 4.3a2.41 2.41 0 0 1 0 3.41l-2.6 2.6a2.41 2.41 0 0 1-3.41 0L11 17'/>"
+  }
+];
+
+const modelCategories = [
+  {
+    title: "Find X Flagships",
+    models: ["Find X7 Ultra", "Find X7", "Find X6 Pro", "Find X6", "Find X5 Pro", "Find X5"],
+    description: "Premium flagship repairs with Hasselblad camera expertise."
+  },
+  {
+    title: "Reno Series",
+    models: ["Reno 11 Pro", "Reno 11", "Reno 10 Pro+", "Reno 10 Pro", "Reno 10", "Reno 8 Pro", "Reno 8"],
+    description: "Mid-range Reno repairs with portrait camera specialization."
+  },
+  {
+    title: "Oppo A Series",
+    models: ["A98", "A78", "A58", "A38", "A17", "A16", "A15"],
+    description: "Budget-friendly A-series repairs at affordable prices."
+  },
+  {
+    title: "Realme Devices",
+    models: ["GT 5 Pro", "GT 3", "11 Pro+", "11 Pro", "11", "10 Pro+", "10 Pro", "C55", "C53"],
+    description: "Full Realme lineup support—GT flagships to C-series budget phones."
+  },
+  {
+    title: "Foldables",
+    models: ["Find N3", "Find N2", "Find N2 Flip"],
+    description: "Specialized foldable screen and hinge repairs."
+  }
+];
+
+const faqs = [
+  {
+    question: "Do you repair Oppo phones in Winnipeg?",
+    answer: "Yes! We're Winnipeg's Oppo and Realme specialists. We service all devices from budget A-series to flagship Find X models at our St. Vital and Garden City locations."
+  },
+  {
+    question: "Can you fix SUPERVOOC fast charging issues?",
+    answer: "Absolutely! We're experts in SUPERVOOC and VOOC charging repairs—from 65W standard to 150W ultra-fast charging. We diagnose port issues, cable problems, and internal charging components."
+  },
+  {
+    question: "Do you repair Oppo foldable phones?",
+    answer: "Yes, we service the Oppo Find N series including the Find N3 and N2 Flip foldables. Specialized hinge and flexible display repairs available."
+  },
+  {
+    question: "Are Oppo and Realme parts available in Winnipeg?",
+    answer: "We maintain stock for popular Oppo and Realme models. Find X flagships and Reno series parts are typically in stock; less common models may take 2-3 business days to source."
+  },
+  {
+    question: "Do you repair Realme phones too?",
+    answer: "Yes! Realme is part of the BBK family (along with Oppo and OnePlus), and we're experts in all Realme models from GT gaming phones to budget C-series devices."
+  }
+];
+
+const locations = [
+  {
+    name: "St. Vital Centre",
+    address: "1225 St Mary's Rd, Winnipeg, MB R2M 5E5",
+    phone: "(204) 500-9757",
+    phoneHref: "tel:2045009757",
+    hours: "Mon–Sat 10am–7pm, Sun 12pm–5pm",
+    mapUrl: "https://maps.google.com/?q=Mobile+Tech+Lab+St+Vital",
+    badge: "Walk-ins Welcome"
+  },
+  {
+    name: "Garden City Shopping Centre",
+    address: "2305 McPhillips St, Winnipeg, MB R2V 3E1",
+    phone: "(204) 515-7736",
+    phoneHref: "tel:2045157736",
+    hours: "Mon–Sat 10am–7pm, Sun 12pm–5pm",
+    mapUrl: "https://maps.google.com/?q=Mobile+Tech+Lab+Garden+City",
+    badge: "Walk-ins Welcome"
+  }
+];
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://mobiletechlab.ca/" },
+    { "@type": "ListItem", "position": 2, "name": "Repairs", "item": "https://mobiletechlab.ca/repair" },
+    { "@type": "ListItem", "position": 3, "name": "Oppo" }
+  ]
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Oppo Repair Service",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Mobile Tech Lab",
+    "url": "https://mobiletechlab.ca"
+  },
+  "areaServed": { "@type": "City", "name": "Winnipeg" },
+  "serviceType": "Phone Repair",
+  "url": "https://mobiletechlab.ca/repair/oppo",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Oppo Repair Services",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Screen Replacement" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Battery Replacement" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SUPERVOOC Repair" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Camera Repair" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Speaker Repair" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Charging Port Repair" } }
+    ]
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(f => ({
+    "@type": "Question",
+    "name": f.question,
+    "acceptedAnswer": { "@type": "Answer", "text": f.answer }
+  }))
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
+
+  <!-- Breadcrumbs -->
+  <nav aria-label="Breadcrumb" class="border-b border-border bg-muted/30">
+    <div class="container mx-auto px-4 py-3">
+      <ol class="flex flex-wrap items-center gap-1.5 text-sm text-muted-foreground">
+        <li><a href="/" class="hover:text-foreground transition-colors">Home</a></li>
+        <li aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m9 18 6-6-6-6"/></svg>
+        </li>
+        <li><a href="/repair" class="hover:text-foreground transition-colors">Repairs</a></li>
+        <li aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m9 18 6-6-6-6"/></svg>
+        </li>
+        <li><span class="text-foreground font-medium" aria-current="page">Oppo</span></li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section id="hero" class="bg-gradient-to-b from-secondary/50 to-background py-20 md:py-28">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col items-center gap-10 md:flex-row md:gap-16">
+        <div class="flex-1 text-center md:text-left">
+          <h1 class="mb-5 text-4xl font-bold tracking-tight md:text-5xl">
+            Oppo &amp; Realme Repair Specialists in Winnipeg
+          </h1>
+          <p class="mb-8 max-w-xl text-lg text-muted-foreground">
+            From the flagship Find X series to the affordable A-series, we repair all Oppo devices in Winnipeg. Plus Realme phones too! SUPERVOOC charging issues, cracked screens, battery problems—we fix it all.
+          </p>
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-3 md:justify-start">
+            <a
+              href="https://shop.mobiletechlab.ca/pages/repair2"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 rounded-md bg-primary px-8 py-3 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
+            >
+              Get a Free Quote
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+            <a
+              href="tel:2045009757"
+              class="inline-flex items-center gap-2 rounded-md border border-input bg-background px-8 py-3 text-sm font-medium hover:bg-accent transition-colors"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              (204) 500-9757
+            </a>
+          </div>
+        </div>
+        <div class="flex-shrink-0">
+          <img
+            src="/assets/hero-oppo.png"
+            alt="Oppo smartphone repair services in Winnipeg"
+            width="600"
+            height="400"
+            loading="eager"
+            class="mx-auto max-w-xs rounded-2xl md:max-w-sm"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="py-16 md:py-20">
+    <div class="container mx-auto px-4">
+      <h2 class="mb-3 text-center text-2xl font-bold md:text-3xl">Oppo &amp; Realme Repairs We Offer</h2>
+      <p class="mb-10 text-center text-muted-foreground">From SUPERVOOC charging to cracked AMOLED screens — walk in or get a quote online</p>
+      <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {services.map(service => (
+          <div class="rounded-lg border border-border bg-card p-6">
+            <div class="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" set:html={service.iconPaths} />
+            </div>
+            <h3 class="mb-2 font-semibold text-foreground">{service.name}</h3>
+            <p class="text-sm text-muted-foreground">{service.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Models -->
+  <section id="models" class="bg-secondary/40 py-16 md:py-20">
+    <div class="container mx-auto px-4">
+      <h2 class="mb-3 text-center text-2xl font-bold md:text-3xl">Oppo &amp; Realme Models We Service</h2>
+      <p class="mb-10 text-center text-muted-foreground">We repair all Oppo and Realme devices including Find X flagships, Reno series, A-series, and foldables. Repair cost and part availability can vary between models, even within the same brand.</p>
+      <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {modelCategories.map(cat => (
+          <div class="rounded-lg border border-border bg-background p-6">
+            <h3 class="mb-1 font-semibold text-foreground">{cat.title}</h3>
+            <p class="mb-3 text-xs text-muted-foreground">{cat.description}</p>
+            <ul class="flex flex-wrap gap-2">
+              {cat.models.map(model => (
+                <li class="rounded-full border border-border bg-muted px-3 py-1 text-xs text-foreground">{model}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section id="why-choose-us" class="py-16 md:py-20">
+    <div class="container mx-auto px-4">
+      <div class="mx-auto max-w-4xl">
+        <h2 class="mb-10 text-center text-2xl font-bold md:text-3xl">Why Choose Us for Oppo Repair?</h2>
+        <div class="grid gap-5 sm:grid-cols-2">
+          {advantages.map(adv => (
+            <div class="rounded-lg border border-border bg-card p-6">
+              <div class="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" set:html={adv.iconPaths} />
+              </div>
+              <h3 class="mb-2 font-semibold text-foreground">{adv.title}</h3>
+              <p class="text-sm text-muted-foreground">{adv.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Micro Copy -->
+  <section class="bg-muted/50 py-12 md:py-16">
+    <div class="container mx-auto px-4">
+      <div class="mx-auto max-w-3xl rounded-xl border border-border bg-background p-8">
+        <h2 class="mb-6 text-xl font-bold text-foreground md:text-2xl">About Oppo &amp; Realme Repair Costs</h2>
+        <div class="space-y-4 text-sm text-muted-foreground">
+          <p>Oppo and Realme repair costs vary by model—budget A-series devices are affordable, while Find X flagships and foldables cost more due to premium components. Oppo's <a href="https://support.oppo.com/ca/" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">Canadian support centre</a> provides model-specific troubleshooting and SUPERVOOC charging diagnostics.</p>
+          <p>Many customers are surprised that flagship Oppo repairs can cost as much as Samsung or iPhone repairs, especially for Find X and N-series foldables. <a href="https://www.ifixit.com/Search?query=oppo+find+teardown" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">iFixit's Oppo teardowns</a> reveal the engineering complexity of SUPERVOOC charging systems and foldable hinge mechanisms.</p>
+          <div class="flex flex-col gap-2 rounded-lg border border-border bg-muted/60 p-4 sm:flex-row sm:gap-4">
+            <div class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 h-4 w-4 shrink-0 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+              <p>If the repair cost doesn't make sense for your device's value, we'll explain alternatives clearly.</p>
+            </div>
+            <div class="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 h-4 w-4 shrink-0 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" x2="12" y1="3" y2="15"/></svg>
+              <p>When repair isn't practical, data recovery is often still possible to retrieve your files.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Locations -->
+  <section id="locations" class="py-16 md:py-20">
+    <div class="container mx-auto px-4">
+      <h2 class="mb-3 text-center text-2xl font-bold md:text-3xl">Our Winnipeg Locations</h2>
+      <p class="mb-10 text-center text-muted-foreground">Serving St. Vital, Fort Garry, Garden City, Transcona, and all Winnipeg neighborhoods. Also serving Thompson, MB. Walk-ins welcome or book online.</p>
+      <div class="mx-auto grid max-w-3xl gap-5 sm:grid-cols-2">
+        {locations.map(loc => (
+          <div class="rounded-lg border border-border bg-card p-6">
+            <div class="mb-3 flex items-center justify-between">
+              <h3 class="font-semibold text-foreground">{loc.name}</h3>
+              <span class="rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary">{loc.badge}</span>
+            </div>
+            <p class="mb-1 text-sm text-muted-foreground">{loc.address}</p>
+            <p class="mb-4 text-sm text-muted-foreground">{loc.hours}</p>
+            <div class="flex flex-col gap-2">
+              <a
+                href={loc.phoneHref}
+                class="inline-flex items-center justify-center gap-2 rounded-md bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                Call {loc.phone}
+              </a>
+              <a
+                href={loc.mapUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center justify-center gap-2 rounded-md border border-input bg-background px-4 py-2.5 text-sm font-medium hover:bg-accent transition-colors"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                Get Directions
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQs -->
+  <section id="faqs" class="bg-secondary/40 py-16 md:py-20">
+    <div class="container mx-auto px-4">
+      <div class="mx-auto max-w-2xl">
+        <h2 class="mb-10 text-center text-2xl font-bold md:text-3xl">Frequently Asked Questions</h2>
+        <div class="space-y-3">
+          {faqs.map(faq => (
+            <details class="group rounded-lg border border-border bg-background">
+              <summary class="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 font-medium text-foreground hover:bg-muted/50 transition-colors rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary">
+                {faq.question}
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0 text-muted-foreground transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+              </summary>
+              <div class="px-5 pb-4 pt-1 text-sm text-muted-foreground">
+                {faq.answer}
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom CTA -->
+  <section class="bg-primary py-14 text-center">
+    <div class="container mx-auto px-4">
+      <h2 class="mb-3 text-2xl font-bold text-primary-foreground md:text-3xl">Ready to Fix Your Oppo or Realme?</h2>
+      <p class="mb-8 text-primary-foreground/80">Walk in today or get an instant quote online. Same-day service available.</p>
+      <div class="flex flex-col items-center justify-center gap-3 sm:flex-row">
+        <a
+          href="https://shop.mobiletechlab.ca/pages/repair2"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 rounded-md bg-background px-8 py-3 text-sm font-semibold text-foreground hover:bg-background/90 transition-colors"
+        >
+          Get a Free Quote
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+        <a
+          href="sms:2045009757?body=Hi%2C%20I%20found%20your%20site%20searching%20for%20Oppo%20repair.%20Can%20you%20help%3F"
+          class="inline-flex items-center gap-2 rounded-md border border-primary-foreground/30 px-8 py-3 text-sm font-medium text-primary-foreground hover:bg-primary-foreground/10 transition-colors"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          Text Us
+        </a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
