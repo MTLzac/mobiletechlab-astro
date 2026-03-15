@@ -1,0 +1,77 @@
+<div class="relative inline-block">
+  <button
+    type="button"
+    id="locations-trigger"
+    aria-expanded="false"
+    aria-controls="locations-dropdown"
+    class="flex items-center gap-1.5 bg-red-500 hover:bg-red-600 text-white text-sm font-semibold px-4 py-2 rounded-md transition-colors duration-150"
+  >
+    Locations
+    <svg id="locations-chevron" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+  </button>
+
+  <div
+    id="locations-dropdown"
+    role="region"
+    aria-label="Locations menu"
+    class="hidden absolute top-full left-0 mt-2 w-[440px] bg-white rounded-xl shadow-xl border border-gray-100 p-5 z-50"
+  >
+    <div class="grid grid-cols-2 gap-x-6">
+
+      <div class="flex flex-col border-r border-gray-100 pr-6">
+        <div class="flex items-center gap-1.5 mb-3">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span class="text-red-500 text-xs font-semibold uppercase tracking-wide">Physical Stores</span>
+        </div>
+
+        <div class="flex flex-col py-2 group">
+          <a href="/location/winnipeg" class="text-gray-800 text-sm font-medium group-hover:text-red-500 transition-colors duration-150">Winnipeg (St. Vital), MB</a>
+          <a href="https://maps.google.com/?q=Mobile+Tech+Lab+Winnipeg+St+Vital" target="_blank" rel="noopener noreferrer" class="text-xs text-gray-400 group-hover:text-red-400 transition-colors duration-150 mt-0.5">Get Directions →</a>
+        </div>
+
+        <div class="flex flex-col py-2 group">
+          <a href="/location/thompson" class="text-gray-800 text-sm font-medium group-hover:text-red-500 transition-colors duration-150">Thompson, MB</a>
+          <a href="https://maps.google.com/?q=Mobile+Tech+Lab+Thompson+MB" target="_blank" rel="noopener noreferrer" class="text-xs text-gray-400 group-hover:text-red-400 transition-colors duration-150 mt-0.5">Get Directions →</a>
+        </div>
+      </div>
+
+      <div class="flex flex-col pl-2">
+        <div class="flex items-center gap-1.5 mb-3">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          <span class="text-red-500 text-xs font-semibold uppercase tracking-wide">Mail-In Service Areas</span>
+        </div>
+
+        <a href="/service-area/steinbach" class="block text-gray-700 text-sm py-1.5 hover:text-red-500 transition-colors duration-150">Steinbach, MB</a>
+        <a href="/service-area/brandon" class="block text-gray-700 text-sm py-1.5 hover:text-red-500 transition-colors duration-150">Brandon, MB</a>
+        <a href="/service-area/portage-la-prairie" class="block text-gray-700 text-sm py-1.5 hover:text-red-500 transition-colors duration-150">Portage la Prairie, MB</a>
+        <a href="/service-area/selkirk" class="block text-gray-700 text-sm py-1.5 hover:text-red-500 transition-colors duration-150">Selkirk, MB</a>
+        <a href="/service-area/the-pas" class="block text-gray-700 text-sm py-1.5 hover:text-red-500 transition-colors duration-150">The Pas, MB</a>
+
+        <a href="/service-areas" class="inline-flex items-center gap-1 text-xs text-red-500 font-semibold mt-3 hover:underline">View All Service Areas →</a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  const trigger = document.getElementById('locations-trigger');
+  const panel = document.getElementById('locations-dropdown');
+  const chevron = document.getElementById('locations-chevron');
+
+  trigger.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isOpen = !panel.classList.contains('hidden');
+    panel.classList.toggle('hidden');
+    chevron.classList.toggle('rotate-180');
+    trigger.setAttribute('aria-expanded', String(!isOpen));
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!trigger.contains(e.target) && !panel.contains(e.target)) {
+      panel.classList.add('hidden');
+      chevron.classList.remove('rotate-180');
+      trigger.setAttribute('aria-expanded', 'false');
+    }
+  });
+</script>
