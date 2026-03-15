@@ -2,104 +2,90 @@
 const year = new Date().getFullYear();
 ---
 
-<footer class="border-t border-border bg-secondary/30">
+<footer class="border-t border-border bg-background">
   <div class="container mx-auto px-4 py-12">
-    <div class="grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
 
-      <div class="sm:col-span-2 md:col-span-1 lg:col-span-1">
-        <a href="/" class="mb-4 inline-block">
-          <img src="/assets/logo-CFQZ0lrl.png" alt="Mobile Tech Lab" class="h-10 w-auto" />
-        </a>
-        <p class="text-sm text-muted-foreground">
-          Manitoba's trusted device repair specialists. Fast, reliable, and affordable repairs for phones, tablets, consoles, and computers.
-        </p>
-      </div>
+    <div class="grid grid-cols-2 gap-8 md:grid-cols-4">
 
       <div>
-        <h3 class="mb-4 font-semibold">Quick Links</h3>
+        <h3 class="mb-4 text-sm font-semibold uppercase tracking-wider text-muted-foreground">Phone Repairs</h3>
         <ul class="space-y-2 text-sm">
-          <li><a class="text-muted-foreground hover:text-primary transition-colors" href="/">Home</a></li>
-          <li><a href="https://shop.mobiletechlab.ca/pages/repair2" target="_blank" rel="noopener noreferrer" class="text-muted-foreground hover:text-primary transition-colors">Get a Quote</a></li>
-          <li><a class="text-muted-foreground hover:text-primary transition-colors" href="/trade-in">Sell Your Phone</a></li>
-          <li><a class="text-muted-foreground hover:text-primary transition-colors" href="/contact">Contact Us</a></li>
-          <li><a class="text-muted-foreground hover:text-primary transition-colors" href="/repair-pricing">Repair Pricing</a></li>
-          <li><a class="text-muted-foreground hover:text-primary transition-colors" href="/service-areas">Service Areas</a></li>
+          <li><a href="/repair/iphone" class="text-muted-foreground hover:text-primary transition-colors">iPhone Repair</a></li>
+          <li><a href="/repair/samsung" class="text-muted-foreground hover:text-primary transition-colors">Samsung Repair</a></li>
+          <li><a href="/repair/google-pixel" class="text-muted-foreground hover:text-primary transition-colors">Google Pixel</a></li>
+          <li><a href="/repair/motorola" class="text-muted-foreground hover:text-primary transition-colors">Motorola</a></li>
+          <li><a href="/repair/tcl" class="text-muted-foreground hover:text-primary transition-colors">TCL</a></li>
+          <li><a href="/repair/water-damage" class="text-muted-foreground hover:text-primary transition-colors">Water Damage</a></li>
+          <li><a href="/repairs" class="text-muted-foreground hover:text-primary transition-colors">All Repairs</a></li>
         </ul>
       </div>
 
       <div>
-        <h3 class="mb-4 font-semibold">Phone Repairs</h3>
+        <h3 class="mb-4 text-sm font-semibold uppercase tracking-wider text-muted-foreground">Computers &amp; Tablets</h3>
         <ul class="space-y-2 text-sm">
-          <li><a class="text-muted-foreground hover:text-primary transition-colors" href="/repair/iphone">iPhone Repair</a></li>
-          <li><a class="text-muted-foreground hover:text-primary transition-colors" href="/repair/samsung">Samsung Repair</a></li>
-          <li><a class="text-muted-foreground hover:text-primary transition-colors" href="/repair/google-pixel">Google Pixel Repair</a></li>
-          <li><a class="text-muted-foreground hover:text-primary transition-colors" href="/repair/motorola">Motorola Repair</a></li>
-          <li><a class="text-muted-foreground hover:text-primary transition-colors" href="/repair/lg">LG Repair</a></li>
-          <li><a class="text-muted-foreground hover:text-primary transition-colors" href="/repairs">All Repairs</a></li>
+          <li><a href="/repair/macbook" class="text-muted-foreground hover:text-primary transition-colors">MacBook Repair</a></li>
+          <li><a href="/repair/laptop" class="text-muted-foreground hover:text-primary transition-colors">Laptop Repair</a></li>
+          <li><a href="/repair/ipad" class="text-muted-foreground hover:text-primary transition-colors">iPad Repair</a></li>
+          <li><a href="/repair/samsung-galaxy-tab" class="text-muted-foreground hover:text-primary transition-colors">Samsung Galaxy Tab</a></li>
+          <li><a href="/repair/surface" class="text-muted-foreground hover:text-primary transition-colors">Surface Repair</a></li>
+          <li><a href="/repair/apple-watch" class="text-muted-foreground hover:text-primary transition-colors">Apple Watch</a></li>
         </ul>
       </div>
 
       <div>
-        <h3 class="mb-4 font-semibold">Tablets &amp; Computers</h3>
+        <h3 class="mb-4 text-sm font-semibold uppercase tracking-wider text-muted-foreground">Gaming</h3>
         <ul class="space-y-2 text-sm">
-          <li><a class="text-muted-foreground hover:text-primary transition-colors" href="/repair/ipad">iPad Repair</a></li>
-          <li><a class="text-muted-foreground hover:text-primary transition-colors" href="/repair/samsung-galaxy-tab">Galaxy Tab Repair</a></li>
-          <li><a class="text-muted-foreground hover:text-primary transition-colors" href="/repair/macbook">MacBook Repair</a></li>
-          <li><a class="text-muted-foreground hover:text-primary transition-colors" href="/repair/laptop">Laptop Repair</a></li>
-          <li><a class="text-muted-foreground hover:text-primary transition-colors" href="/repair/surface">Surface Repair</a></li>
+          <li><a href="/repair/ps5" class="text-muted-foreground hover:text-primary transition-colors">PS5 Repair</a></li>
+          <li><a href="/repair/ps4" class="text-muted-foreground hover:text-primary transition-colors">PS4 Repair</a></li>
+          <li><a href="/repair/xbox" class="text-muted-foreground hover:text-primary transition-colors">Xbox Repair</a></li>
+          <li><a href="/repair/nintendo-switch" class="text-muted-foreground hover:text-primary transition-colors">Nintendo Switch</a></li>
+          <li><a href="/repair/steam-deck" class="text-muted-foreground hover:text-primary transition-colors">Steam Deck</a></li>
+          <li><a href="/repair/controller-repair-winnipeg" class="text-muted-foreground hover:text-primary transition-colors">Controller Repair</a></li>
+          <li><a href="/consoles" class="text-muted-foreground hover:text-primary transition-colors">All Console Repairs</a></li>
         </ul>
       </div>
 
       <div>
-        <h3 class="mb-4 font-semibold">Gaming &amp; More</h3>
+        <h3 class="mb-4 text-sm font-semibold uppercase tracking-wider text-muted-foreground">Service Areas</h3>
         <ul class="space-y-2 text-sm">
-          <li><a class="text-muted-foreground hover:text-primary transition-colors" href="/repair/nintendo-switch">Nintendo Switch</a></li>
-          <li><a class="text-muted-foreground hover:text-primary transition-colors" href="/repair/ps5">PS5 Repair</a></li>
-          <li><a class="text-muted-foreground hover:text-primary transition-colors" href="/repair/xbox">Xbox Repair</a></li>
-          <li><a class="text-muted-foreground hover:text-primary transition-colors" href="/repair/steam-deck">Steam Deck Repair</a></li>
-          <li><a class="text-muted-foreground hover:text-primary transition-colors" href="/repair/apple-watch">Apple Watch Repair</a></li>
-          <li><a class="text-muted-foreground hover:text-primary transition-colors" href="/repair/water-damage">Water Damage</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h3 class="mb-4 font-semibold">Locations</h3>
-        <ul class="space-y-3 text-sm text-muted-foreground">
-          <li>
-            <p class="font-medium text-foreground mb-1">St. Vital</p>
-            <p>845 Dakota St #25<br />Winnipeg, MB R2M 5M3</p>
-            <a href="tel:2045009757" class="mt-1 inline-flex items-center gap-1 hover:text-primary transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              (204) 500-9757
-            </a>
-            <p class="text-xs mt-1">Mon–Sat: 9AM–7PM · Sun: 12–7PM</p>
-          </li>
-          <li>
-            <p class="font-medium text-foreground mb-1">Thompson</p>
-            <p>300 Mystery Lake Rd #1530<br />Thompson, MB R8N 0M2</p>
-            <a href="tel:2044100262" class="mt-1 inline-flex items-center gap-1 hover:text-primary transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              (204) 410-0262
-            </a>
-            <p class="text-xs mt-1">Mon–Sat: 10AM–6PM · Sun: Closed</p>
-          </li>
+          <li><a href="/location/winnipeg" class="text-muted-foreground hover:text-primary transition-colors">Winnipeg</a></li>
+          <li><a href="/location/thompson" class="text-muted-foreground hover:text-primary transition-colors">Thompson</a></li>
+          <li><a href="/service-area/brandon" class="text-muted-foreground hover:text-primary transition-colors">Brandon</a></li>
+          <li><a href="/service-area/selkirk" class="text-muted-foreground hover:text-primary transition-colors">Selkirk</a></li>
+          <li><a href="/service-area/steinbach" class="text-muted-foreground hover:text-primary transition-colors">Steinbach</a></li>
+          <li><a href="/service-area/portage-la-prairie" class="text-muted-foreground hover:text-primary transition-colors">Portage la Prairie</a></li>
+          <li><a href="/service-area/the-pas" class="text-muted-foreground hover:text-primary transition-colors">The Pas</a></li>
+          <li><a href="/service-areas" class="text-muted-foreground hover:text-primary transition-colors">All Service Areas</a></li>
         </ul>
       </div>
 
     </div>
 
     <div class="mt-10 border-t border-border pt-8">
-      <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <p class="text-sm text-muted-foreground">
-          &copy; {year} Mobile Tech Lab. All rights reserved.
-        </p>
-        <div class="flex flex-wrap gap-4 text-sm text-muted-foreground">
-          <a href="/service-areas" class="hover:text-primary transition-colors">Service Areas</a>
+      <div class="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
+
+        <a href="/" class="inline-block">
+          <img src="/assets/logo-CFQZ0lrl.png" alt="Mobile Tech Lab" class="h-8 w-auto" />
+        </a>
+
+        <nav aria-label="Footer secondary navigation" class="flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted-foreground">
+          <a href="/repair-pricing" class="hover:text-primary transition-colors">Pricing</a>
+          <a href="/trade-in" class="hover:text-primary transition-colors">Trade In</a>
+          <a href="/business" class="hover:text-primary transition-colors">Business</a>
           <a href="/phone-problems/phone-not-charging" class="hover:text-primary transition-colors">Phone Problems</a>
-          <a href="/devices/iphone-xr" class="hover:text-primary transition-colors">Device Guides</a>
-          <a href="/consoles" class="hover:text-primary transition-colors">Console Repair</a>
-        </div>
+          <a href="/quote" class="hover:text-primary transition-colors">Get a Quote</a>
+          <a href="/contact" class="hover:text-primary transition-colors">Contact</a>
+        </nav>
+
+        <address class="not-italic text-sm text-muted-foreground">
+          <a href="tel:2045009757" class="hover:text-primary transition-colors">(204) 500-9757</a>
+        </address>
+
       </div>
+
+      <p class="mt-6 text-xs text-muted-foreground">
+        &copy; {year} Mobile Tech Lab. All rights reserved.
+      </p>
     </div>
 
   </div>
