@@ -172,57 +172,253 @@ const faqSchema = {
   </nav>
 
   <!-- Section 1: Hero -->
-  <section class="bg-gradient-to-b from-secondary/50 to-background py-16 md:py-24">
-    <div class="container mx-auto px-4">
-      <div class="mx-auto max-w-3xl">
-        <div class="mb-4 flex flex-wrap items-center gap-2">
-          <span class="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
-            Professional PS4 Repair
-          </span>
-          <span class="inline-flex items-center gap-1.5 rounded-full bg-green-100 px-3 py-1 text-xs font-medium text-green-700">
-            <span class="h-1.5 w-1.5 rounded-full bg-green-500"></span>
+  <section class="ps4-hero-section">
+    <div class="ps4-hero-inner">
+      <div class="ps4-hero-content">
+        <div class="ps4-hero-badge-row">
+          <span class="ps4-hero-service-badge">Professional PS4 Repair</span>
+          <span class="ps4-hero-location-badge open">
+            <span class="ps4-badge-dot"></span>
             St. Vital — Open
           </span>
-          <span class="inline-flex items-center gap-1.5 rounded-full bg-amber-100 px-3 py-1 text-xs font-medium text-amber-700">
-            <span class="h-1.5 w-1.5 rounded-full bg-amber-500"></span>
+          <span class="ps4-hero-location-badge closed">
+            <span class="ps4-badge-dot"></span>
             Thompson — Opens tomorrow 10AM
           </span>
         </div>
 
-        <h1 class="mb-4 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl">
-          PS4 Repair <span class="text-primary">Winnipeg</span> &amp; Manitoba
+        <h1 class="ps4-hero-headline">
+          PS4 Repair <span class="highlight">Winnipeg</span> &amp; Manitoba
         </h1>
-        <p class="mb-2 text-lg font-medium text-muted-foreground">PlayStation 4 Repair Specialists in Winnipeg</p>
-        <p class="mb-5 text-base text-muted-foreground leading-relaxed">
-          Overheating is the single most common PS4 failure we see at our Winnipeg shop—years of dust buildup and degraded thermal compound push the APU past safe limits, causing shutdowns mid-game. We also repair HDMI port damage, disc drive failures, power supply faults, blinking blue and white light issues, and DualShock 4 controller problems including stick drift and broken bumpers.
-        </p>
-        <p class="mb-8 text-base text-muted-foreground leading-relaxed">
-          Our technicians perform precision board-level micro-soldering for HDMI port replacements—a repair most general electronics shops in Winnipeg cannot offer. We work under magnification to remove the damaged port, clean and rebuild pads when necessary, and solder a factory-spec replacement connector.
-        </p>
+        <p class="ps4-hero-subheadline">PlayStation 4 Repair Specialists in Winnipeg</p>
+        <div class="ps4-hero-body">
+          <p>
+            Overheating is the single most common PS4 failure we see at our Winnipeg shop—years of dust buildup and degraded thermal compound push the APU past safe limits, causing shutdowns mid-game. We also repair HDMI port damage, disc drive failures, power supply faults, blinking blue and white light issues, and DualShock 4 controller problems including stick drift and broken bumpers.
+          </p>
+          <p>
+            Our technicians perform precision board-level micro-soldering for HDMI port replacements—a repair most general electronics shops in Winnipeg cannot offer. We work under magnification to remove the damaged port, clean and rebuild pads when necessary, and solder a factory-spec replacement connector.
+          </p>
+        </div>
 
-        <div class="flex flex-col sm:flex-row items-start gap-3">
-          <a
-            href="/contact"
-            class="inline-flex items-center gap-2 rounded-md bg-primary px-8 py-3 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
-          >
+        <div class="ps4-hero-cta-group">
+          <a href="/contact" class="ps4-hero-cta-primary">
             Get a Free Quote
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </a>
-          <a
-            href="tel:2045009757"
-            class="inline-flex items-center gap-2 rounded-md border border-input bg-background px-8 py-3 text-sm font-medium hover:bg-accent transition-colors"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <a href="tel:2045009757" class="ps4-hero-cta-secondary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
             Call Now
           </a>
         </div>
-        <p class="mt-4 text-xs text-muted-foreground">
+        <p class="ps4-hero-pricing-note">
           Not sure what affects the cost?{" "}
-          <a href="/pricing" class="underline hover:text-foreground transition-colors">How repair pricing works</a>
+          <a href="/pricing">How repair pricing works</a>
         </p>
+      </div>
+
+      <div class="ps4-hero-image-wrapper">
+        <img
+          src="/assets/hero-playstation-U7zMrpV6.png"
+          alt="PlayStation 4 console repair at Mobile Tech Lab Winnipeg"
+          loading="eager"
+        />
       </div>
     </div>
   </section>
+
+  <style>
+    .ps4-hero-section {
+      background: linear-gradient(135deg, #fff5f5 0%, #ffffff 50%, #fff5f5 100%);
+      width: 100%;
+      padding: 60px 24px 80px 24px;
+    }
+
+    .ps4-hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .ps4-hero-content {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .ps4-hero-image-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .ps4-hero-image-wrapper img {
+      width: 100%;
+      max-width: 580px;
+      height: auto;
+      display: block;
+      object-fit: contain;
+    }
+
+    .ps4-hero-badge-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .ps4-hero-service-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 5px 14px;
+      background: #fff1f1;
+      border: 1px solid #fecaca;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #ef4444;
+    }
+
+    .ps4-hero-location-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .ps4-hero-location-badge.open {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      color: #16a34a;
+    }
+
+    .ps4-hero-location-badge.closed {
+      background: #fefce8;
+      border: 1px solid #fde68a;
+      color: #92400e;
+    }
+
+    .ps4-badge-dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .ps4-hero-location-badge.open .ps4-badge-dot {
+      background: #16a34a;
+    }
+
+    .ps4-hero-location-badge.closed .ps4-badge-dot {
+      background: #f59e0b;
+    }
+
+    .ps4-hero-headline {
+      font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+      font-weight: 900;
+      line-height: 1.1;
+      color: #111827;
+      margin: 0;
+    }
+
+    .ps4-hero-headline .highlight {
+      color: #ef4444;
+    }
+
+    .ps4-hero-subheadline {
+      font-size: 17px;
+      font-weight: 600;
+      color: #374151;
+      margin: 0;
+    }
+
+    .ps4-hero-body {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .ps4-hero-body p {
+      font-size: 15px;
+      color: #4b5563;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .ps4-hero-cta-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .ps4-hero-cta-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      background: #ef4444;
+      color: #ffffff;
+      border: none;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+    }
+
+    .ps4-hero-cta-primary:hover {
+      background-color: #dc2626;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(239, 68, 68, 0.35);
+    }
+
+    .ps4-hero-cta-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 24px;
+      background: #ffffff;
+      color: #374151;
+      border: 1.5px solid #e5e7eb;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: border-color 0.2s ease, color 0.2s ease;
+      cursor: pointer;
+    }
+
+    .ps4-hero-cta-secondary:hover {
+      border-color: #ef4444;
+      color: #ef4444;
+    }
+
+    .ps4-hero-pricing-note {
+      font-size: 13px;
+      color: #9ca3af;
+      margin: 0;
+    }
+
+    .ps4-hero-pricing-note a {
+      color: #ef4444;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    @media (max-width: 900px) {
+      .ps4-hero-inner {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+    }
+  </style>
 
   <!-- Section 2: Repair Services -->
   <section class="py-16 md:py-20">
