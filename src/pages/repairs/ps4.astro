@@ -1,0 +1,466 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = "PS4 Repair Winnipeg & Manitoba | Mobile Tech Lab";
+const description = "Expert PS4 repair in Winnipeg. HDMI port, overheating, disc drive, power & DualShock 4 fixes. Same-day service, lifetime warranty.";
+const canonical = "https://mobiletechlab.ca/repairs/ps4";
+
+const faqItems = [
+  {
+    question: "How much does PS4 HDMI port repair cost in Winnipeg?",
+    answer: "PS4 HDMI port repair cost depends on the extent of board-level damage. At Mobile Tech Lab in Winnipeg, we provide a free diagnostic and a clear quote before starting any work. Many HDMI repairs can be completed the same day."
+  },
+  {
+    question: "Can you fix a PS4 that overheats and shuts off?",
+    answer: "Yes. PS4 overheating is one of the most common issues we see at our Winnipeg location. We fully disassemble the console, deep clean all dust and debris from the cooling channels, and apply high-performance thermal paste to restore safe operating temperatures."
+  },
+  {
+    question: "Do you repair DualShock 4 controller stick drift in Winnipeg?",
+    answer: "Absolutely. DualShock 4 stick drift is a quick repair at Mobile Tech Lab. We replace the worn analog stick module with a new unit, test calibration, and have it back to you the same day—often within an hour."
+  },
+  {
+    question: "My PS4 turns on but has no display. Can you fix it?",
+    answer: "A PS4 that powers on with no video output usually has a damaged HDMI port or an issue on the motherboard. Our Winnipeg technicians perform board-level micro-soldering to restore the HDMI connection. We diagnose the root cause before quoting a price."
+  },
+  {
+    question: "Is PS4 HDMI repair done the same day in Winnipeg?",
+    answer: "Many PS4 HDMI port repairs are completed the same day at our St. Vital location. Complex board-level damage involving lifted pads or trace repair may take an extra day. We always confirm the timeline after diagnosis."
+  },
+  {
+    question: "Can you upgrade my PS4 hard drive to an SSD?",
+    answer: "Yes. We upgrade PS4 and PS4 Pro internal drives to SSDs, which significantly reduce game load times and system boot speed. We handle the full installation and system software reinstallation at our Winnipeg shop."
+  },
+  {
+    question: "Do you fix PS4 disc drive problems?",
+    answer: "We repair PS4 disc drives that won't read, won't eject, or make grinding noises. Common fixes include roller replacement, laser lens cleaning, and full drive swaps. Walk in to our St. Vital location for a free assessment."
+  },
+  {
+    question: "Is it worth repairing a PS4 in 2026?",
+    answer: "For many owners, yes. A PS4 with a massive game library and active PSN account is still worth maintaining. At Mobile Tech Lab we provide an honest cost-versus-value assessment so you can decide with real numbers."
+  },
+  {
+    question: "Do you offer a warranty on PS4 repairs?",
+    answer: "Yes. Most PS4 repairs at Mobile Tech Lab carry a lifetime warranty, including HDMI port and controller repairs. Battery replacements carry a 90-day warranty. We stand behind every repair we perform."
+  },
+  {
+    question: "Where is the closest PS4 repair shop in Winnipeg?",
+    answer: "Mobile Tech Lab is located at 845 Dakota St in the St. Vital area of Winnipeg. We also have a location in Thompson, MB. Walk-ins are welcome at both shops during business hours—no appointment needed."
+  }
+];
+
+const repairServices = [
+  {
+    title: "Overheating & Thermal Paste Repair",
+    body: "PS4 overheating is caused by dust accumulation in the heatsink fins and degraded thermal compound on the APU. We fully disassemble the console, ultrasonically clean the heatsink and fan assembly, remove the old thermal interface material, and apply premium thermal paste rated for high-TDP processors. After reassembly we run a thermal stress test to confirm temperatures stay within safe operating range under sustained gaming load.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/></svg>`
+  },
+  {
+    title: "HDMI Port Replacement",
+    body: "No signal, flickering display, or a loose HDMI cable connection are signs of a damaged port. We desolder the faulty connector under magnification and install a factory-spec replacement using precision micro-soldering.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><path d="M8 21h8m-4-4v4"/></svg>`
+  },
+  {
+    title: "Power & Boot Issues",
+    body: "PS4 won't turn on, beeps and shuts off, or shows a blinking blue/white light? We diagnose and repair power supply faults, blown fuses, and APU-related boot failures at the board level.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18.36 6.64a9 9 0 1 1-12.73 0"/><line x1="12" x2="12" y1="2" y2="12"/></svg>`
+  },
+  {
+    title: "Disc Drive Repair",
+    body: "We fix disc drives that won't accept or eject discs, make grinding noises, or fail to read games. Common fixes include roller replacements, laser lens cleaning, and full drive mechanism swaps.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>`
+  },
+  {
+    title: "DualShock 4 Controller Repair",
+    body: "Stick drift, unresponsive buttons, broken bumpers, trigger failures, and charging port damage—we repair all DualShock 4 issues. Most controller repairs are finished within an hour.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" x2="10" y1="11" y2="11"/><line x1="8" x2="8" y1="9" y2="13"/><line x1="15" x2="15" y1="12" y2="12"/><line x1="17" x2="17" y1="12" y2="12"/><rect width="20" height="12" x="2" y="6" rx="2"/></svg>`
+  },
+  {
+    title: "Hard Drive & SSD Upgrade",
+    body: "Upgrade your PS4 or PS4 Pro to a faster SSD for dramatically reduced load times. We handle hardware installation, system software setup, and verify full functionality before handoff.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>`
+  }
+];
+
+const modelGroups = [
+  {
+    groupTitle: "PS4 Consoles",
+    groupDescription: "We service all three PlayStation 4 console generations. The original CUH-1000 series, the slimmer CUH-2000 redesign, and the enhanced PS4 Pro CUH-7000 series each have unique internal layouts that we know inside out.",
+    modelPills: ["PlayStation 4 Pro (CUH-7000)", "PlayStation 4 Slim (CUH-2000)", "PlayStation 4 Original (CUH-1000)"],
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="12" x="2" y="6" rx="2"/><path d="M12 12h.01"/></svg>`
+  },
+  {
+    groupTitle: "DualShock 4 Controllers",
+    groupDescription: "Both the original V1 and revised V2 DualShock 4 controllers share common failure points — worn analog stick modules, cracked bumper triggers, and degraded micro-USB charging ports.",
+    modelPills: ["DualShock 4 V2 (CUH-ZCT2)", "DualShock 4 V1 (CUH-ZCT1)"],
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" x2="10" y1="11" y2="11"/><line x1="8" x2="8" y1="9" y2="13"/><line x1="15" x2="15" y1="12" y2="12"/><line x1="17" x2="17" y1="12" y2="12"/><rect width="20" height="12" x="2" y="6" rx="2"/></svg>`
+  },
+  {
+    groupTitle: "PS4 Accessories",
+    groupDescription: "We also service PlayStation VR headsets and the PlayStation Camera. PSVR lens scratches, cable damage, and tracking issues are all repairable.",
+    modelPills: ["PlayStation VR (CUH-ZVR1 / ZVR2)", "PlayStation Camera"],
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"/></svg>`
+  }
+];
+
+const pillars = [
+  {
+    title: "PlayStation Specialists",
+    body: "We're not a generic phone repair shop that also dabbles in consoles. Our technicians have repaired hundreds of PlayStation 4 units across all three hardware revisions. We carry common PS4 parts in stock at our Winnipeg location so most repairs start the same day.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>`
+  },
+  {
+    title: "Precision Board-Level Micro-Soldering",
+    body: "HDMI port repair and power rail diagnostics require microscope-assisted soldering that most Winnipeg repair shops cannot perform. We invested in the tooling and training to handle these jobs in-house rather than shipping your console out of province.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="7"/><line x1="21" x2="15" y1="21" y2="15"/></svg>`
+  },
+  {
+    title: "Lifetime Warranty on Most Repairs",
+    body: "We offer a lifetime warranty on PS4 HDMI port repairs and controller stick drift fixes. Our 90-day warranty covers thermal paste service and battery replacements. If the same issue returns, we re-repair it at no charge.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`
+  },
+  {
+    title: "Same-Day Turnaround on Common Repairs",
+    body: "Overheating service, controller stick drift, and SSD upgrades are typically completed the same day you walk in. HDMI port repairs are often same-day as well, depending on board condition. We keep you updated by text throughout the process.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`
+  }
+];
+
+const pricingParagraphs = [
+  "PS4 repair costs depend primarily on the type of failure. Thermal paste service and fan cleaning are on the affordable end, while HDMI port replacement involves board-level soldering that requires specialized equipment and training — making it the most labor-intensive PS4 repair. The PS4 Pro's larger heatsink and higher-wattage power supply mean it can cost slightly more to service than the Slim or original model.",
+  "If the repair quote approaches or exceeds the console's current resale value, it may make more sense to trade in your PS4 toward a PS5. At Mobile Tech Lab you can trade in broken consoles, phones, and other electronics for cash or store credit to offset the cost of a replacement or a different repair.",
+  "Your game saves are typically backed up to PlayStation Plus cloud storage, and your entire digital library is tied to your PSN account — so even if repair doesn't make financial sense, your content is safe and can be re-downloaded on a replacement console."
+];
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://mobiletechlab.ca/" },
+    { "@type": "ListItem", "position": 2, "name": "Repairs", "item": "https://mobiletechlab.ca/repairs" },
+    { "@type": "ListItem", "position": 3, "name": "PS4 Repair", "item": "https://mobiletechlab.ca/repairs/ps4" }
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqItems.map(item => ({
+    "@type": "Question",
+    "name": item.question,
+    "acceptedAnswer": { "@type": "Answer", "text": item.answer }
+  }))
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
+
+  <!-- Breadcrumbs -->
+  <nav class="border-b border-border bg-background" aria-label="Breadcrumb">
+    <div class="container mx-auto px-4 py-3">
+      <ol class="flex items-center gap-2 text-sm text-muted-foreground">
+        <li><a href="/" class="hover:text-foreground transition-colors">Home</a></li>
+        <li><svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></li>
+        <li><a href="/repairs" class="hover:text-foreground transition-colors">Repairs</a></li>
+        <li><svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></li>
+        <li class="text-foreground font-medium" aria-current="page">PS4 Repair</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- Section 1: Hero -->
+  <section class="bg-gradient-to-b from-secondary/50 to-background py-16 md:py-24">
+    <div class="container mx-auto px-4">
+      <div class="mx-auto max-w-3xl">
+        <div class="mb-4 flex flex-wrap items-center gap-2">
+          <span class="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
+            Professional PS4 Repair
+          </span>
+          <span class="inline-flex items-center gap-1.5 rounded-full bg-green-100 px-3 py-1 text-xs font-medium text-green-700">
+            <span class="h-1.5 w-1.5 rounded-full bg-green-500"></span>
+            St. Vital — Open
+          </span>
+          <span class="inline-flex items-center gap-1.5 rounded-full bg-amber-100 px-3 py-1 text-xs font-medium text-amber-700">
+            <span class="h-1.5 w-1.5 rounded-full bg-amber-500"></span>
+            Thompson — Opens tomorrow 10AM
+          </span>
+        </div>
+
+        <h1 class="mb-4 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl">
+          PS4 Repair <span class="text-primary">Winnipeg</span> &amp; Manitoba
+        </h1>
+        <p class="mb-2 text-lg font-medium text-muted-foreground">PlayStation 4 Repair Specialists in Winnipeg</p>
+        <p class="mb-5 text-base text-muted-foreground leading-relaxed">
+          Overheating is the single most common PS4 failure we see at our Winnipeg shop—years of dust buildup and degraded thermal compound push the APU past safe limits, causing shutdowns mid-game. We also repair HDMI port damage, disc drive failures, power supply faults, blinking blue and white light issues, and DualShock 4 controller problems including stick drift and broken bumpers.
+        </p>
+        <p class="mb-8 text-base text-muted-foreground leading-relaxed">
+          Our technicians perform precision board-level micro-soldering for HDMI port replacements—a repair most general electronics shops in Winnipeg cannot offer. We work under magnification to remove the damaged port, clean and rebuild pads when necessary, and solder a factory-spec replacement connector.
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-start gap-3">
+          <a
+            href="/contact"
+            class="inline-flex items-center gap-2 rounded-md bg-primary px-8 py-3 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
+          >
+            Get a Free Quote
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a
+            href="tel:2045009757"
+            class="inline-flex items-center gap-2 rounded-md border border-input bg-background px-8 py-3 text-sm font-medium hover:bg-accent transition-colors"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Call Now
+          </a>
+        </div>
+        <p class="mt-4 text-xs text-muted-foreground">
+          Not sure what affects the cost?{" "}
+          <a href="/pricing" class="underline hover:text-foreground transition-colors">How repair pricing works</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Repair Services -->
+  <section class="py-16 md:py-20">
+    <div class="container mx-auto px-4">
+      <div class="mb-10 text-center">
+        <h2 class="mb-3 text-2xl font-bold md:text-3xl">PS4 Repair Services in Winnipeg</h2>
+        <p class="mx-auto max-w-2xl text-muted-foreground">Every repair backed by our warranty. Free diagnostics on all PlayStation 4 issues.</p>
+      </div>
+      <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {repairServices.map(service => (
+          <div class="rounded-lg border border-border bg-card p-6">
+            <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-lg bg-primary/10 text-primary" set:html={service.icon} />
+            <h3 class="mb-2 font-semibold text-foreground">{service.title}</h3>
+            <p class="text-sm text-muted-foreground leading-relaxed">{service.body}</p>
+          </div>
+        ))}
+      </div>
+      <div class="mt-10 text-center">
+        <a
+          href="/contact"
+          class="inline-flex items-center gap-2 rounded-md bg-primary px-8 py-3 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
+        >
+          Request Repair
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Models -->
+  <section class="bg-secondary/40 py-16 md:py-20">
+    <div class="container mx-auto px-4">
+      <div class="mb-10 text-center">
+        <h2 class="mb-3 text-2xl font-bold md:text-3xl">All PS4 Models We Repair in Winnipeg</h2>
+        <p class="mx-auto max-w-2xl text-muted-foreground">Every PlayStation 4 generation serviced — from the original launch console to the PS4 Pro.</p>
+      </div>
+      <div class="grid gap-6 md:grid-cols-3">
+        {modelGroups.map(group => (
+          <div class="rounded-lg border border-border bg-background p-6">
+            <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-lg bg-primary/10 text-primary" set:html={group.icon} />
+            <h3 class="mb-2 font-semibold text-foreground">{group.groupTitle}</h3>
+            <p class="mb-4 text-sm text-muted-foreground leading-relaxed">{group.groupDescription}</p>
+            <div class="mb-5 flex flex-wrap gap-2">
+              {group.modelPills.map(pill => (
+                <span class="rounded-full border border-border bg-secondary px-3 py-1 text-xs font-medium text-foreground">{pill}</span>
+              ))}
+            </div>
+            <a
+              href="/contact"
+              class="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline"
+            >
+              Get Quote
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Why Choose Us -->
+  <section class="py-16 md:py-20">
+    <div class="container mx-auto px-4">
+      <div class="mb-10 text-center">
+        <h2 class="mb-3 text-2xl font-bold md:text-3xl">The Mobile Tech Lab Advantage: Why We Are Winnipeg's Best PS4 Repair Shop</h2>
+        <p class="mx-auto max-w-2xl text-muted-foreground">Console repair requires board-level skills most phone shops don't have. Here's what sets us apart.</p>
+      </div>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {pillars.map(pillar => (
+          <div class="rounded-lg border border-border bg-card p-6">
+            <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-lg bg-primary/10 text-primary" set:html={pillar.icon} />
+            <h3 class="mb-2 font-semibold text-foreground">{pillar.title}</h3>
+            <p class="text-sm text-muted-foreground leading-relaxed">{pillar.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Repair Cost Options -->
+  <section class="bg-secondary/40 py-16 md:py-20">
+    <div class="container mx-auto px-4">
+      <div class="mb-10 text-center">
+        <h2 class="mb-3 text-2xl font-bold md:text-3xl">Worried About Repair Cost? You Have Options.</h2>
+        <p class="mx-auto max-w-2xl text-muted-foreground">Most customers use one of these options to lower their repair cost.</p>
+      </div>
+      <div class="mx-auto grid max-w-4xl gap-6 md:grid-cols-2">
+        <div class="rounded-lg border border-border bg-background p-8">
+          <h3 class="mb-3 text-lg font-semibold text-foreground">We'll Match Any Local Repair Price</h3>
+          <p class="mb-6 text-sm text-muted-foreground leading-relaxed">Found a lower price at another Winnipeg repair shop? We'll match it — so you don't overpay. No pressure. No hassle.</p>
+          <a
+            href="sms:2045009757?body=Hey%20Mobile%20Tech%20Lab!%20I%20want%20a%20better%20price%20on%20a%20repair!"
+            class="inline-flex items-center gap-2 rounded-md border border-input bg-background px-6 py-2.5 text-sm font-medium hover:bg-accent transition-colors"
+          >
+            Check If We Can Match Your Price
+          </a>
+        </div>
+        <div class="rounded-lg border border-primary/30 bg-primary/5 p-8">
+          <h3 class="mb-3 text-lg font-semibold text-foreground">Lower Your PS4 Repair Cost With a Trade-In</h3>
+          <p class="mb-2 text-sm text-muted-foreground leading-relaxed">Trade in phones, tablets, consoles, or laptops — even broken ones — to reduce today's repair cost.</p>
+          <p class="mb-6 text-xs font-medium text-muted-foreground">Get paid via Cash, E-Transfer, or Store Credit</p>
+          <a
+            href="/trade-in"
+            class="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-2.5 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
+          >
+            Lower My PS4 Repair Cost
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6: Locations -->
+  <section class="py-16 md:py-20">
+    <div class="container mx-auto px-4">
+      <div class="mb-10 text-center">
+        <h2 class="mb-3 text-2xl font-bold md:text-3xl">Device Repair Locations in Winnipeg &amp; Manitoba</h2>
+        <p class="mx-auto max-w-2xl text-muted-foreground">Two convenient locations to serve you. Walk-ins welcome or book your appointment online.</p>
+      </div>
+      <div class="mx-auto grid max-w-4xl gap-6 md:grid-cols-2">
+        <div class="rounded-lg border border-border bg-card p-6">
+          <h3 class="mb-1 font-semibold text-foreground">St. Vital Location</h3>
+          <p class="mb-4 text-sm text-muted-foreground">845 Dakota St #25, Winnipeg, MB R2M 5M3</p>
+          <div class="mb-4 space-y-1.5 text-sm text-muted-foreground">
+            <p>Mon–Sat: 9AM – 7PM</p>
+            <p>Sun: 12PM – 7PM</p>
+          </div>
+          <div class="flex flex-wrap gap-3">
+            <a href="tel:2045009757" class="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              (204) 500-9757
+            </a>
+            <a href="https://maps.google.com/?q=845+Dakota+St+%2325+Winnipeg+MB+R2M+5M3" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              Get Directions
+            </a>
+          </div>
+        </div>
+        <div class="rounded-lg border border-border bg-card p-6">
+          <h3 class="mb-1 font-semibold text-foreground">Thompson Location</h3>
+          <p class="mb-4 text-sm text-muted-foreground">300 Mystery Lake Rd #1530, Thompson, MB R8N 0M2</p>
+          <div class="mb-4 space-y-1.5 text-sm text-muted-foreground">
+            <p>Mon–Sat: 10AM – 6PM</p>
+            <p>Sun: Closed</p>
+          </div>
+          <div class="flex flex-wrap gap-3">
+            <a href="tel:2044100262" class="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              (204) 410-0262
+            </a>
+            <a href="https://maps.google.com/?q=300+Mystery+Lake+Rd+%231530+Thompson+MB+R8N+0M2" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              Get Directions
+            </a>
+          </div>
+        </div>
+      </div>
+      <p class="mt-8 text-center text-sm text-muted-foreground">
+        Serving all Winnipeg neighborhoods including St. Vital, Fort Garry, Transcona, Garden City, and surrounding Manitoba communities. Also serving customers from Thompson, MB. Walk-ins welcome or book online.
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 7: Pricing Context -->
+  <section class="border-t border-border bg-secondary/30 py-16 md:py-20">
+    <div class="container mx-auto px-4">
+      <div class="mx-auto max-w-3xl space-y-5">
+        {pricingParagraphs.map(p => (
+          <p class="text-sm text-muted-foreground leading-relaxed">{p}</p>
+        ))}
+        <div class="pt-2 flex flex-col gap-2 sm:flex-row sm:gap-6">
+          <a
+            href="https://www.ifixit.com/Teardown/PlayStation+4+Teardown/19493"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-1.5 text-sm text-primary hover:underline"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+            iFixit PS4 teardown and repairability breakdown
+          </a>
+          <a
+            href="https://www.playstation.com/en-ca/support/hardware/ps4/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-1.5 text-sm text-primary hover:underline"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+            PlayStation official PS4 support and troubleshooting
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 8: FAQ -->
+  <section class="py-16 md:py-20">
+    <div class="container mx-auto px-4">
+      <div class="mb-10 text-center">
+        <h2 class="mb-3 text-2xl font-bold md:text-3xl">PS4 Repair FAQs</h2>
+        <p class="mx-auto max-w-2xl text-muted-foreground">Common questions about PS4 repair at Mobile Tech Lab in Winnipeg</p>
+      </div>
+      <div class="mx-auto max-w-3xl divide-y divide-border">
+        {faqItems.map((item, i) => (
+          <details class="group py-5">
+            <summary class="flex cursor-pointer items-start justify-between gap-4 text-sm font-medium text-foreground marker:content-none list-none">
+              <span>{item.question}</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 h-4 w-4 shrink-0 text-muted-foreground transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <p class="mt-3 text-sm text-muted-foreground leading-relaxed">{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="border-t border-border bg-primary/5 py-16">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="mb-3 text-2xl font-bold md:text-3xl">Ready to Fix Your PS4?</h2>
+      <p class="mb-8 text-muted-foreground">Get a free quote online or walk in to our Winnipeg or Thompson location.</p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+        <a
+          href="/contact"
+          class="inline-flex items-center gap-2 rounded-md bg-primary px-8 py-3 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
+        >
+          Get a Free Quote
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+        <a
+          href="tel:2045009757"
+          class="inline-flex items-center gap-2 rounded-md border border-input bg-background px-8 py-3 text-sm font-medium hover:bg-accent transition-colors"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Call Now
+        </a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
