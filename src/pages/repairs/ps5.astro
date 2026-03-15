@@ -1,0 +1,1407 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = "PS5 Repair Winnipeg | PlayStation 5 Fix | Mobile Tech Lab";
+const description = "PS5 repair specialists in Winnipeg. HDMI port micro-soldering, overheating, disc drive, DualSense controller & PS5 Pro repair. Same-day service available.";
+const canonical = "https://mobiletechlab.ca/repairs/ps5";
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://mobiletechlab.ca/" },
+    { "@type": "ListItem", "position": 2, "name": "Repairs", "item": "https://mobiletechlab.ca/repairs" },
+    { "@type": "ListItem", "position": 3, "name": "PS5 Repair", "item": "https://mobiletechlab.ca/repairs/ps5" }
+  ]
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "PlayStation 5 Repair Service",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Mobile Tech Lab",
+    "url": "https://mobiletechlab.ca"
+  },
+  "areaServed": { "@type": "City", "name": "Winnipeg" },
+  "serviceType": "Console Repair",
+  "url": "https://mobiletechlab.ca/repairs/ps5",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "PS5 Repair Services",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Overheating Repair" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "HDMI Port Repair" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Disc Drive Repair" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "DualSense Controller Repair" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SSD Upgrade" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Display and Power Issues" } }
+    ]
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Can you fix PS5 overheating in Winnipeg?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — we fully disassemble the PS5, deep clean all cooling channels, and apply high-performance thermal paste to the APU and VRAM. Most overheating repairs are completed same-day when dropped off before noon at our Winnipeg St. Vital location." } },
+    { "@type": "Question", "name": "Do you repair DualSense controller stick drift in Winnipeg?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — we repair analog stick drift on both standard DualSense and DualSense Edge controllers, typically within 1–2 hours at our Winnipeg location. We also repair adaptive trigger failures, unresponsive touchpads, broken bumpers, and USB-C charging port damage." } },
+    { "@type": "Question", "name": "Can you fix PS5 HDMI port issues in Winnipeg?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — HDMI port repair is one of our most common PS5 repairs and our technicians perform precision board-level micro-soldering under magnification. We repair broken HDMI connectors, lifted solder pads, and motherboard trace damage that most general repair shops in Winnipeg cannot handle." } },
+    { "@type": "Question", "name": "Do you upgrade PS5 storage in Winnipeg?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — we install larger NVMe M.2 PCIe 4.0 SSDs in PS5 consoles up to 4TB capacity. We'll recommend the right drive for your budget, install it correctly, and ensure the required heatsink is properly fitted as per Sony's official installation guidance." } },
+    { "@type": "Question", "name": "Can you fix PS5 disc drive problems?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — we diagnose and repair PS5 disc reading issues, stuck discs, ejecting problems, and drive mechanism failures. We also discuss disc drive upgrade options for PS5 Digital Edition owners — contact us to confirm availability before visiting." } },
+    { "@type": "Question", "name": "How much does PS5 HDMI repair cost in Winnipeg?", "acceptedAnswer": { "@type": "Answer", "text": "PS5 HDMI repair costs depend on the extent of the damage — a straightforward port replacement costs less than a repair involving lifted motherboard pads and trace damage. We provide a clear diagnostic and upfront quote before starting any work so you know exactly what you're paying for." } },
+    { "@type": "Question", "name": "Is PS5 HDMI repair done the same day in Winnipeg?", "acceptedAnswer": { "@type": "Answer", "text": "Many PS5 HDMI repairs are completed same-day when dropped off at our Winnipeg St. Vital location before noon. Cases involving significant motherboard trace damage may require additional time — we'll give you an accurate estimate after the initial diagnostic." } },
+    { "@type": "Question", "name": "Why does my PS5 keep overheating and shutting down?", "acceptedAnswer": { "@type": "Answer", "text": "PS5 overheating is almost always caused by dust buildup clogging the heatsink fins and degraded thermal compound on the APU pushing temperatures past safe limits. A full disassembly, deep clean, and thermal paste replacement typically resolves the issue completely — and is one of the best value repairs you can do on a PS5 to extend its lifespan." } },
+    { "@type": "Question", "name": "Do you offer a warranty on PS5 repairs?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — we offer a lifetime warranty on most PS5 HDMI port and DualSense controller repairs. Overheating repairs include a 90-day warranty. If the same issue returns within the warranty period, we repair it at no charge." } },
+    { "@type": "Question", "name": "Do you repair PS5 consoles in Thompson, MB?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — our Thompson location at 300 Mystery Lake Rd #1530 accepts PS5 repairs Monday through Saturday 10AM–6PM. Calling ahead helps us confirm parts availability and give you an accurate turnaround estimate before your visit." } }
+  ]
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <Fragment slot="head">
+    <meta name="robots" content="index, follow" />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
+
+  <nav class="ps5-breadcrumb-nav" aria-label="Breadcrumb">
+    <div class="ps5-container">
+      <ol class="ps5-breadcrumb-list">
+        <li><a href="/" class="ps5-breadcrumb-link">Home</a></li>
+        <li><svg xmlns="http://www.w3.org/2000/svg" class="ps5-breadcrumb-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m9 18 6-6-6-6"/></svg></li>
+        <li><a href="/repairs" class="ps5-breadcrumb-link">Repairs</a></li>
+        <li><svg xmlns="http://www.w3.org/2000/svg" class="ps5-breadcrumb-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m9 18 6-6-6-6"/></svg></li>
+        <li class="ps5-breadcrumb-current" aria-current="page">PS5 Repair</li>
+      </ol>
+    </div>
+  </nav>
+
+  <section class="ps5-hero-section" id="hero">
+    <div class="ps5-hero-inner">
+      <div class="ps5-hero-content">
+        <div class="ps5-hero-badge-row">
+          <span class="ps5-service-badge">PlayStation 5 Repair Specialists</span>
+          <span class="ps5-location-badge">
+            <span class="ps5-badge-dot"></span>
+            St. Vital - Open
+          </span>
+          <span class="ps5-location-badge ps5-location-badge-secondary">
+            <span class="ps5-badge-dot ps5-badge-dot-secondary"></span>
+            Thompson - Opens tomorrow 10AM
+          </span>
+        </div>
+
+        <h1 class="ps5-hero-headline">
+          PS5 Repair <span class="ps5-highlight">Winnipeg</span> &amp; Manitoba
+        </h1>
+        <p class="ps5-hero-subheadline">PlayStation 5 Console & DualSense Controller Repair Specialists</p>
+
+        <div class="ps5-hero-body">
+          <p>PS5 overheating? HDMI not working? Disc drive not reading? We repair all PlayStation 5 models at our Winnipeg shop — PS5 Disc Edition, Digital Edition, Slim, and PS5 Pro. The most common PS5 issue we see is HDMI port damage — our technicians perform precision board-level micro-soldering under magnification to restore broken ports, lifted pads, and trace damage that most console repair shops in Winnipeg cannot perform.</p>
+          <p>PS5 overheating is the second most common issue — caused by years of dust buildup clogging the heatsink and degraded thermal compound pushing the APU past safe temperatures. We fully disassemble the console, deep clean every cooling channel, and apply high-performance thermal paste. Most PS5 HDMI and overheating repairs are completed same-day when dropped off early enough.</p>
+        </div>
+
+        <div class="ps5-hero-cta-group">
+          <a href="https://shop.mobiletechlab.ca/pages/repair2" target="_blank" rel="noopener noreferrer" class="ps5-cta-primary">
+            Get a Free Quote
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="tel:2045009757" class="ps5-cta-secondary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Call Now
+          </a>
+        </div>
+        <p class="ps5-pricing-note">Not sure what affects the cost? <a href="/pricing">How repair pricing works</a></p>
+      </div>
+
+      <div class="ps5-hero-image-wrapper">
+        <img
+          src="/assets/hero-ps5.png"
+          alt="PS5 repair in Winnipeg — HDMI port, overheating, disc drive and DualSense controller specialists"
+          width="500"
+          height="500"
+          loading="eager"
+        />
+        <ul class="ps5-annotations-list" aria-label="Common PS5 issues we fix">
+          <li class="ps5-annotation">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 4H6a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2z"/><path d="M8 4v16"/></svg>
+            HDMI port issues
+          </li>
+          <li class="ps5-annotation">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            Power issues / random restarting
+          </li>
+          <li class="ps5-annotation">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M22 10H2"/></svg>
+            USB port not working
+          </li>
+          <li class="ps5-annotation">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>
+            Disc drive problems
+          </li>
+          <li class="ps5-annotation">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            Stick drift
+          </li>
+          <li class="ps5-annotation">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="6" y="11" width="4" height="6" rx="1"/><rect x="14" y="11" width="4" height="6" rx="1"/></svg>
+            Button issues
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="ps5-services-section" id="services">
+    <div class="ps5-container">
+      <div class="ps5-section-header">
+        <h2 class="ps5-section-title">PS5 Repair Services in Winnipeg</h2>
+        <p class="ps5-section-subtitle">Expert repairs for all PlayStation 5 issues. Fast turnaround, quality parts, warranty included.</p>
+      </div>
+      <div class="ps5-services-grid">
+        <div class="ps5-service-card">
+          <div class="ps5-service-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96-.44l-2.1-8.4A4 4 0 0 1 9.5 2Z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96-.44l2.1-8.4A4 4 0 0 0 14.5 2Z"/></svg>
+          </div>
+          <h3 class="ps5-service-title">Overheating Repair</h3>
+          <p class="ps5-service-body">PS5 overheating is caused by years of dust buildup clogging the heatsink and degraded thermal compound pushing the APU past safe operating temperatures — resulting in shutdowns mid-game, loud fan noise, and eventual hardware damage. We fully disassemble the console, deep clean all cooling channels with compressed air and brushes, and apply high-performance thermal paste to the APU and VRAM. Most overheating repairs are completed same-day when dropped off before noon.</p>
+        </div>
+        <div class="ps5-service-card">
+          <div class="ps5-service-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 4H6a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2z"/><path d="M8 4v16"/></svg>
+          </div>
+          <h3 class="ps5-service-title">HDMI Port Repair</h3>
+          <p class="ps5-service-body">HDMI port damage is the single most common PS5 repair we perform in Winnipeg. A pushed-in, bent, or broken HDMI port leaves you with no video output at all. Our technicians perform precision board-level micro-soldering under magnification to restore the HDMI connector, rebuild lifted solder pads, and repair trace damage on the motherboard — a repair that most general electronics shops in Winnipeg cannot reliably perform. Many HDMI repairs are completed same-day.</p>
+        </div>
+        <div class="ps5-service-card">
+          <div class="ps5-service-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <h3 class="ps5-service-title">Disc Drive Repair</h3>
+          <p class="ps5-service-body">PS5 disc drive not reading discs, making grinding noises, or refusing to eject? We diagnose and repair disc reading issues, stuck or jammed discs, and drive mechanism failures. We also perform disc drive upgrades for PS5 Digital Edition consoles that need to be converted to disc capability — contact us to confirm availability for your specific model.</p>
+        </div>
+        <div class="ps5-service-card">
+          <div class="ps5-service-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="6" y="11" width="4" height="6" rx="1"/><rect x="14" y="11" width="4" height="6" rx="1"/><path d="M4 9h16a1 1 0 011 1v10a2 2 0 01-2 2H5a2 2 0 01-2-2V10a1 1 0 011-1z"/><circle cx="9" cy="8" r="3"/><circle cx="15" cy="8" r="3"/></svg>
+          </div>
+          <h3 class="ps5-service-title">DualSense Controller Repair</h3>
+          <p class="ps5-service-body">DualSense stick drift, adaptive trigger not working, touchpad unresponsive, or charging port damaged? We repair and replace analog sticks, adaptive trigger mechanisms, touchpad assemblies, USB-C charging ports, and buttons on both standard DualSense and DualSense Edge controllers. Most controller repairs are completed within 1–2 hours.</p>
+        </div>
+        <div class="ps5-service-card">
+          <div class="ps5-service-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M22 10H2"/></svg>
+          </div>
+          <h3 class="ps5-service-title">SSD Upgrade</h3>
+          <p class="ps5-service-body">Running out of PS5 storage? We install larger NVMe M.2 SSDs to give you room for more games without deleting your existing library. PS5 supports PCIe 4.0 NVMe drives up to 4TB — we'll recommend the right drive for your budget and install it correctly including the heatsink that Sony's official guidance requires.</p>
+        </div>
+        <div class="ps5-service-card">
+          <div class="ps5-service-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          </div>
+          <h3 class="ps5-service-title">Display & Power Issues</h3>
+          <p class="ps5-service-body">PS5 turns on but no display, blue light blinking, console shutting off randomly, or not powering on at all? These symptoms often indicate HDMI damage, power supply faults, or APU-related issues. We run full diagnostics before recommending any repair — including checking HDMI port integrity, power delivery, and thermal performance — so you know exactly what's wrong before spending anything.</p>
+        </div>
+      </div>
+      <div class="ps5-section-cta">
+        <a href="https://shop.mobiletechlab.ca/pages/repair2" target="_blank" rel="noopener noreferrer" class="ps5-cta-primary">
+          Request Repair
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="ps5-models-section" id="models">
+    <div class="ps5-container">
+      <div class="ps5-section-header">
+        <h2 class="ps5-section-title">All PS5 Models & Accessories We Repair in Winnipeg</h2>
+        <p class="ps5-section-subtitle">Every PlayStation 5 variant serviced — consoles, controllers, and accessories</p>
+      </div>
+      <div class="ps5-models-grid">
+        <div class="ps5-model-card">
+          <div class="ps5-model-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M22 10H2"/></svg>
+          </div>
+          <h3 class="ps5-model-title">PS5 Consoles</h3>
+          <p class="ps5-model-description">All PlayStation 5 console models repaired. HDMI, overheating, disc drive, and power issues serviced on every PS5 variant including the newer Slim chassis and PS5 Pro.</p>
+          <div class="ps5-model-pills">
+            <span class="ps5-pill">PS5 Disc Edition</span>
+            <span class="ps5-pill">PS5 Digital Edition</span>
+            <span class="ps5-pill">PS5 Slim (Disc)</span>
+            <span class="ps5-pill">PS5 Slim Digital</span>
+            <span class="ps5-pill">PS5 Pro</span>
+          </div>
+          <a href="https://shop.mobiletechlab.ca/pages/repair2" target="_blank" rel="noopener noreferrer" class="ps5-model-cta">
+            Get Quote
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+        <div class="ps5-model-card">
+          <div class="ps5-model-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="6" y="11" width="4" height="6" rx="1"/><rect x="14" y="11" width="4" height="6" rx="1"/><path d="M4 9h16a1 1 0 011 1v10a2 2 0 01-2 2H5a2 2 0 01-2-2V10a1 1 0 011-1z"/><circle cx="9" cy="8" r="3"/><circle cx="15" cy="8" r="3"/></svg>
+          </div>
+          <h3 class="ps5-model-title">DualSense Controllers</h3>
+          <p class="ps5-model-description">Stick drift, adaptive trigger failures, touchpad issues, and USB-C charging port repairs for both standard DualSense and the premium DualSense Edge. Most controller repairs are completed within 1–2 hours.</p>
+          <div class="ps5-model-pills">
+            <span class="ps5-pill">DualSense Controller</span>
+            <span class="ps5-pill">DualSense Edge Controller</span>
+          </div>
+          <a href="https://shop.mobiletechlab.ca/pages/repair2" target="_blank" rel="noopener noreferrer" class="ps5-model-cta">
+            Get Quote
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+        <div class="ps5-model-card">
+          <div class="ps5-model-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 class="ps5-model-title">PlayStation Accessories</h3>
+          <p class="ps5-model-description">PlayStation VR2 headset repairs including display and lens issues, and Pulse 3D headset audio repairs. Contact us to confirm parts availability before visiting for accessory repairs.</p>
+          <div class="ps5-model-pills">
+            <span class="ps5-pill">PlayStation VR2</span>
+            <span class="ps5-pill">Pulse 3D Headset</span>
+          </div>
+          <a href="https://shop.mobiletechlab.ca/pages/repair2" target="_blank" rel="noopener noreferrer" class="ps5-model-cta">
+            Get Quote
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ps5-why-section" id="why-choose-us">
+    <div class="ps5-container">
+      <div class="ps5-section-header">
+        <h2 class="ps5-section-title">The Mobile Tech Lab Advantage: Winnipeg's PS5 Repair Experts</h2>
+        <p class="ps5-section-subtitle">Why Winnipeg PlayStation owners trust us with their PS5</p>
+      </div>
+      <div class="ps5-pillars-grid">
+        <div class="ps5-pillar-card">
+          <div class="ps5-pillar-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96-.44l-2.1-8.4A4 4 0 0 1 9.5 2Z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96-.44l2.1-8.4A4 4 0 0 0 14.5 2Z"/></svg>
+          </div>
+          <h3 class="ps5-pillar-title">PlayStation Specialists</h3>
+          <p class="ps5-pillar-body">PS5 repairs require board-level micro-soldering skills and console-specific tools that most general repair shops don't carry. Our Winnipeg technicians have hands-on experience with every PS5 model — from the original launch console through PS5 Slim and PS5 Pro — and perform HDMI repairs under magnification for precision results.</p>
+        </div>
+        <div class="ps5-pillar-card">
+          <div class="ps5-pillar-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3 class="ps5-pillar-title">Same-Day Console Repairs</h3>
+          <p class="ps5-pillar-body">Most PS5 HDMI port repairs and overheating fixes are completed same-day when dropped off at our Winnipeg St. Vital location before noon. DualSense controller repairs are typically finished within 1–2 hours. We'll give you an honest time estimate when you contact us — no vague 'a few days' timelines.</p>
+        </div>
+        <div class="ps5-pillar-card">
+          <div class="ps5-pillar-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 9l1.5 9h15L21 9a2 2 0 00-2-2H5a2 2 0 00-2 2zm0 0l2-5h14l2 5"/><line x1="9" y1="22" x2="9" y2="15"/><line x1="15" y1="22" x2="15" y2="15"/></svg>
+          </div>
+          <h3 class="ps5-pillar-title">Precision Board-Level Repair</h3>
+          <p class="ps5-pillar-body">PS5 HDMI port failures often involve lifted solder pads and motherboard trace damage — not just a loose connector. We perform micro-soldering repairs under magnification to rebuild damaged pads and restore trace continuity. This is the repair that separates specialist console repair shops from shops that just swap parts.</p>
+        </div>
+        <div class="ps5-pillar-card">
+          <div class="ps5-pillar-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+          </div>
+          <h3 class="ps5-pillar-title">Warranty on Every Repair</h3>
+          <p class="ps5-pillar-body">We offer a lifetime warranty on most PS5 HDMI and controller repairs. Overheating repairs are covered for 90 days. If the same issue returns within the warranty period, we fix it at no charge. We're confident enough in our work to put that in writing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ps5-cost-section" id="pricing">
+    <div class="ps5-container">
+      <div class="ps5-section-header">
+        <h2 class="ps5-section-title">Worried About Repair Cost? You Have Options.</h2>
+        <p class="ps5-section-subtitle">Most customers use one of these options to lower their repair cost.</p>
+      </div>
+      <div class="ps5-cost-grid">
+        <div class="ps5-cost-card">
+          <div class="ps5-cost-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="12" x2="12" y1="1" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <h3 class="ps5-cost-title">We'll Match Any Local Repair Price</h3>
+          <p class="ps5-cost-body">Found a lower price at another Winnipeg repair shop? We'll match it — so you don't overpay. No pressure. No hassle.</p>
+          <a href="sms:2045009757?body=Hey%20Mobile%20Tech%20Lab!%20I%20want%20a%20better%20price%20on%20a%20repair!" class="ps5-price-match-btn">
+            Check If We Can Match Your Price
+          </a>
+        </div>
+        <div class="ps5-cost-card">
+          <div class="ps5-cost-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l4 2"/></svg>
+          </div>
+          <h3 class="ps5-cost-title">Lower Your PS5 Repair Cost With a Trade-In</h3>
+          <p class="ps5-cost-body">Trade in phones, tablets, consoles, or laptops — even broken ones — to reduce today's repair cost.</p>
+          <p class="ps5-cost-note">Get paid via Cash, E-Transfer, or Store Credit</p>
+          <a href="/trade-in" class="ps5-trade-in-btn">
+            Lower My PS5 Repair Cost
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="ps5-pricing-context">
+        <p class="ps5-context-paragraph">PS5 repair costs depend on the specific issue — HDMI port damage involving motherboard trace repair is more expensive than a basic port swap, while overheating cleaning and thermal paste replacement is one of the most cost-effective repairs available for the value it delivers in extending your console's lifespan. <a href="https://www.playstation.com/en-ca/support/hardware/ps5/" target="_blank" rel="noopener noreferrer" class="ps5-context-link">Sony's PS5 support centre</a> provides troubleshooting guides that can help determine whether a repair is needed before visiting.</p>
+        <p class="ps5-context-paragraph">Many customers are surprised that a PS5 HDMI repair can approach a significant fraction of the console's current value, particularly when motherboard trace damage is involved. <a href="https://www.ifixit.com/Search?query=ps5+teardown" target="_blank" rel="noopener noreferrer" class="ps5-context-link">iFixit's PS5 teardown</a> reveals exactly why — the HDMI port is soldered directly to the main motherboard with no daughter board, making pad and trace repair an essential skill for anyone servicing these consoles.</p>
+        <p class="ps5-context-paragraph">If the repair cost doesn't make financial sense given your console's condition, we'll explain that clearly and walk you through alternatives — including trade-in options toward a newer console or a refurbished PS5 from our pre-owned inventory.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="ps5-locations-section" id="locations">
+    <div class="ps5-container">
+      <div class="ps5-section-header">
+        <h2 class="ps5-section-title">PS5 Repair Locations in Winnipeg & Thompson</h2>
+        <p class="ps5-section-subtitle">Two Manitoba locations. Walk-ins welcome at both.</p>
+      </div>
+      <div class="ps5-locations-grid">
+        <div class="ps5-location-card">
+          <span class="ps5-walkin-badge">Walk-ins welcome - Same-day repairs available</span>
+          <h3 class="ps5-location-name">St. Vital Location</h3>
+          <p class="ps5-location-address">845 Dakota St #25, Winnipeg, MB R2M 5M3</p>
+          <div class="ps5-location-hours">
+            <p>Mon-Sat: 9AM - 7PM</p>
+            <p>Sun: 12PM - 7PM</p>
+          </div>
+          <div class="ps5-location-actions">
+            <a href="tel:2045009757" class="ps5-location-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              (204) 500-9757
+            </a>
+            <a href="https://maps.google.com/?q=845+Dakota+St+%2325+Winnipeg+MB+R2M+5M3" target="_blank" rel="noopener noreferrer" class="ps5-location-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              Get Directions
+            </a>
+          </div>
+        </div>
+        <div class="ps5-location-card">
+          <span class="ps5-location-badge-tag">Serving Northern Manitoba</span>
+          <h3 class="ps5-location-name">Thompson Location</h3>
+          <p class="ps5-location-address">300 Mystery Lake Rd #1530, Thompson, MB R8N 0M2</p>
+          <div class="ps5-location-hours">
+            <p>Mon-Sat: 10AM - 6PM</p>
+            <p>Sun: Closed</p>
+          </div>
+          <div class="ps5-location-actions">
+            <a href="tel:2044100262" class="ps5-location-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              (204) 410-0262
+            </a>
+            <a href="https://maps.google.com/?q=300+Mystery+Lake+Rd+%231530+Thompson+MB+R8N+0M2" target="_blank" rel="noopener noreferrer" class="ps5-location-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              Get Directions
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ps5-faq-section" id="faqs">
+    <div class="ps5-container">
+      <div class="ps5-section-header">
+        <h2 class="ps5-section-title">PS5 Repair FAQs</h2>
+        <p class="ps5-section-subtitle">Common questions about PS5 repair at Mobile Tech Lab in Winnipeg</p>
+      </div>
+      <div class="ps5-faq-list">
+        <details class="ps5-faq-item">
+          <summary class="ps5-faq-summary">
+            <span>Can you fix PS5 overheating in Winnipeg?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="ps5-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <p class="ps5-faq-answer">Yes — we fully disassemble the PS5, deep clean all cooling channels, and apply high-performance thermal paste to the APU and VRAM. Most overheating repairs are completed same-day when dropped off before noon at our Winnipeg St. Vital location.</p>
+        </details>
+        <details class="ps5-faq-item">
+          <summary class="ps5-faq-summary">
+            <span>Do you repair DualSense controller stick drift in Winnipeg?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="ps5-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <p class="ps5-faq-answer">Yes — we repair analog stick drift on both standard DualSense and DualSense Edge controllers, typically within 1–2 hours at our Winnipeg location. We also repair adaptive trigger failures, unresponsive touchpads, broken bumpers, and USB-C charging port damage.</p>
+        </details>
+        <details class="ps5-faq-item">
+          <summary class="ps5-faq-summary">
+            <span>Can you fix PS5 HDMI port issues in Winnipeg?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="ps5-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <p class="ps5-faq-answer">Yes — HDMI port repair is one of our most common PS5 repairs and our technicians perform precision board-level micro-soldering under magnification. We repair broken HDMI connectors, lifted solder pads, and motherboard trace damage that most general repair shops in Winnipeg cannot handle.</p>
+        </details>
+        <details class="ps5-faq-item">
+          <summary class="ps5-faq-summary">
+            <span>Do you upgrade PS5 storage in Winnipeg?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="ps5-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <p class="ps5-faq-answer">Yes — we install larger NVMe M.2 PCIe 4.0 SSDs in PS5 consoles up to 4TB capacity. We'll recommend the right drive for your budget, install it correctly, and ensure the required heatsink is properly fitted as per Sony's official installation guidance.</p>
+        </details>
+        <details class="ps5-faq-item">
+          <summary class="ps5-faq-summary">
+            <span>Can you fix PS5 disc drive problems?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="ps5-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <p class="ps5-faq-answer">Yes — we diagnose and repair PS5 disc reading issues, stuck discs, ejecting problems, and drive mechanism failures. We also discuss disc drive upgrade options for PS5 Digital Edition owners — contact us to confirm availability before visiting.</p>
+        </details>
+        <details class="ps5-faq-item">
+          <summary class="ps5-faq-summary">
+            <span>How much does PS5 HDMI repair cost in Winnipeg?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="ps5-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <p class="ps5-faq-answer">PS5 HDMI repair costs depend on the extent of the damage — a straightforward port replacement costs less than a repair involving lifted motherboard pads and trace damage. We provide a clear diagnostic and upfront quote before starting any work so you know exactly what you're paying for.</p>
+        </details>
+        <details class="ps5-faq-item">
+          <summary class="ps5-faq-summary">
+            <span>Is PS5 HDMI repair done the same day in Winnipeg?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="ps5-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <p class="ps5-faq-answer">Many PS5 HDMI repairs are completed same-day when dropped off at our Winnipeg St. Vital location before noon. Cases involving significant motherboard trace damage may require additional time — we'll give you an accurate estimate after the initial diagnostic.</p>
+        </details>
+        <details class="ps5-faq-item">
+          <summary class="ps5-faq-summary">
+            <span>Why does my PS5 keep overheating and shutting down?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="ps5-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <p class="ps5-faq-answer">PS5 overheating is almost always caused by dust buildup clogging the heatsink fins and degraded thermal compound on the APU pushing temperatures past safe limits. A full disassembly, deep clean, and thermal paste replacement typically resolves the issue completely — and is one of the best value repairs you can do on a PS5 to extend its lifespan.</p>
+        </details>
+        <details class="ps5-faq-item">
+          <summary class="ps5-faq-summary">
+            <span>Do you offer a warranty on PS5 repairs?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="ps5-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <p class="ps5-faq-answer">Yes — we offer a lifetime warranty on most PS5 HDMI port and DualSense controller repairs. Overheating repairs include a 90-day warranty. If the same issue returns within the warranty period, we repair it at no charge.</p>
+        </details>
+        <details class="ps5-faq-item">
+          <summary class="ps5-faq-summary">
+            <span>Do you repair PS5 consoles in Thompson, MB?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="ps5-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <p class="ps5-faq-answer">Yes — our Thompson location at 300 Mystery Lake Rd #1530 accepts PS5 repairs Monday through Saturday 10AM–6PM. Calling ahead helps us confirm parts availability and give you an accurate turnaround estimate before your visit.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="ps5-final-cta-section">
+    <div class="ps5-container">
+      <div class="ps5-final-cta-inner">
+        <h2 class="ps5-final-cta-title">Ready to Fix Your PS5?</h2>
+        <p class="ps5-final-cta-subtitle">Get a free quote online or walk in to either of our Manitoba locations.</p>
+        <div class="ps5-final-cta-group">
+          <a href="https://shop.mobiletechlab.ca/pages/repair2" target="_blank" rel="noopener noreferrer" class="ps5-cta-primary">
+            Get a Free Quote
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="tel:2045009757" class="ps5-cta-secondary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Call Now
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    :root {
+      --color-primary: #ef4444;
+      --color-primary-dark: #dc2626;
+      --color-primary-light: #fff1f1;
+      --color-primary-border: #fde8e8;
+      --color-primary-hover-bg: #fecaca;
+      --color-text-dark: #111827;
+      --color-text-body: #374151;
+      --color-text-muted: #6b7280;
+      --color-text-subtle: #9ca3af;
+      --color-bg-white: #ffffff;
+      --color-bg-section: linear-gradient(135deg, #fff5f5 0%, #ffffff 50%, #fff5f5 100%);
+      --color-bg-dark: #1f2028;
+      --color-card-border: #fde8e8;
+      --border-radius-card: 16px;
+      --border-radius-btn: 10px;
+      --shadow-card: 0 2px 16px rgba(239, 68, 68, 0.07);
+      --shadow-card-hover: 0 12px 32px rgba(239, 68, 68, 0.13);
+      --shadow-btn-hover: 0 6px 20px rgba(239, 68, 68, 0.35);
+    }
+
+    .ps5-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .ps5-section-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .ps5-section-title {
+      font-size: clamp(1.5rem, 3vw, 1.875rem);
+      font-weight: 700;
+      color: var(--color-text-dark);
+      margin: 0 0 12px 0;
+    }
+
+    .ps5-section-subtitle {
+      font-size: 15px;
+      color: var(--color-text-muted);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .ps5-breadcrumb-nav {
+      border-bottom: 1px solid #e5e7eb;
+      background: var(--color-bg-white);
+    }
+
+    .ps5-breadcrumb-nav .ps5-container {
+      padding-top: 12px;
+      padding-bottom: 12px;
+    }
+
+    .ps5-breadcrumb-list {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      color: var(--color-text-muted);
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .ps5-breadcrumb-link {
+      color: var(--color-text-muted);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .ps5-breadcrumb-link:hover {
+      color: var(--color-text-dark);
+    }
+
+    .ps5-breadcrumb-chevron {
+      width: 12px;
+      height: 12px;
+      flex-shrink: 0;
+    }
+
+    .ps5-breadcrumb-current {
+      color: var(--color-text-dark);
+      font-weight: 500;
+    }
+
+    .ps5-hero-section {
+      background: var(--color-bg-section);
+      width: 100%;
+      padding: 60px 24px 80px;
+    }
+
+    .ps5-hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .ps5-hero-content {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .ps5-hero-badge-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .ps5-service-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 5px 14px;
+      background: var(--color-primary-light);
+      border: 1px solid var(--color-primary-border);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--color-primary);
+    }
+
+    .ps5-location-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 500;
+      color: #16a34a;
+    }
+
+    .ps5-location-badge-secondary {
+      background: #fefce8;
+      border-color: #fef08a;
+      color: #a16207;
+    }
+
+    .ps5-badge-dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: #16a34a;
+      flex-shrink: 0;
+    }
+
+    .ps5-badge-dot-secondary {
+      background: #a16207;
+    }
+
+    .ps5-hero-headline {
+      font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+      font-weight: 900;
+      line-height: 1.1;
+      color: var(--color-text-dark);
+      margin: 0;
+    }
+
+    .ps5-highlight {
+      color: var(--color-text-dark);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      text-decoration-color: var(--color-primary);
+    }
+
+    .ps5-hero-subheadline {
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--color-text-body);
+      margin: 0;
+    }
+
+    .ps5-hero-body {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .ps5-hero-body p {
+      font-size: 15px;
+      color: #4b5563;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .ps5-hero-body a {
+      color: var(--color-primary);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .ps5-hero-cta-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .ps5-cta-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      background: var(--color-primary);
+      color: var(--color-bg-white);
+      border: none;
+      border-radius: var(--border-radius-btn);
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+    }
+
+    .ps5-cta-primary:hover {
+      background-color: var(--color-primary-dark);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-btn-hover);
+    }
+
+    .ps5-cta-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 24px;
+      background: var(--color-bg-white);
+      color: var(--color-text-body);
+      border: 1.5px solid #e5e7eb;
+      border-radius: var(--border-radius-btn);
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: border-color 0.2s ease, color 0.2s ease;
+      cursor: pointer;
+    }
+
+    .ps5-cta-secondary:hover {
+      border-color: var(--color-primary);
+      color: var(--color-primary);
+    }
+
+    .ps5-pricing-note {
+      font-size: 13px;
+      color: var(--color-text-subtle);
+      margin: 0;
+    }
+
+    .ps5-pricing-note a {
+      color: var(--color-primary);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .ps5-hero-image-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .ps5-hero-image-wrapper img {
+      width: 100%;
+      max-width: 420px;
+      height: auto;
+      display: block;
+      object-fit: contain;
+    }
+
+    .ps5-annotations-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+    }
+
+    .ps5-annotation {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      background: var(--color-primary-light);
+      border: 1px solid var(--color-primary-border);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--color-primary);
+    }
+
+    .ps5-annotation svg {
+      flex-shrink: 0;
+      stroke: var(--color-primary);
+    }
+
+    .ps5-services-section {
+      background: var(--color-bg-white);
+      padding: 80px 0;
+    }
+
+    .ps5-services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .ps5-service-card {
+      background: var(--color-bg-white);
+      border: 1px solid var(--color-card-border);
+      border-left: 4px solid var(--color-primary);
+      border-radius: var(--border-radius-card);
+      padding: 24px;
+      box-shadow: var(--shadow-card);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .ps5-service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-card-hover);
+    }
+
+    .ps5-service-icon-wrapper {
+      background-color: var(--color-primary-light);
+      border-radius: 10px;
+      padding: 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      width: 44px;
+      height: 44px;
+    }
+
+    .ps5-service-icon-wrapper svg {
+      stroke: var(--color-primary);
+      width: 22px;
+      height: 22px;
+    }
+
+    .ps5-service-card:hover .ps5-service-icon-wrapper {
+      background-color: var(--color-primary-hover-bg);
+    }
+
+    .ps5-service-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--color-text-dark);
+      margin: 0 0 10px 0;
+    }
+
+    .ps5-service-body {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .ps5-section-cta {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .ps5-models-section {
+      background: linear-gradient(135deg, #fafafa 0%, #f9fafb 100%);
+      padding: 80px 0;
+    }
+
+    .ps5-models-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .ps5-model-card {
+      background: var(--color-bg-white);
+      border: 1px solid var(--color-card-border);
+      border-left: 4px solid var(--color-primary);
+      border-radius: var(--border-radius-card);
+      padding: 28px;
+      box-shadow: var(--shadow-card);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .ps5-model-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-card-hover);
+    }
+
+    .ps5-model-icon-wrapper {
+      background-color: var(--color-primary-light);
+      border-radius: 10px;
+      padding: 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      width: 44px;
+      height: 44px;
+    }
+
+    .ps5-model-icon-wrapper svg {
+      stroke: var(--color-primary);
+      width: 22px;
+      height: 22px;
+    }
+
+    .ps5-model-card:hover .ps5-model-icon-wrapper {
+      background-color: var(--color-primary-hover-bg);
+    }
+
+    .ps5-model-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--color-text-dark);
+      margin: 0 0 8px 0;
+    }
+
+    .ps5-model-description {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      line-height: 1.6;
+      margin: 0 0 16px 0;
+      flex: 1;
+    }
+
+    .ps5-model-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 20px;
+    }
+
+    .ps5-pill {
+      padding: 4px 10px;
+      background: #f3f4f6;
+      border: 1px solid #e5e7eb;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--color-text-body);
+    }
+
+    .ps5-model-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--color-primary);
+      text-decoration: none;
+      transition: gap 0.2s ease;
+    }
+
+    .ps5-model-cta:hover {
+      gap: 10px;
+    }
+
+    .ps5-why-section {
+      background: var(--color-bg-white);
+      padding: 80px 0;
+    }
+
+    .ps5-pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .ps5-pillar-card {
+      background: var(--color-bg-white);
+      border: 1px solid var(--color-card-border);
+      border-left: 4px solid var(--color-primary);
+      border-radius: var(--border-radius-card);
+      padding: 24px;
+      box-shadow: var(--shadow-card);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .ps5-pillar-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-card-hover);
+    }
+
+    .ps5-pillar-icon-wrapper {
+      background-color: var(--color-primary-light);
+      border-radius: 10px;
+      padding: 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      width: 44px;
+      height: 44px;
+    }
+
+    .ps5-pillar-icon-wrapper svg {
+      stroke: var(--color-primary);
+      width: 22px;
+      height: 22px;
+    }
+
+    .ps5-pillar-card:hover .ps5-pillar-icon-wrapper {
+      background-color: var(--color-primary-hover-bg);
+    }
+
+    .ps5-pillar-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--color-text-dark);
+      margin: 0 0 8px 0;
+    }
+
+    .ps5-pillar-body {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .ps5-cost-section {
+      background: var(--color-bg-section);
+      width: 100%;
+      padding: 80px 24px;
+    }
+
+    .ps5-cost-section .ps5-container {
+      padding: 0;
+    }
+
+    .ps5-cost-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .ps5-cost-card {
+      background: var(--color-bg-white);
+      border: 1px solid var(--color-card-border);
+      border-left: 4px solid var(--color-primary);
+      border-radius: var(--border-radius-card);
+      padding: 28px;
+      box-shadow: var(--shadow-card);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .ps5-cost-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-card-hover);
+    }
+
+    .ps5-cost-icon-wrapper {
+      background-color: var(--color-primary-light);
+      border-radius: 10px;
+      padding: 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      width: 44px;
+      height: 44px;
+    }
+
+    .ps5-cost-icon-wrapper svg {
+      stroke: var(--color-primary);
+      width: 22px;
+      height: 22px;
+    }
+
+    .ps5-cost-card:hover .ps5-cost-icon-wrapper {
+      background-color: var(--color-primary-hover-bg);
+    }
+
+    .ps5-cost-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--color-text-dark);
+      margin: 0 0 12px 0;
+    }
+
+    .ps5-cost-body {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      margin: 0 0 16px 0;
+      flex: 1;
+    }
+
+    .ps5-cost-note {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--color-text-subtle);
+      margin: 0 0 20px 0;
+    }
+
+    .ps5-price-match-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 14px 20px;
+      border: 1.5px solid #d1d5db;
+      border-radius: var(--border-radius-btn);
+      background: var(--color-bg-white);
+      color: var(--color-text-body);
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+      box-sizing: border-box;
+    }
+
+    .ps5-price-match-btn:hover {
+      border-color: var(--color-primary);
+      color: var(--color-primary);
+      box-shadow: 0 2px 12px rgba(239, 68, 68, 0.1);
+    }
+
+    .ps5-trade-in-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 14px 20px;
+      background: var(--color-primary-light);
+      color: var(--color-primary);
+      border: 1.5px solid #fca5a5;
+      border-radius: var(--border-radius-btn);
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+      box-sizing: border-box;
+    }
+
+    .ps5-trade-in-btn:hover {
+      background-color: var(--color-primary-hover-bg);
+      border-color: var(--color-primary);
+      box-shadow: 0 2px 12px rgba(239, 68, 68, 0.15);
+    }
+
+    .ps5-pricing-context {
+      max-width: 800px;
+      margin: 40px auto 0 auto;
+    }
+
+    .ps5-context-paragraph {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .ps5-context-link {
+      color: var(--color-primary);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .ps5-locations-section {
+      background: #fafafa;
+      padding: 80px 0;
+    }
+
+    .ps5-locations-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .ps5-location-card {
+      background: var(--color-bg-white);
+      border: 1px solid var(--color-card-border);
+      border-radius: var(--border-radius-card);
+      padding: 28px;
+      box-shadow: var(--shadow-card);
+    }
+
+    .ps5-walkin-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 12px;
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #16a34a;
+      margin-bottom: 16px;
+    }
+
+    .ps5-location-badge-tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 12px;
+      background: var(--color-primary-light);
+      border: 1px solid var(--color-primary-border);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--color-primary);
+      margin-bottom: 16px;
+    }
+
+    .ps5-location-name {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--color-text-dark);
+      margin: 0 0 6px 0;
+    }
+
+    .ps5-location-address {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      margin: 0 0 16px 0;
+    }
+
+    .ps5-location-hours {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      margin-bottom: 20px;
+      line-height: 1.7;
+    }
+
+    .ps5-location-hours p {
+      margin: 0;
+    }
+
+    .ps5-location-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .ps5-location-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--color-primary);
+      text-decoration: none;
+      transition: gap 0.2s ease;
+    }
+
+    .ps5-location-link:hover {
+      gap: 10px;
+    }
+
+    .ps5-location-link svg {
+      stroke: var(--color-primary);
+    }
+
+    .ps5-faq-section {
+      background: var(--color-bg-white);
+      padding: 80px 0;
+    }
+
+    .ps5-faq-list {
+      max-width: 760px;
+      margin: 0 auto;
+      border-top: 1px solid #e5e7eb;
+    }
+
+    .ps5-faq-item {
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .ps5-faq-summary {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 20px 0;
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--color-text-dark);
+      list-style: none;
+    }
+
+    .ps5-faq-summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .ps5-faq-chevron {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      stroke: var(--color-text-muted);
+      transition: transform 0.2s ease;
+      margin-top: 2px;
+    }
+
+    details[open] .ps5-faq-chevron {
+      transform: rotate(180deg);
+    }
+
+    .ps5-faq-answer {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      margin: 0 0 20px 0;
+      padding-right: 34px;
+    }
+
+    .ps5-final-cta-section {
+      background: var(--color-primary-light);
+      border-top: 1px solid var(--color-primary-border);
+      padding: 80px 0;
+    }
+
+    .ps5-final-cta-inner {
+      text-align: center;
+    }
+
+    .ps5-final-cta-title {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 700;
+      color: var(--color-text-dark);
+      margin: 0 0 12px 0;
+    }
+
+    .ps5-final-cta-subtitle {
+      font-size: 15px;
+      color: var(--color-text-muted);
+      margin: 0 0 32px 0;
+    }
+
+    .ps5-final-cta-group {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 1024px) {
+      .ps5-pillars-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .ps5-hero-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .ps5-services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .ps5-models-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .ps5-services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .ps5-models-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .ps5-cost-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .ps5-locations-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .ps5-pillars-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
+</BaseLayout>
