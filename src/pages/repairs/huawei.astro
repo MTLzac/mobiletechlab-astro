@@ -1,0 +1,1429 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = "Huawei Repair Winnipeg | Screen & Battery | Mobile Tech Lab";
+const description = "Expert Huawei repair in Winnipeg. Screen, battery, SuperCharge port and Leica camera repair for P series, Mate, Nova & Honor. Hard-to-find parts specialists.";
+const canonical = "https://mobiletechlab.ca/repairs/huawei";
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://mobiletechlab.ca/" },
+    { "@type": "ListItem", "position": 2, "name": "Repairs", "item": "https://mobiletechlab.ca/repairs" },
+    { "@type": "ListItem", "position": 3, "name": "Huawei Repair", "item": "https://mobiletechlab.ca/repairs/huawei" }
+  ]
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Huawei Repair Service",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Mobile Tech Lab",
+    "url": "https://mobiletechlab.ca"
+  },
+  "areaServed": { "@type": "City", "name": "Winnipeg" },
+  "serviceType": "Phone Repair",
+  "url": "https://mobiletechlab.ca/repairs/huawei",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Huawei Repair Services",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Screen Replacement" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Battery Replacement" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SuperCharge Port Repair" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Leica Camera Repair" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Motherboard Repair" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Fingerprint Sensor Repair" } }
+    ]
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Do you repair Huawei phones in Winnipeg?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — we're one of the few repair shops in Winnipeg that specializes in Huawei devices including P series, Mate, Nova, and all Honor models. Most shops turn Huawei repairs away due to parts sourcing challenges — we've built dedicated supplier relationships specifically to service these devices." } },
+    { "@type": "Question", "name": "Are Huawei parts available in Winnipeg?", "acceptedAnswer": { "@type": "Answer", "text": "We maintain specialist supplier relationships for Huawei and Honor parts that most Canadian shops cannot source. Most common parts are available within 2–3 business days — contact us with your specific model to confirm availability before visiting." } },
+    { "@type": "Question", "name": "How long does Huawei screen repair take in Winnipeg?", "acceptedAnswer": { "@type": "Answer", "text": "Most Huawei screen replacements are completed same-day in 1–2 hours once parts are in stock at our Winnipeg location. If your model requires a special order, we'll give you an estimated wait time when you contact us for a quote." } },
+    { "@type": "Question", "name": "Do you repair Honor phones in Winnipeg?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — we repair all Honor devices including the Magic series, Honor 50, Honor 70, and all legacy Honor models. Honor shares many components with Huawei and our supplier relationships cover both brands." } },
+    { "@type": "Question", "name": "Can you repair Huawei phones without Google services?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — we repair all Huawei hardware regardless of whether the device runs Google Mobile Services or Huawei Mobile Services. Our repairs are hardware-only and do not affect the software or app ecosystem on your device." } },
+    { "@type": "Question", "name": "Can you fix Huawei SuperCharge not working?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — SuperCharge failures are a common Huawei issue we diagnose and repair regularly. We test the full charging chain including the USB-C port, charging IC, and battery to identify the specific fault before recommending any repair." } },
+    { "@type": "Question", "name": "Do you repair Huawei Leica camera issues?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — we repair front and rear camera modules on all Huawei P series and Mate series devices including the Leica-engineered multi-lens systems. Camera repairs include blurry images, black screen, autofocus failures, and cracked lens glass." } },
+    { "@type": "Question", "name": "Can you fix a Huawei phone that won't turn on?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — a non-responsive Huawei is often caused by a depleted battery, a software boot loop, or a component-level board fault. We run free diagnostics to identify the root cause before recommending any repair so you know what the issue is before spending anything." } },
+    { "@type": "Question", "name": "Do you repair Huawei in-display fingerprint sensors?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — we repair and recalibrate in-display optical fingerprint sensors on Huawei P and Mate series flagships, as well as rear fingerprint sensors on Nova and entry-level models. Fingerprint sensor issues are often caused by screen replacement with incompatible parts — we use model-matched components to avoid this." } },
+    { "@type": "Question", "name": "Do you repair Huawei phones in Thompson, MB?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — our Thompson location at 300 Mystery Lake Rd #1530 accepts Huawei repairs Monday through Saturday 10AM–6PM. For less common Huawei models, calling ahead helps us confirm parts availability before your visit." } }
+  ]
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <Fragment slot="head">
+    <meta name="robots" content="index, follow" />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
+
+  <nav class="hw-breadcrumb-nav" aria-label="Breadcrumb">
+    <div class="hw-container">
+      <ol class="hw-breadcrumb-list">
+        <li><a href="/" class="hw-breadcrumb-link">Home</a></li>
+        <li><svg xmlns="http://www.w3.org/2000/svg" class="hw-breadcrumb-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m9 18 6-6-6-6"/></svg></li>
+        <li><a href="/repairs" class="hw-breadcrumb-link">Repairs</a></li>
+        <li><svg xmlns="http://www.w3.org/2000/svg" class="hw-breadcrumb-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m9 18 6-6-6-6"/></svg></li>
+        <li class="hw-breadcrumb-current" aria-current="page">Huawei Repair</li>
+      </ol>
+    </div>
+  </nav>
+
+  <section class="hw-hero-section" id="hero">
+    <div class="hw-hero-inner">
+      <div class="hw-hero-content">
+        <div class="hw-hero-badge-row">
+          <span class="hw-service-badge">Huawei & Honor Repair Specialists</span>
+          <span class="hw-location-badge">
+            <span class="hw-badge-dot"></span>
+            St. Vital — Open
+          </span>
+          <span class="hw-location-badge">
+            <span class="hw-badge-dot"></span>
+            Thompson — Opens tomorrow 10AM
+          </span>
+        </div>
+
+        <h1 class="hw-hero-headline">
+          Huawei Repair <span class="hw-highlight">Winnipeg</span> &amp; Manitoba
+        </h1>
+        <p class="hw-hero-subheadline">Huawei P Series, Mate, Nova & Honor Repair Specialists in Winnipeg</p>
+
+        <div class="hw-hero-body">
+          <p>Cracked Huawei screen or battery not lasting the day? We repair all Huawei models at our Winnipeg shop — from the P30 through P60 Pro, Mate series, Nova lineup, and all Honor devices. Common repairs include screen replacements, battery swaps, SuperCharge port fixes, Leica camera repairs, motherboard diagnostics, and fingerprint sensor issues.</p>
+          <p>Parts availability is the biggest challenge with Huawei repairs in Canada — most shops turn them away because they can't source components. We maintain specialist supplier relationships specifically for Huawei and Honor parts so we can service devices that others won't touch. We'll always confirm parts availability and give you a quote before starting any repair.</p>
+        </div>
+
+        <div class="hw-hero-cta-group">
+          <a href="https://shop.mobiletechlab.ca/pages/repair2" target="_blank" rel="noopener noreferrer" class="hw-cta-primary">
+            Get a Free Quote &rarr;
+          </a>
+          <a href="tel:2045009757" class="hw-cta-secondary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Call Now
+          </a>
+        </div>
+        <p class="hw-pricing-note">Not sure what affects the cost? <a href="/pricing">How repair pricing works</a></p>
+      </div>
+
+      <div class="hw-hero-image-wrapper">
+        <img
+          src="/assets/hero-huawei-CUC1zmak.png"
+          alt="Huawei phone repair in Winnipeg — P series, Mate and Nova specialists at Mobile Tech Lab"
+          width="500"
+          height="500"
+          loading="eager"
+        />
+        <ul class="hw-annotations-list" aria-label="Common Huawei issues we fix">
+          <li class="hw-annotation">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+            Cracked screen
+          </li>
+          <li class="hw-annotation">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+            Battery draining fast
+          </li>
+          <li class="hw-annotation">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            SuperCharge port issues
+          </li>
+          <li class="hw-annotation">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
+            Leica camera not working
+          </li>
+          <li class="hw-annotation">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            Won't turn on
+          </li>
+          <li class="hw-annotation">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Fingerprint sensor issues
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="hw-services-section" id="services">
+    <div class="hw-container">
+      <div class="hw-section-header">
+        <h2 class="hw-section-title">Huawei Repair Services in Winnipeg</h2>
+        <p class="hw-section-subtitle">Specialist repairs for all Huawei and Honor models. Hard-to-find parts sourced, warranty included.</p>
+      </div>
+      <div class="hw-services-grid">
+        <div class="hw-service-card">
+          <div class="hw-service-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+          </div>
+          <h3 class="hw-service-title">Screen Replacement</h3>
+          <p class="hw-service-body">Cracked or unresponsive Huawei display? We replace OLED and LCD screens on all P series, Mate, Nova, and Honor devices. Huawei flagship displays use high-quality curved OLED panels that require model-specific parts — we source them through specialist suppliers when standard channels don't carry them.</p>
+        </div>
+        <div class="hw-service-card">
+          <div class="hw-service-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+          </div>
+          <h3 class="hw-service-title">Battery Replacement</h3>
+          <p class="hw-service-body">Huawei not lasting all day? We replace degraded batteries with quality cells and same-day turnaround on most models. Huawei batteries are tightly integrated into the device chassis — we disassemble carefully to avoid display or motherboard damage during the swap.</p>
+        </div>
+        <div class="hw-service-card">
+          <div class="hw-service-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </div>
+          <h3 class="hw-service-title">SuperCharge Port Repair</h3>
+          <p class="hw-service-body">Huawei SuperCharge not working or charging intermittently? We diagnose and repair USB-C charging ports and SuperCharge fast-charging systems across all Huawei and Honor models. We clean the port before replacing it — debris is a common cause of charging failures.</p>
+        </div>
+        <div class="hw-service-card">
+          <div class="hw-service-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
+          </div>
+          <h3 class="hw-service-title">Leica Camera Repair</h3>
+          <p class="hw-service-body">Blurry photos, black camera screen, or cracked Leica lens on your Huawei P or Mate series? We repair the front and rear camera modules on all Huawei flagships including the Leica-engineered multi-lens systems on P40, P50, P60, and Mate series devices.</p>
+        </div>
+        <div class="hw-service-card">
+          <div class="hw-service-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
+          </div>
+          <h3 class="hw-service-title">Motherboard Repair</h3>
+          <p class="hw-service-body">Component-level motherboard diagnostics and micro-soldering repair for Huawei devices. We diagnose power failures, no-boot conditions, and water damage at the board level — identifying and repairing the specific component rather than replacing the entire board.</p>
+        </div>
+        <div class="hw-service-card">
+          <div class="hw-service-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 class="hw-service-title">Fingerprint Sensor Repair</h3>
+          <p class="hw-service-body">In-display or rear fingerprint sensor not working on your Huawei? We repair and recalibrate fingerprint sensors across all Huawei and Honor models — including the in-display optical sensors on flagship P and Mate series devices.</p>
+        </div>
+      </div>
+      <div class="hw-section-cta">
+        <a href="https://shop.mobiletechlab.ca/pages/repair2" target="_blank" rel="noopener noreferrer" class="hw-cta-primary">
+          Request Repair &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="hw-models-section" id="models">
+    <div class="hw-container">
+      <div class="hw-section-header">
+        <h2 class="hw-section-title">All Huawei & Honor Models We Repair in Winnipeg</h2>
+        <p class="hw-section-subtitle">P series, Mate, Nova, and all Honor devices — parts sourced when others can't</p>
+      </div>
+      <div class="hw-models-grid">
+        <div class="hw-model-card">
+          <div class="hw-model-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+          </div>
+          <h3 class="hw-model-title">Huawei P Series</h3>
+          <p class="hw-model-description">Premium Huawei phones with Leica camera systems. Screen and battery repairs are the most common P series fixes — contact us to confirm parts availability for your specific model.</p>
+          <div class="hw-model-pills">
+            <span class="hw-pill">P60 Pro</span>
+            <span class="hw-pill">P60 Art</span>
+            <span class="hw-pill">P60</span>
+            <span class="hw-pill">P50 Pro</span>
+            <span class="hw-pill">P50 Pocket</span>
+            <span class="hw-pill">P50</span>
+            <span class="hw-pill">P40 Pro+</span>
+            <span class="hw-pill">P40 Pro</span>
+            <span class="hw-pill">P40</span>
+            <span class="hw-pill">P30 Pro</span>
+            <span class="hw-pill">P30</span>
+          </div>
+          <a href="https://shop.mobiletechlab.ca/pages/repair2" target="_blank" rel="noopener noreferrer" class="hw-model-cta">
+            Get Quote &rarr;
+          </a>
+        </div>
+        <div class="hw-model-card">
+          <div class="hw-model-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+          </div>
+          <h3 class="hw-model-title">Huawei Mate Series</h3>
+          <p class="hw-model-description">Flagship Mate lineup with large batteries and premium displays. Mate series repairs require specialist parts — we source them through dedicated Huawei supplier channels.</p>
+          <div class="hw-model-pills">
+            <span class="hw-pill">Mate 60 Pro</span>
+            <span class="hw-pill">Mate 60</span>
+            <span class="hw-pill">Mate 50 Pro</span>
+            <span class="hw-pill">Mate 50</span>
+            <span class="hw-pill">Mate 40 Pro</span>
+            <span class="hw-pill">Mate 40</span>
+            <span class="hw-pill">Mate 30 Pro</span>
+            <span class="hw-pill">Mate 20 Pro</span>
+            <span class="hw-pill">Mate 20 X</span>
+          </div>
+          <a href="https://shop.mobiletechlab.ca/pages/repair2" target="_blank" rel="noopener noreferrer" class="hw-model-cta">
+            Get Quote &rarr;
+          </a>
+        </div>
+        <div class="hw-model-card">
+          <div class="hw-model-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+          </div>
+          <h3 class="hw-model-title">Huawei Nova Series</h3>
+          <p class="hw-model-description">Mid-range Nova devices with strong camera systems. Nova repairs are generally more accessible than flagship models with better parts availability.</p>
+          <div class="hw-model-pills">
+            <span class="hw-pill">Nova 11 Pro</span>
+            <span class="hw-pill">Nova 11</span>
+            <span class="hw-pill">Nova 10 Pro</span>
+            <span class="hw-pill">Nova 10</span>
+            <span class="hw-pill">Nova 9</span>
+            <span class="hw-pill">Nova 8</span>
+            <span class="hw-pill">Nova 7</span>
+            <span class="hw-pill">Nova 5T</span>
+          </div>
+          <a href="https://shop.mobiletechlab.ca/pages/repair2" target="_blank" rel="noopener noreferrer" class="hw-model-cta">
+            Get Quote &rarr;
+          </a>
+        </div>
+        <div class="hw-model-card">
+          <div class="hw-model-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+          </div>
+          <h3 class="hw-model-title">Honor Devices</h3>
+          <p class="hw-model-description">Honor was formerly a Huawei sub-brand and shares many components. We repair all Honor devices including Magic series, Honor 50, 70, and legacy models.</p>
+          <div class="hw-model-pills">
+            <span class="hw-pill">Honor Magic5 Pro</span>
+            <span class="hw-pill">Honor Magic4 Pro</span>
+            <span class="hw-pill">Honor 70</span>
+            <span class="hw-pill">Honor 50</span>
+            <span class="hw-pill">Honor 20 Pro</span>
+            <span class="hw-pill">Honor 10</span>
+          </div>
+          <a href="https://shop.mobiletechlab.ca/pages/repair2" target="_blank" rel="noopener noreferrer" class="hw-model-cta">
+            Get Quote &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hw-why-section" id="why-choose-us">
+    <div class="hw-container">
+      <div class="hw-section-header">
+        <h2 class="hw-section-title">The Mobile Tech Lab Advantage: Winnipeg's Huawei Repair Experts</h2>
+        <p class="hw-section-subtitle">Why Winnipeg customers bring their Huawei devices to us when other shops say no</p>
+      </div>
+      <div class="hw-pillars-grid">
+        <div class="hw-pillar-card">
+          <div class="hw-pillar-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <h3 class="hw-pillar-title">Huawei Specialists in Winnipeg</h3>
+          <p class="hw-pillar-body">Most Winnipeg repair shops turn Huawei devices away because they can't source parts. We've built dedicated supplier relationships specifically for Huawei and Honor components — allowing us to repair devices that others refuse to touch.</p>
+        </div>
+        <div class="hw-pillar-card">
+          <div class="hw-pillar-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+          </div>
+          <h3 class="hw-pillar-title">Hard-to-Find Parts Sourced</h3>
+          <p class="hw-pillar-body">Huawei parts availability in Canada is limited due to trade restrictions and reduced market presence. We maintain active supplier relationships for P series, Mate, Nova, and Honor components — contact us to confirm availability for your specific model before visiting.</p>
+        </div>
+        <div class="hw-pillar-card">
+          <div class="hw-pillar-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </div>
+          <h3 class="hw-pillar-title">SuperCharge & Fast Charging Experts</h3>
+          <p class="hw-pillar-body">Huawei SuperCharge and fast charging failures are a common complaint that most shops misdiagnose. We test the full charging chain — port, cable compatibility, charging IC, and battery — to identify the real cause before recommending any repair.</p>
+        </div>
+        <div class="hw-pillar-card">
+          <div class="hw-pillar-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+          </div>
+          <h3 class="hw-pillar-title">Warranty on Every Repair</h3>
+          <p class="hw-pillar-body">Screen repairs carry a 30-day to lifetime warranty depending on part tier. Battery replacements include a 90-day warranty. All other repairs carry a lifetime warranty on parts and labour — even on hard-to-source Huawei components.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hw-cost-section" id="pricing">
+    <div class="hw-container">
+      <div class="hw-section-header">
+        <h2 class="hw-section-title">Worried About Repair Cost? You Have Options.</h2>
+        <p class="hw-section-subtitle">Most customers use one of these options to lower their repair cost.</p>
+      </div>
+      <div class="hw-cost-grid">
+        <div class="hw-cost-card">
+          <div class="hw-cost-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="12" x2="12" y1="1" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <h3 class="hw-cost-title">We'll Match Any Local Repair Price</h3>
+          <p class="hw-cost-body">Found a lower price at another Winnipeg repair shop? We'll match it — so you don't overpay. No pressure. No hassle.</p>
+          <a href="sms:2045009757?body=Hey%20Mobile%20Tech%20Lab!%20I%20want%20a%20better%20price%20on%20a%20repair!" class="hw-price-match-btn">
+            Check If We Can Match Your Price
+          </a>
+        </div>
+        <div class="hw-cost-card">
+          <div class="hw-cost-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l4 2"/></svg>
+          </div>
+          <h3 class="hw-cost-title">Lower Your Huawei Repair Cost With a Trade-In</h3>
+          <p class="hw-cost-body">Trade in phones, tablets, consoles, or laptops — even broken ones — to reduce today's repair cost.</p>
+          <p class="hw-cost-note">Get paid via Cash, E-Transfer, or Store Credit</p>
+          <a href="/trade-in" class="hw-trade-in-btn">
+            Lower My Huawei Repair Cost &rarr;
+          </a>
+        </div>
+      </div>
+      <div class="hw-pricing-context">
+        <p class="hw-context-paragraph">Huawei repair costs in Canada are often higher than comparable Samsung or iPhone repairs due to limited parts availability caused by trade restrictions and reduced market presence. Flagship P series and Mate screens use curved OLED panels that are among the most expensive smartphone displays to source and replace.</p>
+        <p class="hw-context-paragraph">Many customers are surprised that Huawei parts can cost as much as Apple or Samsung equivalents despite the brand's lower profile in Canada. <a href="https://www.ifixit.com/Search?query=huawei+teardown" target="_blank" rel="noopener noreferrer" class="hw-context-link">iFixit's Huawei teardowns</a> show why certain models are more difficult to service — tightly integrated components and proprietary connectors add complexity to even basic repairs.</p>
+        <p class="hw-context-paragraph">If the repair cost doesn't make financial sense for your Huawei model's current value, we'll tell you honestly and walk you through alternatives — including trade-in options toward a different device or data recovery if the phone can't be economically repaired. <a href="https://consumer.huawei.com/en/support/" target="_blank" rel="noopener noreferrer" class="hw-context-link">Huawei support documentation</a> provides additional resources for device troubleshooting.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="hw-locations-section" id="locations">
+    <div class="hw-container">
+      <div class="hw-section-header">
+        <h2 class="hw-section-title">Huawei Repair Locations in Winnipeg & Thompson</h2>
+        <p class="hw-section-subtitle">Two Manitoba locations. Walk-ins welcome at both.</p>
+      </div>
+      <div class="hw-locations-grid">
+        <div class="hw-location-card">
+          <span class="hw-walkin-badge">Walk-ins welcome · Same-day repairs available</span>
+          <h3 class="hw-location-name">St. Vital Location</h3>
+          <p class="hw-location-address">845 Dakota St #25, Winnipeg, MB R2M 5M3</p>
+          <div class="hw-location-hours">
+            <p>Mon–Sat: 9AM – 7PM</p>
+            <p>Sun: 12PM – 7PM</p>
+          </div>
+          <div class="hw-location-actions">
+            <a href="tel:2045009757" class="hw-location-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              (204) 500-9757
+            </a>
+            <a href="https://maps.google.com/?q=845+Dakota+St+%2325+Winnipeg+MB+R2M+5M3" target="_blank" rel="noopener noreferrer" class="hw-location-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              Get Directions
+            </a>
+          </div>
+        </div>
+        <div class="hw-location-card">
+          <span class="hw-location-badge-tag">Serving Northern Manitoba</span>
+          <h3 class="hw-location-name">Thompson Location</h3>
+          <p class="hw-location-address">300 Mystery Lake Rd #1530, Thompson, MB R8N 0M2</p>
+          <div class="hw-location-hours">
+            <p>Mon–Sat: 10AM – 6PM</p>
+            <p>Sun: Closed</p>
+          </div>
+          <div class="hw-location-actions">
+            <a href="tel:2044100262" class="hw-location-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              (204) 410-0262
+            </a>
+            <a href="https://maps.google.com/?q=300+Mystery+Lake+Rd+%231530+Thompson+MB+R8N+0M2" target="_blank" rel="noopener noreferrer" class="hw-location-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              Get Directions
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hw-faq-section" id="faqs">
+    <div class="hw-container">
+      <div class="hw-section-header">
+        <h2 class="hw-section-title">Huawei Repair FAQs</h2>
+        <p class="hw-section-subtitle">Common questions about Huawei repair at Mobile Tech Lab in Winnipeg</p>
+      </div>
+      <div class="hw-faq-list">
+        <details class="hw-faq-item">
+          <summary class="hw-faq-summary">
+            <span>Do you repair Huawei phones in Winnipeg?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="hw-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <p class="hw-faq-answer">Yes — we're one of the few repair shops in Winnipeg that specializes in Huawei devices including P series, Mate, Nova, and all Honor models. Most shops turn Huawei repairs away due to parts sourcing challenges — we've built dedicated supplier relationships specifically to service these devices.</p>
+        </details>
+        <details class="hw-faq-item">
+          <summary class="hw-faq-summary">
+            <span>Are Huawei parts available in Winnipeg?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="hw-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <p class="hw-faq-answer">We maintain specialist supplier relationships for Huawei and Honor parts that most Canadian shops cannot source. Most common parts are available within 2–3 business days — contact us with your specific model to confirm availability before visiting.</p>
+        </details>
+        <details class="hw-faq-item">
+          <summary class="hw-faq-summary">
+            <span>How long does Huawei screen repair take in Winnipeg?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="hw-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <p class="hw-faq-answer">Most Huawei screen replacements are completed same-day in 1–2 hours once parts are in stock at our Winnipeg location. If your model requires a special order, we'll give you an estimated wait time when you contact us for a quote.</p>
+        </details>
+        <details class="hw-faq-item">
+          <summary class="hw-faq-summary">
+            <span>Do you repair Honor phones in Winnipeg?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="hw-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <p class="hw-faq-answer">Yes — we repair all Honor devices including the Magic series, Honor 50, Honor 70, and all legacy Honor models. Honor shares many components with Huawei and our supplier relationships cover both brands.</p>
+        </details>
+        <details class="hw-faq-item">
+          <summary class="hw-faq-summary">
+            <span>Can you repair Huawei phones without Google services?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="hw-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <p class="hw-faq-answer">Yes — we repair all Huawei hardware regardless of whether the device runs Google Mobile Services or Huawei Mobile Services. Our repairs are hardware-only and do not affect the software or app ecosystem on your device.</p>
+        </details>
+        <details class="hw-faq-item">
+          <summary class="hw-faq-summary">
+            <span>Can you fix Huawei SuperCharge not working?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="hw-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <p class="hw-faq-answer">Yes — SuperCharge failures are a common Huawei issue we diagnose and repair regularly. We test the full charging chain including the USB-C port, charging IC, and battery to identify the specific fault before recommending any repair.</p>
+        </details>
+        <details class="hw-faq-item">
+          <summary class="hw-faq-summary">
+            <span>Do you repair Huawei Leica camera issues?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="hw-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <p class="hw-faq-answer">Yes — we repair front and rear camera modules on all Huawei P series and Mate series devices including the Leica-engineered multi-lens systems. Camera repairs include blurry images, black screen, autofocus failures, and cracked lens glass.</p>
+        </details>
+        <details class="hw-faq-item">
+          <summary class="hw-faq-summary">
+            <span>Can you fix a Huawei phone that won't turn on?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="hw-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <p class="hw-faq-answer">Yes — a non-responsive Huawei is often caused by a depleted battery, a software boot loop, or a component-level board fault. We run free diagnostics to identify the root cause before recommending any repair so you know what the issue is before spending anything.</p>
+        </details>
+        <details class="hw-faq-item">
+          <summary class="hw-faq-summary">
+            <span>Do you repair Huawei in-display fingerprint sensors?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="hw-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <p class="hw-faq-answer">Yes — we repair and recalibrate in-display optical fingerprint sensors on Huawei P and Mate series flagships, as well as rear fingerprint sensors on Nova and entry-level models. Fingerprint sensor issues are often caused by screen replacement with incompatible parts — we use model-matched components to avoid this.</p>
+        </details>
+        <details class="hw-faq-item">
+          <summary class="hw-faq-summary">
+            <span>Do you repair Huawei phones in Thompson, MB?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="hw-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <p class="hw-faq-answer">Yes — our Thompson location at 300 Mystery Lake Rd #1530 accepts Huawei repairs Monday through Saturday 10AM–6PM. For less common Huawei models, calling ahead helps us confirm parts availability before your visit.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="hw-final-cta-section">
+    <div class="hw-container">
+      <div class="hw-final-cta-inner">
+        <h2 class="hw-final-cta-title">Ready to Fix Your Huawei?</h2>
+        <p class="hw-final-cta-subtitle">Get a free quote online or walk in to either of our Manitoba locations.</p>
+        <div class="hw-final-cta-group">
+          <a href="https://shop.mobiletechlab.ca/pages/repair2" target="_blank" rel="noopener noreferrer" class="hw-cta-primary">
+            Get a Free Quote
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="tel:2045009757" class="hw-cta-secondary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Call Now
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    :root {
+      --color-primary: #ef4444;
+      --color-primary-dark: #dc2626;
+      --color-primary-light: #fff1f1;
+      --color-primary-border: #fde8e8;
+      --color-primary-hover-bg: #fecaca;
+      --color-text-dark: #111827;
+      --color-text-body: #374151;
+      --color-text-muted: #6b7280;
+      --color-text-subtle: #9ca3af;
+      --color-bg-white: #ffffff;
+      --color-bg-section: linear-gradient(135deg, #fff5f5 0%, #ffffff 50%, #fff5f5 100%);
+      --color-card-border: #fde8e8;
+      --border-radius-card: 16px;
+      --border-radius-btn: 10px;
+      --shadow-card: 0 2px 16px rgba(239, 68, 68, 0.07);
+      --shadow-card-hover: 0 12px 32px rgba(239, 68, 68, 0.13);
+      --shadow-btn-hover: 0 6px 20px rgba(239, 68, 68, 0.35);
+    }
+
+    .hw-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .hw-section-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .hw-section-title {
+      font-size: clamp(1.5rem, 3vw, 1.875rem);
+      font-weight: 700;
+      color: var(--color-text-dark);
+      margin: 0 0 12px 0;
+    }
+
+    .hw-section-subtitle {
+      font-size: 15px;
+      color: var(--color-text-muted);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .hw-breadcrumb-nav {
+      border-bottom: 1px solid #e5e7eb;
+      background: var(--color-bg-white);
+    }
+
+    .hw-breadcrumb-nav .hw-container {
+      padding-top: 12px;
+      padding-bottom: 12px;
+    }
+
+    .hw-breadcrumb-list {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      color: var(--color-text-muted);
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .hw-breadcrumb-link {
+      color: var(--color-text-muted);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .hw-breadcrumb-link:hover {
+      color: var(--color-text-dark);
+    }
+
+    .hw-breadcrumb-chevron {
+      width: 12px;
+      height: 12px;
+      flex-shrink: 0;
+    }
+
+    .hw-breadcrumb-current {
+      color: var(--color-text-dark);
+      font-weight: 500;
+    }
+
+    .hw-hero-section {
+      background: var(--color-bg-section);
+      width: 100%;
+      padding: 60px 24px 80px;
+    }
+
+    .hw-hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .hw-hero-content {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .hw-hero-badge-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .hw-service-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 5px 14px;
+      background: var(--color-primary-light);
+      border: 1px solid var(--color-primary-border);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--color-primary);
+    }
+
+    .hw-location-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 500;
+      color: #16a34a;
+    }
+
+    .hw-badge-dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: #16a34a;
+      flex-shrink: 0;
+    }
+
+    .hw-hero-headline {
+      font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+      font-weight: 900;
+      line-height: 1.1;
+      color: var(--color-text-dark);
+      margin: 0;
+    }
+
+    .hw-highlight {
+      color: var(--color-text-dark);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      text-decoration-color: var(--color-primary);
+    }
+
+    .hw-hero-subheadline {
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--color-text-body);
+      margin: 0;
+    }
+
+    .hw-hero-body {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .hw-hero-body p {
+      font-size: 15px;
+      color: #4b5563;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .hw-hero-body a {
+      color: var(--color-primary);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .hw-hero-cta-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .hw-cta-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      background: var(--color-primary);
+      color: var(--color-bg-white);
+      border: none;
+      border-radius: var(--border-radius-btn);
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+    }
+
+    .hw-cta-primary:hover {
+      background-color: var(--color-primary-dark);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-btn-hover);
+    }
+
+    .hw-cta-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 24px;
+      background: var(--color-bg-white);
+      color: var(--color-text-body);
+      border: 1.5px solid #e5e7eb;
+      border-radius: var(--border-radius-btn);
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: border-color 0.2s ease, color 0.2s ease;
+      cursor: pointer;
+    }
+
+    .hw-cta-secondary:hover {
+      border-color: var(--color-primary);
+      color: var(--color-primary);
+    }
+
+    .hw-pricing-note {
+      font-size: 13px;
+      color: var(--color-text-subtle);
+      margin: 0;
+    }
+
+    .hw-pricing-note a {
+      color: var(--color-primary);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .hw-hero-image-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .hw-hero-image-wrapper img {
+      width: 100%;
+      max-width: 420px;
+      height: auto;
+      display: block;
+      object-fit: contain;
+    }
+
+    .hw-annotations-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+    }
+
+    .hw-annotation {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      background: var(--color-primary-light);
+      border: 1px solid var(--color-primary-border);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--color-primary);
+    }
+
+    .hw-annotation svg {
+      flex-shrink: 0;
+      stroke: var(--color-primary);
+    }
+
+    .hw-services-section {
+      background: var(--color-bg-white);
+      padding: 80px 0;
+    }
+
+    .hw-services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .hw-service-card {
+      background: var(--color-bg-white);
+      border: 1px solid var(--color-card-border);
+      border-left: 4px solid var(--color-primary);
+      border-radius: var(--border-radius-card);
+      padding: 24px;
+      box-shadow: var(--shadow-card);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .hw-service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-card-hover);
+    }
+
+    .hw-service-icon-wrapper {
+      background-color: var(--color-primary-light);
+      border-radius: 10px;
+      padding: 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      width: 44px;
+      height: 44px;
+    }
+
+    .hw-service-icon-wrapper svg {
+      stroke: var(--color-primary);
+      width: 22px;
+      height: 22px;
+    }
+
+    .hw-service-card:hover .hw-service-icon-wrapper {
+      background-color: var(--color-primary-hover-bg);
+    }
+
+    .hw-service-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--color-text-dark);
+      margin: 0 0 10px 0;
+    }
+
+    .hw-service-body {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .hw-section-cta {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .hw-models-section {
+      background: linear-gradient(135deg, #fafafa 0%, #f9fafb 100%);
+      padding: 80px 0;
+    }
+
+    .hw-models-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .hw-model-card {
+      background: var(--color-bg-white);
+      border: 1px solid var(--color-card-border);
+      border-left: 4px solid var(--color-primary);
+      border-radius: var(--border-radius-card);
+      padding: 28px;
+      box-shadow: var(--shadow-card);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hw-model-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-card-hover);
+    }
+
+    .hw-model-icon-wrapper {
+      background-color: var(--color-primary-light);
+      border-radius: 10px;
+      padding: 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      width: 44px;
+      height: 44px;
+    }
+
+    .hw-model-icon-wrapper svg {
+      stroke: var(--color-primary);
+      width: 22px;
+      height: 22px;
+    }
+
+    .hw-model-card:hover .hw-model-icon-wrapper {
+      background-color: var(--color-primary-hover-bg);
+    }
+
+    .hw-model-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--color-text-dark);
+      margin: 0 0 8px 0;
+    }
+
+    .hw-model-description {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      line-height: 1.6;
+      margin: 0 0 16px 0;
+      flex: 1;
+    }
+
+    .hw-model-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 20px;
+    }
+
+    .hw-pill {
+      padding: 4px 10px;
+      background: #f3f4f6;
+      border: 1px solid #e5e7eb;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--color-text-body);
+    }
+
+    .hw-model-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--color-primary);
+      text-decoration: none;
+      transition: gap 0.2s ease;
+    }
+
+    .hw-model-cta:hover {
+      gap: 10px;
+    }
+
+    .hw-why-section {
+      background: var(--color-bg-white);
+      padding: 80px 0;
+    }
+
+    .hw-pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .hw-pillar-card {
+      background: var(--color-bg-white);
+      border: 1px solid var(--color-card-border);
+      border-left: 4px solid var(--color-primary);
+      border-radius: var(--border-radius-card);
+      padding: 24px;
+      box-shadow: var(--shadow-card);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .hw-pillar-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-card-hover);
+    }
+
+    .hw-pillar-icon-wrapper {
+      background-color: var(--color-primary-light);
+      border-radius: 10px;
+      padding: 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      width: 44px;
+      height: 44px;
+    }
+
+    .hw-pillar-icon-wrapper svg {
+      stroke: var(--color-primary);
+      width: 22px;
+      height: 22px;
+    }
+
+    .hw-pillar-card:hover .hw-pillar-icon-wrapper {
+      background-color: var(--color-primary-hover-bg);
+    }
+
+    .hw-pillar-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--color-text-dark);
+      margin: 0 0 8px 0;
+    }
+
+    .hw-pillar-body {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .hw-cost-section {
+      background: var(--color-bg-section);
+      width: 100%;
+      padding: 80px 24px;
+    }
+
+    .hw-cost-section .hw-container {
+      padding: 0;
+    }
+
+    .hw-cost-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .hw-cost-card {
+      background: var(--color-bg-white);
+      border: 1px solid var(--color-card-border);
+      border-left: 4px solid var(--color-primary);
+      border-radius: var(--border-radius-card);
+      padding: 28px;
+      box-shadow: var(--shadow-card);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hw-cost-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-card-hover);
+    }
+
+    .hw-cost-icon-wrapper {
+      background-color: var(--color-primary-light);
+      border-radius: 10px;
+      padding: 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      width: 44px;
+      height: 44px;
+    }
+
+    .hw-cost-icon-wrapper svg {
+      stroke: var(--color-primary);
+      width: 22px;
+      height: 22px;
+    }
+
+    .hw-cost-card:hover .hw-cost-icon-wrapper {
+      background-color: var(--color-primary-hover-bg);
+    }
+
+    .hw-cost-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--color-text-dark);
+      margin: 0 0 12px 0;
+    }
+
+    .hw-cost-body {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      margin: 0 0 16px 0;
+      flex: 1;
+    }
+
+    .hw-cost-note {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--color-text-subtle);
+      margin: 0 0 20px 0;
+    }
+
+    .hw-price-match-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 14px 20px;
+      border: 1.5px solid #d1d5db;
+      border-radius: var(--border-radius-btn);
+      background: var(--color-bg-white);
+      color: var(--color-text-body);
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+      box-sizing: border-box;
+    }
+
+    .hw-price-match-btn:hover {
+      border-color: var(--color-primary);
+      color: var(--color-primary);
+      box-shadow: 0 2px 12px rgba(239, 68, 68, 0.1);
+    }
+
+    .hw-trade-in-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 14px 20px;
+      background: var(--color-primary-light);
+      color: var(--color-primary);
+      border: 1.5px solid #fca5a5;
+      border-radius: var(--border-radius-btn);
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+      box-sizing: border-box;
+    }
+
+    .hw-trade-in-btn:hover {
+      background-color: var(--color-primary-hover-bg);
+      border-color: var(--color-primary);
+      box-shadow: 0 2px 12px rgba(239, 68, 68, 0.15);
+    }
+
+    .hw-pricing-context {
+      max-width: 800px;
+      margin: 40px auto 0 auto;
+    }
+
+    .hw-context-paragraph {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .hw-context-link {
+      color: var(--color-primary);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .hw-locations-section {
+      background: #fafafa;
+      padding: 80px 0;
+    }
+
+    .hw-locations-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .hw-location-card {
+      background: var(--color-bg-white);
+      border: 1px solid var(--color-card-border);
+      border-radius: var(--border-radius-card);
+      padding: 28px;
+      box-shadow: var(--shadow-card);
+    }
+
+    .hw-walkin-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 12px;
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #16a34a;
+      margin-bottom: 16px;
+    }
+
+    .hw-location-badge-tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 12px;
+      background: var(--color-primary-light);
+      border: 1px solid var(--color-primary-border);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--color-primary);
+      margin-bottom: 16px;
+    }
+
+    .hw-location-name {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--color-text-dark);
+      margin: 0 0 6px 0;
+    }
+
+    .hw-location-address {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      margin: 0 0 16px 0;
+    }
+
+    .hw-location-hours {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      margin-bottom: 20px;
+      line-height: 1.7;
+    }
+
+    .hw-location-hours p {
+      margin: 0;
+    }
+
+    .hw-location-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .hw-location-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--color-primary);
+      text-decoration: none;
+      transition: gap 0.2s ease;
+    }
+
+    .hw-location-link:hover {
+      gap: 10px;
+    }
+
+    .hw-location-link svg {
+      stroke: var(--color-primary);
+    }
+
+    .hw-faq-section {
+      background: var(--color-bg-white);
+      padding: 80px 0;
+    }
+
+    .hw-faq-list {
+      max-width: 760px;
+      margin: 0 auto;
+      border-top: 1px solid #e5e7eb;
+    }
+
+    .hw-faq-item {
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .hw-faq-summary {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 20px 0;
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--color-text-dark);
+      list-style: none;
+    }
+
+    .hw-faq-summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .hw-faq-chevron {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      stroke: var(--color-text-muted);
+      transition: transform 0.2s ease;
+      margin-top: 2px;
+    }
+
+    details[open] .hw-faq-chevron {
+      transform: rotate(180deg);
+    }
+
+    .hw-faq-answer {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      margin: 0 0 20px 0;
+      padding-right: 34px;
+    }
+
+    .hw-final-cta-section {
+      background: var(--color-primary-light);
+      border-top: 1px solid var(--color-primary-border);
+      padding: 80px 0;
+    }
+
+    .hw-final-cta-inner {
+      text-align: center;
+    }
+
+    .hw-final-cta-title {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 700;
+      color: var(--color-text-dark);
+      margin: 0 0 12px 0;
+    }
+
+    .hw-final-cta-subtitle {
+      font-size: 15px;
+      color: var(--color-text-muted);
+      margin: 0 0 32px 0;
+    }
+
+    .hw-final-cta-group {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 1200px) {
+      .hw-models-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 1024px) {
+      .hw-pillars-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .hw-hero-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .hw-services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hw-services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hw-models-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hw-cost-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hw-locations-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hw-pillars-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
+</BaseLayout>
