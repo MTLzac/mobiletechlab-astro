@@ -3,6 +3,7 @@ import MainLayout from '../layouts/MainLayout.astro';
 import RepairOptions from '../components/RepairOptions.astro';
 import WhyTrustUs from '../components/WhyTrustUs.astro';
 import ReviewsSection from '../components/ReviewsSection.astro';
+import LocationsSection from '../components/LocationsSection.astro';
 
 const title = "Professional Phone, Tablet, and Computer Repair | Mobile Tech Lab";
 const description = "Expert phone repair, tablet repair, computer repair, and console repair in Winnipeg and Thompson. Fast service, quality parts, and professional technicians.";
@@ -159,47 +160,7 @@ const services = [
 
   <WhyTrustUs />
 
-  <section style="padding: 4rem 1.5rem;">
-    <div style="max-width: 56rem; margin: 0 auto; text-align: center;">
-      <h2 style="font-weight: 700; font-size: clamp(1.5rem, 3vw, 2rem); color: #111827; margin: 0;">Choose the Location Closest to You</h2>
-      <p style="color: #6b7280; font-size: 0.9rem; margin-top: 0.5rem;">Walk in today or call ahead for faster service.</p>
-
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; text-align: left;">
-
-        <div style="border-radius: 0.75rem; border: 1.5px solid #e8472a; background: #ffffff; padding: 1.5rem;">
-          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem;">
-            <h3 style="font-weight: 700; font-size: 1rem; color: #111827; margin: 0;">St. Vital — Winnipeg</h3>
-            <span style="background-color: #e8472a; color: #ffffff; font-size: 0.65rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 9999px; letter-spacing: 0.05em; text-transform: uppercase;">Primary</span>
-          </div>
-          <p style="color: #6b7280; font-size: 0.8rem; margin: 0 0 1.25rem 0;">845 Dakota St #25, Winnipeg, MB R2M 5M3</p>
-          <a href="tel:2045009757" style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; background-color: #e8472a; color: #ffffff; font-size: 0.875rem; font-weight: 600; padding: 0.6rem 1rem; border-radius: 0.5rem; text-decoration: none; margin-bottom: 0.625rem;">
-            <svg xmlns="http://www.w3.org/2000/svg" style="height: 14px; width: 14px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            Call (204) 500-9757
-          </a>
-          <a href="https://maps.google.com/?q=845+Dakota+St+25+Winnipeg+MB+R2M+5M3" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; background-color: #ffffff; color: #374151; font-size: 0.875rem; font-weight: 500; padding: 0.6rem 1rem; border-radius: 0.5rem; text-decoration: none; border: 1px solid #d1d5db;">
-            <svg xmlns="http://www.w3.org/2000/svg" style="height: 14px; width: 14px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
-            Open in Maps
-          </a>
-          <p style="color: #9ca3af; font-size: 0.75rem; margin: 0.875rem 0 0 0; text-align: center;">Walk-ins welcome &bull; Same-day repairs available</p>
-        </div>
-
-        <div style="border-radius: 0.75rem; border: 1px solid #e5e7eb; background: #ffffff; padding: 1.5rem;">
-          <h3 style="font-weight: 700; font-size: 1rem; color: #111827; margin: 0 0 0.5rem 0;">Thompson Location</h3>
-          <p style="color: #6b7280; font-size: 0.8rem; margin: 0 0 1.25rem 0;">300 Mystery Lake Rd #1530, Thompson, MB R8N 0M2</p>
-          <a href="tel:2044100262" style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; background-color: #e8472a; color: #ffffff; font-size: 0.875rem; font-weight: 600; padding: 0.6rem 1rem; border-radius: 0.5rem; text-decoration: none; margin-bottom: 0.625rem;">
-            <svg xmlns="http://www.w3.org/2000/svg" style="height: 14px; width: 14px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            Call (204) 410-0262
-          </a>
-          <a href="https://maps.google.com/?q=300+Mystery+Lake+Rd+1530+Thompson+MB+R8N+0M2" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; background-color: #ffffff; color: #374151; font-size: 0.875rem; font-weight: 500; padding: 0.6rem 1rem; border-radius: 0.5rem; text-decoration: none; border: 1px solid #d1d5db;">
-            <svg xmlns="http://www.w3.org/2000/svg" style="height: 14px; width: 14px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
-            Open in Maps
-          </a>
-          <p style="color: #9ca3af; font-size: 0.75rem; margin: 0.875rem 0 0 0; text-align: center;">Walk-ins welcome</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
+  <LocationsSection />
 
   <section style="background: linear-gradient(to bottom, #fff5f5, #ffffff); padding: 4rem 1.5rem;">
     <div style="max-width: 40rem; margin: 0 auto; text-align: center;">
