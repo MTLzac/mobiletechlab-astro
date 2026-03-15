@@ -1,0 +1,469 @@
+{
+  "meta": {
+    "version": "1.0",
+    "generator": "mobiletechlab-lovable-export",
+    "date": "2026-03-15",
+    "reference_doc": "/seo-exports/astro-repair-template.md",
+    "purpose": "LLM prompt to generate an Astro static page for LG repair services",
+    "template": "RepairLandingTemplate"
+  },
+  "constraints": {
+    "framework": "Astro (latest stable)",
+    "rendering": "Static HTML only — zero client-side JavaScript unless explicitly marked as `client:load` island",
+    "styling": "Tailwind CSS using semantic design tokens from the provided CSS variables. NEVER use raw color values (no `bg-blue-500`, no `text-white`). Use `bg-primary`, `text-foreground`, `bg-muted`, etc.",
+    "fonts": "Inter via Google Fonts, loaded in <head> with `font-display: swap`",
+    "icons": "Inline SVG only — no icon library runtime. Copy SVG paths from Lucide (https://lucide.dev). Each icon must have `aria-hidden=\"true\"` and `focusable=\"false\"`.",
+    "images": "All `<img>` tags MUST have `alt`, `width`, `height`, and `loading=\"lazy\"` (except hero which uses `loading=\"eager\"`). Use Astro `<Image />` component where possible.",
+    "links_internal": "Standard `<a href=\"/path\">` — NO client-side router. All internal links must start with `/`.",
+    "links_external": "All external `<a>` tags MUST have `target=\"_blank\"` and `rel=\"noopener noreferrer\"`.",
+    "accessibility": "All interactive elements must be keyboard-accessible. Use semantic HTML (`<nav>`, `<main>`, `<section>`, `<article>`, `<footer>`). Buttons must have visible focus rings.",
+    "accordions": "Use native `<details>` + `<summary>` elements. NO JavaScript accordions.",
+    "seo_title_max_chars": 60,
+    "seo_description_max_chars": 160,
+    "must_have_single_h1": true,
+    "canonical_url_required": true,
+    "structured_data_required": [
+      "BreadcrumbList",
+      "Service",
+      "FAQPage"
+    ],
+    "forbidden": [
+      "React or any JSX runtime",
+      "useState, useEffect, or any React hooks",
+      "Client-side routing (react-router, @astrojs/preact, etc.)",
+      "CSS-in-JS libraries",
+      "Hardcoded color values in components",
+      "JavaScript-based accordions or toggles",
+      "Placeholder or lorem ipsum content",
+      "Any content not present in this JSON"
+    ]
+  },
+  "file_structure": {
+    "layout": "src/layouts/BaseLayout.astro",
+    "page": "src/pages/repair/lg.astro",
+    "components": [
+      "src/components/repair/VisibleBreadcrumbs.astro",
+      "src/components/repair/HeroSection.astro",
+      "src/components/repair/ServiceGrid.astro",
+      "src/components/repair/ModelListGrid.astro",
+      "src/components/repair/WhyChooseUs.astro",
+      "src/components/repair/PricingMicroCopy.astro",
+      "src/components/repair/LocationCards.astro",
+      "src/components/repair/FAQSection.astro",
+      "src/components/repair/StickyMobileCTA.astro",
+      "src/components/repair/TableOfContents.astro"
+    ]
+  },
+  "section_order": [
+    "breadcrumbs",
+    "hero",
+    "services",
+    "models",
+    "why_choose_us",
+    "pricing_micro_copy",
+    "locations",
+    "faqs",
+    "sticky_mobile_cta",
+    "table_of_contents"
+  ],
+  "page": {
+    "slug": "lg",
+    "canonicalUrl": "https://mobiletechlab.ca/repair/lg",
+    "metaTitle": "LG Phone Repair Winnipeg | Screen & Battery Fix | Mobile Tech Lab",
+    "metaDescription": "LG phone repair specialists in Winnipeg. Screen, battery, charging port repair for LG Velvet, V series, G series, Stylo & all legacy models. We keep your LG running!",
+    "robots": "index, follow",
+    "deviceName": "LG",
+    "h1": "LG Phone Repair in Winnipeg, MB",
+    "heroDescription": "Even though LG exited the smartphone market, we continue to support all LG devices in Winnipeg. From the innovative LG Wing to the reliable Stylo series, we keep your LG phone running strong.",
+    "heroImage": {
+      "src": "/assets/hero-lg.png",
+      "alt": "LG repair services in Winnipeg",
+      "width": 600,
+      "height": 400,
+      "loading": "eager"
+    }
+  },
+  "breadcrumbs": [
+    {
+      "label": "Home",
+      "href": "/"
+    },
+    {
+      "label": "Repairs",
+      "href": "/repair"
+    },
+    {
+      "label": "LG",
+      "href": null
+    }
+  ],
+  "services": [
+    {
+      "icon": "ScreenShare",
+      "name": "Screen Replacement",
+      "description": "OLED and LCD display replacements for LG Velvet, V series, G series, and Stylo devices."
+    },
+    {
+      "icon": "Battery",
+      "name": "Battery Replacement",
+      "description": "Restore full-day battery life to your LG phone. Same-day replacement for most models."
+    },
+    {
+      "icon": "Plug",
+      "name": "Charging Port Repair",
+      "description": "USB-C and micro USB charging port diagnosis and repair for all LG devices."
+    },
+    {
+      "icon": "Camera",
+      "name": "Camera Repair",
+      "description": "Front, rear, and wide-angle camera replacements for all LG models."
+    },
+    {
+      "icon": "Volume2",
+      "name": "Speaker Repair",
+      "description": "Fix speakers, earpieces, and Boombox audio systems on LG devices."
+    },
+    {
+      "icon": "Power",
+      "name": "Power Button Repair",
+      "description": "Repair stuck or non-responsive power and volume buttons on all LG models."
+    }
+  ],
+  "advantage_pillars": [
+    {
+      "icon": "Award",
+      "title": "LG Legacy Specialists",
+      "description": "We continue to support LG devices long after others have stopped."
+    },
+    {
+      "icon": "Package",
+      "title": "Parts Still Available",
+      "description": "We maintain supplier relationships for LG parts that others can't source."
+    },
+    {
+      "icon": "Wrench",
+      "title": "Dual Screen & Wing Experts",
+      "description": "We repair unique LG innovations including Dual Screen cases and the LG Wing swivel mechanism."
+    },
+    {
+      "icon": "Award",
+      "title": "Warranty on Every Repair",
+      "description": "Screen repair warranties vary by part tier (30 days to lifetime). 90-day battery warranty. Lifetime warranty on most other repairs."
+    }
+  ],
+  "model_categories": [
+    {
+      "title": "LG Velvet & Wing",
+      "models": [
+        "LG Velvet 5G",
+        "LG Wing 5G"
+      ],
+      "description": "LG's innovative final flagships."
+    },
+    {
+      "title": "LG V Series",
+      "models": [
+        "V60 ThinQ",
+        "V50 ThinQ",
+        "V40 ThinQ",
+        "V35 ThinQ",
+        "V30",
+        "V20"
+      ],
+      "description": "Premium V series with Quad DAC audio."
+    },
+    {
+      "title": "LG G Series",
+      "models": [
+        "G8X ThinQ",
+        "G8 ThinQ",
+        "G7 ThinQ",
+        "G6",
+        "G5",
+        "G4",
+        "G3"
+      ],
+      "description": "Classic G series flagship lineup."
+    },
+    {
+      "title": "LG Stylo & K Series",
+      "models": [
+        "Stylo 6",
+        "Stylo 5",
+        "Stylo 4",
+        "K92",
+        "K71",
+        "K62",
+        "K51",
+        "K42"
+      ],
+      "description": "Budget-friendly LG devices."
+    }
+  ],
+  "models_flat": [
+    "LG Velvet 5G",
+    "LG Wing 5G",
+    "LG V60 ThinQ",
+    "LG V50 ThinQ",
+    "LG V40 ThinQ",
+    "LG V35 ThinQ",
+    "LG V30",
+    "LG G8X ThinQ",
+    "LG G8 ThinQ",
+    "LG G7 ThinQ",
+    "LG G6",
+    "LG G5",
+    "LG Stylo 6",
+    "LG Stylo 5",
+    "LG Stylo 4",
+    "LG Stylo 3",
+    "LG K92",
+    "LG K71",
+    "LG K62",
+    "LG K52",
+    "LG K51",
+    "LG K42",
+    "LG K41S",
+    "LG Q70",
+    "LG Q60",
+    "LG Q Stylus",
+    "LG Aristo",
+    "LG Phoenix",
+    "LG Rebel",
+    "LG Tribute"
+  ],
+  "models_description": "We repair all LG smartphone models. As Winnipeg's LG legacy support specialists, we maintain parts for older devices others won't service.",
+  "pricing_micro_copy": {
+    "costDriver": "LG repair costs depend on the model and parts availability—as a discontinued brand, some parts require specialty sourcing. LG's <a href='https://www.lg.com/ca_en/support' target='_blank' rel='noopener noreferrer'>Canadian support portal</a> still provides basic documentation.",
+    "priceShock": "Many customers are surprised that repairing an older LG device can sometimes cost more than expected due to limited parts supply. <a href='https://www.ifixit.com/Search?query=lg+phone+teardown' target='_blank' rel='noopener noreferrer'>iFixit's LG phone teardowns</a> remain useful for understanding repairability.",
+    "advisory": "If the repair cost doesn't make sense for your LG's current value, we'll explain alternatives.",
+    "fallback": "When repair isn't practical, data recovery is often still possible."
+  },
+  "faqs": [
+    {
+      "question": "Do you repair LG phones in Winnipeg?",
+      "answer": "Yes! We're one of the few repair shops in Winnipeg still specializing in LG devices."
+    },
+    {
+      "question": "Can you still get LG phone parts in Winnipeg?",
+      "answer": "We maintain supplier relationships for LG parts. Popular Velvet, V series, and Stylo parts are often in stock."
+    },
+    {
+      "question": "How long does LG screen repair take in Winnipeg?",
+      "answer": "Most LG screen replacements are completed same-day, typically within 1-2 hours once parts are available."
+    },
+    {
+      "question": "Is it worth repairing my LG phone?",
+      "answer": "We'll provide an honest assessment. Many LG phones are well-built and worth repairing."
+    },
+    {
+      "question": "Can you repair LG Dual Screen accessories?",
+      "answer": "Yes, we repair LG Dual Screen cases and the unique LG Wing swivel mechanism."
+    }
+  ],
+  "service_area_note": "Serving St. Vital, Fort Garry, Garden City, Transcona, and all Winnipeg neighborhoods. Also serving Thompson, MB. Walk-ins welcome or book online.",
+  "locations": [
+    {
+      "name": "St. Vital Centre",
+      "address": "1225 St Mary's Rd, Winnipeg, MB R2M 5E5",
+      "phone": "(204) 500-9757",
+      "phoneHref": "tel:2045009757",
+      "hours": "Mon–Sat 10am–7pm, Sun 12pm–5pm",
+      "mapUrl": "https://maps.google.com/?q=Mobile+Tech+Lab+St+Vital",
+      "badge": "Walk-ins Welcome"
+    },
+    {
+      "name": "Garden City Shopping Centre",
+      "address": "2305 McPhillips St, Winnipeg, MB R2V 3E1",
+      "phone": "(204) 515-7736",
+      "phoneHref": "tel:2045157736",
+      "hours": "Mon–Sat 10am–7pm, Sun 12pm–5pm",
+      "mapUrl": "https://maps.google.com/?q=Mobile+Tech+Lab+Garden+City",
+      "badge": "Walk-ins Welcome"
+    }
+  ],
+  "cta": {
+    "quoteWidgetUrl": "https://shop.mobiletechlab.ca/pages/repair2",
+    "primaryPhone": "(204) 500-9757",
+    "primaryPhoneHref": "tel:2045009757",
+    "smsNumber": "2045009757",
+    "smsMessage": "Hi, I found your site searching for LG repair. Can you help?"
+  },
+  "table_of_contents": [
+    {
+      "id": "hero",
+      "label": "Overview"
+    },
+    {
+      "id": "services",
+      "label": "Services"
+    },
+    {
+      "id": "models",
+      "label": "Models"
+    },
+    {
+      "id": "why-choose-us",
+      "label": "Why Us"
+    },
+    {
+      "id": "locations",
+      "label": "Locations"
+    },
+    {
+      "id": "faqs",
+      "label": "FAQs"
+    }
+  ],
+  "structured_data": {
+    "breadcrumb_list": {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://mobiletechlab.ca/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Repairs",
+          "item": "https://mobiletechlab.ca/repair"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "LG"
+        }
+      ]
+    },
+    "service": {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "LG Repair Service",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Mobile Tech Lab",
+        "url": "https://mobiletechlab.ca"
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Winnipeg"
+      },
+      "serviceType": "Phone Repair",
+      "url": "https://mobiletechlab.ca/repair/lg",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "LG Repair Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Screen Replacement"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Battery Replacement"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Charging Port Repair"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Camera Repair"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Speaker Repair"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Power Button Repair"
+            }
+          }
+        ]
+      }
+    },
+    "faq_page": {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do you repair LG phones in Winnipeg?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! We're one of the few repair shops in Winnipeg still specializing in LG devices."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you still get LG phone parts in Winnipeg?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We maintain supplier relationships for LG parts. Popular Velvet, V series, and Stylo parts are often in stock."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does LG screen repair take in Winnipeg?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most LG screen replacements are completed same-day, typically within 1-2 hours once parts are available."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is it worth repairing my LG phone?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We'll provide an honest assessment. Many LG phones are well-built and worth repairing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you repair LG Dual Screen accessories?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we repair LG Dual Screen cases and the unique LG Wing swivel mechanism."
+          }
+        }
+      ]
+    }
+  },
+  "validation_checklist": [
+    "Page has exactly ONE <h1> tag matching the `page.h1` field",
+    "All services render with inline SVG icons, not an icon library import",
+    "All FAQ items use <details>/<summary>, not JS accordions",
+    "All external links have target='_blank' rel='noopener noreferrer'",
+    "Canonical URL matches `page.canonicalUrl` exactly",
+    "All three JSON-LD blocks are injected in <head>",
+    "<meta name='robots' content='index, follow'> is present",
+    "No React, Preact, or JSX runtime in the build output",
+    "Hero image has loading='eager'; all other images have loading='lazy'",
+    "Page renders fully without JavaScript enabled",
+    "All color classes use Tailwind semantic tokens (bg-primary, text-foreground, etc.)",
+    "Phone links use tel: protocol; SMS links use sms: protocol",
+    "Section IDs match table_of_contents entries for anchor navigation",
+    "No placeholder content — every string comes from this JSON"
+  ]
+}

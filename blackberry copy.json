@@ -1,0 +1,457 @@
+{
+  "meta": {
+    "version": "1.0",
+    "generator": "mobiletechlab-lovable-export",
+    "date": "2026-03-15",
+    "reference_doc": "/seo-exports/astro-repair-template.md",
+    "purpose": "LLM prompt to generate an Astro static page for Blackberry repair services",
+    "template": "RepairLandingTemplate"
+  },
+  "constraints": {
+    "framework": "Astro (latest stable)",
+    "rendering": "Static HTML only — zero client-side JavaScript unless explicitly marked as `client:load` island",
+    "styling": "Tailwind CSS using semantic design tokens from the provided CSS variables. NEVER use raw color values (no `bg-blue-500`, no `text-white`). Use `bg-primary`, `text-foreground`, `bg-muted`, etc.",
+    "fonts": "Inter via Google Fonts, loaded in <head> with `font-display: swap`",
+    "icons": "Inline SVG only — no icon library runtime. Copy SVG paths from Lucide (https://lucide.dev). Each icon must have `aria-hidden=\"true\"` and `focusable=\"false\"`.",
+    "images": "All `<img>` tags MUST have `alt`, `width`, `height`, and `loading=\"lazy\"` (except hero which uses `loading=\"eager\"`). Use Astro `<Image />` component where possible.",
+    "links_internal": "Standard `<a href=\"/path\">` — NO client-side router. All internal links must start with `/`.",
+    "links_external": "All external `<a>` tags MUST have `target=\"_blank\"` and `rel=\"noopener noreferrer\"`.",
+    "accessibility": "All interactive elements must be keyboard-accessible. Use semantic HTML (`<nav>`, `<main>`, `<section>`, `<article>`, `<footer>`). Buttons must have visible focus rings.",
+    "accordions": "Use native `<details>` + `<summary>` elements. NO JavaScript accordions.",
+    "seo_title_max_chars": 60,
+    "seo_description_max_chars": 160,
+    "must_have_single_h1": true,
+    "canonical_url_required": true,
+    "structured_data_required": [
+      "BreadcrumbList",
+      "Service",
+      "FAQPage"
+    ],
+    "forbidden": [
+      "React or any JSX runtime",
+      "useState, useEffect, or any React hooks",
+      "Client-side routing (react-router, @astrojs/preact, etc.)",
+      "CSS-in-JS libraries",
+      "Hardcoded color values in components",
+      "JavaScript-based accordions or toggles",
+      "Placeholder or lorem ipsum content",
+      "Any content not present in this JSON"
+    ]
+  },
+  "file_structure": {
+    "layout": "src/layouts/BaseLayout.astro",
+    "page": "src/pages/repair/blackberry.astro",
+    "components": [
+      "src/components/repair/VisibleBreadcrumbs.astro",
+      "src/components/repair/HeroSection.astro",
+      "src/components/repair/ServiceGrid.astro",
+      "src/components/repair/ModelListGrid.astro",
+      "src/components/repair/WhyChooseUs.astro",
+      "src/components/repair/PricingMicroCopy.astro",
+      "src/components/repair/LocationCards.astro",
+      "src/components/repair/FAQSection.astro",
+      "src/components/repair/StickyMobileCTA.astro",
+      "src/components/repair/TableOfContents.astro"
+    ]
+  },
+  "section_order": [
+    "breadcrumbs",
+    "hero",
+    "services",
+    "models",
+    "why_choose_us",
+    "pricing_micro_copy",
+    "locations",
+    "faqs",
+    "sticky_mobile_cta",
+    "table_of_contents"
+  ],
+  "page": {
+    "slug": "blackberry",
+    "canonicalUrl": "https://mobiletechlab.ca/repair/blackberry",
+    "metaTitle": "Blackberry Phone Repair Winnipeg | KEY2 & Classic Fix | Mobile Tech Lab",
+    "metaDescription": "Blackberry repair specialists in Winnipeg. Screen, keyboard, battery repair for KEY2, KEYone, Classic, Passport & all legacy models. We keep discontinued devices running!",
+    "robots": "index, follow",
+    "deviceName": "Blackberry",
+    "h1": "Blackberry Phone Repair in Winnipeg, MB",
+    "heroDescription": "Still using a Blackberry? We've got you covered in Winnipeg. As Blackberry repair specialists, we maintain parts and expertise for all models.",
+    "heroImage": {
+      "src": "/assets/hero-blackberry.png",
+      "alt": "Blackberry repair services in Winnipeg",
+      "width": 600,
+      "height": 400,
+      "loading": "eager"
+    }
+  },
+  "breadcrumbs": [
+    {
+      "label": "Home",
+      "href": "/"
+    },
+    {
+      "label": "Repairs",
+      "href": "/repair"
+    },
+    {
+      "label": "Blackberry",
+      "href": null
+    }
+  ],
+  "services": [
+    {
+      "icon": "ScreenShare",
+      "name": "Screen Replacement",
+      "description": "LCD and touchscreen replacements for KEY2, KEYone, Passport, and all Blackberry models."
+    },
+    {
+      "icon": "Keyboard",
+      "name": "Keyboard Repair",
+      "description": "Physical QWERTY keyboard repairs for KEY2, KEYone, Classic, Passport, and Bold series."
+    },
+    {
+      "icon": "Battery",
+      "name": "Battery Replacement",
+      "description": "Restore full-day battery life. Same-day replacement for most models."
+    },
+    {
+      "icon": "Plug",
+      "name": "Charging Port Repair",
+      "description": "Micro USB and USB-C charging port diagnosis and repair."
+    },
+    {
+      "icon": "HardDrive",
+      "name": "Data Recovery",
+      "description": "Recover contacts, messages, and files from damaged or non-booting devices."
+    },
+    {
+      "icon": "Wifi",
+      "name": "Connectivity Repair",
+      "description": "WiFi, Bluetooth, and cellular connectivity diagnosis and repair."
+    }
+  ],
+  "advantage_pillars": [
+    {
+      "icon": "Award",
+      "title": "Blackberry Specialists",
+      "description": "We continue to support Blackberry devices long after others have stopped."
+    },
+    {
+      "icon": "Package",
+      "title": "Legacy Parts Stockpiled",
+      "description": "We've stockpiled Blackberry parts and maintain supplier relationships."
+    },
+    {
+      "icon": "Wrench",
+      "title": "QWERTY Keyboard Experts",
+      "description": "Specialized in physical keyboard repairs for KEY2, KEYone, Classic, Passport, and Bold."
+    },
+    {
+      "icon": "Award",
+      "title": "Warranty on Every Repair",
+      "description": "Screen repair warranties vary by part tier (30 days to lifetime). 90-day battery warranty. Lifetime warranty on most other repairs."
+    }
+  ],
+  "model_categories": [
+    {
+      "title": "Android Blackberry",
+      "models": [
+        "KEY2",
+        "KEY2 LE",
+        "KEYone",
+        "Motion",
+        "DTEK60",
+        "DTEK50",
+        "Priv"
+      ],
+      "description": "Modern Android-powered Blackberry devices."
+    },
+    {
+      "title": "Blackberry Classic & Passport",
+      "models": [
+        "Classic",
+        "Passport",
+        "Passport Silver Edition"
+      ],
+      "description": "Iconic QWERTY devices."
+    },
+    {
+      "title": "Blackberry Bold & Curve",
+      "models": [
+        "Bold 9900",
+        "Bold 9930",
+        "Bold 9790",
+        "Curve 9360",
+        "Curve 9320",
+        "Curve 9310"
+      ],
+      "description": "Classic Bold and Curve series."
+    },
+    {
+      "title": "Blackberry Z & Torch",
+      "models": [
+        "Z30",
+        "Z10",
+        "Torch 9810",
+        "Torch 9800",
+        "Q10",
+        "Q5"
+      ],
+      "description": "Touchscreen and slider models."
+    }
+  ],
+  "models_flat": [
+    "Blackberry KEY2",
+    "Blackberry KEY2 LE",
+    "Blackberry KEYone",
+    "Blackberry Motion",
+    "Blackberry DTEK60",
+    "Blackberry DTEK50",
+    "Blackberry Priv",
+    "Blackberry Classic",
+    "Blackberry Passport",
+    "Blackberry Q10",
+    "Blackberry Q5",
+    "Blackberry Z30",
+    "Blackberry Z10",
+    "Blackberry Bold 9900",
+    "Blackberry Bold 9930",
+    "Blackberry Curve 9360",
+    "Blackberry Curve 9320",
+    "Blackberry Torch 9810",
+    "Blackberry Torch 9800"
+  ],
+  "models_description": "We service all Blackberry models including Android devices and classic Blackberry OS devices.",
+  "pricing_micro_copy": {
+    "costDriver": "Blackberry repair costs depend on parts availability—as a discontinued brand, some components are scarce. <a href='https://www.ifixit.com/Search?query=blackberry+repair' target='_blank' rel='noopener noreferrer'>iFixit's Blackberry repair guides</a> provide useful reference.",
+    "priceShock": "Many customers are surprised that repairing a legacy Blackberry can cost more than expected due to parts scarcity.",
+    "advisory": "If the repair cost doesn't make sense, we'll explain alternatives.",
+    "fallback": "When repair isn't practical, data recovery is often still possible."
+  },
+  "faqs": [
+    {
+      "question": "Do you repair Blackberry phones in Winnipeg?",
+      "answer": "Yes! We're one of the few repair shops still specializing in Blackberry devices."
+    },
+    {
+      "question": "Are Blackberry parts still available in Winnipeg?",
+      "answer": "We've stockpiled common Blackberry parts and maintain supplier relationships."
+    },
+    {
+      "question": "Can you repair Blackberry QWERTY keyboards?",
+      "answer": "Yes! We specialize in physical QWERTY keyboard repairs."
+    },
+    {
+      "question": "How long does Blackberry repair take in Winnipeg?",
+      "answer": "Most repairs are completed same-day, typically within 1-2 hours."
+    },
+    {
+      "question": "Can you recover data from a dead Blackberry?",
+      "answer": "In many cases, yes."
+    }
+  ],
+  "service_area_note": "Serving St. Vital, Fort Garry, Garden City, Transcona, and all Winnipeg neighborhoods. Also serving Thompson, MB.",
+  "locations": [
+    {
+      "name": "St. Vital Centre",
+      "address": "1225 St Mary's Rd, Winnipeg, MB R2M 5E5",
+      "phone": "(204) 500-9757",
+      "phoneHref": "tel:2045009757",
+      "hours": "Mon–Sat 10am–7pm, Sun 12pm–5pm",
+      "mapUrl": "https://maps.google.com/?q=Mobile+Tech+Lab+St+Vital",
+      "badge": "Walk-ins Welcome"
+    },
+    {
+      "name": "Garden City Shopping Centre",
+      "address": "2305 McPhillips St, Winnipeg, MB R2V 3E1",
+      "phone": "(204) 515-7736",
+      "phoneHref": "tel:2045157736",
+      "hours": "Mon–Sat 10am–7pm, Sun 12pm–5pm",
+      "mapUrl": "https://maps.google.com/?q=Mobile+Tech+Lab+Garden+City",
+      "badge": "Walk-ins Welcome"
+    }
+  ],
+  "cta": {
+    "quoteWidgetUrl": "https://shop.mobiletechlab.ca/pages/repair2",
+    "primaryPhone": "(204) 500-9757",
+    "primaryPhoneHref": "tel:2045009757",
+    "smsNumber": "2045009757",
+    "smsMessage": "Hi, I found your site searching for Blackberry repair. Can you help?"
+  },
+  "table_of_contents": [
+    {
+      "id": "hero",
+      "label": "Overview"
+    },
+    {
+      "id": "services",
+      "label": "Services"
+    },
+    {
+      "id": "models",
+      "label": "Models"
+    },
+    {
+      "id": "why-choose-us",
+      "label": "Why Us"
+    },
+    {
+      "id": "locations",
+      "label": "Locations"
+    },
+    {
+      "id": "faqs",
+      "label": "FAQs"
+    }
+  ],
+  "structured_data": {
+    "breadcrumb_list": {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://mobiletechlab.ca/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Repairs",
+          "item": "https://mobiletechlab.ca/repair"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Blackberry"
+        }
+      ]
+    },
+    "service": {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Blackberry Repair Service",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Mobile Tech Lab",
+        "url": "https://mobiletechlab.ca"
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Winnipeg"
+      },
+      "serviceType": "Phone Repair",
+      "url": "https://mobiletechlab.ca/repair/blackberry",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Blackberry Repair Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Screen Replacement"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Keyboard Repair"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Battery Replacement"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Charging Port Repair"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Data Recovery"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Connectivity Repair"
+            }
+          }
+        ]
+      }
+    },
+    "faq_page": {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do you repair Blackberry phones in Winnipeg?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! We're one of the few repair shops still specializing in Blackberry devices."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are Blackberry parts still available in Winnipeg?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We've stockpiled common Blackberry parts and maintain supplier relationships."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you repair Blackberry QWERTY keyboards?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! We specialize in physical QWERTY keyboard repairs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does Blackberry repair take in Winnipeg?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most repairs are completed same-day, typically within 1-2 hours."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you recover data from a dead Blackberry?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In many cases, yes."
+          }
+        }
+      ]
+    }
+  },
+  "validation_checklist": [
+    "Page has exactly ONE <h1> tag matching the `page.h1` field",
+    "All services render with inline SVG icons, not an icon library import",
+    "All FAQ items use <details>/<summary>, not JS accordions",
+    "All external links have target='_blank' rel='noopener noreferrer'",
+    "Canonical URL matches `page.canonicalUrl` exactly",
+    "All three JSON-LD blocks are injected in <head>",
+    "<meta name='robots' content='index, follow'> is present",
+    "No React, Preact, or JSX runtime in the build output",
+    "Hero image has loading='eager'; all other images have loading='lazy'",
+    "Page renders fully without JavaScript enabled",
+    "All color classes use Tailwind semantic tokens (bg-primary, text-foreground, etc.)",
+    "Phone links use tel: protocol; SMS links use sms: protocol",
+    "Section IDs match table_of_contents entries for anchor navigation",
+    "No placeholder content — every string comes from this JSON"
+  ]
+}

@@ -1,0 +1,432 @@
+{
+  "meta": {
+    "version": "1.0",
+    "generator": "mobiletechlab-lovable-export",
+    "date": "2026-03-15",
+    "reference_doc": "/seo-exports/astro-repair-template.md",
+    "purpose": "LLM prompt to generate an Astro static page for Controller repair services",
+    "template": "CustomControllerPage"
+  },
+  "constraints": {
+    "framework": "Astro (latest stable)",
+    "rendering": "Static HTML only — zero client-side JavaScript unless explicitly marked as `client:load` island",
+    "styling": "Tailwind CSS using semantic design tokens from the provided CSS variables. NEVER use raw color values (no `bg-blue-500`, no `text-white`). Use `bg-primary`, `text-foreground`, `bg-muted`, etc.",
+    "fonts": "Inter via Google Fonts, loaded in <head> with `font-display: swap`",
+    "icons": "Inline SVG only — no icon library runtime. Copy SVG paths from Lucide (https://lucide.dev). Each icon must have `aria-hidden=\"true\"` and `focusable=\"false\"`.",
+    "images": "All `<img>` tags MUST have `alt`, `width`, `height`, and `loading=\"lazy\"` (except hero which uses `loading=\"eager\"`). Use Astro `<Image />` component where possible.",
+    "links_internal": "Standard `<a href=\"/path\">` — NO client-side router. All internal links must start with `/`.",
+    "links_external": "All external `<a>` tags MUST have `target=\"_blank\"` and `rel=\"noopener noreferrer\"`.",
+    "accessibility": "All interactive elements must be keyboard-accessible. Use semantic HTML (`<nav>`, `<main>`, `<section>`, `<article>`, `<footer>`). Buttons must have visible focus rings.",
+    "accordions": "Use native `<details>` + `<summary>` elements. NO JavaScript accordions.",
+    "seo_title_max_chars": 60,
+    "seo_description_max_chars": 160,
+    "must_have_single_h1": true,
+    "canonical_url_required": true,
+    "structured_data_required": [
+      "BreadcrumbList",
+      "Service",
+      "FAQPage"
+    ],
+    "forbidden": [
+      "React or any JSX runtime",
+      "useState, useEffect, or any React hooks",
+      "Client-side routing (react-router, @astrojs/preact, etc.)",
+      "CSS-in-JS libraries",
+      "Hardcoded color values in components",
+      "JavaScript-based accordions or toggles",
+      "Placeholder or lorem ipsum content",
+      "Any content not present in this JSON"
+    ]
+  },
+  "file_structure": {
+    "layout": "src/layouts/BaseLayout.astro",
+    "page": "src/pages/repair/controller-repair-winnipeg.astro",
+    "components": [
+      "src/components/repair/VisibleBreadcrumbs.astro",
+      "src/components/repair/HeroSection.astro",
+      "src/components/repair/ServiceGrid.astro",
+      "src/components/repair/ModelListGrid.astro",
+      "src/components/repair/WhyChooseUs.astro",
+      "src/components/repair/PricingMicroCopy.astro",
+      "src/components/repair/LocationCards.astro",
+      "src/components/repair/FAQSection.astro",
+      "src/components/repair/StickyMobileCTA.astro",
+      "src/components/repair/TableOfContents.astro"
+    ]
+  },
+  "section_order": [
+    "breadcrumbs",
+    "hero",
+    "services",
+    "models",
+    "why_choose_us",
+    "pricing_micro_copy",
+    "locations",
+    "faqs",
+    "sticky_mobile_cta",
+    "table_of_contents"
+  ],
+  "page": {
+    "slug": "controller-repair-winnipeg",
+    "canonicalUrl": "https://mobiletechlab.ca/repair/controller-repair-winnipeg",
+    "metaTitle": "Controller Repair Winnipeg | Xbox & PS5 Controller Repair",
+    "metaDescription": "Need controller repair in Winnipeg? We fix Xbox and PS5 controller issues including stick drift, broken buttons, charging ports, and connectivity problems.",
+    "robots": "index, follow",
+    "deviceName": "Controller",
+    "h1": "Controller Repair in Winnipeg",
+    "heroDescription": "We repair Xbox and PlayStation controllers in Winnipeg. Common controller problems include stick drift, buttons not responding, broken bumpers, or charging ports that stop working.",
+    "heroImage": {
+      "src": "/assets/hero-controller-repair-winnipeg.png",
+      "alt": "Controller repair services in Winnipeg",
+      "width": 600,
+      "height": 400,
+      "loading": "eager"
+    }
+  },
+  "breadcrumbs": [
+    {
+      "label": "Home",
+      "href": "/"
+    },
+    {
+      "label": "Repairs",
+      "href": "/repair"
+    },
+    {
+      "label": "Controller",
+      "href": null
+    }
+  ],
+  "services": [
+    {
+      "icon": "Crosshair",
+      "name": "Stick Drift Repair",
+      "description": "Replace worn analog stick modules to restore precise input."
+    },
+    {
+      "icon": "Gamepad2",
+      "name": "Broken Bumper/Trigger",
+      "description": "Repair broken bumper or trigger buttons."
+    },
+    {
+      "icon": "BatteryCharging",
+      "name": "Not Charging Fix",
+      "description": "Controller not charging? We diagnose and fix charging issues."
+    },
+    {
+      "icon": "Usb",
+      "name": "USB Port Replacement",
+      "description": "Replace damaged USB charging ports."
+    },
+    {
+      "icon": "CircleDot",
+      "name": "Unresponsive Buttons",
+      "description": "Fix buttons that don't respond or feel stuck."
+    },
+    {
+      "icon": "Wifi",
+      "name": "Connection Issues",
+      "description": "Fix controller connection and sync problems."
+    }
+  ],
+  "advantage_pillars": [
+    {
+      "icon": "DollarSign",
+      "title": "Save Money",
+      "description": "Repairing a worn component costs a fraction of a new controller."
+    },
+    {
+      "icon": "Clock",
+      "title": "Fast Turnaround",
+      "description": "Most repairs completed same day."
+    },
+    {
+      "icon": "Shield",
+      "title": "Warranty Included",
+      "description": "Warranty coverage on repaired components."
+    },
+    {
+      "icon": "Wrench",
+      "title": "Professional Repair",
+      "description": "Precise component-level work by experienced technicians."
+    }
+  ],
+  "model_categories": [],
+  "models_flat": [],
+  "models_description": "",
+  "pricing_micro_copy": {
+    "costDriver": "Controller repair costs depend on the issue—stick drift fixes are affordable, while Elite controller repairs may cost more due to premium components.",
+    "priceShock": "Most controller repairs are surprisingly affordable compared to buying a new controller.",
+    "advisory": "We'll explain costs clearly before starting any repair.",
+    "fallback": "If repair doesn't make sense, we offer pre-owned controller swaps with trade-in credit."
+  },
+  "faqs": [
+    {
+      "question": "Can you fix controller stick drift?",
+      "answer": "Yes. Stick drift is one of our most common controller repairs."
+    },
+    {
+      "question": "Do you repair PS5 DualSense controllers?",
+      "answer": "Yes. We repair DualSense and DualShock controllers."
+    },
+    {
+      "question": "How long does controller repair take?",
+      "answer": "Most controller repairs can be completed the same day, often within an hour."
+    },
+    {
+      "question": "Is it worth repairing a controller?",
+      "answer": "In most cases, yes. Replacing a worn analog stick or charging port is significantly cheaper than buying a new controller."
+    },
+    {
+      "question": "Do you repair Xbox Elite controllers?",
+      "answer": "Yes. We service Xbox Elite Series 2 controllers."
+    }
+  ],
+  "service_area_note": "Serving all Winnipeg neighborhoods. Walk-ins welcome or book online.",
+  "locations": [
+    {
+      "name": "St. Vital Centre",
+      "address": "1225 St Mary's Rd, Winnipeg, MB R2M 5E5",
+      "phone": "(204) 500-9757",
+      "phoneHref": "tel:2045009757",
+      "hours": "Mon–Sat 10am–7pm, Sun 12pm–5pm",
+      "mapUrl": "https://maps.google.com/?q=Mobile+Tech+Lab+St+Vital",
+      "badge": "Walk-ins Welcome"
+    },
+    {
+      "name": "Garden City Shopping Centre",
+      "address": "2305 McPhillips St, Winnipeg, MB R2V 3E1",
+      "phone": "(204) 515-7736",
+      "phoneHref": "tel:2045157736",
+      "hours": "Mon–Sat 10am–7pm, Sun 12pm–5pm",
+      "mapUrl": "https://maps.google.com/?q=Mobile+Tech+Lab+Garden+City",
+      "badge": "Walk-ins Welcome"
+    }
+  ],
+  "cta": {
+    "quoteWidgetUrl": "https://shop.mobiletechlab.ca/pages/repair2",
+    "primaryPhone": "(204) 500-9757",
+    "primaryPhoneHref": "tel:2045009757",
+    "smsNumber": "2045009757",
+    "smsMessage": "Hi, I found your site searching for Controller repair. Can you help?"
+  },
+  "table_of_contents": [
+    {
+      "id": "hero",
+      "label": "Overview"
+    },
+    {
+      "id": "services",
+      "label": "Services"
+    },
+    {
+      "id": "models",
+      "label": "Models"
+    },
+    {
+      "id": "why-choose-us",
+      "label": "Why Us"
+    },
+    {
+      "id": "locations",
+      "label": "Locations"
+    },
+    {
+      "id": "faqs",
+      "label": "FAQs"
+    }
+  ],
+  "structured_data": {
+    "breadcrumb_list": {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://mobiletechlab.ca/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Repairs",
+          "item": "https://mobiletechlab.ca/repair"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Controller"
+        }
+      ]
+    },
+    "service": {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Controller Repair Service",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Mobile Tech Lab",
+        "url": "https://mobiletechlab.ca"
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Winnipeg"
+      },
+      "serviceType": "Controller Repair",
+      "url": "https://mobiletechlab.ca/repair/controller-repair-winnipeg",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Controller Repair Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Stick Drift Repair"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Broken Bumper/Trigger"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Not Charging Fix"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "USB Port Replacement"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Unresponsive Buttons"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Connection Issues"
+            }
+          }
+        ]
+      }
+    },
+    "faq_page": {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can you fix controller stick drift?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Stick drift is one of our most common controller repairs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you repair PS5 DualSense controllers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. We repair DualSense and DualShock controllers."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does controller repair take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most controller repairs can be completed the same day, often within an hour."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is it worth repairing a controller?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In most cases, yes. Replacing a worn analog stick or charging port is significantly cheaper than buying a new controller."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you repair Xbox Elite controllers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. We service Xbox Elite Series 2 controllers."
+          }
+        }
+      ]
+    }
+  },
+  "extra_sections": {
+    "stick_drift_visual": {
+      "description": "Stick drift happens when worn analog stick components send movement signals even when the joystick is not being touched."
+    },
+    "repair_or_swap": {
+      "repair_option": {
+        "title": "Repair Your Controller",
+        "benefits": [
+          "Professional component replacement",
+          "Fully tested after repair",
+          "Keep your original controller"
+        ]
+      },
+      "swap_option": {
+        "title": "Swap For A Pre-Owned Controller",
+        "benefits": [
+          "Faster than waiting for a repair",
+          "Tested working controller",
+          "Pay only the difference"
+        ],
+        "link": "/trade-in"
+      }
+    },
+    "related_repairs": [
+      {
+        "label": "PS5 Repair Winnipeg",
+        "href": "/repair/ps5"
+      },
+      {
+        "label": "Xbox Repair Winnipeg",
+        "href": "/repair/xbox"
+      },
+      {
+        "label": "Console Repair Winnipeg",
+        "href": "/consoles"
+      }
+    ],
+    "authority_links": {
+      "sony": "https://support.playstation.com",
+      "microsoft": "https://support.xbox.com"
+    }
+  },
+  "validation_checklist": [
+    "Page has exactly ONE <h1> tag matching the `page.h1` field",
+    "All services render with inline SVG icons, not an icon library import",
+    "All FAQ items use <details>/<summary>, not JS accordions",
+    "All external links have target='_blank' rel='noopener noreferrer'",
+    "Canonical URL matches `page.canonicalUrl` exactly",
+    "All three JSON-LD blocks are injected in <head>",
+    "<meta name='robots' content='index, follow'> is present",
+    "No React, Preact, or JSX runtime in the build output",
+    "Hero image has loading='eager'; all other images have loading='lazy'",
+    "Page renders fully without JavaScript enabled",
+    "All color classes use Tailwind semantic tokens (bg-primary, text-foreground, etc.)",
+    "Phone links use tel: protocol; SMS links use sms: protocol",
+    "Section IDs match table_of_contents entries for anchor navigation",
+    "No placeholder content — every string comes from this JSON"
+  ]
+}

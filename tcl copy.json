@@ -1,0 +1,449 @@
+{
+  "meta": {
+    "version": "1.0",
+    "generator": "mobiletechlab-lovable-export",
+    "date": "2026-03-15",
+    "reference_doc": "/seo-exports/astro-repair-template.md",
+    "purpose": "LLM prompt to generate an Astro static page for TCL repair services",
+    "template": "RepairLandingTemplate"
+  },
+  "constraints": {
+    "framework": "Astro (latest stable)",
+    "rendering": "Static HTML only — zero client-side JavaScript unless explicitly marked as `client:load` island",
+    "styling": "Tailwind CSS using semantic design tokens from the provided CSS variables. NEVER use raw color values (no `bg-blue-500`, no `text-white`). Use `bg-primary`, `text-foreground`, `bg-muted`, etc.",
+    "fonts": "Inter via Google Fonts, loaded in <head> with `font-display: swap`",
+    "icons": "Inline SVG only — no icon library runtime. Copy SVG paths from Lucide (https://lucide.dev). Each icon must have `aria-hidden=\"true\"` and `focusable=\"false\"`.",
+    "images": "All `<img>` tags MUST have `alt`, `width`, `height`, and `loading=\"lazy\"` (except hero which uses `loading=\"eager\"`). Use Astro `<Image />` component where possible.",
+    "links_internal": "Standard `<a href=\"/path\">` — NO client-side router. All internal links must start with `/`.",
+    "links_external": "All external `<a>` tags MUST have `target=\"_blank\"` and `rel=\"noopener noreferrer\"`.",
+    "accessibility": "All interactive elements must be keyboard-accessible. Use semantic HTML (`<nav>`, `<main>`, `<section>`, `<article>`, `<footer>`). Buttons must have visible focus rings.",
+    "accordions": "Use native `<details>` + `<summary>` elements. NO JavaScript accordions.",
+    "seo_title_max_chars": 60,
+    "seo_description_max_chars": 160,
+    "must_have_single_h1": true,
+    "canonical_url_required": true,
+    "structured_data_required": [
+      "BreadcrumbList",
+      "Service",
+      "FAQPage"
+    ],
+    "forbidden": [
+      "React or any JSX runtime",
+      "useState, useEffect, or any React hooks",
+      "Client-side routing (react-router, @astrojs/preact, etc.)",
+      "CSS-in-JS libraries",
+      "Hardcoded color values in components",
+      "JavaScript-based accordions or toggles",
+      "Placeholder or lorem ipsum content",
+      "Any content not present in this JSON"
+    ]
+  },
+  "file_structure": {
+    "layout": "src/layouts/BaseLayout.astro",
+    "page": "src/pages/repair/tcl.astro",
+    "components": [
+      "src/components/repair/VisibleBreadcrumbs.astro",
+      "src/components/repair/HeroSection.astro",
+      "src/components/repair/ServiceGrid.astro",
+      "src/components/repair/ModelListGrid.astro",
+      "src/components/repair/WhyChooseUs.astro",
+      "src/components/repair/PricingMicroCopy.astro",
+      "src/components/repair/LocationCards.astro",
+      "src/components/repair/FAQSection.astro",
+      "src/components/repair/StickyMobileCTA.astro",
+      "src/components/repair/TableOfContents.astro"
+    ]
+  },
+  "section_order": [
+    "breadcrumbs",
+    "hero",
+    "services",
+    "models",
+    "why_choose_us",
+    "pricing_micro_copy",
+    "locations",
+    "faqs",
+    "sticky_mobile_cta",
+    "table_of_contents"
+  ],
+  "page": {
+    "slug": "tcl",
+    "canonicalUrl": "https://mobiletechlab.ca/repair/tcl",
+    "metaTitle": "TCL Phone Repair Winnipeg | Screen & Battery Fix | Mobile Tech Lab",
+    "metaDescription": "TCL phone repair in Winnipeg. Screen, battery, charging port repair for TCL 50, 40, 30 series & tablets. Budget device specialists.",
+    "robots": "index, follow",
+    "deviceName": "TCL",
+    "h1": "TCL Device Repair in Winnipeg",
+    "heroDescription": "TCL makes great budget phones, and we're here to keep them running in Winnipeg. From the TCL 50 series to tablets, we provide <a href='https://support.tcl.com/us/self-repair-options' target='_blank' rel='noopener noreferrer'>affordable repairs for all TCL devices</a>.",
+    "heroImage": {
+      "src": "/assets/hero-tcl.png",
+      "alt": "TCL repair services in Winnipeg",
+      "width": 600,
+      "height": 400,
+      "loading": "eager"
+    }
+  },
+  "breadcrumbs": [
+    {
+      "label": "Home",
+      "href": "/"
+    },
+    {
+      "label": "Repairs",
+      "href": "/repair"
+    },
+    {
+      "label": "TCL",
+      "href": null
+    }
+  ],
+  "services": [
+    {
+      "icon": "ScreenShare",
+      "name": "Screen Replacement",
+      "description": "Replace cracked or damaged TCL NXTVISION screens in Winnipeg."
+    },
+    {
+      "icon": "Battery",
+      "name": "Battery Replacement",
+      "description": "Restore battery life to your TCL phone or tablet."
+    },
+    {
+      "icon": "Plug",
+      "name": "Charging Port Repair",
+      "description": "Fix USB-C charging port issues."
+    },
+    {
+      "icon": "Camera",
+      "name": "Camera Repair",
+      "description": "Repair front and rear cameras on TCL devices."
+    },
+    {
+      "icon": "Volume2",
+      "name": "Speaker Repair",
+      "description": "Fix speakers and audio quality issues."
+    },
+    {
+      "icon": "Wifi",
+      "name": "Connectivity Repair",
+      "description": "Resolve WiFi, Bluetooth, and cellular issues."
+    }
+  ],
+  "advantage_pillars": [
+    {
+      "icon": "Award",
+      "title": "TCL Specialists",
+      "description": "Winnipeg's experts in TCL phones and tablets."
+    },
+    {
+      "icon": "DollarSign",
+      "title": "Budget Device Experts",
+      "description": "Affordable repairs matching TCL's value-focused pricing."
+    },
+    {
+      "icon": "Tablet",
+      "title": "Phone & Tablet Service",
+      "description": "We repair both TCL phones and Tab tablets."
+    },
+    {
+      "icon": "Award",
+      "title": "Warranty on Every Repair",
+      "description": "Screen repair warranties vary by part tier (30 days to lifetime). 90-day battery warranty. Lifetime warranty on most other repairs."
+    }
+  ],
+  "model_categories": [
+    {
+      "title": "TCL 50 Series",
+      "models": [
+        "TCL 50 XL 5G",
+        "TCL 50 SE",
+        "TCL 50 XE"
+      ],
+      "description": "Latest TCL 50 series with 5G."
+    },
+    {
+      "title": "TCL 40 Series",
+      "models": [
+        "TCL 40 NxtPaper",
+        "TCL 40 XL",
+        "TCL 40 XE",
+        "TCL 40 SE"
+      ],
+      "description": "Popular 40 series including NxtPaper display."
+    },
+    {
+      "title": "TCL 30 Series",
+      "models": [
+        "TCL 30 XL",
+        "TCL 30 XE 5G",
+        "TCL 30 SE",
+        "TCL 30 V 5G"
+      ],
+      "description": "Reliable 30 series budget phones."
+    },
+    {
+      "title": "TCL Tablets",
+      "models": [
+        "TCL Tab 10s",
+        "TCL Tab 8"
+      ],
+      "description": "TCL tablet repairs."
+    }
+  ],
+  "models_flat": [
+    "TCL 50 XL 5G",
+    "TCL 50 SE",
+    "TCL 50 XE",
+    "TCL 40 NxtPaper",
+    "TCL 40 XL",
+    "TCL 40 XE",
+    "TCL 40 SE",
+    "TCL 30 XL",
+    "TCL 30 XE 5G",
+    "TCL 30 SE",
+    "TCL 30 V 5G",
+    "TCL 20 Pro 5G",
+    "TCL 20 SE",
+    "TCL 20S",
+    "TCL Stylus 5G",
+    "TCL Tab 10s",
+    "TCL Tab 8",
+    "TCL A3X",
+    "TCL A3",
+    "TCL Ion X"
+  ],
+  "models_description": "We repair all TCL phones and tablets including the 50, 40, 30, and 20 series.",
+  "pricing_micro_copy": {
+    "costDriver": "TCL repair costs are generally affordable. TCL's <a href='https://www.tcl.com/ca/en/support' target='_blank' rel='noopener noreferrer'>official support page</a> provides model-specific troubleshooting.",
+    "priceShock": "TCL owners are often pleasantly surprised that repairs are more affordable than other brands. <a href='https://www.ifixit.com/Right-to-Repair' target='_blank' rel='noopener noreferrer'>iFixit's repairability advocacy</a> highlights why budget devices benefit most from repair.",
+    "advisory": "For budget TCL devices, repair almost always makes financial sense.",
+    "fallback": "When repair doesn't make sense, data recovery is often still possible."
+  },
+  "faqs": [
+    {
+      "question": "Do you repair TCL phones in Winnipeg?",
+      "answer": "Yes! TCL makes quality budget phones, and we service all models."
+    },
+    {
+      "question": "Is TCL repair worth it?",
+      "answer": "Often yes! TCL devices are budget-friendly, and our repair costs are proportionally affordable."
+    },
+    {
+      "question": "Are TCL parts available in Winnipeg?",
+      "answer": "We can source parts for most TCL models."
+    },
+    {
+      "question": "Do you repair TCL tablets too?",
+      "answer": "Yes! We service TCL Tab devices."
+    },
+    {
+      "question": "How long does TCL repair take?",
+      "answer": "Most repairs are completed same-day if parts are in stock."
+    }
+  ],
+  "service_area_note": "Serving St. Vital, Fort Garry, Garden City, Transcona, and all Winnipeg neighborhoods. Also serving Thompson, MB.",
+  "locations": [
+    {
+      "name": "St. Vital Centre",
+      "address": "1225 St Mary's Rd, Winnipeg, MB R2M 5E5",
+      "phone": "(204) 500-9757",
+      "phoneHref": "tel:2045009757",
+      "hours": "Mon–Sat 10am–7pm, Sun 12pm–5pm",
+      "mapUrl": "https://maps.google.com/?q=Mobile+Tech+Lab+St+Vital",
+      "badge": "Walk-ins Welcome"
+    },
+    {
+      "name": "Garden City Shopping Centre",
+      "address": "2305 McPhillips St, Winnipeg, MB R2V 3E1",
+      "phone": "(204) 515-7736",
+      "phoneHref": "tel:2045157736",
+      "hours": "Mon–Sat 10am–7pm, Sun 12pm–5pm",
+      "mapUrl": "https://maps.google.com/?q=Mobile+Tech+Lab+Garden+City",
+      "badge": "Walk-ins Welcome"
+    }
+  ],
+  "cta": {
+    "quoteWidgetUrl": "https://shop.mobiletechlab.ca/pages/repair2",
+    "primaryPhone": "(204) 500-9757",
+    "primaryPhoneHref": "tel:2045009757",
+    "smsNumber": "2045009757",
+    "smsMessage": "Hi, I found your site searching for TCL repair. Can you help?"
+  },
+  "table_of_contents": [
+    {
+      "id": "hero",
+      "label": "Overview"
+    },
+    {
+      "id": "services",
+      "label": "Services"
+    },
+    {
+      "id": "models",
+      "label": "Models"
+    },
+    {
+      "id": "why-choose-us",
+      "label": "Why Us"
+    },
+    {
+      "id": "locations",
+      "label": "Locations"
+    },
+    {
+      "id": "faqs",
+      "label": "FAQs"
+    }
+  ],
+  "structured_data": {
+    "breadcrumb_list": {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://mobiletechlab.ca/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Repairs",
+          "item": "https://mobiletechlab.ca/repair"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "TCL"
+        }
+      ]
+    },
+    "service": {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "TCL Repair Service",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Mobile Tech Lab",
+        "url": "https://mobiletechlab.ca"
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Winnipeg"
+      },
+      "serviceType": "Phone Repair",
+      "url": "https://mobiletechlab.ca/repair/tcl",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "TCL Repair Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Screen Replacement"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Battery Replacement"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Charging Port Repair"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Camera Repair"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Speaker Repair"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Connectivity Repair"
+            }
+          }
+        ]
+      }
+    },
+    "faq_page": {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do you repair TCL phones in Winnipeg?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! TCL makes quality budget phones, and we service all models."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is TCL repair worth it?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Often yes! TCL devices are budget-friendly, and our repair costs are proportionally affordable."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are TCL parts available in Winnipeg?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We can source parts for most TCL models."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you repair TCL tablets too?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! We service TCL Tab devices."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does TCL repair take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most repairs are completed same-day if parts are in stock."
+          }
+        }
+      ]
+    }
+  },
+  "validation_checklist": [
+    "Page has exactly ONE <h1> tag matching the `page.h1` field",
+    "All services render with inline SVG icons, not an icon library import",
+    "All FAQ items use <details>/<summary>, not JS accordions",
+    "All external links have target='_blank' rel='noopener noreferrer'",
+    "Canonical URL matches `page.canonicalUrl` exactly",
+    "All three JSON-LD blocks are injected in <head>",
+    "<meta name='robots' content='index, follow'> is present",
+    "No React, Preact, or JSX runtime in the build output",
+    "Hero image has loading='eager'; all other images have loading='lazy'",
+    "Page renders fully without JavaScript enabled",
+    "All color classes use Tailwind semantic tokens (bg-primary, text-foreground, etc.)",
+    "Phone links use tel: protocol; SMS links use sms: protocol",
+    "Section IDs match table_of_contents entries for anchor navigation",
+    "No placeholder content — every string comes from this JSON"
+  ]
+}
