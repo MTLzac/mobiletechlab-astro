@@ -1,50 +1,5 @@
 ---
-const repairs = {
-  phones: [
-    { label: 'iPhone', href: '/repair/iphone' },
-    { label: 'Samsung', href: '/repair/samsung' },
-    { label: 'Google Pixel', href: '/repair/google-pixel' },
-    { label: 'Motorola', href: '/repair/motorola' },
-    { label: 'OnePlus', href: '/repair/google-pixel' },
-    { label: 'LG', href: '/repair/google-pixel' },
-    { label: 'Huawei', href: '/repair/google-pixel' },
-    { label: 'Xiaomi', href: '/repair/google-pixel' },
-    { label: 'Oppo', href: '/repair/google-pixel' },
-    { label: 'Nothing', href: '/repair/google-pixel' },
-    { label: 'Infinix', href: '/repair/google-pixel' },
-    { label: 'TCL', href: '/repair/tcl' },
-    { label: 'ZTE', href: '/repair/google-pixel' },
-    { label: 'Blackberry', href: '/repair/google-pixel' },
-  ],
-  tablets: [
-    { label: 'iPad', href: '/repair/ipad' },
-    { label: 'Galaxy Tab', href: '/repair/samsung-galaxy-tab' },
-    { label: 'Amazon Kindle/Fire', href: '/repair/ipad' },
-  ],
-  gaming: [
-    { label: 'All Console Repairs', href: '/consoles' },
-    { label: 'Nintendo Switch', href: '/repair/nintendo-switch' },
-    { label: 'PlayStation 5', href: '/repair/ps5' },
-    { label: 'PlayStation 4', href: '/repair/ps4' },
-    { label: 'Xbox', href: '/repair/xbox' },
-    { label: 'Steam Deck', href: '/repair/steam-deck' },
-  ],
-  computers: [
-    { label: 'MacBook', href: '/repair/macbook' },
-    { label: 'Microsoft Surface', href: '/repair/surface' },
-    { label: 'Laptop Repair', href: '/repair/laptop' },
-  ],
-  otherDevices: [
-    { label: 'Apple Watch', href: '/repair/apple-watch' },
-    { label: 'iPod', href: '/repair/ipad' },
-    { label: 'Water Damage', href: '/repair/water-damage' },
-  ],
-  specialty: [
-    { label: 'Steam Deck', href: '/repair/steam-deck' },
-    { label: 'CAT S62 Charging Port', href: '/repair/iphone' },
-    { label: 'BlackMagic HDMI', href: '/repair/iphone' },
-  ],
-};
+import RepairsMegaMenu from './RepairsMegaMenu.astro';
 
 const devices = [
   { label: 'iPhone 11 Pro', href: '/devices/iphone-11-pro' },
@@ -92,106 +47,7 @@ const mobileLocations = [
     <nav aria-label="Main navigation" class="hidden lg:flex items-center gap-1 text-sm font-medium">
 
       <!-- Repairs mega menu -->
-      <div x-data="{ open: false }" class="relative" @mouseenter="open = true" @mouseleave="open = false">
-        <button
-          @click="open = !open"
-          :aria-expanded="open"
-          class="flex items-center gap-1 rounded-md px-3 py-2 transition-colors"
-          style="background-color: #e8472a; color: #ffffff;"
-        >
-          <a href="/repairs" class="outline-none" style="color: inherit;">Repairs</a>
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 transition-transform duration-200" :class="open ? 'rotate-180' : ''" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
-        </button>
-
-        <div
-          x-show="open"
-          x-transition:enter="transition ease-out duration-150"
-          x-transition:enter-start="opacity-0 translate-y-1"
-          x-transition:enter-end="opacity-100 translate-y-0"
-          x-transition:leave="transition ease-in duration-100"
-          x-transition:leave-start="opacity-100 translate-y-0"
-          x-transition:leave-end="opacity-0 translate-y-1"
-          @click.away="open = false"
-          class="absolute left-0 top-full mt-1 rounded-lg border border-border bg-white shadow-xl"
-          style="width: 660px; z-index: 9999;"
-          role="menu"
-        >
-          <div class="border-b border-border px-5 py-3">
-            <a href="/repairs" class="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline" role="menuitem">
-              <svg xmlns="http://www.w3.org/2000/svg" style="height:14px;width:14px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-              View All Repair Services
-            </a>
-          </div>
-
-          <div class="grid grid-cols-3 gap-0 p-6">
-            <div class="pr-6">
-              <p class="mb-3 flex items-center gap-1.5 text-xs font-semibold text-primary">
-                <svg xmlns="http://www.w3.org/2000/svg" style="height:13px;width:13px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" x2="12.01" y1="18" y2="18"/></svg>
-                Phone Repairs
-              </p>
-              <ul class="space-y-2.5">
-                {repairs.phones.map(l => (
-                  <li><a href={l.href} class="text-sm text-foreground hover:text-primary transition-colors" role="menuitem">{l.label}</a></li>
-                ))}
-              </ul>
-            </div>
-
-            <div class="border-x border-border px-6">
-              <p class="mb-3 flex items-center gap-1.5 text-xs font-semibold text-primary">
-                <svg xmlns="http://www.w3.org/2000/svg" style="height:13px;width:13px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><line x1="8" x2="16" y1="22" y2="22"/><line x1="12" x2="12" y1="18" y2="22"/></svg>
-                Tablets
-              </p>
-              <ul class="space-y-2.5 mb-7">
-                {repairs.tablets.map(l => (
-                  <li><a href={l.href} class="text-sm text-foreground hover:text-primary transition-colors" role="menuitem">{l.label}</a></li>
-                ))}
-              </ul>
-
-              <p class="mb-3 flex items-center gap-1.5 text-xs font-semibold text-primary">
-                <svg xmlns="http://www.w3.org/2000/svg" style="height:13px;width:13px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
-                Computers
-              </p>
-              <ul class="space-y-2.5">
-                {repairs.computers.map(l => (
-                  <li><a href={l.href} class="text-sm text-foreground hover:text-primary transition-colors" role="menuitem">{l.label}</a></li>
-                ))}
-              </ul>
-            </div>
-
-            <div class="pl-6">
-              <p class="mb-3 flex items-center gap-1.5 text-xs font-semibold text-primary">
-                <svg xmlns="http://www.w3.org/2000/svg" style="height:13px;width:13px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 11a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v5H6v-5Z"/><path d="M10 7V5a2 2 0 0 1 4 0v2"/><rect x="2" y="16" width="20" height="4" rx="1"/><path d="M8 16v-1"/><path d="M16 16v-1"/></svg>
-                Gaming Consoles
-              </p>
-              <ul class="space-y-2.5 mb-7">
-                {repairs.gaming.map(l => (
-                  <li><a href={l.href} class="text-sm text-foreground hover:text-primary transition-colors" role="menuitem">{l.label}</a></li>
-                ))}
-              </ul>
-
-              <p class="mb-3 flex items-center gap-1.5 text-xs font-semibold text-primary">
-                <svg xmlns="http://www.w3.org/2000/svg" style="height:13px;width:13px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>
-                Other Devices
-              </p>
-              <ul class="space-y-2.5 mb-7">
-                {repairs.otherDevices.map(l => (
-                  <li><a href={l.href} class="text-sm text-foreground hover:text-primary transition-colors" role="menuitem">{l.label}</a></li>
-                ))}
-              </ul>
-
-              <p class="mb-3 flex items-center gap-1.5 text-xs font-semibold text-primary">
-                <svg xmlns="http://www.w3.org/2000/svg" style="height:13px;width:13px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-                Specialty Repairs
-              </p>
-              <ul class="space-y-2.5">
-                {repairs.specialty.map(l => (
-                  <li><a href={l.href} class="text-sm text-foreground hover:text-primary transition-colors" role="menuitem">{l.label}</a></li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
+      <RepairsMegaMenu />
 
       <!-- Locations mega menu -->
       <div x-data="{ open: false }" class="relative" @mouseenter="open = true" @mouseleave="open = false">
@@ -317,29 +173,42 @@ const mobileLocations = [
         <div x-show="open" class="ml-4 mt-1 space-y-1 border-l border-border pl-4">
           <a href="/repairs" class="block rounded-md px-2 py-1.5 text-sm font-medium text-primary hover:bg-accent transition-colors">View All Repair Services</a>
           <p class="pb-1 pt-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">Phone Repairs</p>
-          {repairs.phones.map(l => (
-            <a href={l.href} class="block rounded-md px-2 py-1.5 text-sm hover:bg-accent transition-colors">{l.label}</a>
-          ))}
+          <a href="/repairs/iphone" class="block rounded-md px-2 py-1.5 text-sm hover:bg-accent transition-colors">iPhone</a>
+          <a href="/repairs/samsung" class="block rounded-md px-2 py-1.5 text-sm hover:bg-accent transition-colors">Samsung</a>
+          <a href="/repairs/google-pixel" class="block rounded-md px-2 py-1.5 text-sm hover:bg-accent transition-colors">Google Pixel</a>
+          <a href="/repairs/motorola" class="block rounded-md px-2 py-1.5 text-sm hover:bg-accent transition-colors">Motorola</a>
+          <a href="/repairs/oneplus" class="block rounded-md px-2 py-1.5 text-sm hover:bg-accent transition-colors">OnePlus</a>
+          <a href="/repairs/lg" class="block rounded-md px-2 py-1.5 text-sm hover:bg-accent transition-colors">LG</a>
+          <a href="/repairs/huawei" class="block rounded-md px-2 py-1.5 text-sm hover:bg-accent transition-colors">Huawei</a>
+          <a href="/repairs/xiaomi" class="block rounded-md px-2 py-1.5 text-sm hover:bg-accent transition-colors">Xiaomi</a>
+          <a href="/repairs/oppo" class="block rounded-md px-2 py-1.5 text-sm hover:bg-accent transition-colors">Oppo</a>
+          <a href="/repairs/nothing" class="block rounded-md px-2 py-1.5 text-sm hover:bg-accent transition-colors">Nothing</a>
+          <a href="/repairs/infinix" class="block rounded-md px-2 py-1.5 text-sm hover:bg-accent transition-colors">Infinix</a>
+          <a href="/repairs/tcl" class="block rounded-md px-2 py-1.5 text-sm hover:bg-accent transition-colors">TCL</a>
+          <a href="/repairs/zte" class="block rounded-md px-2 py-1.5 text-sm hover:bg-accent transition-colors">ZTE</a>
+          <a href="/repairs/blackberry" class="block rounded-md px-2 py-1.5 text-sm hover:bg-accent transition-colors">Blackberry</a>
           <p class="pb-1 pt-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">Tablets</p>
-          {repairs.tablets.map(l => (
-            <a href={l.href} class="block rounded-md px-2 py-1.5 text-sm hover:bg-accent transition-colors">{l.label}</a>
-          ))}
+          <a href="/repairs/ipad" class="block rounded-md px-2 py-1.5 text-sm hover:bg-accent transition-colors">iPad</a>
+          <a href="/repairs/galaxy-tab" class="block rounded-md px-2 py-1.5 text-sm hover:bg-accent transition-colors">Galaxy Tab</a>
+          <a href="/repairs/kindle-fire" class="block rounded-md px-2 py-1.5 text-sm hover:bg-accent transition-colors">Amazon Kindle/Fire</a>
           <p class="pb-1 pt-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">Computers</p>
-          {repairs.computers.map(l => (
-            <a href={l.href} class="block rounded-md px-2 py-1.5 text-sm hover:bg-accent transition-colors">{l.label}</a>
-          ))}
+          <a href="/repairs/macbook" class="block rounded-md px-2 py-1.5 text-sm hover:bg-accent transition-colors">MacBook</a>
+          <a href="/repairs/microsoft-surface" class="block rounded-md px-2 py-1.5 text-sm hover:bg-accent transition-colors">Microsoft Surface</a>
+          <a href="/repairs/laptop" class="block rounded-md px-2 py-1.5 text-sm hover:bg-accent transition-colors">Laptop Repair</a>
           <p class="pb-1 pt-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">Gaming Consoles</p>
-          {repairs.gaming.map(l => (
-            <a href={l.href} class="block rounded-md px-2 py-1.5 text-sm hover:bg-accent transition-colors">{l.label}</a>
-          ))}
+          <a href="/repairs/consoles" class="block rounded-md px-2 py-1.5 text-sm hover:bg-accent transition-colors">All Console Repairs</a>
+          <a href="/repairs/nintendo-switch" class="block rounded-md px-2 py-1.5 text-sm hover:bg-accent transition-colors">Nintendo Switch</a>
+          <a href="/repairs/playstation-5" class="block rounded-md px-2 py-1.5 text-sm hover:bg-accent transition-colors">PlayStation 5</a>
+          <a href="/repairs/playstation-4" class="block rounded-md px-2 py-1.5 text-sm hover:bg-accent transition-colors">PlayStation 4</a>
+          <a href="/repairs/xbox" class="block rounded-md px-2 py-1.5 text-sm hover:bg-accent transition-colors">Xbox</a>
+          <a href="/repairs/steam-deck" class="block rounded-md px-2 py-1.5 text-sm hover:bg-accent transition-colors">Steam Deck</a>
           <p class="pb-1 pt-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">Other Devices</p>
-          {repairs.otherDevices.map(l => (
-            <a href={l.href} class="block rounded-md px-2 py-1.5 text-sm hover:bg-accent transition-colors">{l.label}</a>
-          ))}
+          <a href="/repairs/apple-watch" class="block rounded-md px-2 py-1.5 text-sm hover:bg-accent transition-colors">Apple Watch</a>
+          <a href="/repairs/ipod" class="block rounded-md px-2 py-1.5 text-sm hover:bg-accent transition-colors">iPod</a>
+          <a href="/repairs/water-damage" class="block rounded-md px-2 py-1.5 text-sm hover:bg-accent transition-colors">Water Damage</a>
           <p class="pb-1 pt-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">Specialty Repairs</p>
-          {repairs.specialty.map(l => (
-            <a href={l.href} class="block rounded-md px-2 py-1.5 text-sm hover:bg-accent transition-colors">{l.label}</a>
-          ))}
+          <a href="/repairs/cat-s62-charging-port" class="block rounded-md px-2 py-1.5 text-sm hover:bg-accent transition-colors">CAT S62 Charging Port</a>
+          <a href="/repairs/blackmagic-hdmi" class="block rounded-md px-2 py-1.5 text-sm hover:bg-accent transition-colors">BlackMagic HDMI</a>
         </div>
       </div>
 

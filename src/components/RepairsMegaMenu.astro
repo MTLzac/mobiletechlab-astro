@@ -1,0 +1,167 @@
+---
+const phones = [
+  { name: "iPhone", href: "/repairs/iphone" },
+  { name: "Samsung", href: "/repairs/samsung" },
+  { name: "Google Pixel", href: "/repairs/google-pixel" },
+  { name: "Motorola", href: "/repairs/motorola" },
+  { name: "OnePlus", href: "/repairs/oneplus" },
+  { name: "LG", href: "/repairs/lg" },
+  { name: "Huawei", href: "/repairs/huawei" },
+  { name: "Xiaomi", href: "/repairs/xiaomi" },
+  { name: "Oppo", href: "/repairs/oppo" },
+  { name: "Nothing", href: "/repairs/nothing" },
+  { name: "Infinix", href: "/repairs/infinix" },
+  { name: "TCL", href: "/repairs/tcl" },
+  { name: "ZTE", href: "/repairs/zte" },
+  { name: "Blackberry", href: "/repairs/blackberry" },
+];
+
+const tablets = [
+  { name: "iPad", href: "/repairs/ipad" },
+  { name: "Galaxy Tab", href: "/repairs/galaxy-tab" },
+  { name: "Amazon Kindle/Fire", href: "/repairs/kindle-fire" },
+];
+
+const gaming = [
+  { name: "All Console Repairs", href: "/repairs/consoles" },
+  { name: "Nintendo Switch", href: "/repairs/nintendo-switch" },
+  { name: "PlayStation 5", href: "/repairs/playstation-5" },
+  { name: "PlayStation 4", href: "/repairs/playstation-4" },
+  { name: "Xbox", href: "/repairs/xbox" },
+  { name: "Steam Deck", href: "/repairs/steam-deck" },
+];
+
+const computers = [
+  { name: "MacBook", href: "/repairs/macbook" },
+  { name: "Microsoft Surface", href: "/repairs/microsoft-surface" },
+  { name: "Laptop Repair", href: "/repairs/laptop" },
+];
+
+const otherDevices = [
+  { name: "Apple Watch", href: "/repairs/apple-watch" },
+  { name: "iPod", href: "/repairs/ipod" },
+  { name: "Water Damage", href: "/repairs/water-damage" },
+];
+
+const specialty = [
+  { name: "CAT S62 Charging Port", href: "/repairs/cat-s62-charging-port" },
+  { name: "BlackMagic HDMI", href: "/repairs/blackmagic-hdmi" },
+];
+---
+
+<div class="relative inline-block group">
+  <button
+    type="button"
+    aria-haspopup="true"
+    class="flex items-center gap-1.5 text-sm font-semibold text-gray-800 hover:text-red-500 px-3 py-2 rounded-md transition-colors duration-150"
+  >
+    Repairs
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+  </button>
+
+  <div
+    role="navigation"
+    aria-label="Repair services menu"
+    class="absolute top-full left-1/2 -translate-x-1/2 mt-0 w-[680px] bg-white rounded-2xl shadow-2xl border border-gray-100 p-6 z-50 invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200"
+  >
+    <!-- View All CTA -->
+    <div class="flex items-center justify-between pb-4 mb-5 border-b border-gray-100">
+      <a
+        href="/repairs"
+        class="flex items-center gap-2 text-sm font-semibold text-red-500 hover:text-red-600 hover:underline transition-colors duration-150"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path stroke-linecap="round" stroke-linejoin="round" d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+        View All Repair Services
+      </a>
+    </div>
+
+    <!-- Row One: Phone Repairs | Tablets | Gaming Consoles -->
+    <div class="grid grid-cols-3 gap-0 divide-x divide-gray-100">
+
+      <!-- Phone Repairs -->
+      <div class="flex flex-col pr-5">
+        <div class="flex items-center gap-1.5 mb-3">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+          <span class="text-red-500 text-xs font-bold uppercase tracking-wide">Phone Repairs</span>
+        </div>
+        <div class="grid grid-cols-2 gap-x-3 gap-y-0">
+          {phones.map(item => (
+            <a href={item.href} class="block text-gray-700 text-sm py-1 hover:text-red-500 transition-colors duration-150">{item.name}</a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Tablets -->
+      <div class="flex flex-col px-5">
+        <div class="flex items-center gap-1.5 mb-3">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+          <span class="text-red-500 text-xs font-bold uppercase tracking-wide">Tablets</span>
+        </div>
+        {tablets.map(item => (
+          <a href={item.href} class="block text-gray-700 text-sm py-1 hover:text-red-500 transition-colors duration-150">{item.name}</a>
+        ))}
+      </div>
+
+      <!-- Gaming Consoles -->
+      <div class="flex flex-col pl-5">
+        <div class="flex items-center gap-1.5 mb-3">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="6" y1="12" x2="10" y2="12"/><line x1="8" y1="10" x2="8" y2="14"/><circle cx="15" cy="11" r="1"/><circle cx="17" cy="13" r="1"/><path d="M3 9l1.5 9h15L21 9a2 2 0 00-2-2H5a2 2 0 00-2 2z"/></svg>
+          <span class="text-red-500 text-xs font-bold uppercase tracking-wide">Gaming Consoles</span>
+        </div>
+        {gaming.map(item => (
+          <a href={item.href} class="block text-gray-700 text-sm py-1 hover:text-red-500 transition-colors duration-150">{item.name}</a>
+        ))}
+      </div>
+
+    </div>
+
+    <!-- Row Divider -->
+    <hr class="border-t border-gray-100 my-5" />
+
+    <!-- Row Two: Computers | Other Devices | Specialty Repairs -->
+    <div class="grid grid-cols-3 gap-0 divide-x divide-gray-100">
+
+      <!-- Computers -->
+      <div class="flex flex-col pr-5">
+        <div class="flex items-center gap-1.5 mb-3">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          <span class="text-red-500 text-xs font-bold uppercase tracking-wide">Computers</span>
+        </div>
+        {computers.map(item => (
+          <a href={item.href} class="block text-gray-700 text-sm py-1 hover:text-red-500 transition-colors duration-150">{item.name}</a>
+        ))}
+      </div>
+
+      <!-- Other Devices -->
+      <div class="flex flex-col px-5">
+        <div class="flex items-center gap-1.5 mb-3">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <span class="text-red-500 text-xs font-bold uppercase tracking-wide">Other Devices</span>
+        </div>
+        {otherDevices.map(item => (
+          <a href={item.href} class="block text-gray-700 text-sm py-1 hover:text-red-500 transition-colors duration-150">{item.name}</a>
+        ))}
+      </div>
+
+      <!-- Specialty Repairs -->
+      <div class="flex flex-col pl-5">
+        <div class="flex items-center gap-1.5 mb-3">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/></svg>
+          <span class="text-red-500 text-xs font-bold uppercase tracking-wide">Specialty Repairs</span>
+        </div>
+        {specialty.map(item => (
+          <a href={item.href} class="block text-gray-700 text-sm py-1 hover:text-red-500 transition-colors duration-150">{item.name}</a>
+        ))}
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      (document.activeElement as HTMLElement)?.blur();
+    }
+  });
+</script>
