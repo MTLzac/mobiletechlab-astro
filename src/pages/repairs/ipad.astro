@@ -1,0 +1,1420 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = "iPad Repair Winnipeg | Screen & Battery | Mobile Tech Lab";
+const description = "Professional iPad repair in Winnipeg & Thompson. Screen replacement, battery, charging port repair for iPad Pro, Air, mini & all models. Same-day service available.";
+const canonical = "https://mobiletechlab.ca/repairs/ipad";
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://mobiletechlab.ca/" },
+    { "@type": "ListItem", "position": 2, "name": "Repairs", "item": "https://mobiletechlab.ca/repairs" },
+    { "@type": "ListItem", "position": 3, "name": "iPad Repair", "item": "https://mobiletechlab.ca/repairs/ipad" }
+  ]
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "iPad Repair Service",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Mobile Tech Lab",
+    "url": "https://mobiletechlab.ca"
+  },
+  "areaServed": { "@type": "City", "name": "Winnipeg" },
+  "serviceType": "Tablet Repair",
+  "url": "https://mobiletechlab.ca/repairs/ipad",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "iPad Repair Services",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Screen Replacement" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Battery Replacement" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Charging Port Repair" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Liquid Damage Recovery" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Software and Boot Issues" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Button and Sensor Repair" } }
+    ]
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "How much does iPad screen repair cost in Winnipeg?", "acceptedAnswer": { "@type": "Answer", "text": "iPad repair costs vary significantly by model — standard iPad models are the most affordable to repair while iPad Pro screens are the most expensive due to their ProMotion OLED assemblies. Contact us or use our online quote tool for a free upfront price on your specific iPad model." } },
+    { "@type": "Question", "name": "How long does it take to repair a cracked iPad screen in Winnipeg?", "acceptedAnswer": { "@type": "Answer", "text": "Most iPad screen replacements are completed same-day at our Winnipeg St. Vital location, typically within a few hours. iPad Pro screen repairs may take longer due to the complexity of the fused display assembly — we'll give you a time estimate when you drop it off." } },
+    { "@type": "Question", "name": "Do you use genuine Apple parts for iPad repairs?", "acceptedAnswer": { "@type": "Answer", "text": "As an Apple Independent Repair Provider, we have access to genuine Apple parts and official diagnostics for iPad repairs. We also offer quality aftermarket parts at a lower price point — we'll explain both options and let you choose before starting any repair." } },
+    { "@type": "Question", "name": "What warranty do you offer on iPad repairs?", "acceptedAnswer": { "@type": "Answer", "text": "Screen repairs carry a 30-day to lifetime warranty depending on the part tier selected. Battery replacements include a 90-day warranty, and most other component repairs carry a lifetime warranty on parts and labour." } },
+    { "@type": "Question", "name": "Can you fix a water-damaged iPad in Winnipeg?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — we offer liquid damage recovery using ultrasonic cleaning and component-level diagnostics to assess what can be saved. Recovery success depends on the extent of the damage and how quickly the device was powered off after exposure — bring it in as soon as possible for the best outcome." } },
+    { "@type": "Question", "name": "Can you repair an iPad that won't turn on?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — a non-responsive iPad is often caused by a fully depleted battery, a failed display connection, or a software issue. We run free diagnostics to identify the root cause before recommending any repair so you know exactly what's wrong before spending anything." } },
+    { "@type": "Question", "name": "Do you repair iPad Pro screens in Winnipeg?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — we repair all iPad Pro models including the latest M4 Pro. iPad Pro screens use ProMotion OLED fused displays that require specialized tools and model-specific parts — we stock them for all current iPad Pro generations at our St. Vital location." } },
+    { "@type": "Question", "name": "Can you fix an iPad home button or Touch ID?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — we repair and replace home buttons, Touch ID sensors, power buttons, and Face ID components across all iPad models. Most button repairs are completed same-day and carry a warranty on parts and labour." } },
+    { "@type": "Question", "name": "Do I need an appointment for iPad repair in Winnipeg?", "acceptedAnswer": { "@type": "Answer", "text": "No appointment is needed — walk-ins are welcome at both our St. Vital and Thompson locations during business hours. Calling ahead is helpful for iPad Pro repairs so we can confirm we have your model's specific parts in stock before your visit." } },
+    { "@type": "Question", "name": "Do you repair iPads in Thompson, MB?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — our Thompson location at 300 Mystery Lake Rd #1530 accepts iPad repairs and walk-ins Monday through Saturday 10AM–6PM. For iPad Pro or less common models, calling ahead helps us confirm parts availability before your visit." } }
+  ]
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <Fragment slot="head">
+    <meta name="robots" content="index, follow" />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
+
+  <nav class="ipad-breadcrumb-nav" aria-label="Breadcrumb">
+    <div class="ipad-container">
+      <ol class="ipad-breadcrumb-list">
+        <li><a href="/" class="ipad-breadcrumb-link">Home</a></li>
+        <li><svg xmlns="http://www.w3.org/2000/svg" class="ipad-breadcrumb-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m9 18 6-6-6-6"/></svg></li>
+        <li><a href="/repairs" class="ipad-breadcrumb-link">Repairs</a></li>
+        <li><svg xmlns="http://www.w3.org/2000/svg" class="ipad-breadcrumb-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m9 18 6-6-6-6"/></svg></li>
+        <li class="ipad-breadcrumb-current" aria-current="page">iPad Repair</li>
+      </ol>
+    </div>
+  </nav>
+
+  <section class="ipad-hero-section" id="hero">
+    <div class="ipad-hero-inner">
+      <div class="ipad-hero-content">
+        <div class="ipad-hero-badge-row">
+          <span class="ipad-service-badge">Professional iPad Repair</span>
+          <span class="ipad-location-badge">
+            <span class="ipad-badge-dot"></span>
+            St. Vital — Open
+          </span>
+          <span class="ipad-location-badge">
+            <span class="ipad-badge-dot"></span>
+            Thompson — Opens tomorrow 10AM
+          </span>
+        </div>
+
+        <h1 class="ipad-hero-headline">
+          iPad Repair <span class="ipad-highlight">Winnipeg</span> &amp; Manitoba
+        </h1>
+        <p class="ipad-hero-subheadline">iPad Pro, Air, Mini & Standard Repair Specialists in Winnipeg</p>
+
+        <div class="ipad-hero-body">
+          <p>Shattered iPad screen or battery that won't hold a charge? We repair all iPad models at our Winnipeg shop — from the original iPad through iPad Pro M4, iPad Air M2, iPad mini 6th Gen, and all standard iPad generations. Common repairs include screen replacements, battery swaps, charging port fixes, liquid damage recovery, button and sensor repairs, and software issues.</p>
+          <p>iPad Pro screens use ProMotion OLED displays with fused glass assemblies — a repair that requires precision tools and model-specific parts most general repair shops don't carry. As an Apple Independent Repair Provider, our Winnipeg technicians have access to genuine Apple parts and official diagnostics for accurate, warranty-backed repairs.</p>
+        </div>
+
+        <div class="ipad-hero-cta-group">
+          <a href="https://shop.mobiletechlab.ca/pages/repair2" target="_blank" rel="noopener noreferrer" class="ipad-cta-primary">
+            Get a Free Quote &rarr;
+          </a>
+          <a href="tel:2045009757" class="ipad-cta-secondary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Call Now
+          </a>
+        </div>
+        <p class="ipad-pricing-note">Not sure what affects the cost? <a href="/pricing">How repair pricing works</a></p>
+      </div>
+
+      <div class="ipad-hero-image-wrapper">
+        <img
+          src="/assets/hero-ipad-CGp2855O.png"
+          alt="iPad repair in Winnipeg — screen and battery replacement specialists at Mobile Tech Lab"
+          width="500"
+          height="500"
+          loading="eager"
+        />
+        <ul class="ipad-annotations-list" aria-label="Common iPad issues we fix">
+          <li class="ipad-annotation">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+            Cracked screen
+          </li>
+          <li class="ipad-annotation">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+            Battery draining fast
+          </li>
+          <li class="ipad-annotation">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12H19M12 5l7 7-7 7"/></svg>
+            Charging port issues
+          </li>
+          <li class="ipad-annotation">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            Won't turn on
+          </li>
+          <li class="ipad-annotation">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg>
+            Water damage
+          </li>
+          <li class="ipad-annotation">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>
+            Home button broken
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="ipad-services-section" id="services">
+    <div class="ipad-container">
+      <div class="ipad-section-header">
+        <h2 class="ipad-section-title">iPad Repair Services in Winnipeg</h2>
+        <p class="ipad-section-subtitle">Expert repairs for all iPad models. Fast turnaround, quality parts, and warranty included.</p>
+      </div>
+      <div class="ipad-services-grid">
+        <div class="ipad-service-card">
+          <div class="ipad-service-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+          </div>
+          <h3 class="ipad-service-title">Screen Replacement</h3>
+          <p class="ipad-service-body">Cracked or unresponsive iPad screen? We handle fused LCD and digitizer assemblies for a factory-quality finish on all iPad models. Glass-only repairs are available for iPad Air and Mini to save money where the display beneath is undamaged. iPad Pro screens use ProMotion OLED panels that require precision tools and model-specific parts — we stock them for all current Pro generations.</p>
+        </div>
+        <div class="ipad-service-card">
+          <div class="ipad-service-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+          </div>
+          <h3 class="ipad-service-title">Battery Replacement</h3>
+          <p class="ipad-service-body">iPad dying at 20% or feeling sluggish during use? A fresh battery can add years to your device's lifespan. We replace batteries on all iPad models with quality cells and same-day turnaround. All battery replacements include a 90-day warranty.</p>
+        </div>
+        <div class="ipad-service-card">
+          <div class="ipad-service-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12H19M12 5l7 7-7 7"/></svg>
+          </div>
+          <h3 class="ipad-service-title">Charging Port Repair</h3>
+          <p class="ipad-service-body">iPad not charging or connecting to your computer? We clean the port before recommending replacement — debris is a common culprit. If the port is damaged we perform microsoldering to restore the Lightning or USB-C connection on all iPad models.</p>
+        </div>
+        <div class="ipad-service-card">
+          <div class="ipad-service-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg>
+          </div>
+          <h3 class="ipad-service-title">Liquid Damage Recovery</h3>
+          <p class="ipad-service-body">Spilled liquid on your iPad? Our ultrasonic cleaning process gives your device the best chance of recovery. We perform component-level diagnostics to assess what can be salvaged and give you a full report before recommending any repair.</p>
+        </div>
+        <div class="ipad-service-card">
+          <div class="ipad-service-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <h3 class="ipad-service-title">Software & Boot Issues</h3>
+          <p class="ipad-service-body">iPad stuck on the Apple logo, boot looping, or showing a black screen? Our technicians perform advanced restores, DFU recovery, and data recovery for software-related failures. We diagnose the root cause before attempting any restore so your data has the best chance of being preserved.</p>
+        </div>
+        <div class="ipad-service-card">
+          <div class="ipad-service-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <h3 class="ipad-service-title">Button & Sensor Repair</h3>
+          <p class="ipad-service-body">Home button unresponsive, power button stuck, Touch ID not working, or Face ID failing? We repair and replace home buttons, power buttons, Touch ID sensors, and Face ID components across all iPad models. Button repairs are typically completed same-day.</p>
+        </div>
+      </div>
+      <div class="ipad-section-cta">
+        <a href="https://shop.mobiletechlab.ca/pages/repair2" target="_blank" rel="noopener noreferrer" class="ipad-cta-primary">
+          Request Repair &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="ipad-models-section" id="models">
+    <div class="ipad-container">
+      <div class="ipad-section-header">
+        <h2 class="ipad-section-title">All iPad Models We Repair in Winnipeg</h2>
+        <p class="ipad-section-subtitle">From the original iPad through iPad Pro M4 — we repair every generation</p>
+      </div>
+      <div class="ipad-models-grid">
+        <div class="ipad-model-card">
+          <div class="ipad-model-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+          </div>
+          <h3 class="ipad-model-title">iPad Pro</h3>
+          <p class="ipad-model-description">ProMotion OLED displays require precision tools and model-specific parts. We stock screens for all current and recent iPad Pro generations including M4 and M2 models.</p>
+          <div class="ipad-model-pills">
+            <span class="ipad-pill">iPad Pro 11-inch (M4)</span>
+            <span class="ipad-pill">iPad Pro 13-inch (M4)</span>
+            <span class="ipad-pill">iPad Pro 12.9-inch (6th Gen)</span>
+            <span class="ipad-pill">iPad Pro 11-inch (4th Gen)</span>
+            <span class="ipad-pill">iPad Pro 12.9-inch (5th Gen)</span>
+            <span class="ipad-pill">All iPad Pro models</span>
+          </div>
+          <a href="https://shop.mobiletechlab.ca/pages/repair2" target="_blank" rel="noopener noreferrer" class="ipad-model-cta">
+            Get Quote &rarr;
+          </a>
+        </div>
+        <div class="ipad-model-card">
+          <div class="ipad-model-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+          </div>
+          <h3 class="ipad-model-title">iPad Air & iPad mini</h3>
+          <p class="ipad-model-description">Glass-only repairs available for iPad Air and Mini where the display beneath is undamaged — saving you money on the most common damage type. Battery and charging port repairs available same-day.</p>
+          <div class="ipad-model-pills">
+            <span class="ipad-pill">iPad Air 13-inch (M2)</span>
+            <span class="ipad-pill">iPad Air 11-inch (M2)</span>
+            <span class="ipad-pill">iPad Air (5th Gen)</span>
+            <span class="ipad-pill">iPad Air (4th Gen)</span>
+            <span class="ipad-pill">iPad mini (6th Gen)</span>
+            <span class="ipad-pill">iPad mini (5th Gen)</span>
+            <span class="ipad-pill">All Air & Mini models</span>
+          </div>
+          <a href="https://shop.mobiletechlab.ca/pages/repair2" target="_blank" rel="noopener noreferrer" class="ipad-model-cta">
+            Get Quote &rarr;
+          </a>
+        </div>
+        <div class="ipad-model-card">
+          <div class="ipad-model-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+          </div>
+          <h3 class="ipad-model-title">Standard iPad</h3>
+          <p class="ipad-model-description">The most affordable iPad to repair — standard iPad models use LCD displays with non-fused glass assemblies that are quicker and less expensive to replace than Pro or Air screens.</p>
+          <div class="ipad-model-pills">
+            <span class="ipad-pill">iPad (10th Gen)</span>
+            <span class="ipad-pill">iPad (9th Gen)</span>
+            <span class="ipad-pill">iPad (8th Gen)</span>
+            <span class="ipad-pill">iPad (7th Gen)</span>
+            <span class="ipad-pill">iPad (6th Gen)</span>
+            <span class="ipad-pill">All standard iPad models</span>
+          </div>
+          <a href="https://shop.mobiletechlab.ca/pages/repair2" target="_blank" rel="noopener noreferrer" class="ipad-model-cta">
+            Get Quote &rarr;
+          </a>
+        </div>
+        <div class="ipad-model-card">
+          <div class="ipad-model-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+          </div>
+          <h3 class="ipad-model-title">Legacy & Discontinued iPads</h3>
+          <p class="ipad-model-description">Don't see your model? We service all iPad generations including older iPad Pro, Air, and mini models. Contact us to confirm parts availability for your specific generation.</p>
+          <div class="ipad-model-pills">
+            <span class="ipad-pill">iPad Pro (1st Gen)</span>
+            <span class="ipad-pill">iPad Air (3rd Gen)</span>
+            <span class="ipad-pill">iPad Air (2nd Gen)</span>
+            <span class="ipad-pill">iPad mini (4th Gen)</span>
+            <span class="ipad-pill">iPad mini (3rd Gen)</span>
+            <span class="ipad-pill">All legacy models</span>
+          </div>
+          <a href="https://shop.mobiletechlab.ca/pages/repair2" target="_blank" rel="noopener noreferrer" class="ipad-model-cta">
+            Get Quote &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ipad-why-section" id="why-choose-us">
+    <div class="ipad-container">
+      <div class="ipad-section-header">
+        <h2 class="ipad-section-title">The Mobile Tech Lab Advantage: Winnipeg's iPad Repair Experts</h2>
+        <p class="ipad-section-subtitle">Why Winnipeg customers trust us with their iPads</p>
+      </div>
+      <div class="ipad-pillars-grid">
+        <div class="ipad-pillar-card">
+          <div class="ipad-pillar-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <h3 class="ipad-pillar-title">Apple IRP Certified</h3>
+          <p class="ipad-pillar-body">Mobile Tech Lab is an Apple Independent Repair Provider — giving us access to genuine Apple parts, official diagnostics, and specialized tools for iPad repair. This means your iPad is repaired to Apple's own quality standards without the Apple Store wait times.</p>
+        </div>
+        <div class="ipad-pillar-card">
+          <div class="ipad-pillar-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3 class="ipad-pillar-title">Same-Day Service</h3>
+          <p class="ipad-pillar-body">Most iPad screen and battery repairs are completed same-day at our Winnipeg St. Vital location. Walk in any time during business hours — no appointment needed, though calling ahead helps us confirm we have your specific model's parts ready.</p>
+        </div>
+        <div class="ipad-pillar-card">
+          <div class="ipad-pillar-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+          </div>
+          <h3 class="ipad-pillar-title">Warranty on Every Repair</h3>
+          <p class="ipad-pillar-body">Screen repairs carry a 30-day to lifetime warranty depending on part tier selected. Battery replacements include a 90-day warranty. All other repairs carry a lifetime warranty on parts and labour — so you can trust the fix will last.</p>
+        </div>
+        <div class="ipad-pillar-card">
+          <div class="ipad-pillar-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+          </div>
+          <h3 class="ipad-pillar-title">Transparent Pricing</h3>
+          <p class="ipad-pillar-body">We provide free diagnostics and upfront quotes before starting any iPad repair. Multiple part quality tiers are available so you can choose the level of repair that fits your budget — we explain every option clearly before you decide.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ipad-cost-section" id="pricing">
+    <div class="ipad-container">
+      <div class="ipad-section-header">
+        <h2 class="ipad-section-title">Worried About Repair Cost? You Have Options.</h2>
+        <p class="ipad-section-subtitle">Most customers use one of these options to lower their repair cost.</p>
+      </div>
+      <div class="ipad-cost-grid">
+        <div class="ipad-cost-card">
+          <div class="ipad-cost-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="12" x2="12" y1="1" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <h3 class="ipad-cost-title">We'll Match Any Local Repair Price</h3>
+          <p class="ipad-cost-body">Found a lower price at another Winnipeg repair shop? We'll match it — so you don't overpay. No pressure. No hassle.</p>
+          <a href="sms:2045009757?body=Hey%20Mobile%20Tech%20Lab!%20I%20want%20a%20better%20price%20on%20a%20repair!" class="ipad-price-match-btn">
+            Check If We Can Match Your Price
+          </a>
+        </div>
+        <div class="ipad-cost-card">
+          <div class="ipad-cost-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l4 2"/></svg>
+          </div>
+          <h3 class="ipad-cost-title">Lower Your iPad Repair Cost With a Trade-In</h3>
+          <p class="ipad-cost-body">Trade in phones, tablets, consoles, or laptops — even broken ones — to reduce today's repair cost.</p>
+          <p class="ipad-cost-note">Get paid via Cash, E-Transfer, or Store Credit</p>
+          <a href="/trade-in" class="ipad-trade-in-btn">
+            Lower My iPad Repair Cost &rarr;
+          </a>
+        </div>
+      </div>
+      <div class="ipad-pricing-context">
+        <p class="ipad-context-paragraph">iPad repair costs depend heavily on the model and the type of screen — an iPad 9th Gen uses a standard LCD assembly that is significantly less expensive to repair than an iPad Pro M4 which uses a tandem OLED ProMotion display. <a href="https://support.apple.com/en-ca/111901" target="_blank" rel="noopener noreferrer" class="ipad-context-link">Apple's iPad repair service documentation</a> outlines warranty coverage and what to expect from out-of-warranty repairs.</p>
+        <p class="ipad-context-paragraph">Many customers are surprised that an iPad Pro screen replacement can approach or exceed the cost of a new standard iPad. <a href="https://www.ifixit.com/Search?query=ipad+teardown" target="_blank" rel="noopener noreferrer" class="ipad-context-link">iFixit's iPad teardowns</a> show exactly why — the adhesive-sealed fused glass assemblies in Pro models require precision disassembly under heat and magnification, making them more labour-intensive than standard tablet repairs.</p>
+        <p class="ipad-context-paragraph">If your iPad repair cost approaches its current resale value, we'll tell you honestly — and walk you through alternatives including data transfer to a new device or trade-in options toward a newer model. We'd rather give you the right advice than take your money for a repair that doesn't make financial sense.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="ipad-locations-section" id="locations">
+    <div class="ipad-container">
+      <div class="ipad-section-header">
+        <h2 class="ipad-section-title">iPad Repair Locations in Winnipeg & Thompson</h2>
+        <p class="ipad-section-subtitle">Two Manitoba locations. Walk-ins welcome at both.</p>
+      </div>
+      <div class="ipad-locations-grid">
+        <div class="ipad-location-card">
+          <span class="ipad-walkin-badge">Walk-ins welcome · Same-day repairs available</span>
+          <h3 class="ipad-location-name">St. Vital Location</h3>
+          <p class="ipad-location-address">845 Dakota St #25, Winnipeg, MB R2M 5M3</p>
+          <div class="ipad-location-hours">
+            <p>Mon–Sat: 9AM – 7PM</p>
+            <p>Sun: 12PM – 7PM</p>
+          </div>
+          <div class="ipad-location-actions">
+            <a href="tel:2045009757" class="ipad-location-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              (204) 500-9757
+            </a>
+            <a href="https://maps.google.com/?q=845+Dakota+St+%2325+Winnipeg+MB+R2M+5M3" target="_blank" rel="noopener noreferrer" class="ipad-location-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              Get Directions
+            </a>
+          </div>
+        </div>
+        <div class="ipad-location-card">
+          <span class="ipad-location-badge-tag">Serving Northern Manitoba</span>
+          <h3 class="ipad-location-name">Thompson Location</h3>
+          <p class="ipad-location-address">300 Mystery Lake Rd #1530, Thompson, MB R8N 0M2</p>
+          <div class="ipad-location-hours">
+            <p>Mon–Sat: 10AM – 6PM</p>
+            <p>Sun: Closed</p>
+          </div>
+          <div class="ipad-location-actions">
+            <a href="tel:2044100262" class="ipad-location-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              (204) 410-0262
+            </a>
+            <a href="https://maps.google.com/?q=300+Mystery+Lake+Rd+%231530+Thompson+MB+R8N+0M2" target="_blank" rel="noopener noreferrer" class="ipad-location-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              Get Directions
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ipad-faq-section" id="faqs">
+    <div class="ipad-container">
+      <div class="ipad-section-header">
+        <h2 class="ipad-section-title">iPad Repair FAQs</h2>
+        <p class="ipad-section-subtitle">Common questions about iPad repair at Mobile Tech Lab in Winnipeg</p>
+      </div>
+      <div class="ipad-faq-list">
+        <details class="ipad-faq-item">
+          <summary class="ipad-faq-summary">
+            <span>How much does iPad screen repair cost in Winnipeg?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="ipad-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <p class="ipad-faq-answer">iPad repair costs vary significantly by model — standard iPad models are the most affordable to repair while iPad Pro screens are the most expensive due to their ProMotion OLED assemblies. Contact us or use our online quote tool for a free upfront price on your specific iPad model.</p>
+        </details>
+        <details class="ipad-faq-item">
+          <summary class="ipad-faq-summary">
+            <span>How long does it take to repair a cracked iPad screen in Winnipeg?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="ipad-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <p class="ipad-faq-answer">Most iPad screen replacements are completed same-day at our Winnipeg St. Vital location, typically within a few hours. iPad Pro screen repairs may take longer due to the complexity of the fused display assembly — we'll give you a time estimate when you drop it off.</p>
+        </details>
+        <details class="ipad-faq-item">
+          <summary class="ipad-faq-summary">
+            <span>Do you use genuine Apple parts for iPad repairs?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="ipad-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <p class="ipad-faq-answer">As an Apple Independent Repair Provider, we have access to genuine Apple parts and official diagnostics for iPad repairs. We also offer quality aftermarket parts at a lower price point — we'll explain both options and let you choose before starting any repair.</p>
+        </details>
+        <details class="ipad-faq-item">
+          <summary class="ipad-faq-summary">
+            <span>What warranty do you offer on iPad repairs?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="ipad-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <p class="ipad-faq-answer">Screen repairs carry a 30-day to lifetime warranty depending on the part tier selected. Battery replacements include a 90-day warranty, and most other component repairs carry a lifetime warranty on parts and labour.</p>
+        </details>
+        <details class="ipad-faq-item">
+          <summary class="ipad-faq-summary">
+            <span>Can you fix a water-damaged iPad in Winnipeg?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="ipad-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <p class="ipad-faq-answer">Yes — we offer liquid damage recovery using ultrasonic cleaning and component-level diagnostics to assess what can be saved. Recovery success depends on the extent of the damage and how quickly the device was powered off after exposure — bring it in as soon as possible for the best outcome.</p>
+        </details>
+        <details class="ipad-faq-item">
+          <summary class="ipad-faq-summary">
+            <span>Can you repair an iPad that won't turn on?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="ipad-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <p class="ipad-faq-answer">Yes — a non-responsive iPad is often caused by a fully depleted battery, a failed display connection, or a software issue. We run free diagnostics to identify the root cause before recommending any repair so you know exactly what's wrong before spending anything.</p>
+        </details>
+        <details class="ipad-faq-item">
+          <summary class="ipad-faq-summary">
+            <span>Do you repair iPad Pro screens in Winnipeg?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="ipad-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <p class="ipad-faq-answer">Yes — we repair all iPad Pro models including the latest M4 Pro. iPad Pro screens use ProMotion OLED fused displays that require specialized tools and model-specific parts — we stock them for all current iPad Pro generations at our St. Vital location.</p>
+        </details>
+        <details class="ipad-faq-item">
+          <summary class="ipad-faq-summary">
+            <span>Can you fix an iPad home button or Touch ID?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="ipad-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <p class="ipad-faq-answer">Yes — we repair and replace home buttons, Touch ID sensors, power buttons, and Face ID components across all iPad models. Most button repairs are completed same-day and carry a warranty on parts and labour.</p>
+        </details>
+        <details class="ipad-faq-item">
+          <summary class="ipad-faq-summary">
+            <span>Do I need an appointment for iPad repair in Winnipeg?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="ipad-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <p class="ipad-faq-answer">No appointment is needed — walk-ins are welcome at both our St. Vital and Thompson locations during business hours. Calling ahead is helpful for iPad Pro repairs so we can confirm we have your model's specific parts in stock before your visit.</p>
+        </details>
+        <details class="ipad-faq-item">
+          <summary class="ipad-faq-summary">
+            <span>Do you repair iPads in Thompson, MB?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="ipad-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <p class="ipad-faq-answer">Yes — our Thompson location at 300 Mystery Lake Rd #1530 accepts iPad repairs and walk-ins Monday through Saturday 10AM–6PM. For iPad Pro or less common models, calling ahead helps us confirm parts availability before your visit.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="ipad-final-cta-section">
+    <div class="ipad-container">
+      <div class="ipad-final-cta-inner">
+        <h2 class="ipad-final-cta-title">Ready to Fix Your iPad?</h2>
+        <p class="ipad-final-cta-subtitle">Get a free quote online or walk in to either of our Manitoba locations.</p>
+        <div class="ipad-final-cta-group">
+          <a href="https://shop.mobiletechlab.ca/pages/repair2" target="_blank" rel="noopener noreferrer" class="ipad-cta-primary">
+            Get a Free Quote
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="tel:2045009757" class="ipad-cta-secondary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Call Now
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    :root {
+      --color-primary: #ef4444;
+      --color-primary-dark: #dc2626;
+      --color-primary-light: #fff1f1;
+      --color-primary-border: #fde8e8;
+      --color-primary-hover-bg: #fecaca;
+      --color-text-dark: #111827;
+      --color-text-body: #374151;
+      --color-text-muted: #6b7280;
+      --color-text-subtle: #9ca3af;
+      --color-bg-white: #ffffff;
+      --color-bg-section: linear-gradient(135deg, #fff5f5 0%, #ffffff 50%, #fff5f5 100%);
+      --color-card-border: #fde8e8;
+      --border-radius-card: 16px;
+      --border-radius-btn: 10px;
+      --shadow-card: 0 2px 16px rgba(239, 68, 68, 0.07);
+      --shadow-card-hover: 0 12px 32px rgba(239, 68, 68, 0.13);
+      --shadow-btn-hover: 0 6px 20px rgba(239, 68, 68, 0.35);
+    }
+
+    .ipad-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .ipad-section-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .ipad-section-title {
+      font-size: clamp(1.5rem, 3vw, 1.875rem);
+      font-weight: 700;
+      color: var(--color-text-dark);
+      margin: 0 0 12px 0;
+    }
+
+    .ipad-section-subtitle {
+      font-size: 15px;
+      color: var(--color-text-muted);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .ipad-breadcrumb-nav {
+      border-bottom: 1px solid #e5e7eb;
+      background: var(--color-bg-white);
+    }
+
+    .ipad-breadcrumb-nav .ipad-container {
+      padding-top: 12px;
+      padding-bottom: 12px;
+    }
+
+    .ipad-breadcrumb-list {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      color: var(--color-text-muted);
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .ipad-breadcrumb-link {
+      color: var(--color-text-muted);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .ipad-breadcrumb-link:hover {
+      color: var(--color-text-dark);
+    }
+
+    .ipad-breadcrumb-chevron {
+      width: 12px;
+      height: 12px;
+      flex-shrink: 0;
+    }
+
+    .ipad-breadcrumb-current {
+      color: var(--color-text-dark);
+      font-weight: 500;
+    }
+
+    .ipad-hero-section {
+      background: var(--color-bg-section);
+      width: 100%;
+      padding: 60px 24px 80px;
+    }
+
+    .ipad-hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .ipad-hero-content {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .ipad-hero-badge-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .ipad-service-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 5px 14px;
+      background: var(--color-primary-light);
+      border: 1px solid var(--color-primary-border);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--color-primary);
+    }
+
+    .ipad-location-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 500;
+      color: #16a34a;
+    }
+
+    .ipad-badge-dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: #16a34a;
+      flex-shrink: 0;
+    }
+
+    .ipad-hero-headline {
+      font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+      font-weight: 900;
+      line-height: 1.1;
+      color: var(--color-text-dark);
+      margin: 0;
+    }
+
+    .ipad-highlight {
+      color: var(--color-text-dark);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      text-decoration-color: var(--color-primary);
+    }
+
+    .ipad-hero-subheadline {
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--color-text-body);
+      margin: 0;
+    }
+
+    .ipad-hero-body {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .ipad-hero-body p {
+      font-size: 15px;
+      color: #4b5563;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .ipad-hero-body a {
+      color: var(--color-primary);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .ipad-hero-cta-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .ipad-cta-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      background: var(--color-primary);
+      color: var(--color-bg-white);
+      border: none;
+      border-radius: var(--border-radius-btn);
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+    }
+
+    .ipad-cta-primary:hover {
+      background-color: var(--color-primary-dark);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-btn-hover);
+    }
+
+    .ipad-cta-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 24px;
+      background: var(--color-bg-white);
+      color: var(--color-text-body);
+      border: 1.5px solid #e5e7eb;
+      border-radius: var(--border-radius-btn);
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: border-color 0.2s ease, color 0.2s ease;
+      cursor: pointer;
+    }
+
+    .ipad-cta-secondary:hover {
+      border-color: var(--color-primary);
+      color: var(--color-primary);
+    }
+
+    .ipad-pricing-note {
+      font-size: 13px;
+      color: var(--color-text-subtle);
+      margin: 0;
+    }
+
+    .ipad-pricing-note a {
+      color: var(--color-primary);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .ipad-hero-image-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .ipad-hero-image-wrapper img {
+      width: 100%;
+      max-width: 420px;
+      height: auto;
+      display: block;
+      object-fit: contain;
+    }
+
+    .ipad-annotations-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+    }
+
+    .ipad-annotation {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      background: var(--color-primary-light);
+      border: 1px solid var(--color-primary-border);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--color-primary);
+    }
+
+    .ipad-annotation svg {
+      flex-shrink: 0;
+      stroke: var(--color-primary);
+    }
+
+    .ipad-services-section {
+      background: var(--color-bg-white);
+      padding: 80px 0;
+    }
+
+    .ipad-services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .ipad-service-card {
+      background: var(--color-bg-white);
+      border: 1px solid var(--color-card-border);
+      border-left: 4px solid var(--color-primary);
+      border-radius: var(--border-radius-card);
+      padding: 24px;
+      box-shadow: var(--shadow-card);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .ipad-service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-card-hover);
+    }
+
+    .ipad-service-icon-wrapper {
+      background-color: var(--color-primary-light);
+      border-radius: 10px;
+      padding: 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      width: 44px;
+      height: 44px;
+    }
+
+    .ipad-service-icon-wrapper svg {
+      stroke: var(--color-primary);
+      width: 22px;
+      height: 22px;
+    }
+
+    .ipad-service-card:hover .ipad-service-icon-wrapper {
+      background-color: var(--color-primary-hover-bg);
+    }
+
+    .ipad-service-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--color-text-dark);
+      margin: 0 0 10px 0;
+    }
+
+    .ipad-service-body {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .ipad-section-cta {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .ipad-models-section {
+      background: linear-gradient(135deg, #fafafa 0%, #f9fafb 100%);
+      padding: 80px 0;
+    }
+
+    .ipad-models-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .ipad-model-card {
+      background: var(--color-bg-white);
+      border: 1px solid var(--color-card-border);
+      border-left: 4px solid var(--color-primary);
+      border-radius: var(--border-radius-card);
+      padding: 28px;
+      box-shadow: var(--shadow-card);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .ipad-model-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-card-hover);
+    }
+
+    .ipad-model-icon-wrapper {
+      background-color: var(--color-primary-light);
+      border-radius: 10px;
+      padding: 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      width: 44px;
+      height: 44px;
+    }
+
+    .ipad-model-icon-wrapper svg {
+      stroke: var(--color-primary);
+      width: 22px;
+      height: 22px;
+    }
+
+    .ipad-model-card:hover .ipad-model-icon-wrapper {
+      background-color: var(--color-primary-hover-bg);
+    }
+
+    .ipad-model-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--color-text-dark);
+      margin: 0 0 8px 0;
+    }
+
+    .ipad-model-description {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      line-height: 1.6;
+      margin: 0 0 16px 0;
+      flex: 1;
+    }
+
+    .ipad-model-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 20px;
+    }
+
+    .ipad-pill {
+      padding: 4px 10px;
+      background: #f3f4f6;
+      border: 1px solid #e5e7eb;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--color-text-body);
+    }
+
+    .ipad-model-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--color-primary);
+      text-decoration: none;
+      transition: gap 0.2s ease;
+    }
+
+    .ipad-model-cta:hover {
+      gap: 10px;
+    }
+
+    .ipad-why-section {
+      background: var(--color-bg-white);
+      padding: 80px 0;
+    }
+
+    .ipad-pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .ipad-pillar-card {
+      background: var(--color-bg-white);
+      border: 1px solid var(--color-card-border);
+      border-left: 4px solid var(--color-primary);
+      border-radius: var(--border-radius-card);
+      padding: 24px;
+      box-shadow: var(--shadow-card);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .ipad-pillar-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-card-hover);
+    }
+
+    .ipad-pillar-icon-wrapper {
+      background-color: var(--color-primary-light);
+      border-radius: 10px;
+      padding: 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      width: 44px;
+      height: 44px;
+    }
+
+    .ipad-pillar-icon-wrapper svg {
+      stroke: var(--color-primary);
+      width: 22px;
+      height: 22px;
+    }
+
+    .ipad-pillar-card:hover .ipad-pillar-icon-wrapper {
+      background-color: var(--color-primary-hover-bg);
+    }
+
+    .ipad-pillar-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--color-text-dark);
+      margin: 0 0 8px 0;
+    }
+
+    .ipad-pillar-body {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .ipad-cost-section {
+      background: var(--color-bg-section);
+      width: 100%;
+      padding: 80px 24px;
+    }
+
+    .ipad-cost-section .ipad-container {
+      padding: 0;
+    }
+
+    .ipad-cost-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .ipad-cost-card {
+      background: var(--color-bg-white);
+      border: 1px solid var(--color-card-border);
+      border-left: 4px solid var(--color-primary);
+      border-radius: var(--border-radius-card);
+      padding: 28px;
+      box-shadow: var(--shadow-card);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .ipad-cost-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-card-hover);
+    }
+
+    .ipad-cost-icon-wrapper {
+      background-color: var(--color-primary-light);
+      border-radius: 10px;
+      padding: 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      width: 44px;
+      height: 44px;
+    }
+
+    .ipad-cost-icon-wrapper svg {
+      stroke: var(--color-primary);
+      width: 22px;
+      height: 22px;
+    }
+
+    .ipad-cost-card:hover .ipad-cost-icon-wrapper {
+      background-color: var(--color-primary-hover-bg);
+    }
+
+    .ipad-cost-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--color-text-dark);
+      margin: 0 0 12px 0;
+    }
+
+    .ipad-cost-body {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      margin: 0 0 16px 0;
+      flex: 1;
+    }
+
+    .ipad-cost-note {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--color-text-subtle);
+      margin: 0 0 20px 0;
+    }
+
+    .ipad-price-match-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 14px 20px;
+      border: 1.5px solid #d1d5db;
+      border-radius: var(--border-radius-btn);
+      background: var(--color-bg-white);
+      color: var(--color-text-body);
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+      box-sizing: border-box;
+    }
+
+    .ipad-price-match-btn:hover {
+      border-color: var(--color-primary);
+      color: var(--color-primary);
+      box-shadow: 0 2px 12px rgba(239, 68, 68, 0.1);
+    }
+
+    .ipad-trade-in-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 14px 20px;
+      background: var(--color-primary-light);
+      color: var(--color-primary);
+      border: 1.5px solid #fca5a5;
+      border-radius: var(--border-radius-btn);
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+      box-sizing: border-box;
+    }
+
+    .ipad-trade-in-btn:hover {
+      background-color: var(--color-primary-hover-bg);
+      border-color: var(--color-primary);
+      box-shadow: 0 2px 12px rgba(239, 68, 68, 0.15);
+    }
+
+    .ipad-pricing-context {
+      max-width: 800px;
+      margin: 40px auto 0 auto;
+    }
+
+    .ipad-context-paragraph {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .ipad-context-link {
+      color: var(--color-primary);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .ipad-locations-section {
+      background: #fafafa;
+      padding: 80px 0;
+    }
+
+    .ipad-locations-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .ipad-location-card {
+      background: var(--color-bg-white);
+      border: 1px solid var(--color-card-border);
+      border-radius: var(--border-radius-card);
+      padding: 28px;
+      box-shadow: var(--shadow-card);
+    }
+
+    .ipad-walkin-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 12px;
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #16a34a;
+      margin-bottom: 16px;
+    }
+
+    .ipad-location-badge-tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 12px;
+      background: var(--color-primary-light);
+      border: 1px solid var(--color-primary-border);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--color-primary);
+      margin-bottom: 16px;
+    }
+
+    .ipad-location-name {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--color-text-dark);
+      margin: 0 0 6px 0;
+    }
+
+    .ipad-location-address {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      margin: 0 0 16px 0;
+    }
+
+    .ipad-location-hours {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      margin-bottom: 20px;
+      line-height: 1.7;
+    }
+
+    .ipad-location-hours p {
+      margin: 0;
+    }
+
+    .ipad-location-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .ipad-location-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--color-primary);
+      text-decoration: none;
+      transition: gap 0.2s ease;
+    }
+
+    .ipad-location-link:hover {
+      gap: 10px;
+    }
+
+    .ipad-location-link svg {
+      stroke: var(--color-primary);
+    }
+
+    .ipad-faq-section {
+      background: var(--color-bg-white);
+      padding: 80px 0;
+    }
+
+    .ipad-faq-list {
+      max-width: 760px;
+      margin: 0 auto;
+      border-top: 1px solid #e5e7eb;
+    }
+
+    .ipad-faq-item {
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .ipad-faq-summary {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 20px 0;
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--color-text-dark);
+      list-style: none;
+    }
+
+    .ipad-faq-summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .ipad-faq-chevron {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      stroke: var(--color-text-muted);
+      transition: transform 0.2s ease;
+      margin-top: 2px;
+    }
+
+    details[open] .ipad-faq-chevron {
+      transform: rotate(180deg);
+    }
+
+    .ipad-faq-answer {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      margin: 0 0 20px 0;
+      padding-right: 34px;
+    }
+
+    .ipad-final-cta-section {
+      background: var(--color-primary-light);
+      border-top: 1px solid var(--color-primary-border);
+      padding: 80px 0;
+    }
+
+    .ipad-final-cta-inner {
+      text-align: center;
+    }
+
+    .ipad-final-cta-title {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 700;
+      color: var(--color-text-dark);
+      margin: 0 0 12px 0;
+    }
+
+    .ipad-final-cta-subtitle {
+      font-size: 15px;
+      color: var(--color-text-muted);
+      margin: 0 0 32px 0;
+    }
+
+    .ipad-final-cta-group {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 1200px) {
+      .ipad-models-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 1024px) {
+      .ipad-pillars-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .ipad-hero-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .ipad-services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .ipad-services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .ipad-models-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .ipad-cost-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .ipad-locations-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .ipad-pillars-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
+</BaseLayout>
