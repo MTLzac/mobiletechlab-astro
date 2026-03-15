@@ -1,0 +1,250 @@
+---
+const reviews = [
+  {
+    reviewer: "J Moneyas",
+    initial: "J",
+    avatarBg: "#ef4444",
+    text: `"Got recommended to this place by my sister... The service is very quick, I was told it would take 2-3 hours to fix and they had it done in under an hour and a half... Overall, very good experience."`,
+  },
+  {
+    reviewer: "Sourav Sourav",
+    initial: "S",
+    avatarBg: "#dc2626",
+    text: `"Really happy with the service. Tanvin, he is the best guy. Helped me right away. My phone was hanging and stopped work. He fixed it within minutes. Saved me from losing all my data."`,
+  },
+  {
+    reviewer: "GuitarCharlie S",
+    initial: "G",
+    avatarBg: "#b91c1c",
+    text: `"My iPhone XR was completely dead no charging whatsoever or signs of life. I bring it into this shop and a friendly guy fixed it in a matter of seconds and didn't charge a dime. Best repair shop in Winnipeg, thanks again!"`,
+  },
+  {
+    reviewer: "Kaptain Chronic",
+    initial: "K",
+    avatarBg: "#ef4444",
+    text: `"Super fast and very friendly service... Me and my wife brought in an xbox with an unknown issue and they very quickly got back to us... repaired for us a day before they said it would be done. These guys are good I highly recommend."`,
+  },
+];
+---
+
+<section class="reviews-section">
+  <div class="reviews-wrapper">
+
+    <div class="header-stars" aria-hidden="true">
+      {Array.from({ length: 5 }).map(() => (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="#ef4444" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+        </svg>
+      ))}
+    </div>
+
+    <h2 class="reviews-heading">Trusted by Hundreds of Winnipeg Repair Customers</h2>
+    <p class="reviews-subheading">500+ 5-star reviews on Google from real Manitoba customers</p>
+
+    <div class="reviews-grid">
+      {reviews.map(review => (
+        <div class="review-card">
+          <div>
+            <div class="google-badge">
+              <svg width="16" height="16" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+                <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+                <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+                <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+                <path fill="none" d="M0 0h48v48H0z"/>
+              </svg>
+              <span class="google-badge-label">Google Review</span>
+            </div>
+
+            <div class="review-quote-mark">&ldquo;</div>
+            <p class="review-text">{review.text}</p>
+          </div>
+
+          <div class="review-footer">
+            <div class="reviewer-info">
+              <div class="reviewer-avatar" style={`background: ${review.avatarBg}`}>{review.initial}</div>
+              <span class="reviewer-name">{review.reviewer}</span>
+            </div>
+            <div class="review-stars" aria-label="5 stars">
+              {Array.from({ length: 5 }).map(() => (
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#ef4444" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                </svg>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <a
+      class="reviews-cta"
+      href="https://www.google.com/maps/search/Mobile+Tech+Lab+Winnipeg"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      See All 500+ Reviews on Google
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+        <polyline points="15 3 21 3 21 9"/>
+        <line x1="10" x2="21" y1="14" y2="3"/>
+      </svg>
+    </a>
+
+  </div>
+</section>
+
+<style>
+  .reviews-section {
+    width: 100%;
+    background: linear-gradient(135deg, #fff5f5 0%, #fff 50%, #fff5f5 100%);
+    padding: 80px 24px;
+  }
+
+  .reviews-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .header-stars {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    margin-bottom: 16px;
+  }
+
+  .reviews-heading {
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 800;
+    color: #111827;
+    margin: 0 0 12px 0;
+    line-height: 1.2;
+  }
+
+  .reviews-subheading {
+    font-size: 15px;
+    color: #6b7280;
+    margin: 0 0 48px 0;
+  }
+
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 48px;
+  }
+
+  .review-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+    border: 1px solid #fde8e8;
+    box-shadow: 0 2px 12px rgba(239, 68, 68, 0.06);
+  }
+
+  .google-badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 16px;
+  }
+
+  .google-badge-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: #9ca3af;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+
+  .review-quote-mark {
+    font-size: 32px;
+    line-height: 1;
+    color: #fca5a5;
+    font-family: Georgia, serif;
+    margin-bottom: 8px;
+  }
+
+  .review-text {
+    font-size: 13.5px;
+    color: #374151;
+    line-height: 1.65;
+    flex-grow: 1;
+    margin: 0 0 20px 0;
+  }
+
+  .review-footer {
+    border-top: 1px solid #f3f4f6;
+    padding-top: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .reviewer-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .reviewer-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+
+  .reviewer-name {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    color: #111827;
+  }
+
+  .review-stars {
+    display: flex;
+    gap: 2px;
+  }
+
+  .reviews-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #ffffff;
+    color: #111827;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 12px 28px;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    text-decoration: none;
+    transition: border-color 0.15s ease, color 0.15s ease;
+  }
+
+  .reviews-cta:hover {
+    border-color: #ef4444;
+    color: #ef4444;
+  }
+
+  @media (max-width: 1024px) {
+    .reviews-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .reviews-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

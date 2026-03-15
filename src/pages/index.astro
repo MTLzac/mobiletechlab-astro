@@ -2,6 +2,7 @@
 import MainLayout from '../layouts/MainLayout.astro';
 import RepairOptions from '../components/RepairOptions.astro';
 import WhyTrustUs from '../components/WhyTrustUs.astro';
+import ReviewsSection from '../components/ReviewsSection.astro';
 
 const title = "Professional Phone, Tablet, and Computer Repair | Mobile Tech Lab";
 const description = "Expert phone repair, tablet repair, computer repair, and console repair in Winnipeg and Thompson. Fast service, quality parts, and professional technicians.";
@@ -152,74 +153,7 @@ const services = [
     </div>
   </section>
 
-  <section class="bg-[#f5f5f5] py-16 md:py-20">
-    <div class="container mx-auto px-4">
-      <div class="mb-10 text-center">
-        <div class="mb-3 flex justify-center gap-1">
-          {[1,2,3,4,5].map(() => (
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 fill-[#e8472a] text-[#e8472a]" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          ))}
-        </div>
-        <h2 class="mb-2 text-3xl font-bold tracking-tight md:text-4xl">Trusted by Hundreds of Winnipeg Repair Customers</h2>
-        <p class="text-muted-foreground">500+ 5-star reviews on Google from real Manitoba customers</p>
-      </div>
-
-      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        {[
-          {
-            text: "Got recommended to this place by my sister... The service is very quick, I was told it would take 2-3 hours to fix and they had it done in under an hour and a half... Overall, very good experience.",
-            name: "J Moneyas",
-            initials: "JM",
-          },
-          {
-            text: "Really happy with the service. Tanvin, he is the best guy. Helped me right away. My phone was hanging and stopped work. He fixed it within minutes. Saved me from losing all my data.",
-            name: "Sourav Sourav",
-            initials: "SS",
-          },
-          {
-            text: "My iPhone XR was completely dead no charging whatsoever or signs of life. I bring it into this shop and a friendly guy fixed it in a matter of seconds and didn't charge a dime. Best repair shop in Winnipeg, thanks again!",
-            name: "GuitarCharlie S",
-            initials: "GS",
-          },
-          {
-            text: "Super fast and very friendly service... Me and my wife brought in an xbox with an unknown issue and they very quickly got back to us... repaired for us a day before they said it would be done. These guys are good I highly recommend.",
-            name: "Kaptain Chronic",
-            initials: "KC",
-          },
-        ].map(review => (
-          <div class="flex flex-col rounded-lg border border-border bg-white p-5">
-            <div class="mb-4 text-2xl font-serif text-[#e8472a] opacity-60 leading-none">&ldquo;&rdquo;</div>
-            <p class="flex-1 text-sm text-muted-foreground leading-relaxed mb-6">&ldquo;{review.text}&rdquo;</p>
-            <div class="border-t border-border pt-4 flex items-center gap-3">
-              <div class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#c0392b] text-white text-xs font-bold">
-                {review.initials}
-              </div>
-              <div>
-                <p class="text-sm font-semibold text-foreground">{review.name}</p>
-                <div class="flex gap-0.5 mt-0.5">
-                  {[1,2,3,4,5].map(() => (
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 fill-[#e8472a] text-[#e8472a]" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <div class="mt-10 text-center">
-        <a
-          href="https://www.google.com/maps/place/Mobile+Tech+Lab"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 rounded-md border border-input bg-background px-6 py-2.5 text-sm font-medium hover:bg-accent transition-colors"
-        >
-          See All 500+ Reviews on Google
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
-        </a>
-      </div>
-    </div>
-  </section>
+  <ReviewsSection />
 
   <RepairOptions />
 
