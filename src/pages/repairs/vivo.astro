@@ -791,57 +791,268 @@ const faqSchema = {
   </style>
 
   <!-- Section 6: Locations -->
-  <section class="py-16 md:py-20" id="locations">
-    <div class="container mx-auto px-4">
-      <div class="mb-10 text-center">
-        <h2 class="mb-3 text-2xl font-bold md:text-3xl">Vivo Repair Locations in Winnipeg</h2>
-        <p class="mx-auto max-w-2xl text-muted-foreground">Two convenient Winnipeg locations. Walk-ins welcome.</p>
-      </div>
-      <div class="mx-auto grid max-w-4xl gap-6 md:grid-cols-2">
-        <div class="rounded-lg border border-border bg-card p-6">
-          <div class="mb-2 inline-flex items-center rounded-full bg-green-50 px-3 py-1 text-xs font-medium text-green-700 border border-green-200">Walk-ins Welcome</div>
-          <h3 class="mb-1 mt-3 font-semibold text-foreground">St. Vital Centre</h3>
-          <p class="mb-4 text-sm text-muted-foreground">1225 St Mary's Rd, Winnipeg, MB R2M 5E5</p>
-          <div class="mb-4 space-y-1 text-sm text-muted-foreground">
-            <p>Mon–Sat: 10AM – 7PM</p>
-            <p>Sun: 12PM – 5PM</p>
+  <section class="locations-section" id="locations">
+    <div class="locations-inner">
+      <h2 class="locations-heading">Device Repair Locations in Winnipeg &amp; Manitoba</h2>
+      <p class="locations-subheading">Two convenient locations to serve you. Walk-ins welcome or book your appointment online.</p>
+      <p class="locations-service-area">Serving all Winnipeg neighborhoods including St. Vital, Fort Garry, Transcona, Garden City, and surrounding Manitoba communities. Also serving customers from Thompson, MB.</p>
+
+      <div class="locations-grid">
+        <!-- St. Vital -->
+        <div class="location-card">
+          <div class="location-card-header">
+            <h3 class="location-title">St. Vital Location</h3>
           </div>
-          <div class="flex flex-wrap gap-3">
-            <a href="tel:2045009757" class="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              (204) 500-9757
+          <a
+            href="https://maps.google.com/?q=845+Dakota+St+%2325+Winnipeg+MB+R2M+5M3"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="location-address"
+          >845 Dakota St #25, Winnipeg, MB R2M 5M3</a>
+          <div class="location-hours-block">
+            <p class="location-hours">
+              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              Mon–Sat: 9AM – 7PM
+            </p>
+            <p class="location-hours">
+              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              Sun: 12PM – 7PM
+            </p>
+          </div>
+          <div class="location-actions">
+            <a href="tel:2045009757" class="location-call-btn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              Call (204) 500-9757
             </a>
-            <a href="https://maps.google.com/?q=Mobile+Tech+Lab+St+Vital" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <a href="https://maps.google.com/?q=845+Dakota+St+%2325+Winnipeg+MB+R2M+5M3" target="_blank" rel="noopener noreferrer" class="location-directions-btn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
               Get Directions
             </a>
           </div>
+          <p class="location-walkin">Walk-ins welcome · Same-day repairs available</p>
         </div>
-        <div class="rounded-lg border border-border bg-card p-6">
-          <div class="mb-2 inline-flex items-center rounded-full bg-green-50 px-3 py-1 text-xs font-medium text-green-700 border border-green-200">Walk-ins Welcome</div>
-          <h3 class="mb-1 mt-3 font-semibold text-foreground">Garden City Shopping Centre</h3>
-          <p class="mb-4 text-sm text-muted-foreground">2305 McPhillips St, Winnipeg, MB R2V 3E1</p>
-          <div class="mb-4 space-y-1 text-sm text-muted-foreground">
-            <p>Mon–Sat: 10AM – 7PM</p>
-            <p>Sun: 12PM – 5PM</p>
+
+        <!-- Thompson -->
+        <div class="location-card">
+          <div class="location-card-header">
+            <h3 class="location-title">Thompson Location</h3>
+            <span class="location-badge">Serving Northern Manitoba</span>
           </div>
-          <div class="flex flex-wrap gap-3">
-            <a href="tel:2045157736" class="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              (204) 515-7736
+          <a
+            href="https://maps.google.com/?q=300+Mystery+Lake+Rd+%231530+Thompson+MB+R8N+0M2"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="location-address"
+          >300 Mystery Lake Rd #1530, Thompson, MB R8N 0M2</a>
+          <div class="location-hours-block">
+            <p class="location-hours">
+              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              Mon–Sat: 10AM – 6PM
+            </p>
+            <p class="location-hours">
+              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              Sun: Closed
+            </p>
+          </div>
+          <div class="location-actions">
+            <a href="tel:2044100262" class="location-call-btn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              Call (204) 410-0262
             </a>
-            <a href="https://maps.google.com/?q=Mobile+Tech+Lab+Garden+City" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <a href="https://maps.google.com/?q=300+Mystery+Lake+Rd+%231530+Thompson+MB+R8N+0M2" target="_blank" rel="noopener noreferrer" class="location-directions-btn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
               Get Directions
             </a>
           </div>
+          <p class="location-walkin">Walk-ins welcome</p>
         </div>
       </div>
-      <p class="mt-8 text-center text-sm text-muted-foreground">
-        Serving St. Vital, Fort Garry, Garden City, Transcona, and all Winnipeg neighborhoods. Also serving Thompson, MB.
-      </p>
     </div>
   </section>
+
+  <style>
+    .locations-section {
+      width: 100%;
+      background: linear-gradient(135deg, #fff5f5 0%, #ffffff 50%, #fff5f5 100%);
+      padding: 80px 24px;
+    }
+
+    .locations-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .locations-heading {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 800;
+      color: #111827;
+      margin: 0 0 12px 0;
+      text-align: center;
+    }
+
+    .locations-subheading {
+      font-size: 15px;
+      color: #6b7280;
+      text-align: center;
+      margin: 0 0 12px 0;
+    }
+
+    .locations-service-area {
+      font-size: 13px;
+      color: #9ca3af;
+      text-align: center;
+      margin: 0 0 48px 0;
+    }
+
+    .locations-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      text-align: left;
+    }
+
+    .location-card {
+      background: #ffffff;
+      border: 1px solid #fde8e8;
+      border-left: 4px solid #ef4444;
+      border-radius: 16px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      box-shadow: 0 2px 16px rgba(239, 68, 68, 0.07);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .location-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(239, 68, 68, 0.13);
+    }
+
+    .location-card-header {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .location-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #111827;
+      margin: 0;
+    }
+
+    .location-badge {
+      display: inline-flex;
+      align-items: center;
+      font-size: 11px;
+      font-weight: 600;
+      color: #ef4444;
+      background: #fff1f1;
+      border: 1px solid #fecaca;
+      border-radius: 999px;
+      padding: 3px 10px;
+      white-space: nowrap;
+      width: fit-content;
+    }
+
+    .location-address {
+      font-size: 13.5px;
+      color: #6b7280;
+      text-decoration: none;
+      display: block;
+      transition: color 0.15s ease;
+    }
+
+    .location-address:hover {
+      color: #ef4444;
+    }
+
+    .location-hours-block {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .location-hours {
+      font-size: 12.5px;
+      color: #9ca3af;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin: 0;
+    }
+
+    .location-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .location-call-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 14px 20px;
+      background: #ef4444;
+      color: #ffffff;
+      border: none;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+      box-sizing: border-box;
+    }
+
+    .location-call-btn:hover {
+      background-color: #dc2626;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(239, 68, 68, 0.35);
+    }
+
+    .location-directions-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 14px 20px;
+      background: #ffffff;
+      color: #374151;
+      border: 1.5px solid #e5e7eb;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+      box-sizing: border-box;
+    }
+
+    .location-directions-btn:hover {
+      border-color: #ef4444;
+      color: #ef4444;
+      box-shadow: 0 2px 12px rgba(239, 68, 68, 0.1);
+    }
+
+    .location-walkin {
+      font-size: 12px;
+      color: #9ca3af;
+      text-align: center;
+      margin-top: 4px;
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 768px) {
+      .locations-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 
   <!-- Section 7: FAQs -->
   <section class="py-16 md:py-20" id="faqs">
