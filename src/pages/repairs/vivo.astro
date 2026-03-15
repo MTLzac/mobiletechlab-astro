@@ -1,0 +1,700 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = "Vivo Repair Winnipeg | X Series & iQOO Fix | Mobile Tech Lab";
+const description = "Vivo phone repair in Winnipeg. Screen, battery, camera repair for Vivo X100, V30, Y series & iQOO gaming phones. Growing brand specialists.";
+const canonical = "https://mobiletechlab.ca/repair/vivo";
+
+const services = [
+  {
+    name: "Screen Replacement",
+    description: "Replace AMOLED displays on Vivo X100, V30, and all Vivo devices.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M13 3H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-3"/><path d="M8 21h8"/><path d="M12 17v4"/><path d="m22 3-5 5"/><path d="m17 3 5 5"/></svg>`
+  },
+  {
+    name: "Battery Replacement",
+    description: "Restore battery life with FlashCharge compatibility—up to 120W charging preserved.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="16" height="10" x="2" y="7" rx="2" ry="2"/><line x1="22" x2="22" y1="11" y2="13"/></svg>`
+  },
+  {
+    name: "Charging Port Repair",
+    description: "Fix FlashCharge and USB-C port issues.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 22V11"/><path d="M5 12H2a10 10 0 0 0 20 0h-3"/><path d="M5 5v3"/><path d="M19 5v3"/><path d="M5 8h14"/></svg>`
+  },
+  {
+    name: "Camera Repair",
+    description: "Repair ZEISS-partnered cameras on flagship Vivo X series.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>`
+  },
+  {
+    name: "Speaker Repair",
+    description: "Fix Hi-Res Audio certified speakers.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>`
+  },
+  {
+    name: "Fingerprint Sensor",
+    description: "Repair in-display fingerprint sensors.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 12C2 6.5 6.5 2 12 2a10 10 0 0 1 8 4"/><path d="M5 19.5C5.5 18 6 15 6 12c0-.7.12-1.37.34-2"/><path d="M17.29 21.02c.12-.6.43-2.3.5-3.02"/><path d="M12 10a2 2 0 0 0-2 2c0 1.02-.1 2.51-.26 4"/><path d="M8.65 22c.21-.66.45-1.32.57-2"/><path d="M14 13.12c0 2.38 0 6.38-1 8.88"/><path d="M2 16h.01"/><path d="M21.8 16c.2-2 .131-5.354 0-6"/><path d="M9 6.8a6 6 0 0 1 9 5.2c0 .47 0 1.17-.02 2"/></svg>`
+  }
+];
+
+const modelCategories = [
+  {
+    title: "X Series Flagships",
+    description: "Premium X series with ZEISS camera partnership.",
+    models: ["X100 Pro", "X100", "X90 Pro+", "X90 Pro", "X90", "X80 Pro", "X80"],
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" x2="12.01" y1="18" y2="18"/></svg>`
+  },
+  {
+    title: "V Series",
+    description: "Portrait-focused V series.",
+    models: ["V30 Pro", "V30", "V29 Pro", "V29"],
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" x2="12.01" y1="18" y2="18"/></svg>`
+  },
+  {
+    title: "Y Series",
+    description: "Budget-friendly Y series.",
+    models: ["Y100", "Y78", "Y56", "Y36"],
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" x2="12.01" y1="18" y2="18"/></svg>`
+  },
+  {
+    title: "iQOO Gaming",
+    description: "High-performance gaming phones.",
+    models: ["iQOO 12 Pro", "iQOO 12", "iQOO 11", "iQOO Neo 9"],
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="6" x2="10" y1="11" y2="11"/><line x1="8" x2="8" y1="9" y2="13"/><line x1="15" x2="15" y1="12" y2="12"/><line x1="17" x2="17" y1="12" y2="12"/><rect width="20" height="12" x="2" y="6" rx="2"/></svg>`
+  },
+  {
+    title: "Foldables",
+    description: "Foldable screen and hinge repairs.",
+    models: ["X Fold 3 Pro", "X Fold 3", "X Fold 2", "X Flip"],
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="3" width="9" height="18" rx="1"/><rect x="13" y="3" width="9" height="18" rx="1"/></svg>`
+  }
+];
+
+const pillars = [
+  {
+    title: "Vivo & iQOO Specialists",
+    body: "Winnipeg's experts in Vivo phones and iQOO gaming devices.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>`
+  },
+  {
+    title: "Growing Brand Specialists",
+    body: "Early adopters supporting Vivo's expansion in Canada.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>`
+  },
+  {
+    title: "iQOO Gaming Experts",
+    body: "Specialized in iQOO gaming phone repairs and cooling systems.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="6" x2="10" y1="11" y2="11"/><line x1="8" x2="8" y1="9" y2="13"/><line x1="15" x2="15" y1="12" y2="12"/><line x1="17" x2="17" y1="12" y2="12"/><rect width="20" height="12" x="2" y="6" rx="2"/></svg>`
+  },
+  {
+    title: "Warranty on Every Repair",
+    body: "Screen repair warranties vary by part tier (30 days to lifetime). 90-day battery warranty. Lifetime warranty on most other repairs.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`
+  }
+];
+
+const faqs = [
+  {
+    question: "Do you repair Vivo phones in Winnipeg?",
+    answer: "Yes! We're Winnipeg's Vivo and iQOO specialists."
+  },
+  {
+    question: "Can you fix FlashCharge fast charging issues?",
+    answer: "Absolutely! We diagnose and repair FlashCharge issues from 44W to 120W."
+  },
+  {
+    question: "Do you repair Vivo foldable phones?",
+    answer: "Yes, we service the Vivo X Fold and X Flip foldable devices."
+  },
+  {
+    question: "Are Vivo parts available in Winnipeg?",
+    answer: "We can source parts for most Vivo models."
+  },
+  {
+    question: "Do you repair iQOO gaming phones?",
+    answer: "Yes! We're experts in all iQOO models."
+  }
+];
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://mobiletechlab.ca/" },
+    { "@type": "ListItem", "position": 2, "name": "Repairs", "item": "https://mobiletechlab.ca/repair" },
+    { "@type": "ListItem", "position": 3, "name": "Vivo", "item": "https://mobiletechlab.ca/repair/vivo" }
+  ]
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Vivo Repair Service",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Mobile Tech Lab",
+    "url": "https://mobiletechlab.ca"
+  },
+  "areaServed": { "@type": "City", "name": "Winnipeg" },
+  "serviceType": "Phone Repair",
+  "url": "https://mobiletechlab.ca/repair/vivo",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Vivo Repair Services",
+    "itemListElement": services.map(s => ({
+      "@type": "Offer",
+      "itemOffered": { "@type": "Service", "name": s.name }
+    }))
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(f => ({
+    "@type": "Question",
+    "name": f.question,
+    "acceptedAnswer": { "@type": "Answer", "text": f.answer }
+  }))
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <Fragment slot="head">
+    <meta name="robots" content="index, follow" />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
+
+  <!-- Breadcrumbs -->
+  <nav class="border-b border-border bg-background" aria-label="Breadcrumb">
+    <div class="container mx-auto px-4 py-3">
+      <ol class="vivo-breadcrumb-list">
+        <li><a href="/" class="vivo-breadcrumb-link">Home</a></li>
+        <li>
+          <svg xmlns="http://www.w3.org/2000/svg" class="vivo-breadcrumb-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m9 18 6-6-6-6"/></svg>
+        </li>
+        <li><a href="/repair" class="vivo-breadcrumb-link">Repairs</a></li>
+        <li>
+          <svg xmlns="http://www.w3.org/2000/svg" class="vivo-breadcrumb-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m9 18 6-6-6-6"/></svg>
+        </li>
+        <li class="vivo-breadcrumb-current" aria-current="page">Vivo</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- Section 1: Hero -->
+  <section class="vivo-hero-section" id="hero">
+    <div class="vivo-hero-inner">
+      <div class="vivo-hero-content">
+        <div class="vivo-hero-badge-row">
+          <span class="vivo-hero-service-badge">Professional Vivo Repair</span>
+          <span class="vivo-hero-location-badge open">
+            <span class="vivo-badge-dot"></span>
+            St. Vital — Open
+          </span>
+          <span class="vivo-hero-location-badge closed">
+            <span class="vivo-badge-dot"></span>
+            Garden City — Open
+          </span>
+        </div>
+
+        <h1 class="vivo-hero-headline">
+          Vivo &amp; iQOO Repair in <span class="vivo-highlight">Winnipeg</span>
+        </h1>
+        <p class="vivo-hero-subheadline">Vivo X Series, V Series, Y Series &amp; iQOO Gaming Specialists</p>
+        <div class="vivo-hero-body">
+          <p>
+            From the ZEISS-equipped X100 flagship to iQOO gaming phones, we repair all <a href="https://www.vivo.com/en/support" target="_blank" rel="noopener noreferrer">Vivo devices</a> in Winnipeg. Screen replacements, battery repairs, FlashCharge port fixes, and more — all backed by our warranty.
+          </p>
+          <p>
+            Whether you have a cracked AMOLED display, a degraded battery, a malfunctioning in-display fingerprint sensor, or ZEISS camera damage, our Winnipeg technicians handle every Vivo and iQOO model.
+          </p>
+        </div>
+
+        <div class="vivo-hero-cta-group">
+          <a href="/contact" class="vivo-cta-primary">
+            Get a Free Quote
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="tel:2045009757" class="vivo-cta-secondary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Call Now
+          </a>
+        </div>
+        <p class="vivo-hero-pricing-note">
+          Not sure what affects the cost? <a href="/repair-pricing">How repair pricing works</a>
+        </p>
+      </div>
+
+      <div class="vivo-hero-image-wrapper">
+        <img
+          src="/assets/hero-vivo-rDHrMj0e.png"
+          alt="Vivo repair services in Winnipeg"
+          width="600"
+          height="400"
+          loading="eager"
+        />
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .vivo-breadcrumb-list {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      color: #6b7280;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .vivo-breadcrumb-link {
+      color: #6b7280;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .vivo-breadcrumb-link:hover {
+      color: #111827;
+    }
+
+    .vivo-breadcrumb-chevron {
+      width: 12px;
+      height: 12px;
+      flex-shrink: 0;
+    }
+
+    .vivo-breadcrumb-current {
+      color: #111827;
+      font-weight: 500;
+    }
+
+    .vivo-hero-section {
+      background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 50%, #f0f9ff 100%);
+      width: 100%;
+      padding: 60px 24px 80px;
+    }
+
+    .vivo-hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .vivo-hero-content {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .vivo-hero-image-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .vivo-hero-image-wrapper img {
+      width: 100%;
+      max-width: 580px;
+      height: auto;
+      display: block;
+      object-fit: contain;
+    }
+
+    .vivo-hero-badge-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .vivo-hero-service-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 5px 14px;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #2563eb;
+    }
+
+    .vivo-hero-location-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .vivo-hero-location-badge.open {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      color: #16a34a;
+    }
+
+    .vivo-hero-location-badge.closed {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      color: #16a34a;
+    }
+
+    .vivo-badge-dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      background: #16a34a;
+    }
+
+    .vivo-hero-headline {
+      font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+      font-weight: 900;
+      line-height: 1.1;
+      color: #111827;
+      margin: 0;
+    }
+
+    .vivo-highlight {
+      color: #2563eb;
+    }
+
+    .vivo-hero-subheadline {
+      font-size: 17px;
+      font-weight: 600;
+      color: #374151;
+      margin: 0;
+    }
+
+    .vivo-hero-body {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .vivo-hero-body p {
+      font-size: 15px;
+      color: #4b5563;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .vivo-hero-body a {
+      color: #2563eb;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .vivo-hero-cta-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .vivo-cta-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      background: #2563eb;
+      color: #ffffff;
+      border: none;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+    }
+
+    .vivo-cta-primary:hover {
+      background-color: #1d4ed8;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.35);
+    }
+
+    .vivo-cta-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 24px;
+      background: #ffffff;
+      color: #374151;
+      border: 1.5px solid #e5e7eb;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: border-color 0.2s ease, color 0.2s ease;
+      cursor: pointer;
+    }
+
+    .vivo-cta-secondary:hover {
+      border-color: #2563eb;
+      color: #2563eb;
+    }
+
+    .vivo-hero-pricing-note {
+      font-size: 13px;
+      color: #9ca3af;
+      margin: 0;
+    }
+
+    .vivo-hero-pricing-note a {
+      color: #2563eb;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    @media (max-width: 900px) {
+      .vivo-hero-inner {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+    }
+  </style>
+
+  <!-- Section 2: Services -->
+  <section class="py-16 md:py-20" id="services">
+    <div class="container mx-auto px-4">
+      <div class="mb-10 text-center">
+        <h2 class="mb-3 text-2xl font-bold md:text-3xl">Vivo Repair Services in Winnipeg</h2>
+        <p class="mx-auto max-w-2xl text-muted-foreground">Every repair backed by our warranty. Free diagnostics on all Vivo issues.</p>
+      </div>
+      <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {services.map(service => (
+          <div class="rounded-lg border border-border bg-card p-6">
+            <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-lg bg-primary/10 text-primary vivo-service-icon" set:html={service.icon} />
+            <h3 class="mb-2 font-semibold text-foreground">{service.name}</h3>
+            <p class="text-sm text-muted-foreground leading-relaxed">{service.description}</p>
+          </div>
+        ))}
+      </div>
+      <div class="mt-10 text-center">
+        <a
+          href="/contact"
+          class="inline-flex items-center gap-2 rounded-md bg-primary px-8 py-3 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
+        >
+          Request Repair
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .vivo-service-icon svg {
+      width: 24px;
+      height: 24px;
+    }
+  </style>
+
+  <!-- Section 3: Models -->
+  <section class="bg-secondary/40 py-16 md:py-20" id="models">
+    <div class="container mx-auto px-4">
+      <div class="mb-10 text-center">
+        <h2 class="mb-3 text-2xl font-bold md:text-3xl">All Vivo Models We Repair in Winnipeg</h2>
+        <p class="mx-auto max-w-2xl text-muted-foreground">We repair all Vivo phones including X series, V series, Y series, X Fold foldables, and iQOO gaming devices.</p>
+      </div>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {modelCategories.map(cat => (
+          <div class="rounded-lg border border-border bg-background p-6">
+            <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-lg bg-primary/10 text-primary vivo-model-icon" set:html={cat.icon} />
+            <h3 class="mb-2 font-semibold text-foreground">{cat.title}</h3>
+            <p class="mb-4 text-sm text-muted-foreground leading-relaxed">{cat.description}</p>
+            <div class="mb-5 flex flex-wrap gap-2">
+              {cat.models.map(model => (
+                <span class="rounded-full border border-border bg-secondary px-3 py-1 text-xs font-medium text-foreground">{model}</span>
+              ))}
+            </div>
+            <a href="/contact" class="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline">
+              Get Quote
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .vivo-model-icon svg {
+      width: 24px;
+      height: 24px;
+    }
+  </style>
+
+  <!-- Section 4: Why Choose Us -->
+  <section class="py-16 md:py-20" id="why-choose-us">
+    <div class="container mx-auto px-4">
+      <div class="mb-10 text-center">
+        <h2 class="mb-3 text-2xl font-bold md:text-3xl">Why Choose Mobile Tech Lab for Vivo Repair in Winnipeg</h2>
+        <p class="mx-auto max-w-2xl text-muted-foreground">Vivo and iQOO repair requires brand-specific expertise. Here's what sets us apart.</p>
+      </div>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {pillars.map(pillar => (
+          <div class="rounded-lg border border-border bg-card p-6">
+            <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-lg bg-primary/10 text-primary vivo-pillar-icon" set:html={pillar.icon} />
+            <h3 class="mb-2 font-semibold text-foreground">{pillar.title}</h3>
+            <p class="text-sm text-muted-foreground leading-relaxed">{pillar.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .vivo-pillar-icon svg {
+      width: 24px;
+      height: 24px;
+    }
+  </style>
+
+  <!-- Section 5: Pricing -->
+  <section class="bg-secondary/40 py-16 md:py-20">
+    <div class="container mx-auto px-4">
+      <div class="mb-10 text-center">
+        <h2 class="mb-3 text-2xl font-bold md:text-3xl">Worried About Repair Cost? You Have Options.</h2>
+        <p class="mx-auto max-w-2xl text-muted-foreground">Most customers use one of these options to lower their repair cost.</p>
+      </div>
+      <div class="mx-auto grid max-w-4xl gap-6 md:grid-cols-2">
+        <div class="rounded-lg border border-border bg-background p-8">
+          <h3 class="mb-3 text-lg font-semibold text-foreground">We'll Match Any Local Repair Price</h3>
+          <p class="mb-2 text-sm text-muted-foreground leading-relaxed">
+            Vivo repair costs vary by model. Vivo's <a href="https://www.vivo.com/en/support" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">official support centre</a> provides battery care tips. Many customers are surprised that flagship Vivo repairs can cost as much as Samsung or iPhone repairs — <a href="https://www.ifixit.com/Search?query=smartphone+repair+guide" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">iFixit's smartphone repair resources</a> help understand AMOLED complexity.
+          </p>
+          <p class="mb-6 text-sm text-muted-foreground leading-relaxed">If the repair cost doesn't make sense, we'll explain alternatives clearly. When repair isn't practical, data recovery is often still possible.</p>
+          <a
+            href="sms:2045009757?body=Hi%2C%20I%20found%20your%20site%20searching%20for%20Vivo%20repair.%20Can%20you%20help%3F"
+            class="inline-flex items-center gap-2 rounded-md border border-input bg-background px-6 py-2.5 text-sm font-medium hover:bg-accent transition-colors"
+          >
+            Check If We Can Match Your Price
+          </a>
+        </div>
+        <div class="rounded-lg border border-primary/30 bg-primary/5 p-8">
+          <h3 class="mb-3 text-lg font-semibold text-foreground">Lower Your Vivo Repair Cost With a Trade-In</h3>
+          <p class="mb-2 text-sm text-muted-foreground leading-relaxed">Trade in phones, tablets, consoles, or laptops — even broken ones — to reduce today's repair cost.</p>
+          <p class="mb-6 text-xs font-medium text-muted-foreground">Get paid via Cash, E-Transfer, or Store Credit</p>
+          <a
+            href="/trade-in"
+            class="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-2.5 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
+          >
+            Lower My Repair Cost
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6: Locations -->
+  <section class="py-16 md:py-20" id="locations">
+    <div class="container mx-auto px-4">
+      <div class="mb-10 text-center">
+        <h2 class="mb-3 text-2xl font-bold md:text-3xl">Vivo Repair Locations in Winnipeg</h2>
+        <p class="mx-auto max-w-2xl text-muted-foreground">Two convenient Winnipeg locations. Walk-ins welcome.</p>
+      </div>
+      <div class="mx-auto grid max-w-4xl gap-6 md:grid-cols-2">
+        <div class="rounded-lg border border-border bg-card p-6">
+          <div class="mb-2 inline-flex items-center rounded-full bg-green-50 px-3 py-1 text-xs font-medium text-green-700 border border-green-200">Walk-ins Welcome</div>
+          <h3 class="mb-1 mt-3 font-semibold text-foreground">St. Vital Centre</h3>
+          <p class="mb-4 text-sm text-muted-foreground">1225 St Mary's Rd, Winnipeg, MB R2M 5E5</p>
+          <div class="mb-4 space-y-1 text-sm text-muted-foreground">
+            <p>Mon–Sat: 10AM – 7PM</p>
+            <p>Sun: 12PM – 5PM</p>
+          </div>
+          <div class="flex flex-wrap gap-3">
+            <a href="tel:2045009757" class="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              (204) 500-9757
+            </a>
+            <a href="https://maps.google.com/?q=Mobile+Tech+Lab+St+Vital" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              Get Directions
+            </a>
+          </div>
+        </div>
+        <div class="rounded-lg border border-border bg-card p-6">
+          <div class="mb-2 inline-flex items-center rounded-full bg-green-50 px-3 py-1 text-xs font-medium text-green-700 border border-green-200">Walk-ins Welcome</div>
+          <h3 class="mb-1 mt-3 font-semibold text-foreground">Garden City Shopping Centre</h3>
+          <p class="mb-4 text-sm text-muted-foreground">2305 McPhillips St, Winnipeg, MB R2V 3E1</p>
+          <div class="mb-4 space-y-1 text-sm text-muted-foreground">
+            <p>Mon–Sat: 10AM – 7PM</p>
+            <p>Sun: 12PM – 5PM</p>
+          </div>
+          <div class="flex flex-wrap gap-3">
+            <a href="tel:2045157736" class="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              (204) 515-7736
+            </a>
+            <a href="https://maps.google.com/?q=Mobile+Tech+Lab+Garden+City" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              Get Directions
+            </a>
+          </div>
+        </div>
+      </div>
+      <p class="mt-8 text-center text-sm text-muted-foreground">
+        Serving St. Vital, Fort Garry, Garden City, Transcona, and all Winnipeg neighborhoods. Also serving Thompson, MB.
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 7: FAQs -->
+  <section class="py-16 md:py-20" id="faqs">
+    <div class="container mx-auto px-4">
+      <div class="mb-10 text-center">
+        <h2 class="mb-3 text-2xl font-bold md:text-3xl">Vivo Repair FAQs</h2>
+        <p class="mx-auto max-w-2xl text-muted-foreground">Common questions about Vivo repair at Mobile Tech Lab in Winnipeg</p>
+      </div>
+      <div class="mx-auto max-w-3xl divide-y divide-border">
+        {faqs.map(item => (
+          <details class="group py-5">
+            <summary class="flex cursor-pointer items-start justify-between gap-4 text-sm font-medium text-foreground marker:content-none list-none">
+              <span>{item.question}</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 h-4 w-4 shrink-0 text-muted-foreground transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <p class="mt-3 text-sm text-muted-foreground leading-relaxed">{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="border-t border-border bg-primary/5 py-16">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="mb-3 text-2xl font-bold md:text-3xl">Ready to Fix Your Vivo or iQOO?</h2>
+      <p class="mb-8 text-muted-foreground">Get a free quote online or walk in to our Winnipeg locations.</p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+        <a
+          href="/contact"
+          class="inline-flex items-center gap-2 rounded-md bg-primary px-8 py-3 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
+        >
+          Get a Free Quote
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+        <a
+          href="tel:2045009757"
+          class="inline-flex items-center gap-2 rounded-md border border-input bg-background px-8 py-3 text-sm font-medium hover:bg-accent transition-colors"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Call Now
+        </a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
