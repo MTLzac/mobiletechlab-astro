@@ -567,41 +567,228 @@ const faqSchema = {
   </style>
 
   <!-- Section 5: Pricing -->
-  <section class="bg-secondary/40 py-16 md:py-20">
-    <div class="container mx-auto px-4">
-      <div class="mb-10 text-center">
-        <h2 class="mb-3 text-2xl font-bold md:text-3xl">Worried About Repair Cost? You Have Options.</h2>
-        <p class="mx-auto max-w-2xl text-muted-foreground">Most customers use one of these options to lower their repair cost.</p>
+  <section class="repair-cost-section">
+    <div class="repair-cost-inner">
+      <div class="repair-cost-header">
+        <h2 class="repair-cost-title">Worried About Repair Cost? You Have Options.</h2>
+        <p class="repair-cost-subtitle">Most customers use one of these options to lower their repair cost.</p>
       </div>
-      <div class="mx-auto grid max-w-4xl gap-6 md:grid-cols-2">
-        <div class="rounded-lg border border-border bg-background p-8">
-          <h3 class="mb-3 text-lg font-semibold text-foreground">We'll Match Any Local Repair Price</h3>
-          <p class="mb-2 text-sm text-muted-foreground leading-relaxed">
-            Vivo repair costs vary by model. Vivo's <a href="https://www.vivo.com/en/support" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">official support centre</a> provides battery care tips. Many customers are surprised that flagship Vivo repairs can cost as much as Samsung or iPhone repairs — <a href="https://www.ifixit.com/Search?query=smartphone+repair+guide" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">iFixit's smartphone repair resources</a> help understand AMOLED complexity.
-          </p>
-          <p class="mb-6 text-sm text-muted-foreground leading-relaxed">If the repair cost doesn't make sense, we'll explain alternatives clearly. When repair isn't practical, data recovery is often still possible.</p>
+
+      <div class="repair-cost-grid">
+        <div class="repair-option-card">
+          <div class="repair-option-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="12" x2="12" y1="1" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <h3 class="repair-option-title">We'll Match Any Local Repair Price</h3>
+          <p class="repair-option-body">Found a lower price at another Winnipeg repair shop? We'll match it — so you don't overpay. No pressure. No hassle.</p>
           <a
-            href="sms:2045009757?body=Hi%2C%20I%20found%20your%20site%20searching%20for%20Vivo%20repair.%20Can%20you%20help%3F"
-            class="inline-flex items-center gap-2 rounded-md border border-input bg-background px-6 py-2.5 text-sm font-medium hover:bg-accent transition-colors"
+            href="sms:2045009757?body=Hey%20Mobile%20Tech%20Lab!%20I%20want%20a%20better%20price%20on%20a%20repair!"
+            class="price-match-button"
           >
             Check If We Can Match Your Price
           </a>
         </div>
-        <div class="rounded-lg border border-primary/30 bg-primary/5 p-8">
-          <h3 class="mb-3 text-lg font-semibold text-foreground">Lower Your Vivo Repair Cost With a Trade-In</h3>
-          <p class="mb-2 text-sm text-muted-foreground leading-relaxed">Trade in phones, tablets, consoles, or laptops — even broken ones — to reduce today's repair cost.</p>
-          <p class="mb-6 text-xs font-medium text-muted-foreground">Get paid via Cash, E-Transfer, or Store Credit</p>
-          <a
-            href="/trade-in"
-            class="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-2.5 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
-          >
-            Lower My Repair Cost
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+
+        <div class="repair-option-card">
+          <div class="repair-option-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l4 2"/></svg>
+          </div>
+          <h3 class="repair-option-title">Lower Your Vivo Repair Cost With a Trade-In</h3>
+          <p class="repair-option-body">Trade in phones, tablets, consoles, or laptops — even broken ones — to reduce today's repair cost.</p>
+          <p class="repair-option-note">Get paid via Cash, E-Transfer, or Store Credit</p>
+          <a href="/trade-in" class="trade-in-button">
+            Lower My Vivo Repair Cost &rarr;
           </a>
         </div>
       </div>
+
+      <div class="pricing-context-section">
+        <p class="pricing-context-paragraph">
+          Vivo repair costs vary by model. Vivo's <a href="https://www.vivo.com/en/support" target="_blank" rel="noopener noreferrer" class="pricing-context-link">official support centre</a> provides battery care tips. Many customers are surprised that flagship Vivo repairs can cost as much as Samsung or iPhone repairs — <a href="https://www.ifixit.com/Search?query=smartphone+repair+guide" target="_blank" rel="noopener noreferrer" class="pricing-context-link">iFixit's smartphone repair resources</a> help understand AMOLED complexity.
+        </p>
+        <p class="pricing-context-paragraph">
+          If the repair cost doesn't make sense, we'll explain alternatives clearly. When repair isn't practical, data recovery is often still possible.
+        </p>
+      </div>
     </div>
   </section>
+
+  <style>
+    .repair-cost-section {
+      background: linear-gradient(135deg, #fff5f5 0%, #ffffff 50%, #fff5f5 100%);
+      width: 100%;
+      padding: 80px 24px;
+    }
+
+    .repair-cost-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .repair-cost-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .repair-cost-title {
+      font-size: clamp(1.4rem, 3vw, 1.875rem);
+      font-weight: 700;
+      color: #111827;
+      margin: 0 0 12px 0;
+    }
+
+    .repair-cost-subtitle {
+      font-size: 15px;
+      color: #6b7280;
+      margin: 0 auto;
+      max-width: 600px;
+    }
+
+    .repair-cost-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .repair-option-card {
+      background: #ffffff;
+      border: 1px solid #fde8e8;
+      border-left: 4px solid #ef4444;
+      border-radius: 16px;
+      padding: 28px;
+      box-shadow: 0 2px 16px rgba(239, 68, 68, 0.07);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .repair-option-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(239, 68, 68, 0.13);
+    }
+
+    .repair-option-icon-wrapper {
+      background-color: #fff1f1;
+      border-radius: 10px;
+      padding: 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      width: 44px;
+      height: 44px;
+    }
+
+    .repair-option-icon-wrapper svg {
+      color: #ef4444;
+      stroke: #ef4444;
+      width: 22px;
+      height: 22px;
+    }
+
+    .repair-option-card:hover .repair-option-icon-wrapper {
+      background-color: #fecaca;
+    }
+
+    .repair-option-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #111827;
+      margin: 0 0 12px 0;
+    }
+
+    .repair-option-body {
+      font-size: 14px;
+      color: #6b7280;
+      line-height: 1.7;
+      margin: 0 0 16px 0;
+      flex: 1;
+    }
+
+    .repair-option-note {
+      font-size: 12px;
+      font-weight: 600;
+      color: #9ca3af;
+      margin: 0 0 20px 0;
+    }
+
+    .price-match-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 14px 20px;
+      border: 1.5px solid #d1d5db;
+      border-radius: 10px;
+      background: #ffffff;
+      color: #374151;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+      box-sizing: border-box;
+    }
+
+    .price-match-button:hover {
+      border-color: #ef4444;
+      color: #ef4444;
+      box-shadow: 0 2px 12px rgba(239, 68, 68, 0.1);
+    }
+
+    .trade-in-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 14px 20px;
+      background: #fff1f1;
+      color: #ef4444;
+      border: 1.5px solid #fca5a5;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+      box-sizing: border-box;
+    }
+
+    .trade-in-button:hover {
+      background-color: #fecaca;
+      border-color: #ef4444;
+      box-shadow: 0 2px 12px rgba(239, 68, 68, 0.15);
+    }
+
+    .pricing-context-section {
+      max-width: 800px;
+      margin: 40px auto 0 auto;
+      padding: 0 24px;
+    }
+
+    .pricing-context-paragraph {
+      font-size: 14px;
+      color: #6b7280;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .pricing-context-link {
+      color: #ef4444;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    @media (max-width: 700px) {
+      .repair-cost-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 
   <!-- Section 6: Locations -->
   <section class="py-16 md:py-20" id="locations">
