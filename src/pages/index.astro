@@ -1,5 +1,5 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import MainLayout from '../layouts/MainLayout.astro';
 
 const title = "Professional Phone, Tablet, and Computer Repair | Mobile Tech Lab";
 const description = "Expert phone repair, tablet repair, computer repair, and console repair in Winnipeg and Thompson. Fast service, quality parts, and professional technicians.";
@@ -54,7 +54,7 @@ const trustPoints = [
 ];
 ---
 
-<BaseLayout title={title} description={description} canonical={canonical}>
+<MainLayout title={title} description={description} canonical={canonical}>
 
   <section class="bg-gradient-to-b from-secondary/50 to-background py-20 md:py-28">
     <div class="container mx-auto px-4 text-center">
@@ -203,4 +203,4 @@ const trustPoints = [
     </div>
   </section>
 
-</BaseLayout>
+</MainLayout>
