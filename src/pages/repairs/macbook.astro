@@ -1,0 +1,1414 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = "MacBook Repair Winnipeg | Screen & Battery | Mobile Tech Lab";
+const description = "Professional MacBook repair in Winnipeg. Screen, battery, keyboard, liquid damage and data recovery for all MacBook Air and Pro models. M1, M2, M3 specialists.";
+const canonical = "https://mobiletechlab.ca/repairs/macbook";
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://mobiletechlab.ca/" },
+    { "@type": "ListItem", "position": 2, "name": "Repairs", "item": "https://mobiletechlab.ca/repairs" },
+    { "@type": "ListItem", "position": 3, "name": "MacBook Repair", "item": "https://mobiletechlab.ca/repairs/macbook" }
+  ]
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "MacBook Repair Service",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Mobile Tech Lab",
+    "url": "https://mobiletechlab.ca"
+  },
+  "areaServed": { "@type": "City", "name": "Winnipeg" },
+  "serviceType": "Laptop Repair",
+  "url": "https://mobiletechlab.ca/repairs/macbook",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "MacBook Repair Services",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Screen Replacement" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Battery Replacement" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Keyboard Replacement" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Data Recovery" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Liquid Damage Repair" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Charging and MagSafe Repair" } }
+    ]
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "How long does MacBook screen replacement take in Winnipeg?", "acceptedAnswer": { "@type": "Answer", "text": "Most MacBook screen replacements are completed within 1–3 business days at our Winnipeg location depending on parts availability for your specific model and year. M3 MacBook Pro Liquid Retina XDR screens may take longer to source — contact us to confirm availability before visiting." } },
+    { "@type": "Question", "name": "Can you recover data from a water-damaged MacBook in Winnipeg?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — in many cases we can recover data from liquid-damaged MacBooks using component-level diagnostics and specialised data recovery tools. Apple Silicon MacBooks store data on chips soldered to the logic board, which makes recovery more complex but still possible in many cases — bring it in as soon as possible for the best outcome." } },
+    { "@type": "Question", "name": "Do you repair MacBooks with Apple Silicon M1, M2, and M3?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — we repair the full Apple Silicon MacBook lineup including M1, M2, and M3 Air and Pro models. Apple Silicon repairs require different techniques than Intel models due to the tighter integration of logic board, battery, and storage components — our Winnipeg technicians are trained on all generations." } },
+    { "@type": "Question", "name": "How much does MacBook battery replacement cost in Winnipeg?", "acceptedAnswer": { "@type": "Answer", "text": "MacBook battery replacement costs vary by model and generation — older Intel models are generally less expensive than M-chip models due to differences in battery integration. Contact us or use our online quote tool for a free upfront price on your specific MacBook model." } },
+    { "@type": "Question", "name": "Is my data safe during MacBook repair at Mobile Tech Lab?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — your files remain untouched during all hardware repairs. For liquid damage or data recovery cases, we document the device state on arrival and walk you through the process step by step. We recommend backing up your data before any repair when possible." } },
+    { "@type": "Question", "name": "Can you fix a MacBook with a swollen battery in Winnipeg?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — swollen MacBook batteries are a safety issue we treat as urgent. A swollen battery can warp the trackpad and chassis if left unaddressed. We replace swollen batteries on all MacBook models and dispose of the old battery safely. Do not leave a swollen battery unattended — bring it in as soon as possible." } },
+    { "@type": "Question", "name": "Do you repair MacBook keyboard issues including butterfly keyboard?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — we replace keyboards on all MacBook models including the notorious butterfly mechanism on 2016–2019 MacBook Pros. We replace the full keyboard assembly rather than individual keys for a lasting fix. Most keyboard replacements are completed within 1–2 business days." } },
+    { "@type": "Question", "name": "Can you fix a MacBook that won't turn on in Winnipeg?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — a MacBook that won't power on is often caused by a depleted or failed battery, a liquid-damaged logic board, or a firmware issue. We run free diagnostics to identify the root cause before recommending any repair so you know exactly what the problem is before spending anything." } },
+    { "@type": "Question", "name": "Do you repair MacBook charging issues in Winnipeg?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — we diagnose and repair all MacBook charging problems including MagSafe connector damage, USB-C port repairs, charging IC faults, and battery connector issues. We test the full charging chain before replacing any parts to avoid unnecessary repairs." } },
+    { "@type": "Question", "name": "Do you repair MacBooks in Thompson, MB?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — our Thompson location at 300 Mystery Lake Rd #1530 accepts MacBook repairs Monday through Saturday 10AM–6PM. For screen replacements or less common models, calling ahead helps us confirm parts availability before your visit." } }
+  ]
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <Fragment slot="head">
+    <meta name="robots" content="index, follow" />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
+
+  <nav class="mb-breadcrumb-nav" aria-label="Breadcrumb">
+    <div class="mb-container">
+      <ol class="mb-breadcrumb-list">
+        <li><a href="/" class="mb-breadcrumb-link">Home</a></li>
+        <li><svg xmlns="http://www.w3.org/2000/svg" class="mb-breadcrumb-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m9 18 6-6-6-6"/></svg></li>
+        <li><a href="/repairs" class="mb-breadcrumb-link">Repairs</a></li>
+        <li><svg xmlns="http://www.w3.org/2000/svg" class="mb-breadcrumb-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m9 18 6-6-6-6"/></svg></li>
+        <li class="mb-breadcrumb-current" aria-current="page">MacBook Repair</li>
+      </ol>
+    </div>
+  </nav>
+
+  <section class="mb-hero-section" id="hero">
+    <div class="mb-hero-inner">
+      <div class="mb-hero-content">
+        <div class="mb-hero-badge-row">
+          <span class="mb-service-badge">MacBook Air & Pro Repair Specialists</span>
+          <span class="mb-location-badge">
+            <span class="mb-badge-dot"></span>
+            St. Vital — Open
+          </span>
+          <span class="mb-location-badge">
+            <span class="mb-badge-dot"></span>
+            Thompson — Opens tomorrow 10AM
+          </span>
+        </div>
+
+        <h1 class="mb-hero-headline">
+          MacBook Repair <span class="mb-highlight">Winnipeg</span> &amp; Manitoba
+        </h1>
+        <p class="mb-hero-subheadline">MacBook Air & Pro Repair Specialists — M1, M2 & M3 Models</p>
+
+        <div class="mb-hero-body">
+          <p>Cracked Retina display, swollen battery, liquid damage, or unresponsive keyboard? We repair all MacBook Air and Pro models at our Winnipeg shop — from Intel-based machines through the latest M3 Apple Silicon. Common repairs include screen replacements, battery swaps, keyboard replacements, MagSafe and USB-C charging fixes, liquid damage restoration, and data recovery from failed SSDs.</p>
+          <p>MacBook repairs require specialised tools and model-specific parts — particularly for Apple Silicon models where the logic board, battery, and display are tightly integrated. Our Winnipeg technicians perform component-level diagnostics before recommending any repair, so you get an honest assessment of what's wrong and what it will cost before we touch your machine.</p>
+        </div>
+
+        <div class="mb-hero-cta-group">
+          <a href="https://shop.mobiletechlab.ca/pages/repair2" target="_blank" rel="noopener noreferrer" class="mb-cta-primary">
+            Get a Free Quote &rarr;
+          </a>
+          <a href="tel:2045009757" class="mb-cta-secondary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Call Now
+          </a>
+        </div>
+        <p class="mb-pricing-note">Not sure what affects the cost? <a href="/pricing">How repair pricing works</a></p>
+      </div>
+
+      <div class="mb-hero-image-wrapper">
+        <img
+          src="/assets/hero-macbook-Cp0WkrNX.png"
+          alt="MacBook repair in Winnipeg — screen, battery and keyboard specialists at Mobile Tech Lab"
+          width="500"
+          height="500"
+          loading="eager"
+        />
+        <ul class="mb-annotations-list" aria-label="Common MacBook issues we fix">
+          <li class="mb-annotation">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            Cracked screen
+          </li>
+          <li class="mb-annotation">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+            Battery swollen or dead
+          </li>
+          <li class="mb-annotation">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M6 8h.01M10 8h.01M14 8h.01M18 8h.01M8 12h.01M12 12h.01M16 12h.01M7 16h10"/></svg>
+            Keyboard not working
+          </li>
+          <li class="mb-annotation">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg>
+            Liquid damage
+          </li>
+          <li class="mb-annotation">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12H19M12 5l7 7-7 7"/></svg>
+            Won't charge
+          </li>
+          <li class="mb-annotation">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+            Data recovery
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-services-section" id="services">
+    <div class="mb-container">
+      <div class="mb-section-header">
+        <h2 class="mb-section-title">MacBook Repair Services in Winnipeg</h2>
+        <p class="mb-section-subtitle">Expert repairs for all MacBook Air and Pro models. Free diagnostics, quality parts, warranty included.</p>
+      </div>
+      <div class="mb-services-grid">
+        <div class="mb-service-card">
+          <div class="mb-service-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <h3 class="mb-service-title">Screen Replacement</h3>
+          <p class="mb-service-body">Cracked Retina display, dead pixels, or backlight failure on your MacBook? We replace screens on all MacBook Air and Pro models including the Liquid Retina XDR display on M3 Pro and Max models. MacBook screen replacements typically take 1–3 business days depending on parts availability for your specific model and year.</p>
+        </div>
+        <div class="mb-service-card">
+          <div class="mb-service-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+          </div>
+          <h3 class="mb-service-title">Battery Replacement</h3>
+          <p class="mb-service-body">MacBook battery swelling, not holding charge, or showing Service Recommended? We replace batteries on all MacBook models with quality cells. Apple Silicon MacBook batteries are more tightly integrated than Intel models — we disassemble carefully to avoid logic board damage during the swap. All battery replacements include a 90-day warranty.</p>
+        </div>
+        <div class="mb-service-card">
+          <div class="mb-service-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M6 8h.01M10 8h.01M14 8h.01M18 8h.01M8 12h.01M12 12h.01M16 12h.01M7 16h10"/></svg>
+          </div>
+          <h3 class="mb-service-title">Keyboard Replacement</h3>
+          <p class="mb-service-body">Sticky butterfly keys, unresponsive Magic Keyboard, or keys not registering on your MacBook? We perform complete keyboard replacements on all MacBook models. The notorious butterfly keyboard mechanism on 2016–2019 MacBook Pros is a common repair we handle regularly — we replace the full keyboard assembly rather than individual keys for a lasting fix.</p>
+        </div>
+        <div class="mb-service-card">
+          <div class="mb-service-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+          </div>
+          <h3 class="mb-service-title">Data Recovery</h3>
+          <p class="mb-service-body">Lost files from a failed SSD or corrupted drive on your MacBook? We recover data from damaged, water-affected, and non-booting MacBooks. Apple Silicon MacBooks use onboard storage soldered to the logic board — data recovery requires specialised tools and expertise. We assess recovery feasibility before charging anything.</p>
+        </div>
+        <div class="mb-service-card">
+          <div class="mb-service-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg>
+          </div>
+          <h3 class="mb-service-title">Liquid Damage Repair</h3>
+          <p class="mb-service-body">Coffee or water spill on your MacBook? We specialise in liquid damage restoration using ultrasonic cleaning and component-level diagnostics. MacBook liquid damage can affect the keyboard, logic board, and battery simultaneously — we assess all affected components before recommending a repair path. Bring it in as soon as possible for the best outcome.</p>
+        </div>
+        <div class="mb-service-card">
+          <div class="mb-service-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12H19M12 5l7 7-7 7"/></svg>
+          </div>
+          <h3 class="mb-service-title">Charging & MagSafe Repair</h3>
+          <p class="mb-service-body">MacBook not charging via MagSafe or USB-C? We diagnose and repair charging issues across all MacBook models — including MagSafe connector damage, USB-C port repairs, battery connector faults, and charging IC failures. We test the full charging chain before recommending any part replacement.</p>
+        </div>
+      </div>
+      <div class="mb-section-cta">
+        <a href="https://shop.mobiletechlab.ca/pages/repair2" target="_blank" rel="noopener noreferrer" class="mb-cta-primary">
+          Request Repair &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-models-section" id="models">
+    <div class="mb-container">
+      <div class="mb-section-header">
+        <h2 class="mb-section-title">All MacBook Models We Repair in Winnipeg</h2>
+        <p class="mb-section-subtitle">From Intel MacBooks through the latest M3 Apple Silicon — all generations serviced</p>
+      </div>
+      <div class="mb-models-grid">
+        <div class="mb-model-card">
+          <div class="mb-model-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <h3 class="mb-model-title">MacBook Air</h3>
+          <p class="mb-model-description">Ultralight MacBook repairs for all Air generations. M-series MacBook Air batteries and screens are tightly integrated — we use model-specific parts for every generation.</p>
+          <div class="mb-model-pills">
+            <span class="mb-pill">MacBook Air M3 (2024)</span>
+            <span class="mb-pill">MacBook Air M2 (2022)</span>
+            <span class="mb-pill">MacBook Air M1 (2020)</span>
+            <span class="mb-pill">MacBook Air Retina (2018–2020)</span>
+            <span class="mb-pill">MacBook Air (2015–2017)</span>
+          </div>
+          <a href="https://shop.mobiletechlab.ca/pages/repair2" target="_blank" rel="noopener noreferrer" class="mb-model-cta">
+            Get Quote &rarr;
+          </a>
+        </div>
+        <div class="mb-model-card">
+          <div class="mb-model-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <h3 class="mb-model-title">MacBook Pro 14" & 16"</h3>
+          <p class="mb-model-description">Pro-level MacBook repairs including Liquid Retina XDR displays and MagSafe charging. Notch-era and M-chip models require model-specific screen assemblies — contact us to confirm parts availability.</p>
+          <div class="mb-model-pills">
+            <span class="mb-pill">MacBook Pro 16" M3 (2023)</span>
+            <span class="mb-pill">MacBook Pro 14" M3 (2023)</span>
+            <span class="mb-pill">MacBook Pro 16" M2 (2023)</span>
+            <span class="mb-pill">MacBook Pro 14" M2 (2023)</span>
+            <span class="mb-pill">MacBook Pro 16" M1 (2021)</span>
+            <span class="mb-pill">MacBook Pro 14" M1 (2021)</span>
+            <span class="mb-pill">MacBook Pro 16" (2019)</span>
+            <span class="mb-pill">MacBook Pro 15" (2015–2019)</span>
+          </div>
+          <a href="https://shop.mobiletechlab.ca/pages/repair2" target="_blank" rel="noopener noreferrer" class="mb-model-cta">
+            Get Quote &rarr;
+          </a>
+        </div>
+        <div class="mb-model-card">
+          <div class="mb-model-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <h3 class="mb-model-title">MacBook Pro 13"</h3>
+          <p class="mb-model-description">Compact MacBook Pro repairs including the Touch Bar models. The 2016–2019 butterfly keyboard is one of our most common MacBook Pro repairs — we replace the full assembly for a lasting fix.</p>
+          <div class="mb-model-pills">
+            <span class="mb-pill">MacBook Pro 13" M2 (2022)</span>
+            <span class="mb-pill">MacBook Pro 13" M1 (2020)</span>
+            <span class="mb-pill">MacBook Pro 13" (2016–2020)</span>
+          </div>
+          <a href="https://shop.mobiletechlab.ca/pages/repair2" target="_blank" rel="noopener noreferrer" class="mb-model-cta">
+            Get Quote &rarr;
+          </a>
+        </div>
+        <div class="mb-model-card">
+          <div class="mb-model-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <h3 class="mb-model-title">MacBook 12"</h3>
+          <p class="mb-model-description">Retina MacBook repairs for the ultra-slim 12-inch models. These use a USB-C only design and have one of the most compact battery and keyboard assemblies Apple has made.</p>
+          <div class="mb-model-pills">
+            <span class="mb-pill">MacBook 12" (2017)</span>
+            <span class="mb-pill">MacBook 12" (2016)</span>
+            <span class="mb-pill">MacBook 12" (2015)</span>
+          </div>
+          <a href="https://shop.mobiletechlab.ca/pages/repair2" target="_blank" rel="noopener noreferrer" class="mb-model-cta">
+            Get Quote &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-why-section" id="why-choose-us">
+    <div class="mb-container">
+      <div class="mb-section-header">
+        <h2 class="mb-section-title">The Mobile Tech Lab Advantage: Winnipeg's MacBook Repair Experts</h2>
+        <p class="mb-section-subtitle">Why Winnipeg customers trust us with their MacBooks</p>
+      </div>
+      <div class="mb-pillars-grid">
+        <div class="mb-pillar-card">
+          <div class="mb-pillar-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <h3 class="mb-pillar-title">M1, M2 & M3 Specialists</h3>
+          <p class="mb-pillar-body">Apple Silicon MacBooks require different repair techniques than Intel models — the logic board, battery, and display are far more integrated. Our Winnipeg technicians are experienced with the full M-chip MacBook lineup including the latest M3 Air, M3 Pro, and M3 Max configurations.</p>
+        </div>
+        <div class="mb-pillar-card">
+          <div class="mb-pillar-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          </div>
+          <h3 class="mb-pillar-title">Free Diagnostics First</h3>
+          <p class="mb-pillar-body">MacBook repairs can be complex and expensive — we never start work without giving you a full diagnostic report and upfront quote. If the repair cost approaches your MacBook's current value, we'll tell you honestly and help you explore alternatives including data recovery or trade-in options.</p>
+        </div>
+        <div class="mb-pillar-card">
+          <div class="mb-pillar-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+          </div>
+          <h3 class="mb-pillar-title">Warranty on Every Repair</h3>
+          <p class="mb-pillar-body">Screen repairs carry a 30-day to lifetime warranty depending on part tier. Battery replacements include a 90-day warranty. All other repairs carry a lifetime warranty on parts and labour — so your MacBook stays working long after it leaves our shop.</p>
+        </div>
+        <div class="mb-pillar-card">
+          <div class="mb-pillar-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+          </div>
+          <h3 class="mb-pillar-title">Your Data Stays Safe</h3>
+          <p class="mb-pillar-body">We take data security seriously — your files remain untouched during hardware repairs. For liquid damage or data recovery cases, we document the device state on arrival and walk you through the recovery process step by step so you know exactly what's happening with your data.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-cost-section" id="pricing">
+    <div class="mb-container">
+      <div class="mb-section-header">
+        <h2 class="mb-section-title">Worried About Repair Cost? You Have Options.</h2>
+        <p class="mb-section-subtitle">Most customers use one of these options to lower their repair cost.</p>
+      </div>
+      <div class="mb-cost-grid">
+        <div class="mb-cost-card">
+          <div class="mb-cost-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="12" x2="12" y1="1" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <h3 class="mb-cost-title">We'll Match Any Local Repair Price</h3>
+          <p class="mb-cost-body">Found a lower price at another Winnipeg repair shop? We'll match it — so you don't overpay. No pressure. No hassle.</p>
+          <a href="sms:2045009757?body=Hey%20Mobile%20Tech%20Lab!%20I%20want%20a%20better%20price%20on%20a%20repair!" class="mb-price-match-btn">
+            Check If We Can Match Your Price
+          </a>
+        </div>
+        <div class="mb-cost-card">
+          <div class="mb-cost-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l4 2"/></svg>
+          </div>
+          <h3 class="mb-cost-title">Lower Your MacBook Repair Cost With a Trade-In</h3>
+          <p class="mb-cost-body">Trade in phones, tablets, consoles, or laptops — even broken ones — to reduce today's repair cost.</p>
+          <p class="mb-cost-note">Get paid via Cash, E-Transfer, or Store Credit</p>
+          <a href="/trade-in" class="mb-trade-in-btn">
+            Lower My MacBook Repair Cost &rarr;
+          </a>
+        </div>
+      </div>
+      <div class="mb-pricing-context">
+        <p class="mb-context-paragraph">MacBook repair costs are primarily driven by the display and logic board. A MacBook Air M2 screen replacement is significantly more expensive than an Intel MacBook Air due to the newer panel technology and tighter integration with the chassis. <a href="https://support.apple.com/en-ca/102894" target="_blank" rel="noopener noreferrer" class="mb-context-link">Apple's battery service documentation</a> explains when battery replacement is recommended based on cycle count and maximum capacity percentage.</p>
+        <p class="mb-context-paragraph">Many customers are surprised that a MacBook Pro display replacement can approach or exceed the cost of a refurbished MacBook — particularly on M-chip Pro and Max models with Liquid Retina XDR displays. <a href="https://www.ifixit.com/Search?query=macbook+teardown" target="_blank" rel="noopener noreferrer" class="mb-context-link">iFixit's MacBook teardowns</a> illustrate exactly why these repairs are complex, showing how tightly the display, battery, and logic board components are integrated.</p>
+        <p class="mb-context-paragraph">If the repair cost approaches your MacBook's current market value, we'll always tell you clearly and walk you through your options — including data recovery and transfer to a new machine, or trade-in value toward a replacement device from our pre-owned inventory.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-locations-section" id="locations">
+    <div class="mb-container">
+      <div class="mb-section-header">
+        <h2 class="mb-section-title">MacBook Repair Locations in Winnipeg & Thompson</h2>
+        <p class="mb-section-subtitle">Two Manitoba locations. Walk-ins welcome at both.</p>
+      </div>
+      <div class="mb-locations-grid">
+        <div class="mb-location-card">
+          <span class="mb-walkin-badge">Walk-ins welcome · Diagnostics while you wait</span>
+          <h3 class="mb-location-name">St. Vital Location</h3>
+          <p class="mb-location-address">845 Dakota St #25, Winnipeg, MB R2M 5M3</p>
+          <div class="mb-location-hours">
+            <p>Mon–Sat: 9AM – 7PM</p>
+            <p>Sun: 12PM – 7PM</p>
+          </div>
+          <div class="mb-location-actions">
+            <a href="tel:2045009757" class="mb-location-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              (204) 500-9757
+            </a>
+            <a href="https://maps.google.com/?q=845+Dakota+St+%2325+Winnipeg+MB+R2M+5M3" target="_blank" rel="noopener noreferrer" class="mb-location-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              Get Directions
+            </a>
+          </div>
+        </div>
+        <div class="mb-location-card">
+          <span class="mb-location-badge-tag">Serving Northern Manitoba</span>
+          <h3 class="mb-location-name">Thompson Location</h3>
+          <p class="mb-location-address">300 Mystery Lake Rd #1530, Thompson, MB R8N 0M2</p>
+          <div class="mb-location-hours">
+            <p>Mon–Sat: 10AM – 6PM</p>
+            <p>Sun: Closed</p>
+          </div>
+          <div class="mb-location-actions">
+            <a href="tel:2044100262" class="mb-location-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              (204) 410-0262
+            </a>
+            <a href="https://maps.google.com/?q=300+Mystery+Lake+Rd+%231530+Thompson+MB+R8N+0M2" target="_blank" rel="noopener noreferrer" class="mb-location-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              Get Directions
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-faq-section" id="faqs">
+    <div class="mb-container">
+      <div class="mb-section-header">
+        <h2 class="mb-section-title">MacBook Repair FAQs</h2>
+        <p class="mb-section-subtitle">Common questions about MacBook repair at Mobile Tech Lab in Winnipeg</p>
+      </div>
+      <div class="mb-faq-list">
+        <details class="mb-faq-item">
+          <summary class="mb-faq-summary">
+            <span>How long does MacBook screen replacement take in Winnipeg?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <p class="mb-faq-answer">Most MacBook screen replacements are completed within 1–3 business days at our Winnipeg location depending on parts availability for your specific model and year. M3 MacBook Pro Liquid Retina XDR screens may take longer to source — contact us to confirm availability before visiting.</p>
+        </details>
+        <details class="mb-faq-item">
+          <summary class="mb-faq-summary">
+            <span>Can you recover data from a water-damaged MacBook in Winnipeg?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <p class="mb-faq-answer">Yes — in many cases we can recover data from liquid-damaged MacBooks using component-level diagnostics and specialised data recovery tools. Apple Silicon MacBooks store data on chips soldered to the logic board, which makes recovery more complex but still possible in many cases — bring it in as soon as possible for the best outcome.</p>
+        </details>
+        <details class="mb-faq-item">
+          <summary class="mb-faq-summary">
+            <span>Do you repair MacBooks with Apple Silicon M1, M2, and M3?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <p class="mb-faq-answer">Yes — we repair the full Apple Silicon MacBook lineup including M1, M2, and M3 Air and Pro models. Apple Silicon repairs require different techniques than Intel models due to the tighter integration of logic board, battery, and storage components — our Winnipeg technicians are trained on all generations.</p>
+        </details>
+        <details class="mb-faq-item">
+          <summary class="mb-faq-summary">
+            <span>How much does MacBook battery replacement cost in Winnipeg?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <p class="mb-faq-answer">MacBook battery replacement costs vary by model and generation — older Intel models are generally less expensive than M-chip models due to differences in battery integration. Contact us or use our online quote tool for a free upfront price on your specific MacBook model.</p>
+        </details>
+        <details class="mb-faq-item">
+          <summary class="mb-faq-summary">
+            <span>Is my data safe during MacBook repair at Mobile Tech Lab?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <p class="mb-faq-answer">Yes — your files remain untouched during all hardware repairs. For liquid damage or data recovery cases, we document the device state on arrival and walk you through the process step by step. We recommend backing up your data before any repair when possible.</p>
+        </details>
+        <details class="mb-faq-item">
+          <summary class="mb-faq-summary">
+            <span>Can you fix a MacBook with a swollen battery in Winnipeg?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <p class="mb-faq-answer">Yes — swollen MacBook batteries are a safety issue we treat as urgent. A swollen battery can warp the trackpad and chassis if left unaddressed. We replace swollen batteries on all MacBook models and dispose of the old battery safely. Do not leave a swollen battery unattended — bring it in as soon as possible.</p>
+        </details>
+        <details class="mb-faq-item">
+          <summary class="mb-faq-summary">
+            <span>Do you repair MacBook keyboard issues including butterfly keyboard?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <p class="mb-faq-answer">Yes — we replace keyboards on all MacBook models including the notorious butterfly mechanism on 2016–2019 MacBook Pros. We replace the full keyboard assembly rather than individual keys for a lasting fix. Most keyboard replacements are completed within 1–2 business days.</p>
+        </details>
+        <details class="mb-faq-item">
+          <summary class="mb-faq-summary">
+            <span>Can you fix a MacBook that won't turn on in Winnipeg?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <p class="mb-faq-answer">Yes — a MacBook that won't power on is often caused by a depleted or failed battery, a liquid-damaged logic board, or a firmware issue. We run free diagnostics to identify the root cause before recommending any repair so you know exactly what the problem is before spending anything.</p>
+        </details>
+        <details class="mb-faq-item">
+          <summary class="mb-faq-summary">
+            <span>Do you repair MacBook charging issues in Winnipeg?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <p class="mb-faq-answer">Yes — we diagnose and repair all MacBook charging problems including MagSafe connector damage, USB-C port repairs, charging IC faults, and battery connector issues. We test the full charging chain before replacing any parts to avoid unnecessary repairs.</p>
+        </details>
+        <details class="mb-faq-item">
+          <summary class="mb-faq-summary">
+            <span>Do you repair MacBooks in Thompson, MB?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <p class="mb-faq-answer">Yes — our Thompson location at 300 Mystery Lake Rd #1530 accepts MacBook repairs Monday through Saturday 10AM–6PM. For screen replacements or less common models, calling ahead helps us confirm parts availability before your visit.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-final-cta-section">
+    <div class="mb-container">
+      <div class="mb-final-cta-inner">
+        <h2 class="mb-final-cta-title">Ready to Fix Your MacBook?</h2>
+        <p class="mb-final-cta-subtitle">Get a free quote online or walk in to either of our Manitoba locations.</p>
+        <div class="mb-final-cta-group">
+          <a href="https://shop.mobiletechlab.ca/pages/repair2" target="_blank" rel="noopener noreferrer" class="mb-cta-primary">
+            Get a Free Quote
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="tel:2045009757" class="mb-cta-secondary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Call Now
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    :root {
+      --color-primary: #ef4444;
+      --color-primary-dark: #dc2626;
+      --color-primary-light: #fff1f1;
+      --color-primary-border: #fde8e8;
+      --color-primary-hover-bg: #fecaca;
+      --color-text-dark: #111827;
+      --color-text-body: #374151;
+      --color-text-muted: #6b7280;
+      --color-text-subtle: #9ca3af;
+      --color-bg-white: #ffffff;
+      --color-bg-section: linear-gradient(135deg, #fff5f5 0%, #ffffff 50%, #fff5f5 100%);
+      --color-card-border: #fde8e8;
+      --border-radius-card: 16px;
+      --border-radius-btn: 10px;
+      --shadow-card: 0 2px 16px rgba(239, 68, 68, 0.07);
+      --shadow-card-hover: 0 12px 32px rgba(239, 68, 68, 0.13);
+      --shadow-btn-hover: 0 6px 20px rgba(239, 68, 68, 0.35);
+    }
+
+    .mb-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .mb-section-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .mb-section-title {
+      font-size: clamp(1.5rem, 3vw, 1.875rem);
+      font-weight: 700;
+      color: var(--color-text-dark);
+      margin: 0 0 12px 0;
+    }
+
+    .mb-section-subtitle {
+      font-size: 15px;
+      color: var(--color-text-muted);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .mb-breadcrumb-nav {
+      border-bottom: 1px solid #e5e7eb;
+      background: var(--color-bg-white);
+    }
+
+    .mb-breadcrumb-nav .mb-container {
+      padding-top: 12px;
+      padding-bottom: 12px;
+    }
+
+    .mb-breadcrumb-list {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      color: var(--color-text-muted);
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .mb-breadcrumb-link {
+      color: var(--color-text-muted);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .mb-breadcrumb-link:hover {
+      color: var(--color-text-dark);
+    }
+
+    .mb-breadcrumb-chevron {
+      width: 12px;
+      height: 12px;
+      flex-shrink: 0;
+    }
+
+    .mb-breadcrumb-current {
+      color: var(--color-text-dark);
+      font-weight: 500;
+    }
+
+    .mb-hero-section {
+      background: var(--color-bg-section);
+      width: 100%;
+      padding: 60px 24px 80px;
+    }
+
+    .mb-hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .mb-hero-content {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .mb-hero-badge-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .mb-service-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 5px 14px;
+      background: var(--color-primary-light);
+      border: 1px solid var(--color-primary-border);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--color-primary);
+    }
+
+    .mb-location-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 500;
+      color: #16a34a;
+    }
+
+    .mb-badge-dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: #16a34a;
+      flex-shrink: 0;
+    }
+
+    .mb-hero-headline {
+      font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+      font-weight: 900;
+      line-height: 1.1;
+      color: var(--color-text-dark);
+      margin: 0;
+    }
+
+    .mb-highlight {
+      color: var(--color-text-dark);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      text-decoration-color: var(--color-primary);
+    }
+
+    .mb-hero-subheadline {
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--color-text-body);
+      margin: 0;
+    }
+
+    .mb-hero-body {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .mb-hero-body p {
+      font-size: 15px;
+      color: #4b5563;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .mb-hero-body a {
+      color: var(--color-primary);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .mb-hero-cta-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .mb-cta-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      background: var(--color-primary);
+      color: var(--color-bg-white);
+      border: none;
+      border-radius: var(--border-radius-btn);
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+    }
+
+    .mb-cta-primary:hover {
+      background-color: var(--color-primary-dark);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-btn-hover);
+    }
+
+    .mb-cta-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 24px;
+      background: var(--color-bg-white);
+      color: var(--color-text-body);
+      border: 1.5px solid #e5e7eb;
+      border-radius: var(--border-radius-btn);
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: border-color 0.2s ease, color 0.2s ease;
+      cursor: pointer;
+    }
+
+    .mb-cta-secondary:hover {
+      border-color: var(--color-primary);
+      color: var(--color-primary);
+    }
+
+    .mb-pricing-note {
+      font-size: 13px;
+      color: var(--color-text-subtle);
+      margin: 0;
+    }
+
+    .mb-pricing-note a {
+      color: var(--color-primary);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .mb-hero-image-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .mb-hero-image-wrapper img {
+      width: 100%;
+      max-width: 420px;
+      height: auto;
+      display: block;
+      object-fit: contain;
+    }
+
+    .mb-annotations-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+    }
+
+    .mb-annotation {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      background: var(--color-primary-light);
+      border: 1px solid var(--color-primary-border);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--color-primary);
+    }
+
+    .mb-annotation svg {
+      flex-shrink: 0;
+      stroke: var(--color-primary);
+    }
+
+    .mb-services-section {
+      background: var(--color-bg-white);
+      padding: 80px 0;
+    }
+
+    .mb-services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .mb-service-card {
+      background: var(--color-bg-white);
+      border: 1px solid var(--color-card-border);
+      border-left: 4px solid var(--color-primary);
+      border-radius: var(--border-radius-card);
+      padding: 24px;
+      box-shadow: var(--shadow-card);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .mb-service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-card-hover);
+    }
+
+    .mb-service-icon-wrapper {
+      background-color: var(--color-primary-light);
+      border-radius: 10px;
+      padding: 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      width: 44px;
+      height: 44px;
+    }
+
+    .mb-service-icon-wrapper svg {
+      stroke: var(--color-primary);
+      width: 22px;
+      height: 22px;
+    }
+
+    .mb-service-card:hover .mb-service-icon-wrapper {
+      background-color: var(--color-primary-hover-bg);
+    }
+
+    .mb-service-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--color-text-dark);
+      margin: 0 0 10px 0;
+    }
+
+    .mb-service-body {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .mb-section-cta {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .mb-models-section {
+      background: linear-gradient(135deg, #fafafa 0%, #f9fafb 100%);
+      padding: 80px 0;
+    }
+
+    .mb-models-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .mb-model-card {
+      background: var(--color-bg-white);
+      border: 1px solid var(--color-card-border);
+      border-left: 4px solid var(--color-primary);
+      border-radius: var(--border-radius-card);
+      padding: 28px;
+      box-shadow: var(--shadow-card);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .mb-model-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-card-hover);
+    }
+
+    .mb-model-icon-wrapper {
+      background-color: var(--color-primary-light);
+      border-radius: 10px;
+      padding: 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      width: 44px;
+      height: 44px;
+    }
+
+    .mb-model-icon-wrapper svg {
+      stroke: var(--color-primary);
+      width: 22px;
+      height: 22px;
+    }
+
+    .mb-model-card:hover .mb-model-icon-wrapper {
+      background-color: var(--color-primary-hover-bg);
+    }
+
+    .mb-model-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--color-text-dark);
+      margin: 0 0 8px 0;
+    }
+
+    .mb-model-description {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      line-height: 1.6;
+      margin: 0 0 16px 0;
+      flex: 1;
+    }
+
+    .mb-model-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 20px;
+    }
+
+    .mb-pill {
+      padding: 4px 10px;
+      background: #f3f4f6;
+      border: 1px solid #e5e7eb;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--color-text-body);
+    }
+
+    .mb-model-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--color-primary);
+      text-decoration: none;
+      transition: gap 0.2s ease;
+    }
+
+    .mb-model-cta:hover {
+      gap: 10px;
+    }
+
+    .mb-why-section {
+      background: var(--color-bg-white);
+      padding: 80px 0;
+    }
+
+    .mb-pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .mb-pillar-card {
+      background: var(--color-bg-white);
+      border: 1px solid var(--color-card-border);
+      border-left: 4px solid var(--color-primary);
+      border-radius: var(--border-radius-card);
+      padding: 24px;
+      box-shadow: var(--shadow-card);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .mb-pillar-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-card-hover);
+    }
+
+    .mb-pillar-icon-wrapper {
+      background-color: var(--color-primary-light);
+      border-radius: 10px;
+      padding: 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      width: 44px;
+      height: 44px;
+    }
+
+    .mb-pillar-icon-wrapper svg {
+      stroke: var(--color-primary);
+      width: 22px;
+      height: 22px;
+    }
+
+    .mb-pillar-card:hover .mb-pillar-icon-wrapper {
+      background-color: var(--color-primary-hover-bg);
+    }
+
+    .mb-pillar-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--color-text-dark);
+      margin: 0 0 8px 0;
+    }
+
+    .mb-pillar-body {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .mb-cost-section {
+      background: var(--color-bg-section);
+      width: 100%;
+      padding: 80px 24px;
+    }
+
+    .mb-cost-section .mb-container {
+      padding: 0;
+    }
+
+    .mb-cost-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .mb-cost-card {
+      background: var(--color-bg-white);
+      border: 1px solid var(--color-card-border);
+      border-left: 4px solid var(--color-primary);
+      border-radius: var(--border-radius-card);
+      padding: 28px;
+      box-shadow: var(--shadow-card);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .mb-cost-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-card-hover);
+    }
+
+    .mb-cost-icon-wrapper {
+      background-color: var(--color-primary-light);
+      border-radius: 10px;
+      padding: 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      width: 44px;
+      height: 44px;
+    }
+
+    .mb-cost-icon-wrapper svg {
+      stroke: var(--color-primary);
+      width: 22px;
+      height: 22px;
+    }
+
+    .mb-cost-card:hover .mb-cost-icon-wrapper {
+      background-color: var(--color-primary-hover-bg);
+    }
+
+    .mb-cost-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--color-text-dark);
+      margin: 0 0 12px 0;
+    }
+
+    .mb-cost-body {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      margin: 0 0 16px 0;
+      flex: 1;
+    }
+
+    .mb-cost-note {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--color-text-subtle);
+      margin: 0 0 20px 0;
+    }
+
+    .mb-price-match-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 14px 20px;
+      border: 1.5px solid #d1d5db;
+      border-radius: var(--border-radius-btn);
+      background: var(--color-bg-white);
+      color: var(--color-text-body);
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+      box-sizing: border-box;
+    }
+
+    .mb-price-match-btn:hover {
+      border-color: var(--color-primary);
+      color: var(--color-primary);
+      box-shadow: 0 2px 12px rgba(239, 68, 68, 0.1);
+    }
+
+    .mb-trade-in-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 14px 20px;
+      background: var(--color-primary-light);
+      color: var(--color-primary);
+      border: 1.5px solid #fca5a5;
+      border-radius: var(--border-radius-btn);
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+      box-sizing: border-box;
+    }
+
+    .mb-trade-in-btn:hover {
+      background-color: var(--color-primary-hover-bg);
+      border-color: var(--color-primary);
+      box-shadow: 0 2px 12px rgba(239, 68, 68, 0.15);
+    }
+
+    .mb-pricing-context {
+      max-width: 800px;
+      margin: 40px auto 0 auto;
+    }
+
+    .mb-context-paragraph {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .mb-context-link {
+      color: var(--color-primary);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .mb-locations-section {
+      background: #fafafa;
+      padding: 80px 0;
+    }
+
+    .mb-locations-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .mb-location-card {
+      background: var(--color-bg-white);
+      border: 1px solid var(--color-card-border);
+      border-radius: var(--border-radius-card);
+      padding: 28px;
+      box-shadow: var(--shadow-card);
+    }
+
+    .mb-walkin-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 12px;
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #16a34a;
+      margin-bottom: 16px;
+    }
+
+    .mb-location-badge-tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 12px;
+      background: var(--color-primary-light);
+      border: 1px solid var(--color-primary-border);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--color-primary);
+      margin-bottom: 16px;
+    }
+
+    .mb-location-name {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--color-text-dark);
+      margin: 0 0 6px 0;
+    }
+
+    .mb-location-address {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      margin: 0 0 16px 0;
+    }
+
+    .mb-location-hours {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      margin-bottom: 20px;
+      line-height: 1.7;
+    }
+
+    .mb-location-hours p {
+      margin: 0;
+    }
+
+    .mb-location-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .mb-location-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--color-primary);
+      text-decoration: none;
+      transition: gap 0.2s ease;
+    }
+
+    .mb-location-link:hover {
+      gap: 10px;
+    }
+
+    .mb-location-link svg {
+      stroke: var(--color-primary);
+    }
+
+    .mb-faq-section {
+      background: var(--color-bg-white);
+      padding: 80px 0;
+    }
+
+    .mb-faq-list {
+      max-width: 760px;
+      margin: 0 auto;
+      border-top: 1px solid #e5e7eb;
+    }
+
+    .mb-faq-item {
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .mb-faq-summary {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 20px 0;
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--color-text-dark);
+      list-style: none;
+    }
+
+    .mb-faq-summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .mb-faq-chevron {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      stroke: var(--color-text-muted);
+      transition: transform 0.2s ease;
+      margin-top: 2px;
+    }
+
+    details[open] .mb-faq-chevron {
+      transform: rotate(180deg);
+    }
+
+    .mb-faq-answer {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      margin: 0 0 20px 0;
+      padding-right: 34px;
+    }
+
+    .mb-final-cta-section {
+      background: var(--color-primary-light);
+      border-top: 1px solid var(--color-primary-border);
+      padding: 80px 0;
+    }
+
+    .mb-final-cta-inner {
+      text-align: center;
+    }
+
+    .mb-final-cta-title {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 700;
+      color: var(--color-text-dark);
+      margin: 0 0 12px 0;
+    }
+
+    .mb-final-cta-subtitle {
+      font-size: 15px;
+      color: var(--color-text-muted);
+      margin: 0 0 32px 0;
+    }
+
+    .mb-final-cta-group {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 1200px) {
+      .mb-models-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 1024px) {
+      .mb-pillars-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .mb-hero-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .mb-services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .mb-services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .mb-models-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .mb-cost-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .mb-locations-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .mb-pillars-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
+</BaseLayout>
