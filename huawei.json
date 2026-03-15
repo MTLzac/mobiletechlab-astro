@@ -1,0 +1,487 @@
+{
+  "meta": {
+    "version": "1.0",
+    "generator": "mobiletechlab-lovable-export",
+    "date": "2026-03-15",
+    "reference_doc": "/seo-exports/astro-repair-template.md",
+    "purpose": "LLM prompt to generate an Astro static page for Huawei repair services",
+    "template": "RepairLandingTemplate"
+  },
+  "constraints": {
+    "framework": "Astro (latest stable)",
+    "rendering": "Static HTML only — zero client-side JavaScript unless explicitly marked as `client:load` island",
+    "styling": "Tailwind CSS using semantic design tokens from the provided CSS variables. NEVER use raw color values (no `bg-blue-500`, no `text-white`). Use `bg-primary`, `text-foreground`, `bg-muted`, etc.",
+    "fonts": "Inter via Google Fonts, loaded in <head> with `font-display: swap`",
+    "icons": "Inline SVG only — no icon library runtime. Copy SVG paths from Lucide (https://lucide.dev). Each icon must have `aria-hidden=\"true\"` and `focusable=\"false\"`.",
+    "images": "All `<img>` tags MUST have `alt`, `width`, `height`, and `loading=\"lazy\"` (except hero which uses `loading=\"eager\"`). Use Astro `<Image />` component where possible.",
+    "links_internal": "Standard `<a href=\"/path\">` — NO client-side router. All internal links must start with `/`.",
+    "links_external": "All external `<a>` tags MUST have `target=\"_blank\"` and `rel=\"noopener noreferrer\"`.",
+    "accessibility": "All interactive elements must be keyboard-accessible. Use semantic HTML (`<nav>`, `<main>`, `<section>`, `<article>`, `<footer>`). Buttons must have visible focus rings.",
+    "accordions": "Use native `<details>` + `<summary>` elements. NO JavaScript accordions.",
+    "seo_title_max_chars": 60,
+    "seo_description_max_chars": 160,
+    "must_have_single_h1": true,
+    "canonical_url_required": true,
+    "structured_data_required": [
+      "BreadcrumbList",
+      "Service",
+      "FAQPage"
+    ],
+    "forbidden": [
+      "React or any JSX runtime",
+      "useState, useEffect, or any React hooks",
+      "Client-side routing (react-router, @astrojs/preact, etc.)",
+      "CSS-in-JS libraries",
+      "Hardcoded color values in components",
+      "JavaScript-based accordions or toggles",
+      "Placeholder or lorem ipsum content",
+      "Any content not present in this JSON"
+    ]
+  },
+  "file_structure": {
+    "layout": "src/layouts/BaseLayout.astro",
+    "page": "src/pages/repair/huawei.astro",
+    "components": [
+      "src/components/repair/VisibleBreadcrumbs.astro",
+      "src/components/repair/HeroSection.astro",
+      "src/components/repair/ServiceGrid.astro",
+      "src/components/repair/ModelListGrid.astro",
+      "src/components/repair/WhyChooseUs.astro",
+      "src/components/repair/PricingMicroCopy.astro",
+      "src/components/repair/LocationCards.astro",
+      "src/components/repair/FAQSection.astro",
+      "src/components/repair/StickyMobileCTA.astro",
+      "src/components/repair/TableOfContents.astro"
+    ]
+  },
+  "section_order": [
+    "breadcrumbs",
+    "hero",
+    "services",
+    "models",
+    "why_choose_us",
+    "pricing_micro_copy",
+    "locations",
+    "faqs",
+    "sticky_mobile_cta",
+    "table_of_contents"
+  ],
+  "page": {
+    "slug": "huawei",
+    "canonicalUrl": "https://mobiletechlab.ca/repair/huawei",
+    "metaTitle": "Huawei Phone Repair Winnipeg | Broken Screens, Bad Batteries | Mobile Tech Lab",
+    "metaDescription": "Expert Huawei repair in Winnipeg. Screen, battery, motherboard repair for Huawei P60, P50, Mate, Nova & Honor devices. Hard-to-find parts specialists.",
+    "robots": "index, follow",
+    "deviceName": "Huawei",
+    "h1": "Huawei Phone Repair Services in Winnipeg",
+    "heroDescription": "Don't let parts availability stop you from repairing your Huawei device. We specialize in sourcing components for Huawei P series, Mate, Nova, and Honor phones in Winnipeg when others can't.",
+    "heroImage": {
+      "src": "/assets/hero-huawei.png",
+      "alt": "Huawei repair services in Winnipeg",
+      "width": 600,
+      "height": 400,
+      "loading": "eager"
+    }
+  },
+  "breadcrumbs": [
+    {
+      "label": "Home",
+      "href": "/"
+    },
+    {
+      "label": "Repairs",
+      "href": "/repair"
+    },
+    {
+      "label": "Huawei",
+      "href": null
+    }
+  ],
+  "services": [
+    {
+      "icon": "ScreenShare",
+      "name": "Screen Replacement",
+      "description": "OLED and LCD display replacements for Huawei P series, Mate, and Nova devices."
+    },
+    {
+      "icon": "Battery",
+      "name": "Battery Replacement",
+      "description": "Restore full-day battery life to your Huawei device. Same-day replacement for most models."
+    },
+    {
+      "icon": "Plug",
+      "name": "SuperCharge Repair",
+      "description": "USB-C charging port and SuperCharge fast charging diagnosis and repair for all Huawei devices."
+    },
+    {
+      "icon": "Camera",
+      "name": "Leica Camera Repair",
+      "description": "Leica-engineered camera repairs on Huawei flagships."
+    },
+    {
+      "icon": "Cpu",
+      "name": "Motherboard Repair",
+      "description": "Component-level motherboard diagnostics and micro-soldering repair."
+    },
+    {
+      "icon": "Fingerprint",
+      "name": "Fingerprint Sensor",
+      "description": "In-display and rear fingerprint sensor repairs and calibration."
+    }
+  ],
+  "advantage_pillars": [
+    {
+      "icon": "Award",
+      "title": "Huawei Specialists in Winnipeg",
+      "description": "Specialized knowledge of Huawei devices when most shops turn them away."
+    },
+    {
+      "icon": "Package",
+      "title": "Hard-to-Find Parts",
+      "description": "We maintain supplier relationships for Huawei parts that others can't source."
+    },
+    {
+      "icon": "Zap",
+      "title": "SuperCharge Experts",
+      "description": "We diagnose and repair SuperCharge, fast charging, and all power delivery systems."
+    },
+    {
+      "icon": "Award",
+      "title": "Warranty on Every Repair",
+      "description": "Screen repair warranties vary by part tier (30 days to lifetime). 90-day battery warranty. Lifetime warranty on most other repairs."
+    }
+  ],
+  "model_categories": [
+    {
+      "title": "Huawei P Series",
+      "models": [
+        "P60 Pro",
+        "P60 Art",
+        "P60",
+        "P50 Pro",
+        "P50 Pocket",
+        "P50",
+        "P40 Pro+",
+        "P40 Pro",
+        "P40",
+        "P30 Pro",
+        "P30"
+      ],
+      "description": "Premium Huawei phones with Leica cameras."
+    },
+    {
+      "title": "Huawei Mate Series",
+      "models": [
+        "Mate 60 Pro",
+        "Mate 60",
+        "Mate 50 Pro",
+        "Mate 50",
+        "Mate 40 Pro",
+        "Mate 40",
+        "Mate 30 Pro",
+        "Mate 20 Pro",
+        "Mate 20 X"
+      ],
+      "description": "Flagship Mate lineup."
+    },
+    {
+      "title": "Huawei Nova Series",
+      "models": [
+        "Nova 11 Pro",
+        "Nova 11",
+        "Nova 10 Pro",
+        "Nova 10",
+        "Nova 9",
+        "Nova 8",
+        "Nova 7",
+        "Nova 5T"
+      ],
+      "description": "Mid-range Nova devices."
+    },
+    {
+      "title": "Honor Devices",
+      "models": [
+        "Honor Magic5 Pro",
+        "Honor Magic4 Pro",
+        "Honor 70",
+        "Honor 50",
+        "Honor 20 Pro",
+        "Honor 10"
+      ],
+      "description": "Former Huawei sub-brand."
+    }
+  ],
+  "models_flat": [
+    "Huawei P60 Pro",
+    "Huawei P60",
+    "Huawei P60 Art",
+    "Huawei P50 Pro",
+    "Huawei P50",
+    "Huawei P50 Pocket",
+    "Huawei P40 Pro+",
+    "Huawei P40 Pro",
+    "Huawei P40",
+    "Huawei P40 Lite",
+    "Huawei P30 Pro",
+    "Huawei P30",
+    "Huawei P30 Lite",
+    "Huawei P20 Pro",
+    "Huawei P20",
+    "Huawei P20 Lite",
+    "Huawei Mate 60 Pro",
+    "Huawei Mate 60",
+    "Huawei Mate 50 Pro",
+    "Huawei Mate 50",
+    "Huawei Mate 40 Pro",
+    "Huawei Mate 40",
+    "Huawei Mate 30 Pro",
+    "Huawei Mate 30",
+    "Huawei Mate 20 Pro",
+    "Huawei Mate 20",
+    "Huawei Mate 20 X",
+    "Huawei Nova 11 Pro",
+    "Huawei Nova 11",
+    "Huawei Nova 10 Pro",
+    "Huawei Nova 10",
+    "Huawei Nova 9",
+    "Huawei Nova 8",
+    "Honor Magic5 Pro",
+    "Honor Magic4 Pro",
+    "Honor 70",
+    "Honor 50"
+  ],
+  "models_description": "We repair all Huawei and Honor devices including P series, Mate series, Nova series, and foldable models.",
+  "pricing_micro_copy": {
+    "costDriver": "Huawei repair costs depend on parts availability—as a brand with supply chain challenges, some components require specialty sourcing. Huawei's <a href='https://consumer.huawei.com/ca/support/' target='_blank' rel='noopener noreferrer'>official support portal</a> provides device diagnostics.",
+    "priceShock": "Many customers are surprised that Huawei parts can be as expensive as Samsung or Apple parts. <a href='https://www.ifixit.com/Search?query=huawei+teardown' target='_blank' rel='noopener noreferrer'>iFixit's Huawei teardowns</a> show why certain models are difficult to source parts for.",
+    "advisory": "If the repair cost doesn't make sense for your device's value, we'll explain alternatives and help you decide.",
+    "fallback": "When repair isn't practical, data recovery is often still possible."
+  },
+  "faqs": [
+    {
+      "question": "Do you repair Huawei phones in Winnipeg?",
+      "answer": "Yes! We're one of the few repair shops in Winnipeg that specializes in Huawei devices."
+    },
+    {
+      "question": "Are Huawei parts available in Winnipeg?",
+      "answer": "We maintain supplier relationships for Huawei parts that others can't source. Most parts available within 2-3 days."
+    },
+    {
+      "question": "How long does Huawei screen repair take in Winnipeg?",
+      "answer": "Most Huawei screen replacements are completed same-day once parts are available, typically within 1-2 hours."
+    },
+    {
+      "question": "Do you repair Honor phones?",
+      "answer": "Yes, we repair all Honor devices which were formerly part of Huawei."
+    },
+    {
+      "question": "Can you repair Huawei phones without Google services?",
+      "answer": "Yes! We repair all Huawei hardware regardless of whether the device has Google Mobile Services or Huawei Mobile Services."
+    }
+  ],
+  "service_area_note": "Serving St. Vital, Fort Garry, Garden City, Transcona, and all Winnipeg neighborhoods. Also serving Thompson, MB. Walk-ins welcome or book online.",
+  "locations": [
+    {
+      "name": "St. Vital Centre",
+      "address": "1225 St Mary's Rd, Winnipeg, MB R2M 5E5",
+      "phone": "(204) 500-9757",
+      "phoneHref": "tel:2045009757",
+      "hours": "Mon–Sat 10am–7pm, Sun 12pm–5pm",
+      "mapUrl": "https://maps.google.com/?q=Mobile+Tech+Lab+St+Vital",
+      "badge": "Walk-ins Welcome"
+    },
+    {
+      "name": "Garden City Shopping Centre",
+      "address": "2305 McPhillips St, Winnipeg, MB R2V 3E1",
+      "phone": "(204) 515-7736",
+      "phoneHref": "tel:2045157736",
+      "hours": "Mon–Sat 10am–7pm, Sun 12pm–5pm",
+      "mapUrl": "https://maps.google.com/?q=Mobile+Tech+Lab+Garden+City",
+      "badge": "Walk-ins Welcome"
+    }
+  ],
+  "cta": {
+    "quoteWidgetUrl": "https://shop.mobiletechlab.ca/pages/repair2",
+    "primaryPhone": "(204) 500-9757",
+    "primaryPhoneHref": "tel:2045009757",
+    "smsNumber": "2045009757",
+    "smsMessage": "Hi, I found your site searching for Huawei repair. Can you help?"
+  },
+  "table_of_contents": [
+    {
+      "id": "hero",
+      "label": "Overview"
+    },
+    {
+      "id": "services",
+      "label": "Services"
+    },
+    {
+      "id": "models",
+      "label": "Models"
+    },
+    {
+      "id": "why-choose-us",
+      "label": "Why Us"
+    },
+    {
+      "id": "locations",
+      "label": "Locations"
+    },
+    {
+      "id": "faqs",
+      "label": "FAQs"
+    }
+  ],
+  "structured_data": {
+    "breadcrumb_list": {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://mobiletechlab.ca/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Repairs",
+          "item": "https://mobiletechlab.ca/repair"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Huawei"
+        }
+      ]
+    },
+    "service": {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Huawei Repair Service",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Mobile Tech Lab",
+        "url": "https://mobiletechlab.ca"
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Winnipeg"
+      },
+      "serviceType": "Phone Repair",
+      "url": "https://mobiletechlab.ca/repair/huawei",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Huawei Repair Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Screen Replacement"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Battery Replacement"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "SuperCharge Repair"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Leica Camera Repair"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Motherboard Repair"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Fingerprint Sensor"
+            }
+          }
+        ]
+      }
+    },
+    "faq_page": {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do you repair Huawei phones in Winnipeg?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! We're one of the few repair shops in Winnipeg that specializes in Huawei devices."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are Huawei parts available in Winnipeg?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We maintain supplier relationships for Huawei parts that others can't source. Most parts available within 2-3 days."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does Huawei screen repair take in Winnipeg?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most Huawei screen replacements are completed same-day once parts are available, typically within 1-2 hours."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you repair Honor phones?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we repair all Honor devices which were formerly part of Huawei."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you repair Huawei phones without Google services?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! We repair all Huawei hardware regardless of whether the device has Google Mobile Services or Huawei Mobile Services."
+          }
+        }
+      ]
+    }
+  },
+  "validation_checklist": [
+    "Page has exactly ONE <h1> tag matching the `page.h1` field",
+    "All services render with inline SVG icons, not an icon library import",
+    "All FAQ items use <details>/<summary>, not JS accordions",
+    "All external links have target='_blank' rel='noopener noreferrer'",
+    "Canonical URL matches `page.canonicalUrl` exactly",
+    "All three JSON-LD blocks are injected in <head>",
+    "<meta name='robots' content='index, follow'> is present",
+    "No React, Preact, or JSX runtime in the build output",
+    "Hero image has loading='eager'; all other images have loading='lazy'",
+    "Page renders fully without JavaScript enabled",
+    "All color classes use Tailwind semantic tokens (bg-primary, text-foreground, etc.)",
+    "Phone links use tel: protocol; SMS links use sms: protocol",
+    "Section IDs match table_of_contents entries for anchor navigation",
+    "No placeholder content — every string comes from this JSON"
+  ]
+}

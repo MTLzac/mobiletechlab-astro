@@ -1,0 +1,428 @@
+{
+  "meta": {
+    "version": "1.0",
+    "generator": "mobiletechlab-lovable-export",
+    "date": "2026-03-15",
+    "reference_doc": "/seo-exports/astro-repair-template.md",
+    "purpose": "LLM prompt to generate an Astro static page for Nintendo Switch repair services",
+    "template": "RepairLandingTemplate"
+  },
+  "constraints": {
+    "framework": "Astro (latest stable)",
+    "rendering": "Static HTML only — zero client-side JavaScript unless explicitly marked as `client:load` island",
+    "styling": "Tailwind CSS using semantic design tokens from the provided CSS variables. NEVER use raw color values (no `bg-blue-500`, no `text-white`). Use `bg-primary`, `text-foreground`, `bg-muted`, etc.",
+    "fonts": "Inter via Google Fonts, loaded in <head> with `font-display: swap`",
+    "icons": "Inline SVG only — no icon library runtime. Copy SVG paths from Lucide (https://lucide.dev). Each icon must have `aria-hidden=\"true\"` and `focusable=\"false\"`.",
+    "images": "All `<img>` tags MUST have `alt`, `width`, `height`, and `loading=\"lazy\"` (except hero which uses `loading=\"eager\"`). Use Astro `<Image />` component where possible.",
+    "links_internal": "Standard `<a href=\"/path\">` — NO client-side router. All internal links must start with `/`.",
+    "links_external": "All external `<a>` tags MUST have `target=\"_blank\"` and `rel=\"noopener noreferrer\"`.",
+    "accessibility": "All interactive elements must be keyboard-accessible. Use semantic HTML (`<nav>`, `<main>`, `<section>`, `<article>`, `<footer>`). Buttons must have visible focus rings.",
+    "accordions": "Use native `<details>` + `<summary>` elements. NO JavaScript accordions.",
+    "seo_title_max_chars": 60,
+    "seo_description_max_chars": 160,
+    "must_have_single_h1": true,
+    "canonical_url_required": true,
+    "structured_data_required": [
+      "BreadcrumbList",
+      "Service",
+      "FAQPage"
+    ],
+    "forbidden": [
+      "React or any JSX runtime",
+      "useState, useEffect, or any React hooks",
+      "Client-side routing (react-router, @astrojs/preact, etc.)",
+      "CSS-in-JS libraries",
+      "Hardcoded color values in components",
+      "JavaScript-based accordions or toggles",
+      "Placeholder or lorem ipsum content",
+      "Any content not present in this JSON"
+    ]
+  },
+  "file_structure": {
+    "layout": "src/layouts/BaseLayout.astro",
+    "page": "src/pages/repair/nintendo-switch.astro",
+    "components": [
+      "src/components/repair/VisibleBreadcrumbs.astro",
+      "src/components/repair/HeroSection.astro",
+      "src/components/repair/ServiceGrid.astro",
+      "src/components/repair/ModelListGrid.astro",
+      "src/components/repair/WhyChooseUs.astro",
+      "src/components/repair/PricingMicroCopy.astro",
+      "src/components/repair/LocationCards.astro",
+      "src/components/repair/FAQSection.astro",
+      "src/components/repair/StickyMobileCTA.astro",
+      "src/components/repair/TableOfContents.astro"
+    ]
+  },
+  "section_order": [
+    "breadcrumbs",
+    "hero",
+    "services",
+    "models",
+    "why_choose_us",
+    "pricing_micro_copy",
+    "locations",
+    "faqs",
+    "sticky_mobile_cta",
+    "table_of_contents"
+  ],
+  "page": {
+    "slug": "nintendo-switch",
+    "canonicalUrl": "https://mobiletechlab.ca/repair/nintendo-switch",
+    "metaTitle": "Nintendo Switch Repair Winnipeg | Joy-Con Drift Fix | Mobile Tech Lab",
+    "metaDescription": "Nintendo Switch repair in Winnipeg. Joy-Con drift, screen, battery, charging port repair for Switch OLED, Switch Lite & original Switch.",
+    "robots": "index, follow",
+    "deviceName": "Nintendo Switch",
+    "h1": "Nintendo Switch Repair Experts in Winnipeg",
+    "heroDescription": "Joy-Con drift driving you crazy? Screen cracked? We fix all Nintendo Switch models in Winnipeg—OLED, original, and Lite.",
+    "heroImage": {
+      "src": "/assets/hero-nintendo-switch.png",
+      "alt": "Nintendo Switch repair services in Winnipeg",
+      "width": 600,
+      "height": 400,
+      "loading": "eager"
+    }
+  },
+  "breadcrumbs": [
+    {
+      "label": "Home",
+      "href": "/"
+    },
+    {
+      "label": "Repairs",
+      "href": "/repair"
+    },
+    {
+      "label": "Nintendo Switch",
+      "href": null
+    }
+  ],
+  "services": [
+    {
+      "icon": "ScreenShare",
+      "name": "Screen Replacement",
+      "description": "Replace cracked LCD or OLED screens on all Switch models."
+    },
+    {
+      "icon": "Gamepad2",
+      "name": "Joy-Con Drift Repair",
+      "description": "Permanent fix for analog stick drift on Joy-Con controllers."
+    },
+    {
+      "icon": "Battery",
+      "name": "Battery Replacement",
+      "description": "Restore battery life for longer portable gaming sessions."
+    },
+    {
+      "icon": "Plug",
+      "name": "Charging Port Repair",
+      "description": "Fix USB-C charging port and dock connection issues."
+    },
+    {
+      "icon": "Volume2",
+      "name": "Speaker Repair",
+      "description": "Repair built-in speakers and audio issues."
+    },
+    {
+      "icon": "Wifi",
+      "name": "WiFi/Bluetooth Repair",
+      "description": "Fix wireless connectivity for online play."
+    }
+  ],
+  "advantage_pillars": [
+    {
+      "icon": "Award",
+      "title": "Switch Specialists",
+      "description": "Winnipeg's Nintendo Switch and Joy-Con repair experts."
+    },
+    {
+      "icon": "Gamepad2",
+      "title": "Joy-Con Drift Experts",
+      "description": "Permanent analog stick fixes—our most common Switch repair."
+    },
+    {
+      "icon": "Zap",
+      "title": "Same-Day Service",
+      "description": "Most Joy-Con repairs completed in under an hour."
+    },
+    {
+      "icon": "Award",
+      "title": "Warranty on Every Repair",
+      "description": "Screen repair warranties vary by part tier. Lifetime warranty on most other repairs."
+    }
+  ],
+  "model_categories": [
+    {
+      "title": "Switch Consoles",
+      "models": [
+        "Switch OLED Model",
+        "Switch V2 (Red Box)",
+        "Switch V1 (Original)",
+        "Switch Lite"
+      ],
+      "description": "All Nintendo Switch console generations."
+    },
+    {
+      "title": "Joy-Con Controllers",
+      "models": [
+        "Joy-Con (Left)",
+        "Joy-Con (Right)",
+        "Joy-Con Pair"
+      ],
+      "description": "Joy-Con drift and button repairs."
+    },
+    {
+      "title": "Accessories",
+      "models": [
+        "Pro Controller",
+        "Switch Dock"
+      ],
+      "description": "Pro Controller and dock repairs."
+    }
+  ],
+  "models_flat": [
+    "Nintendo Switch OLED Model",
+    "Nintendo Switch (V2 - Red Box)",
+    "Nintendo Switch (V1 - Original)",
+    "Nintendo Switch Lite",
+    "Joy-Con (Left)",
+    "Joy-Con (Right)",
+    "Joy-Con Pair",
+    "Nintendo Switch Pro Controller",
+    "Nintendo Switch Dock"
+  ],
+  "models_description": "We repair all Nintendo Switch models including OLED, original, and Lite, plus Joy-Con and Pro controllers.",
+  "pricing_micro_copy": {
+    "costDriver": "Nintendo Switch repair costs depend on the issue. Nintendo's <a href='https://www.nintendo.com/en-ca/consumer-support/' target='_blank' rel='noopener noreferrer'>official consumer support</a> outlines warranty coverage.",
+    "priceShock": "Joy-Con repairs are very affordable, but OLED screen replacements can approach a significant portion of the console's value. <a href='https://www.ifixit.com/Search?query=nintendo+switch+joy-con' target='_blank' rel='noopener noreferrer'>iFixit's Joy-Con teardowns</a> show why drift is so common.",
+    "advisory": "If the repair cost doesn't make sense, we'll explain alternatives including trade-in options.",
+    "fallback": "Your game saves are typically backed up to Nintendo Switch Online."
+  },
+  "faqs": [
+    {
+      "question": "Can you fix Joy-Con drift in Winnipeg?",
+      "answer": "Yes! Joy-Con drift is our most common Switch repair. Usually completed within an hour."
+    },
+    {
+      "question": "Do you repair Switch OLED screens?",
+      "answer": "Yes, we replace both LCD and OLED screens."
+    },
+    {
+      "question": "Can you fix a Switch that won't charge?",
+      "answer": "Yes, we diagnose and repair charging issues including USB-C port replacement."
+    },
+    {
+      "question": "Do you repair the Switch dock?",
+      "answer": "Yes, we repair common dock issues."
+    },
+    {
+      "question": "How long does Joy-Con repair take?",
+      "answer": "Joy-Con drift repair typically takes 30-60 minutes."
+    }
+  ],
+  "service_area_note": "Serving St. Vital, Fort Garry, Garden City, Transcona, and all Winnipeg neighborhoods. Also serving Thompson, MB.",
+  "locations": [
+    {
+      "name": "St. Vital Centre",
+      "address": "1225 St Mary's Rd, Winnipeg, MB R2M 5E5",
+      "phone": "(204) 500-9757",
+      "phoneHref": "tel:2045009757",
+      "hours": "Mon–Sat 10am–7pm, Sun 12pm–5pm",
+      "mapUrl": "https://maps.google.com/?q=Mobile+Tech+Lab+St+Vital",
+      "badge": "Walk-ins Welcome"
+    },
+    {
+      "name": "Garden City Shopping Centre",
+      "address": "2305 McPhillips St, Winnipeg, MB R2V 3E1",
+      "phone": "(204) 515-7736",
+      "phoneHref": "tel:2045157736",
+      "hours": "Mon–Sat 10am–7pm, Sun 12pm–5pm",
+      "mapUrl": "https://maps.google.com/?q=Mobile+Tech+Lab+Garden+City",
+      "badge": "Walk-ins Welcome"
+    }
+  ],
+  "cta": {
+    "quoteWidgetUrl": "https://shop.mobiletechlab.ca/pages/repair2",
+    "primaryPhone": "(204) 500-9757",
+    "primaryPhoneHref": "tel:2045009757",
+    "smsNumber": "2045009757",
+    "smsMessage": "Hi, I found your site searching for Nintendo Switch repair. Can you help?"
+  },
+  "table_of_contents": [
+    {
+      "id": "hero",
+      "label": "Overview"
+    },
+    {
+      "id": "services",
+      "label": "Services"
+    },
+    {
+      "id": "models",
+      "label": "Models"
+    },
+    {
+      "id": "why-choose-us",
+      "label": "Why Us"
+    },
+    {
+      "id": "locations",
+      "label": "Locations"
+    },
+    {
+      "id": "faqs",
+      "label": "FAQs"
+    }
+  ],
+  "structured_data": {
+    "breadcrumb_list": {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://mobiletechlab.ca/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Repairs",
+          "item": "https://mobiletechlab.ca/repair"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Nintendo Switch"
+        }
+      ]
+    },
+    "service": {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Nintendo Switch Repair Service",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Mobile Tech Lab",
+        "url": "https://mobiletechlab.ca"
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Winnipeg"
+      },
+      "serviceType": "Console Repair",
+      "url": "https://mobiletechlab.ca/repair/nintendo-switch",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Nintendo Switch Repair Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Screen Replacement"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Joy-Con Drift Repair"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Battery Replacement"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Charging Port Repair"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Speaker Repair"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "WiFi/Bluetooth Repair"
+            }
+          }
+        ]
+      }
+    },
+    "faq_page": {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can you fix Joy-Con drift in Winnipeg?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! Joy-Con drift is our most common Switch repair. Usually completed within an hour."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you repair Switch OLED screens?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we replace both LCD and OLED screens."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you fix a Switch that won't charge?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we diagnose and repair charging issues including USB-C port replacement."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you repair the Switch dock?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we repair common dock issues."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does Joy-Con repair take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Joy-Con drift repair typically takes 30-60 minutes."
+          }
+        }
+      ]
+    }
+  },
+  "validation_checklist": [
+    "Page has exactly ONE <h1> tag matching the `page.h1` field",
+    "All services render with inline SVG icons, not an icon library import",
+    "All FAQ items use <details>/<summary>, not JS accordions",
+    "All external links have target='_blank' rel='noopener noreferrer'",
+    "Canonical URL matches `page.canonicalUrl` exactly",
+    "All three JSON-LD blocks are injected in <head>",
+    "<meta name='robots' content='index, follow'> is present",
+    "No React, Preact, or JSX runtime in the build output",
+    "Hero image has loading='eager'; all other images have loading='lazy'",
+    "Page renders fully without JavaScript enabled",
+    "All color classes use Tailwind semantic tokens (bg-primary, text-foreground, etc.)",
+    "Phone links use tel: protocol; SMS links use sms: protocol",
+    "Section IDs match table_of_contents entries for anchor navigation",
+    "No placeholder content — every string comes from this JSON"
+  ]
+}

@@ -1,0 +1,480 @@
+{
+  "meta": {
+    "version": "1.0",
+    "generator": "mobiletechlab-lovable-export",
+    "date": "2026-03-15",
+    "reference_doc": "/seo-exports/astro-repair-template.md",
+    "purpose": "LLM prompt to generate an Astro static page for PS5 repair services",
+    "template": "RepairLandingTemplate"
+  },
+  "constraints": {
+    "framework": "Astro (latest stable)",
+    "rendering": "Static HTML only — zero client-side JavaScript unless explicitly marked as `client:load` island",
+    "styling": "Tailwind CSS using semantic design tokens from the provided CSS variables. NEVER use raw color values (no `bg-blue-500`, no `text-white`). Use `bg-primary`, `text-foreground`, `bg-muted`, etc.",
+    "fonts": "Inter via Google Fonts, loaded in <head> with `font-display: swap`",
+    "icons": "Inline SVG only — no icon library runtime. Copy SVG paths from Lucide (https://lucide.dev). Each icon must have `aria-hidden=\"true\"` and `focusable=\"false\"`.",
+    "images": "All `<img>` tags MUST have `alt`, `width`, `height`, and `loading=\"lazy\"` (except hero which uses `loading=\"eager\"`). Use Astro `<Image />` component where possible.",
+    "links_internal": "Standard `<a href=\"/path\">` — NO client-side router. All internal links must start with `/`.",
+    "links_external": "All external `<a>` tags MUST have `target=\"_blank\"` and `rel=\"noopener noreferrer\"`.",
+    "accessibility": "All interactive elements must be keyboard-accessible. Use semantic HTML (`<nav>`, `<main>`, `<section>`, `<article>`, `<footer>`). Buttons must have visible focus rings.",
+    "accordions": "Use native `<details>` + `<summary>` elements. NO JavaScript accordions.",
+    "seo_title_max_chars": 60,
+    "seo_description_max_chars": 160,
+    "must_have_single_h1": true,
+    "canonical_url_required": true,
+    "structured_data_required": [
+      "BreadcrumbList",
+      "Service",
+      "FAQPage"
+    ],
+    "forbidden": [
+      "React or any JSX runtime",
+      "useState, useEffect, or any React hooks",
+      "Client-side routing (react-router, @astrojs/preact, etc.)",
+      "CSS-in-JS libraries",
+      "Hardcoded color values in components",
+      "JavaScript-based accordions or toggles",
+      "Placeholder or lorem ipsum content",
+      "Any content not present in this JSON"
+    ]
+  },
+  "file_structure": {
+    "layout": "src/layouts/BaseLayout.astro",
+    "page": "src/pages/repair/ps5.astro",
+    "components": [
+      "src/components/repair/VisibleBreadcrumbs.astro",
+      "src/components/repair/HeroSection.astro",
+      "src/components/repair/ServiceGrid.astro",
+      "src/components/repair/ModelListGrid.astro",
+      "src/components/repair/WhyChooseUs.astro",
+      "src/components/repair/PricingMicroCopy.astro",
+      "src/components/repair/LocationCards.astro",
+      "src/components/repair/FAQSection.astro",
+      "src/components/repair/StickyMobileCTA.astro",
+      "src/components/repair/TableOfContents.astro"
+    ]
+  },
+  "section_order": [
+    "breadcrumbs",
+    "hero",
+    "services",
+    "models",
+    "why_choose_us",
+    "pricing_micro_copy",
+    "locations",
+    "faqs",
+    "sticky_mobile_cta",
+    "table_of_contents"
+  ],
+  "page": {
+    "slug": "ps5",
+    "canonicalUrl": "https://mobiletechlab.ca/repair/ps5",
+    "metaTitle": "PS5 Repair Winnipeg | PlayStation 5 Fix | Mobile Tech Lab",
+    "metaDescription": "PS5 repair in Winnipeg. Overheating, HDMI port, disc drive, DualSense controller repair for PlayStation 5. Console repair specialists.",
+    "robots": "index, follow",
+    "deviceName": "PS5",
+    "h1": "PlayStation 5 Repair Specialists in Winnipeg",
+    "heroDescription": "PS5 overheating? HDMI not working? DualSense drifting? We're Winnipeg's PlayStation 5 repair specialists. HDMI port damage is the most common PS5 issue we repair—our technicians perform precision board-level micro-soldering.",
+    "heroImage": {
+      "src": "/assets/hero-ps5.png",
+      "alt": "PS5 repair services in Winnipeg",
+      "width": 600,
+      "height": 400,
+      "loading": "eager"
+    }
+  },
+  "breadcrumbs": [
+    {
+      "label": "Home",
+      "href": "/"
+    },
+    {
+      "label": "Repairs",
+      "href": "/repair"
+    },
+    {
+      "label": "PS5",
+      "href": null
+    }
+  ],
+  "services": [
+    {
+      "icon": "Fan",
+      "name": "Overheating Repair",
+      "description": "PS5 overheating? We fully disassemble, deep clean cooling channels, and apply high-performance thermal paste."
+    },
+    {
+      "icon": "Plug",
+      "name": "HDMI Port Repair",
+      "description": "Precision board-level micro-soldering to restore broken HDMI ports, damaged pads, and trace damage."
+    },
+    {
+      "icon": "Disc",
+      "name": "Disc Drive Repair",
+      "description": "Fix disc reading issues, stuck discs, and drive replacements."
+    },
+    {
+      "icon": "Gamepad2",
+      "name": "DualSense Repair",
+      "description": "Fix stick drift, adaptive trigger issues, and buttons on DualSense."
+    },
+    {
+      "icon": "HardDrive",
+      "name": "SSD Upgrade",
+      "description": "Install larger NVMe SSD storage for more PS5 games."
+    },
+    {
+      "icon": "Wifi",
+      "name": "Display & Power Issues",
+      "description": "PS5 turns on but no display, blue light blinking, console shuts off randomly, not powering on."
+    }
+  ],
+  "advantage_pillars": [
+    {
+      "icon": "Award",
+      "title": "PlayStation Specialists",
+      "description": "Winnipeg's PS5 and DualSense controller repair experts."
+    },
+    {
+      "icon": "Fan",
+      "title": "Overheating Experts",
+      "description": "Thermal paste replacement and cooling system specialists."
+    },
+    {
+      "icon": "Zap",
+      "title": "Console Repair Pros",
+      "description": "HDMI port micro-soldering and board-level repairs. Many can be completed same day."
+    },
+    {
+      "icon": "Award",
+      "title": "Warranty on Every Repair",
+      "description": "Lifetime warranty on most PS5 and controller repairs."
+    },
+    {
+      "icon": "Shield",
+      "title": "Precision Board-Level Repair",
+      "description": "We perform micro-soldering repairs under magnification."
+    }
+  ],
+  "model_categories": [
+    {
+      "title": "PS5 Consoles",
+      "models": [
+        "PS5 Disc Edition",
+        "PS5 Digital Edition",
+        "PS5 Slim (Disc)",
+        "PS5 Slim Digital",
+        "PS5 Pro"
+      ],
+      "description": "All PlayStation 5 console models."
+    },
+    {
+      "title": "DualSense Controllers",
+      "models": [
+        "DualSense Controller",
+        "DualSense Edge Controller"
+      ],
+      "description": "Stick drift, trigger, and charging port repairs."
+    },
+    {
+      "title": "Accessories",
+      "models": [
+        "PlayStation VR2",
+        "Pulse 3D Headset"
+      ],
+      "description": "VR and audio accessory repairs."
+    }
+  ],
+  "models_flat": [
+    "PlayStation 5 (Disc Edition)",
+    "PlayStation 5 Digital Edition",
+    "PlayStation 5 Slim (Disc)",
+    "PlayStation 5 Slim Digital",
+    "PlayStation 5 Pro",
+    "DualSense Controller",
+    "DualSense Edge Controller",
+    "PlayStation VR2"
+  ],
+  "models_description": "We repair all PlayStation 5 models including disc and digital editions, plus DualSense controllers and PSVR2.",
+  "pricing_micro_copy": {
+    "costDriver": "PS5 repair costs depend on the issue. Sony's <a href='https://www.playstation.com/en-ca/support/hardware/ps5/' target='_blank' rel='noopener noreferrer'>PS5 support centre</a> provides troubleshooting guides.",
+    "priceShock": "Many customers are surprised that console repairs can approach a significant portion of the device's value. <a href='https://www.ifixit.com/Search?query=ps5+teardown' target='_blank' rel='noopener noreferrer'>iFixit's PS5 teardown</a> reveals the internal layout.",
+    "advisory": "If the repair cost doesn't make financial sense, we'll explain alternatives including trade-in options.",
+    "fallback": "Your game saves are typically backed up, so data loss is rarely a concern."
+  },
+  "faqs": [
+    {
+      "question": "Can you fix PS5 overheating in Winnipeg?",
+      "answer": "Yes! We clean dust buildup, replace thermal paste, and ensure proper cooling."
+    },
+    {
+      "question": "Do you repair DualSense controller stick drift?",
+      "answer": "Yes, we repair analog stick drift and adaptive trigger issues, usually within an hour."
+    },
+    {
+      "question": "Can you fix HDMI port issues on PS5?",
+      "answer": "Yes, HDMI port replacement is a specialty—we use micro-soldering."
+    },
+    {
+      "question": "Do you upgrade PS5 storage?",
+      "answer": "Yes, we install larger NVMe SSDs in your PS5."
+    },
+    {
+      "question": "Can you fix disc drive problems?",
+      "answer": "Yes, we diagnose and repair disc drive issues."
+    },
+    {
+      "question": "How much does PS5 HDMI repair cost in Winnipeg?",
+      "answer": "HDMI repair costs depend on the extent of motherboard damage. We provide a clear quote after diagnosing."
+    },
+    {
+      "question": "Is PS5 HDMI repair done the same day?",
+      "answer": "Many HDMI repairs can be completed the same day. Rush service guarantees same-day turnaround."
+    },
+    {
+      "question": "Why does my PS5 overheat?",
+      "answer": "Dust buildup and degraded thermal compound are the most common causes."
+    },
+    {
+      "question": "Do you offer warranty on PS5 repairs?",
+      "answer": "Yes. We offer a lifetime warranty on most PS5 HDMI and controller repairs."
+    }
+  ],
+  "service_area_note": "Serving all Winnipeg neighborhoods. Also serving customers from Thompson, MB. Walk-ins welcome or book online.",
+  "locations": [
+    {
+      "name": "St. Vital Centre",
+      "address": "1225 St Mary's Rd, Winnipeg, MB R2M 5E5",
+      "phone": "(204) 500-9757",
+      "phoneHref": "tel:2045009757",
+      "hours": "Mon–Sat 10am–7pm, Sun 12pm–5pm",
+      "mapUrl": "https://maps.google.com/?q=Mobile+Tech+Lab+St+Vital",
+      "badge": "Walk-ins Welcome"
+    },
+    {
+      "name": "Garden City Shopping Centre",
+      "address": "2305 McPhillips St, Winnipeg, MB R2V 3E1",
+      "phone": "(204) 515-7736",
+      "phoneHref": "tel:2045157736",
+      "hours": "Mon–Sat 10am–7pm, Sun 12pm–5pm",
+      "mapUrl": "https://maps.google.com/?q=Mobile+Tech+Lab+Garden+City",
+      "badge": "Walk-ins Welcome"
+    }
+  ],
+  "cta": {
+    "quoteWidgetUrl": "https://shop.mobiletechlab.ca/pages/repair2",
+    "primaryPhone": "(204) 500-9757",
+    "primaryPhoneHref": "tel:2045009757",
+    "smsNumber": "2045009757",
+    "smsMessage": "Hi, I found your site searching for PS5 repair. Can you help?"
+  },
+  "table_of_contents": [
+    {
+      "id": "hero",
+      "label": "Overview"
+    },
+    {
+      "id": "services",
+      "label": "Services"
+    },
+    {
+      "id": "models",
+      "label": "Models"
+    },
+    {
+      "id": "why-choose-us",
+      "label": "Why Us"
+    },
+    {
+      "id": "locations",
+      "label": "Locations"
+    },
+    {
+      "id": "faqs",
+      "label": "FAQs"
+    }
+  ],
+  "structured_data": {
+    "breadcrumb_list": {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://mobiletechlab.ca/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Repairs",
+          "item": "https://mobiletechlab.ca/repair"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "PS5"
+        }
+      ]
+    },
+    "service": {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "PS5 Repair Service",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Mobile Tech Lab",
+        "url": "https://mobiletechlab.ca"
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Winnipeg"
+      },
+      "serviceType": "Console Repair",
+      "url": "https://mobiletechlab.ca/repair/ps5",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "PS5 Repair Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Overheating Repair"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "HDMI Port Repair"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Disc Drive Repair"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "DualSense Repair"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "SSD Upgrade"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Display & Power Issues"
+            }
+          }
+        ]
+      }
+    },
+    "faq_page": {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can you fix PS5 overheating in Winnipeg?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! We clean dust buildup, replace thermal paste, and ensure proper cooling."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you repair DualSense controller stick drift?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we repair analog stick drift and adaptive trigger issues, usually within an hour."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you fix HDMI port issues on PS5?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, HDMI port replacement is a specialty—we use micro-soldering."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you upgrade PS5 storage?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we install larger NVMe SSDs in your PS5."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you fix disc drive problems?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we diagnose and repair disc drive issues."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does PS5 HDMI repair cost in Winnipeg?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "HDMI repair costs depend on the extent of motherboard damage. We provide a clear quote after diagnosing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is PS5 HDMI repair done the same day?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Many HDMI repairs can be completed the same day. Rush service guarantees same-day turnaround."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does my PS5 overheat?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Dust buildup and degraded thermal compound are the most common causes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you offer warranty on PS5 repairs?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. We offer a lifetime warranty on most PS5 HDMI and controller repairs."
+          }
+        }
+      ]
+    }
+  },
+  "validation_checklist": [
+    "Page has exactly ONE <h1> tag matching the `page.h1` field",
+    "All services render with inline SVG icons, not an icon library import",
+    "All FAQ items use <details>/<summary>, not JS accordions",
+    "All external links have target='_blank' rel='noopener noreferrer'",
+    "Canonical URL matches `page.canonicalUrl` exactly",
+    "All three JSON-LD blocks are injected in <head>",
+    "<meta name='robots' content='index, follow'> is present",
+    "No React, Preact, or JSX runtime in the build output",
+    "Hero image has loading='eager'; all other images have loading='lazy'",
+    "Page renders fully without JavaScript enabled",
+    "All color classes use Tailwind semantic tokens (bg-primary, text-foreground, etc.)",
+    "Phone links use tel: protocol; SMS links use sms: protocol",
+    "Section IDs match table_of_contents entries for anchor navigation",
+    "No placeholder content — every string comes from this JSON"
+  ]
+}

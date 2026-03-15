@@ -1,0 +1,383 @@
+{
+  "meta": {
+    "version": "1.0",
+    "generator": "mobiletechlab-lovable-export",
+    "date": "2026-03-15",
+    "reference_doc": "/seo-exports/astro-repair-template.md",
+    "purpose": "LLM prompt to generate an Astro static page for Apple Watch repair services",
+    "template": "RepairLandingTemplate"
+  },
+  "constraints": {
+    "framework": "Astro (latest stable)",
+    "rendering": "Static HTML only — zero client-side JavaScript unless explicitly marked as `client:load` island",
+    "styling": "Tailwind CSS using semantic design tokens from the provided CSS variables. NEVER use raw color values (no `bg-blue-500`, no `text-white`). Use `bg-primary`, `text-foreground`, `bg-muted`, etc.",
+    "fonts": "Inter via Google Fonts, loaded in <head> with `font-display: swap`",
+    "icons": "Inline SVG only — no icon library runtime. Copy SVG paths from Lucide (https://lucide.dev). Each icon must have `aria-hidden=\"true\"` and `focusable=\"false\"`.",
+    "images": "All `<img>` tags MUST have `alt`, `width`, `height`, and `loading=\"lazy\"` (except hero which uses `loading=\"eager\"`). Use Astro `<Image />` component where possible.",
+    "links_internal": "Standard `<a href=\"/path\">` — NO client-side router. All internal links must start with `/`.",
+    "links_external": "All external `<a>` tags MUST have `target=\"_blank\"` and `rel=\"noopener noreferrer\"`.",
+    "accessibility": "All interactive elements must be keyboard-accessible. Use semantic HTML (`<nav>`, `<main>`, `<section>`, `<article>`, `<footer>`). Buttons must have visible focus rings.",
+    "accordions": "Use native `<details>` + `<summary>` elements. NO JavaScript accordions.",
+    "seo_title_max_chars": 60,
+    "seo_description_max_chars": 160,
+    "must_have_single_h1": true,
+    "canonical_url_required": true,
+    "structured_data_required": [
+      "BreadcrumbList",
+      "Service",
+      "FAQPage"
+    ],
+    "forbidden": [
+      "React or any JSX runtime",
+      "useState, useEffect, or any React hooks",
+      "Client-side routing (react-router, @astrojs/preact, etc.)",
+      "CSS-in-JS libraries",
+      "Hardcoded color values in components",
+      "JavaScript-based accordions or toggles",
+      "Placeholder or lorem ipsum content",
+      "Any content not present in this JSON"
+    ]
+  },
+  "file_structure": {
+    "layout": "src/layouts/BaseLayout.astro",
+    "page": "src/pages/repair/apple-watch.astro",
+    "components": [
+      "src/components/repair/VisibleBreadcrumbs.astro",
+      "src/components/repair/HeroSection.astro",
+      "src/components/repair/ServiceGrid.astro",
+      "src/components/repair/ModelListGrid.astro",
+      "src/components/repair/WhyChooseUs.astro",
+      "src/components/repair/PricingMicroCopy.astro",
+      "src/components/repair/LocationCards.astro",
+      "src/components/repair/FAQSection.astro",
+      "src/components/repair/StickyMobileCTA.astro",
+      "src/components/repair/TableOfContents.astro"
+    ]
+  },
+  "section_order": [
+    "breadcrumbs",
+    "hero",
+    "services",
+    "models",
+    "why_choose_us",
+    "pricing_micro_copy",
+    "locations",
+    "faqs",
+    "sticky_mobile_cta",
+    "table_of_contents"
+  ],
+  "page": {
+    "slug": "apple-watch",
+    "canonicalUrl": "https://mobiletechlab.ca/repair/apple-watch",
+    "metaTitle": "Apple Watch Repair Winnipeg | Screen & Battery Replacement",
+    "metaDescription": "Expert Apple Watch repair in Winnipeg. Screen replacement and battery replacement for all Apple Watch models including Series 10, Ultra 2, and SE. Fast, reliable service.",
+    "robots": "index, follow",
+    "deviceName": "Apple Watch",
+    "h1": "Apple Watch Repair in Winnipeg, MB",
+    "heroDescription": "Cracked screen? Battery draining fast? We repair all Apple Watch models in Winnipeg—from Series 3 to the latest Series 10, SE generations, and Ultra.",
+    "heroImage": {
+      "src": "/assets/hero-apple-watch.png",
+      "alt": "Apple Watch repair services in Winnipeg",
+      "width": 600,
+      "height": 400,
+      "loading": "eager"
+    }
+  },
+  "breadcrumbs": [
+    {
+      "label": "Home",
+      "href": "/"
+    },
+    {
+      "label": "Repairs",
+      "href": "/repair"
+    },
+    {
+      "label": "Apple Watch",
+      "href": null
+    }
+  ],
+  "services": [
+    {
+      "icon": "Smartphone",
+      "name": "Screen Replacement",
+      "description": "Cracked or unresponsive Apple Watch display? We replace OLED and LTPO screens on all models."
+    },
+    {
+      "icon": "Battery",
+      "name": "Battery Replacement",
+      "description": "Apple Watch not lasting all day? Same-day battery replacement."
+    }
+  ],
+  "advantage_pillars": [
+    {
+      "icon": "Zap",
+      "title": "Same-Day Watch Repairs",
+      "description": "Most Apple Watch screen and battery repairs completed in 1-2 hours."
+    },
+    {
+      "icon": "Clock",
+      "title": "All Sizes Serviced",
+      "description": "We repair all sizes: 38mm, 40mm, 41mm, 42mm, 44mm, 45mm, and 49mm Ultra."
+    },
+    {
+      "icon": "Award",
+      "title": "Warranty on Every Repair",
+      "description": "Screen repair warranties vary by part tier (30 days to lifetime). 90-day battery warranty."
+    }
+  ],
+  "model_categories": [
+    {
+      "title": "Apple Watch Series",
+      "models": [
+        "Series 10",
+        "Series 9",
+        "Series 8",
+        "Series 7",
+        "Series 6",
+        "Series 5",
+        "Series 4",
+        "Series 3"
+      ],
+      "description": "Standard Apple Watch lineup."
+    },
+    {
+      "title": "Apple Watch SE",
+      "models": [
+        "SE (3rd Gen)",
+        "SE (2nd Gen)",
+        "SE (1st Gen)"
+      ],
+      "description": "Budget-friendly Apple Watch repairs."
+    },
+    {
+      "title": "Apple Watch Ultra",
+      "models": [
+        "Ultra 2",
+        "Ultra"
+      ],
+      "description": "Rugged Apple Watch repairs."
+    }
+  ],
+  "models_flat": [
+    "Apple Watch Series 10",
+    "Apple Watch Series 9",
+    "Apple Watch Series 8",
+    "Apple Watch Series 7",
+    "Apple Watch Series 6",
+    "Apple Watch Series 5",
+    "Apple Watch Series 4",
+    "Apple Watch Series 3",
+    "Apple Watch SE (1st Gen)",
+    "Apple Watch SE (2nd Gen)",
+    "Apple Watch SE (3rd Gen)",
+    "Apple Watch Ultra",
+    "Apple Watch Ultra 2"
+  ],
+  "models_description": "We repair all Apple Watch models from the original Series 3 to the latest Series 10, SE generations, and Ultra models.",
+  "pricing_micro_copy": {
+    "costDriver": "Apple Watch repair costs depend on the model. Apple's <a href='https://support.apple.com/en-ca/108055' target='_blank' rel='noopener noreferrer'>battery health documentation</a> explains how to check maximum capacity.",
+    "priceShock": "Many customers are surprised that an Apple Watch screen can cost nearly as much as a new SE model. <a href='https://www.ifixit.com/Search?query=apple+watch+teardown' target='_blank' rel='noopener noreferrer'>iFixit's Apple Watch teardowns</a> reveal the precision-intensive process.",
+    "advisory": "If the repair cost approaches the value of your Apple Watch, we'll explain your options.",
+    "fallback": "Unlike phones, Apple Watch data is typically synced to your iPhone, so data loss is rarely a concern."
+  },
+  "faqs": [
+    {
+      "question": "How long does Apple Watch screen replacement take in Winnipeg?",
+      "answer": "Most Apple Watch screen replacements take 1-2 hours."
+    },
+    {
+      "question": "Is my Apple Watch still water resistant after repair?",
+      "answer": "We take care to maintain water resistance during repairs."
+    },
+    {
+      "question": "How much does Apple Watch battery replacement cost in Winnipeg?",
+      "answer": "Costs vary by model. Contact our Winnipeg locations for a free quote."
+    },
+    {
+      "question": "Do you repair Apple Watch Ultra in Winnipeg?",
+      "answer": "Yes! We repair Apple Watch Ultra and Ultra 2."
+    },
+    {
+      "question": "How do I know if my Apple Watch battery needs replacing?",
+      "answer": "Signs include rapid battery drain, unexpected shutdowns, or not lasting a full day."
+    }
+  ],
+  "service_area_note": "Serving St. Vital, Fort Garry, Garden City, Transcona, and all Winnipeg neighborhoods. Also serving Thompson, MB. Walk-ins welcome or book online.",
+  "locations": [
+    {
+      "name": "St. Vital Centre",
+      "address": "1225 St Mary's Rd, Winnipeg, MB R2M 5E5",
+      "phone": "(204) 500-9757",
+      "phoneHref": "tel:2045009757",
+      "hours": "Mon–Sat 10am–7pm, Sun 12pm–5pm",
+      "mapUrl": "https://maps.google.com/?q=Mobile+Tech+Lab+St+Vital",
+      "badge": "Walk-ins Welcome"
+    },
+    {
+      "name": "Garden City Shopping Centre",
+      "address": "2305 McPhillips St, Winnipeg, MB R2V 3E1",
+      "phone": "(204) 515-7736",
+      "phoneHref": "tel:2045157736",
+      "hours": "Mon–Sat 10am–7pm, Sun 12pm–5pm",
+      "mapUrl": "https://maps.google.com/?q=Mobile+Tech+Lab+Garden+City",
+      "badge": "Walk-ins Welcome"
+    }
+  ],
+  "cta": {
+    "quoteWidgetUrl": "https://shop.mobiletechlab.ca/pages/repair2",
+    "primaryPhone": "(204) 500-9757",
+    "primaryPhoneHref": "tel:2045009757",
+    "smsNumber": "2045009757",
+    "smsMessage": "Hi, I found your site searching for Apple Watch repair. Can you help?"
+  },
+  "table_of_contents": [
+    {
+      "id": "hero",
+      "label": "Overview"
+    },
+    {
+      "id": "services",
+      "label": "Services"
+    },
+    {
+      "id": "models",
+      "label": "Models"
+    },
+    {
+      "id": "why-choose-us",
+      "label": "Why Us"
+    },
+    {
+      "id": "locations",
+      "label": "Locations"
+    },
+    {
+      "id": "faqs",
+      "label": "FAQs"
+    }
+  ],
+  "structured_data": {
+    "breadcrumb_list": {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://mobiletechlab.ca/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Repairs",
+          "item": "https://mobiletechlab.ca/repair"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Apple Watch"
+        }
+      ]
+    },
+    "service": {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Apple Watch Repair Service",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Mobile Tech Lab",
+        "url": "https://mobiletechlab.ca"
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Winnipeg"
+      },
+      "serviceType": "Wearable Repair",
+      "url": "https://mobiletechlab.ca/repair/apple-watch",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Apple Watch Repair Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Screen Replacement"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Battery Replacement"
+            }
+          }
+        ]
+      }
+    },
+    "faq_page": {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How long does Apple Watch screen replacement take in Winnipeg?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most Apple Watch screen replacements take 1-2 hours."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my Apple Watch still water resistant after repair?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We take care to maintain water resistance during repairs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does Apple Watch battery replacement cost in Winnipeg?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Costs vary by model. Contact our Winnipeg locations for a free quote."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you repair Apple Watch Ultra in Winnipeg?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! We repair Apple Watch Ultra and Ultra 2."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I know if my Apple Watch battery needs replacing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Signs include rapid battery drain, unexpected shutdowns, or not lasting a full day."
+          }
+        }
+      ]
+    }
+  },
+  "validation_checklist": [
+    "Page has exactly ONE <h1> tag matching the `page.h1` field",
+    "All services render with inline SVG icons, not an icon library import",
+    "All FAQ items use <details>/<summary>, not JS accordions",
+    "All external links have target='_blank' rel='noopener noreferrer'",
+    "Canonical URL matches `page.canonicalUrl` exactly",
+    "All three JSON-LD blocks are injected in <head>",
+    "<meta name='robots' content='index, follow'> is present",
+    "No React, Preact, or JSX runtime in the build output",
+    "Hero image has loading='eager'; all other images have loading='lazy'",
+    "Page renders fully without JavaScript enabled",
+    "All color classes use Tailwind semantic tokens (bg-primary, text-foreground, etc.)",
+    "Phone links use tel: protocol; SMS links use sms: protocol",
+    "Section IDs match table_of_contents entries for anchor navigation",
+    "No placeholder content — every string comes from this JSON"
+  ]
+}

@@ -1,0 +1,456 @@
+{
+  "meta": {
+    "version": "1.0",
+    "generator": "mobiletechlab-lovable-export",
+    "date": "2026-03-15",
+    "reference_doc": "/seo-exports/astro-repair-template.md",
+    "purpose": "LLM prompt to generate an Astro static page for Amazon Kindle & Fire repair services",
+    "template": "RepairLandingTemplate"
+  },
+  "constraints": {
+    "framework": "Astro (latest stable)",
+    "rendering": "Static HTML only — zero client-side JavaScript unless explicitly marked as `client:load` island",
+    "styling": "Tailwind CSS using semantic design tokens from the provided CSS variables. NEVER use raw color values (no `bg-blue-500`, no `text-white`). Use `bg-primary`, `text-foreground`, `bg-muted`, etc.",
+    "fonts": "Inter via Google Fonts, loaded in <head> with `font-display: swap`",
+    "icons": "Inline SVG only — no icon library runtime. Copy SVG paths from Lucide (https://lucide.dev). Each icon must have `aria-hidden=\"true\"` and `focusable=\"false\"`.",
+    "images": "All `<img>` tags MUST have `alt`, `width`, `height`, and `loading=\"lazy\"` (except hero which uses `loading=\"eager\"`). Use Astro `<Image />` component where possible.",
+    "links_internal": "Standard `<a href=\"/path\">` — NO client-side router. All internal links must start with `/`.",
+    "links_external": "All external `<a>` tags MUST have `target=\"_blank\"` and `rel=\"noopener noreferrer\"`.",
+    "accessibility": "All interactive elements must be keyboard-accessible. Use semantic HTML (`<nav>`, `<main>`, `<section>`, `<article>`, `<footer>`). Buttons must have visible focus rings.",
+    "accordions": "Use native `<details>` + `<summary>` elements. NO JavaScript accordions.",
+    "seo_title_max_chars": 60,
+    "seo_description_max_chars": 160,
+    "must_have_single_h1": true,
+    "canonical_url_required": true,
+    "structured_data_required": [
+      "BreadcrumbList",
+      "Service",
+      "FAQPage"
+    ],
+    "forbidden": [
+      "React or any JSX runtime",
+      "useState, useEffect, or any React hooks",
+      "Client-side routing (react-router, @astrojs/preact, etc.)",
+      "CSS-in-JS libraries",
+      "Hardcoded color values in components",
+      "JavaScript-based accordions or toggles",
+      "Placeholder or lorem ipsum content",
+      "Any content not present in this JSON"
+    ]
+  },
+  "file_structure": {
+    "layout": "src/layouts/BaseLayout.astro",
+    "page": "src/pages/repair/amazon-kindle.astro",
+    "components": [
+      "src/components/repair/VisibleBreadcrumbs.astro",
+      "src/components/repair/HeroSection.astro",
+      "src/components/repair/ServiceGrid.astro",
+      "src/components/repair/ModelListGrid.astro",
+      "src/components/repair/WhyChooseUs.astro",
+      "src/components/repair/PricingMicroCopy.astro",
+      "src/components/repair/LocationCards.astro",
+      "src/components/repair/FAQSection.astro",
+      "src/components/repair/StickyMobileCTA.astro",
+      "src/components/repair/TableOfContents.astro"
+    ]
+  },
+  "section_order": [
+    "breadcrumbs",
+    "hero",
+    "services",
+    "models",
+    "why_choose_us",
+    "pricing_micro_copy",
+    "locations",
+    "faqs",
+    "sticky_mobile_cta",
+    "table_of_contents"
+  ],
+  "page": {
+    "slug": "amazon-kindle",
+    "canonicalUrl": "https://mobiletechlab.ca/repair/amazon-kindle",
+    "metaTitle": "Amazon Kindle & Fire Tablet Repair Winnipeg | E-Reader Specialists",
+    "metaDescription": "Expert Kindle e-reader and Fire tablet repair in Winnipeg. E-Ink screen replacement, battery service, charging port repair. Same-day service available.",
+    "robots": "index, follow",
+    "deviceName": "Amazon Kindle & Fire",
+    "h1": "Winnipeg's Kindle & Fire Tablet Repair Experts",
+    "heroDescription": "From cracked E-Ink displays to dead batteries, we specialize in Amazon device repairs.",
+    "heroImage": {
+      "src": "/assets/hero-amazon-kindle.png",
+      "alt": "Amazon Kindle & Fire repair services in Winnipeg",
+      "width": 600,
+      "height": 400,
+      "loading": "eager"
+    }
+  },
+  "breadcrumbs": [
+    {
+      "label": "Home",
+      "href": "/"
+    },
+    {
+      "label": "Repairs",
+      "href": "/repair"
+    },
+    {
+      "label": "Amazon Kindle & Fire",
+      "href": null
+    }
+  ],
+  "services": [
+    {
+      "icon": "Monitor",
+      "name": "Screen Replacement",
+      "description": "We replace E-Ink and LCD displays on all Kindle and Fire models."
+    },
+    {
+      "icon": "Battery",
+      "name": "Battery Replacement",
+      "description": "Restore your device's battery life for extended reading or streaming."
+    },
+    {
+      "icon": "Zap",
+      "name": "Charging Port Repair",
+      "description": "Fix loose or damaged USB-C and micro-USB charging ports."
+    },
+    {
+      "icon": "Volume2",
+      "name": "Speaker Repair",
+      "description": "Restore clear audio on your Fire tablet."
+    },
+    {
+      "icon": "Droplets",
+      "name": "Water Damage Recovery",
+      "description": "Liquid exposure? We can assess and recover water-damaged devices."
+    },
+    {
+      "icon": "Wifi",
+      "name": "Wi-Fi & Connectivity Issues",
+      "description": "Resolve wireless connectivity problems."
+    }
+  ],
+  "advantage_pillars": [
+    {
+      "icon": "Smartphone",
+      "title": "Amazon Device Experts",
+      "description": "We specialize in Kindle e-readers and Fire tablets."
+    },
+    {
+      "icon": "Monitor",
+      "title": "E-Ink Display Specialists",
+      "description": "Expertise in delicate E-Ink screen technology."
+    },
+    {
+      "icon": "Battery",
+      "title": "Extended Battery Life",
+      "description": "Quality battery replacements to restore weeks of reading time."
+    },
+    {
+      "icon": "Fingerprint",
+      "title": "Warranty on Every Repair",
+      "description": "Screen repairs from 30 days to lifetime. 90-day battery warranty."
+    }
+  ],
+  "model_categories": [
+    {
+      "title": "Kindle E-Readers",
+      "models": [
+        "Kindle (11th Gen)",
+        "Kindle (10th Gen)",
+        "Kindle Paperwhite (11th Gen)",
+        "Kindle Paperwhite (10th Gen)",
+        "Kindle Paperwhite Signature Edition",
+        "Kindle Oasis (10th Gen)",
+        "Kindle Oasis (9th Gen)",
+        "Kindle Scribe"
+      ],
+      "description": "E-Ink display repairs and battery replacements."
+    },
+    {
+      "title": "Fire Tablets",
+      "models": [
+        "Fire HD 10 (2023)",
+        "Fire HD 10 (2021)",
+        "Fire HD 10 Plus",
+        "Fire HD 8 (2022)",
+        "Fire HD 8 (2020)",
+        "Fire HD 8 Plus",
+        "Fire 7 (2022)",
+        "Fire 7 (2019)",
+        "Fire Max 11"
+      ],
+      "description": "LCD screen and hardware repairs."
+    },
+    {
+      "title": "Kids Editions",
+      "models": [
+        "Kindle Kids (2022)",
+        "Fire HD 10 Kids",
+        "Fire HD 10 Kids Pro",
+        "Fire HD 8 Kids",
+        "Fire HD 8 Kids Pro",
+        "Fire 7 Kids"
+      ],
+      "description": "Kid-proof case and internal repairs."
+    }
+  ],
+  "models_flat": [
+    "Kindle (11th Gen)",
+    "Kindle (10th Gen)",
+    "Kindle Paperwhite (11th Gen)",
+    "Kindle Paperwhite (10th Gen)",
+    "Kindle Paperwhite Signature Edition",
+    "Kindle Oasis (10th Gen)",
+    "Kindle Oasis (9th Gen)",
+    "Kindle Scribe",
+    "Fire HD 10 (2023)",
+    "Fire HD 10 (2021)",
+    "Fire HD 10 Plus",
+    "Fire HD 8 (2022)",
+    "Fire HD 8 (2020)",
+    "Fire HD 8 Plus",
+    "Fire 7 (2022)",
+    "Fire 7 (2019)",
+    "Fire Max 11",
+    "Kindle Kids (2022)",
+    "Fire HD 10 Kids",
+    "Fire HD 10 Kids Pro",
+    "Fire HD 8 Kids",
+    "Fire HD 8 Kids Pro",
+    "Fire 7 Kids"
+  ],
+  "models_description": "We repair all Amazon Kindle e-readers and Fire tablets, including latest generations and discontinued models.",
+  "pricing_micro_copy": {
+    "costDriver": "Kindle and Fire tablet repair costs depend on the device. Amazon's <a href='https://www.amazon.ca/gp/help/customer/display.html?nodeId=GKMQC26VQQMM8XSW' target='_blank' rel='noopener noreferrer'>device support pages</a> cover troubleshooting.",
+    "priceShock": "An E-Ink screen replacement can approach the cost of a new Kindle. <a href='https://www.ifixit.com/Search?query=kindle+teardown' target='_blank' rel='noopener noreferrer'>iFixit's Kindle teardowns</a> illustrate why E-Ink displays are costly to replace.",
+    "advisory": "If the repair cost approaches your device's value, we'll explain that clearly.",
+    "fallback": "Your content is typically tied to your Amazon account and will sync to a new device."
+  },
+  "faqs": [
+    {
+      "question": "Can you replace a cracked E-Ink screen on my Kindle?",
+      "answer": "Yes! We can replace damaged E-Ink displays on most Kindle models."
+    },
+    {
+      "question": "How long does a Kindle battery replacement take?",
+      "answer": "Most can be completed within 1-2 hours."
+    },
+    {
+      "question": "My Fire tablet won't charge. Can you fix it?",
+      "answer": "Absolutely. Charging port issues are common and we can repair or replace damaged USB ports."
+    },
+    {
+      "question": "Do you repair older Kindle models?",
+      "answer": "We service most Kindle and Fire models. Contact us."
+    },
+    {
+      "question": "Will I lose my books and content after repair?",
+      "answer": "In most cases, your Amazon account content remains intact."
+    }
+  ],
+  "service_area_note": "Serving St. Vital, Thompson, and surrounding Manitoba communities.",
+  "locations": [
+    {
+      "name": "St. Vital Centre",
+      "address": "1225 St Mary's Rd, Winnipeg, MB R2M 5E5",
+      "phone": "(204) 500-9757",
+      "phoneHref": "tel:2045009757",
+      "hours": "Mon–Sat 10am–7pm, Sun 12pm–5pm",
+      "mapUrl": "https://maps.google.com/?q=Mobile+Tech+Lab+St+Vital",
+      "badge": "Walk-ins Welcome"
+    },
+    {
+      "name": "Garden City Shopping Centre",
+      "address": "2305 McPhillips St, Winnipeg, MB R2V 3E1",
+      "phone": "(204) 515-7736",
+      "phoneHref": "tel:2045157736",
+      "hours": "Mon–Sat 10am–7pm, Sun 12pm–5pm",
+      "mapUrl": "https://maps.google.com/?q=Mobile+Tech+Lab+Garden+City",
+      "badge": "Walk-ins Welcome"
+    }
+  ],
+  "cta": {
+    "quoteWidgetUrl": "https://shop.mobiletechlab.ca/pages/repair2",
+    "primaryPhone": "(204) 500-9757",
+    "primaryPhoneHref": "tel:2045009757",
+    "smsNumber": "2045009757",
+    "smsMessage": "Hi, I found your site searching for Amazon Kindle & Fire repair. Can you help?"
+  },
+  "table_of_contents": [
+    {
+      "id": "hero",
+      "label": "Overview"
+    },
+    {
+      "id": "services",
+      "label": "Services"
+    },
+    {
+      "id": "models",
+      "label": "Models"
+    },
+    {
+      "id": "why-choose-us",
+      "label": "Why Us"
+    },
+    {
+      "id": "locations",
+      "label": "Locations"
+    },
+    {
+      "id": "faqs",
+      "label": "FAQs"
+    }
+  ],
+  "structured_data": {
+    "breadcrumb_list": {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://mobiletechlab.ca/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Repairs",
+          "item": "https://mobiletechlab.ca/repair"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Amazon Kindle & Fire"
+        }
+      ]
+    },
+    "service": {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Amazon Kindle & Fire Repair Service",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Mobile Tech Lab",
+        "url": "https://mobiletechlab.ca"
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Winnipeg"
+      },
+      "serviceType": "Tablet Repair",
+      "url": "https://mobiletechlab.ca/repair/amazon-kindle",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Amazon Kindle & Fire Repair Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Screen Replacement"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Battery Replacement"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Charging Port Repair"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Speaker Repair"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Water Damage Recovery"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Wi-Fi & Connectivity Issues"
+            }
+          }
+        ]
+      }
+    },
+    "faq_page": {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can you replace a cracked E-Ink screen on my Kindle?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! We can replace damaged E-Ink displays on most Kindle models."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does a Kindle battery replacement take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most can be completed within 1-2 hours."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "My Fire tablet won't charge. Can you fix it?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely. Charging port issues are common and we can repair or replace damaged USB ports."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you repair older Kindle models?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We service most Kindle and Fire models. Contact us."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will I lose my books and content after repair?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In most cases, your Amazon account content remains intact."
+          }
+        }
+      ]
+    }
+  },
+  "validation_checklist": [
+    "Page has exactly ONE <h1> tag matching the `page.h1` field",
+    "All services render with inline SVG icons, not an icon library import",
+    "All FAQ items use <details>/<summary>, not JS accordions",
+    "All external links have target='_blank' rel='noopener noreferrer'",
+    "Canonical URL matches `page.canonicalUrl` exactly",
+    "All three JSON-LD blocks are injected in <head>",
+    "<meta name='robots' content='index, follow'> is present",
+    "No React, Preact, or JSX runtime in the build output",
+    "Hero image has loading='eager'; all other images have loading='lazy'",
+    "Page renders fully without JavaScript enabled",
+    "All color classes use Tailwind semantic tokens (bg-primary, text-foreground, etc.)",
+    "Phone links use tel: protocol; SMS links use sms: protocol",
+    "Section IDs match table_of_contents entries for anchor navigation",
+    "No placeholder content — every string comes from this JSON"
+  ]
+}

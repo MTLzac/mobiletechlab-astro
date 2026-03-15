@@ -1,0 +1,479 @@
+{
+  "meta": {
+    "version": "1.0",
+    "generator": "mobiletechlab-lovable-export",
+    "date": "2026-03-15",
+    "reference_doc": "/seo-exports/astro-repair-template.md",
+    "purpose": "LLM prompt to generate an Astro static page for Xbox repair services",
+    "template": "RepairLandingTemplate"
+  },
+  "constraints": {
+    "framework": "Astro (latest stable)",
+    "rendering": "Static HTML only — zero client-side JavaScript unless explicitly marked as `client:load` island",
+    "styling": "Tailwind CSS using semantic design tokens from the provided CSS variables. NEVER use raw color values (no `bg-blue-500`, no `text-white`). Use `bg-primary`, `text-foreground`, `bg-muted`, etc.",
+    "fonts": "Inter via Google Fonts, loaded in <head> with `font-display: swap`",
+    "icons": "Inline SVG only — no icon library runtime. Copy SVG paths from Lucide (https://lucide.dev). Each icon must have `aria-hidden=\"true\"` and `focusable=\"false\"`.",
+    "images": "All `<img>` tags MUST have `alt`, `width`, `height`, and `loading=\"lazy\"` (except hero which uses `loading=\"eager\"`). Use Astro `<Image />` component where possible.",
+    "links_internal": "Standard `<a href=\"/path\">` — NO client-side router. All internal links must start with `/`.",
+    "links_external": "All external `<a>` tags MUST have `target=\"_blank\"` and `rel=\"noopener noreferrer\"`.",
+    "accessibility": "All interactive elements must be keyboard-accessible. Use semantic HTML (`<nav>`, `<main>`, `<section>`, `<article>`, `<footer>`). Buttons must have visible focus rings.",
+    "accordions": "Use native `<details>` + `<summary>` elements. NO JavaScript accordions.",
+    "seo_title_max_chars": 60,
+    "seo_description_max_chars": 160,
+    "must_have_single_h1": true,
+    "canonical_url_required": true,
+    "structured_data_required": [
+      "BreadcrumbList",
+      "Service",
+      "FAQPage"
+    ],
+    "forbidden": [
+      "React or any JSX runtime",
+      "useState, useEffect, or any React hooks",
+      "Client-side routing (react-router, @astrojs/preact, etc.)",
+      "CSS-in-JS libraries",
+      "Hardcoded color values in components",
+      "JavaScript-based accordions or toggles",
+      "Placeholder or lorem ipsum content",
+      "Any content not present in this JSON"
+    ]
+  },
+  "file_structure": {
+    "layout": "src/layouts/BaseLayout.astro",
+    "page": "src/pages/repair/xbox.astro",
+    "components": [
+      "src/components/repair/VisibleBreadcrumbs.astro",
+      "src/components/repair/HeroSection.astro",
+      "src/components/repair/ServiceGrid.astro",
+      "src/components/repair/ModelListGrid.astro",
+      "src/components/repair/WhyChooseUs.astro",
+      "src/components/repair/PricingMicroCopy.astro",
+      "src/components/repair/LocationCards.astro",
+      "src/components/repair/FAQSection.astro",
+      "src/components/repair/StickyMobileCTA.astro",
+      "src/components/repair/TableOfContents.astro"
+    ]
+  },
+  "section_order": [
+    "breadcrumbs",
+    "hero",
+    "services",
+    "models",
+    "why_choose_us",
+    "pricing_micro_copy",
+    "locations",
+    "faqs",
+    "sticky_mobile_cta",
+    "table_of_contents"
+  ],
+  "page": {
+    "slug": "xbox",
+    "canonicalUrl": "https://mobiletechlab.ca/repair/xbox",
+    "metaTitle": "Xbox Repair Winnipeg | Series X & Controller Fix | Mobile Tech Lab",
+    "metaDescription": "Xbox repair in Winnipeg. Overheating, HDMI port, disc drive, controller repair for Xbox Series X, Series S, One & 360. Console specialists.",
+    "robots": "index, follow",
+    "deviceName": "Xbox",
+    "h1": "Xbox Repair Winnipeg",
+    "heroDescription": "Xbox not cooperating? We repair a wide range of Xbox issues across all major models, including HDMI port damage, power or no-power problems, overheating, disc drive issues, and common controller repairs such as stick drift, charging port damage, button issues, or sync problems.",
+    "heroImage": {
+      "src": "/assets/hero-xbox.png",
+      "alt": "Xbox repair services in Winnipeg",
+      "width": 600,
+      "height": 400,
+      "loading": "eager"
+    }
+  },
+  "breadcrumbs": [
+    {
+      "label": "Home",
+      "href": "/"
+    },
+    {
+      "label": "Repairs",
+      "href": "/repair"
+    },
+    {
+      "label": "Xbox",
+      "href": null
+    }
+  ],
+  "services": [
+    {
+      "icon": "Fan",
+      "name": "Overheating Repair",
+      "description": "Clean and service cooling systems to fix Xbox overheating."
+    },
+    {
+      "icon": "Plug",
+      "name": "HDMI Port Repair",
+      "description": "Replace damaged HDMI ports—no signal issues fixed. Xbox HDMI repairs involve board-level work."
+    },
+    {
+      "icon": "Power",
+      "name": "No Power Issues",
+      "description": "Diagnose and repair Xbox power supply and boot problems."
+    },
+    {
+      "icon": "Disc",
+      "name": "Disc Drive Repair",
+      "description": "Fix disc reading issues and drive replacements."
+    },
+    {
+      "icon": "Gamepad2",
+      "name": "Controller Repair",
+      "description": "Fix Xbox controller stick drift, bumper issues, charging ports, button failures, and sync problems."
+    },
+    {
+      "icon": "HardDrive",
+      "name": "Storage Upgrade",
+      "description": "Upgrade internal storage for more game capacity."
+    }
+  ],
+  "advantage_pillars": [
+    {
+      "icon": "Award",
+      "title": "Xbox Specialists",
+      "description": "Winnipeg's Xbox Series X, Series S, and One repair experts."
+    },
+    {
+      "icon": "Gamepad2",
+      "title": "Elite Controller Pros",
+      "description": "Specialized in Xbox Elite controller repairs."
+    },
+    {
+      "icon": "Zap",
+      "title": "Console Repair Pros",
+      "description": "HDMI port micro-soldering and board-level repairs. Many can be completed same day."
+    },
+    {
+      "icon": "Award",
+      "title": "Warranty on Every Repair",
+      "description": "Lifetime warranty on most Xbox and controller repairs."
+    }
+  ],
+  "model_categories": [
+    {
+      "title": "Xbox Series",
+      "models": [
+        "Xbox Series X",
+        "Xbox Series S"
+      ],
+      "description": "Current generation Xbox consoles."
+    },
+    {
+      "title": "Xbox One",
+      "models": [
+        "Xbox One X",
+        "Xbox One S",
+        "Xbox One S All-Digital",
+        "Xbox One (Original)"
+      ],
+      "description": "Previous generation Xbox One family."
+    },
+    {
+      "title": "Controllers",
+      "models": [
+        "Xbox Wireless Controller (Series X|S)",
+        "Xbox Elite Series 2",
+        "Xbox Elite Controller",
+        "Xbox One Controller"
+      ],
+      "description": "Standard and Elite controller repairs."
+    },
+    {
+      "title": "Xbox 360",
+      "models": [
+        "Xbox 360 E",
+        "Xbox 360 S",
+        "Xbox 360 (Original)"
+      ],
+      "description": "Legacy Xbox 360 repairs."
+    }
+  ],
+  "models_flat": [
+    "Xbox Series X",
+    "Xbox Series S",
+    "Xbox One X",
+    "Xbox One S",
+    "Xbox One S All-Digital",
+    "Xbox One (Original)",
+    "Xbox 360 E",
+    "Xbox 360 S",
+    "Xbox 360 (Original)",
+    "Xbox Wireless Controller (Series X|S)",
+    "Xbox Elite Wireless Controller Series 2",
+    "Xbox Elite Wireless Controller",
+    "Xbox One Controller"
+  ],
+  "models_description": "We repair all Xbox consoles including Series X, Series S, One, and 360, plus Elite and standard controllers.",
+  "pricing_micro_copy": {
+    "costDriver": "Xbox repair costs depend on the issue—simple fixes like thermal paste are affordable, while HDMI port repairs involve board-level soldering. Microsoft's <a href='https://support.xbox.com/en-CA/help/hardware-network/console/console-wont-power-on' target='_blank' rel='noopener noreferrer'>Xbox hardware troubleshooting guide</a> covers power and connectivity issues.",
+    "priceShock": "Many customers are surprised that console repairs can approach a significant portion of the device's value. <a href='https://www.ifixit.com/Search?query=xbox+teardown' target='_blank' rel='noopener noreferrer'>iFixit's Xbox teardowns</a> show the internal layout differences across generations.",
+    "advisory": "If the repair cost doesn't make financial sense, we'll explain alternatives including trade-in options.",
+    "fallback": "Your game saves are typically backed up to Xbox Live, so data loss is rarely a concern."
+  },
+  "faqs": [
+    {
+      "question": "Can you fix Xbox Series X overheating?",
+      "answer": "Yes! We clean dust buildup, replace thermal paste, and ensure proper airflow."
+    },
+    {
+      "question": "Do you repair Xbox controller drift?",
+      "answer": "Yes, we repair analog stick drift on all Xbox controllers including Elite controllers."
+    },
+    {
+      "question": "Can you fix Xbox HDMI port?",
+      "answer": "Yes, HDMI port replacement is a specialty—we use micro-soldering."
+    },
+    {
+      "question": "Do you repair Xbox Elite controllers?",
+      "answer": "Yes, we service Elite controllers including stick drift, bumper issues, paddle problems."
+    },
+    {
+      "question": "My Xbox won't turn on—can you fix it?",
+      "answer": "Yes, we diagnose and repair power issues including power supply replacement and board-level repairs."
+    }
+  ],
+  "service_area_note": "Serving St. Vital, Fort Garry, Garden City, Transcona, and all Winnipeg neighborhoods. Also serving Thompson, MB. Walk-ins welcome or book online.",
+  "locations": [
+    {
+      "name": "St. Vital Centre",
+      "address": "1225 St Mary's Rd, Winnipeg, MB R2M 5E5",
+      "phone": "(204) 500-9757",
+      "phoneHref": "tel:2045009757",
+      "hours": "Mon–Sat 10am–7pm, Sun 12pm–5pm",
+      "mapUrl": "https://maps.google.com/?q=Mobile+Tech+Lab+St+Vital",
+      "badge": "Walk-ins Welcome"
+    },
+    {
+      "name": "Garden City Shopping Centre",
+      "address": "2305 McPhillips St, Winnipeg, MB R2V 3E1",
+      "phone": "(204) 515-7736",
+      "phoneHref": "tel:2045157736",
+      "hours": "Mon–Sat 10am–7pm, Sun 12pm–5pm",
+      "mapUrl": "https://maps.google.com/?q=Mobile+Tech+Lab+Garden+City",
+      "badge": "Walk-ins Welcome"
+    }
+  ],
+  "cta": {
+    "quoteWidgetUrl": "https://shop.mobiletechlab.ca/pages/repair2",
+    "primaryPhone": "(204) 500-9757",
+    "primaryPhoneHref": "tel:2045009757",
+    "smsNumber": "2045009757",
+    "smsMessage": "Hi, I found your site searching for Xbox repair. Can you help?"
+  },
+  "table_of_contents": [
+    {
+      "id": "hero",
+      "label": "Overview"
+    },
+    {
+      "id": "services",
+      "label": "Services"
+    },
+    {
+      "id": "models",
+      "label": "Models"
+    },
+    {
+      "id": "why-choose-us",
+      "label": "Why Us"
+    },
+    {
+      "id": "locations",
+      "label": "Locations"
+    },
+    {
+      "id": "faqs",
+      "label": "FAQs"
+    }
+  ],
+  "structured_data": {
+    "breadcrumb_list": {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://mobiletechlab.ca/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Repairs",
+          "item": "https://mobiletechlab.ca/repair"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Xbox"
+        }
+      ]
+    },
+    "service": {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Xbox Repair Service",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Mobile Tech Lab",
+        "url": "https://mobiletechlab.ca"
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Winnipeg"
+      },
+      "serviceType": "Console Repair",
+      "url": "https://mobiletechlab.ca/repair/xbox",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Xbox Repair Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Overheating Repair"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "HDMI Port Repair"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "No Power Issues"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Disc Drive Repair"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Controller Repair"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Storage Upgrade"
+            }
+          }
+        ]
+      }
+    },
+    "faq_page": {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can you fix Xbox Series X overheating?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! We clean dust buildup, replace thermal paste, and ensure proper airflow."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you repair Xbox controller drift?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we repair analog stick drift on all Xbox controllers including Elite controllers."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you fix Xbox HDMI port?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, HDMI port replacement is a specialty—we use micro-soldering."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you repair Xbox Elite controllers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we service Elite controllers including stick drift, bumper issues, paddle problems."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "My Xbox won't turn on—can you fix it?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we diagnose and repair power issues including power supply replacement and board-level repairs."
+          }
+        }
+      ]
+    }
+  },
+  "extra_sections": {
+    "hdmi_section": {
+      "heading": "Xbox HDMI Port Repair Winnipeg",
+      "description": "Damaged HDMI ports are one of the most common Xbox repairs we see in Winnipeg.",
+      "symptoms": [
+        "No signal on the TV",
+        "Flickering display",
+        "Loose HDMI connection",
+        "HDMI cable not seating properly"
+      ],
+      "before_after_image": "/assets/repairs/xbox-hdmi-before-after.png",
+      "before_label": "Broken HDMI Port",
+      "after_label": "Repaired HDMI Port"
+    },
+    "related_console_repairs": [
+      {
+        "label": "PlayStation 5 Repair Winnipeg",
+        "href": "/repair/ps5"
+      },
+      {
+        "label": "PlayStation 4 Repair Winnipeg",
+        "href": "/repair/ps4"
+      },
+      {
+        "label": "Nintendo Switch Repair Winnipeg",
+        "href": "/repair/nintendo-switch"
+      },
+      {
+        "label": "Controller Repair Winnipeg",
+        "href": "/repair/controller-repair-winnipeg"
+      }
+    ],
+    "console_hub_link": {
+      "label": "See all of our console repair services →",
+      "href": "/consoles"
+    }
+  },
+  "validation_checklist": [
+    "Page has exactly ONE <h1> tag matching the `page.h1` field",
+    "All services render with inline SVG icons, not an icon library import",
+    "All FAQ items use <details>/<summary>, not JS accordions",
+    "All external links have target='_blank' rel='noopener noreferrer'",
+    "Canonical URL matches `page.canonicalUrl` exactly",
+    "All three JSON-LD blocks are injected in <head>",
+    "<meta name='robots' content='index, follow'> is present",
+    "No React, Preact, or JSX runtime in the build output",
+    "Hero image has loading='eager'; all other images have loading='lazy'",
+    "Page renders fully without JavaScript enabled",
+    "All color classes use Tailwind semantic tokens (bg-primary, text-foreground, etc.)",
+    "Phone links use tel: protocol; SMS links use sms: protocol",
+    "Section IDs match table_of_contents entries for anchor navigation",
+    "No placeholder content — every string comes from this JSON"
+  ]
+}

@@ -1,0 +1,284 @@
+{
+  "meta": {
+    "version": "1.0",
+    "generator": "mobiletechlab-lovable-export",
+    "generated": "2026-03-15",
+    "purpose": "Master index of all repair page LLM prompts for batch Astro build",
+    "total_pages": 31,
+    "usage": "Iterate over `pages` array. For each entry, read the JSON file at `promptFile`, then pass its contents to an LLM to generate the corresponding Astro page at `astroOutputPath`."
+  },
+  "defaults": {
+    "templateRef": "/seo-exports/astro-repair-template.md",
+    "constraintsRef": "See individual prompt JSON `constraints` block",
+    "baseUrl": "https://mobiletechlab.ca",
+    "layoutFile": "src/layouts/BaseLayout.astro"
+  },
+  "pages": [
+    {
+      "slug": "samsung",
+      "deviceName": "Samsung Phone",
+      "category": "phones",
+      "promptFile": "/seo-exports/repair-prompts/samsung.json",
+      "astroOutputPath": "src/pages/repair/samsung.astro",
+      "canonicalUrl": "https://mobiletechlab.ca/repair/samsung"
+    },
+    {
+      "slug": "oppo",
+      "deviceName": "Oppo & Realme",
+      "category": "phones",
+      "promptFile": "/seo-exports/oppo-repair-astro-prompt.json",
+      "astroOutputPath": "src/pages/repair/oppo.astro",
+      "canonicalUrl": "https://mobiletechlab.ca/repair/oppo"
+    },
+    {
+      "slug": "iphone",
+      "deviceName": "iPhone",
+      "category": "phones",
+      "promptFile": "/seo-exports/repair-prompts/iphone.json",
+      "astroOutputPath": "src/pages/repair/iphone.astro",
+      "canonicalUrl": "https://mobiletechlab.ca/repair/iphone"
+    },
+    {
+      "slug": "google-pixel",
+      "deviceName": "Google Pixel",
+      "category": "phones",
+      "promptFile": "/seo-exports/repair-prompts/google-pixel.json",
+      "astroOutputPath": "src/pages/repair/google-pixel.astro",
+      "canonicalUrl": "https://mobiletechlab.ca/repair/google-pixel"
+    },
+    {
+      "slug": "huawei",
+      "deviceName": "Huawei",
+      "category": "phones",
+      "promptFile": "/seo-exports/repair-prompts/huawei.json",
+      "astroOutputPath": "src/pages/repair/huawei.astro",
+      "canonicalUrl": "https://mobiletechlab.ca/repair/huawei"
+    },
+    {
+      "slug": "lg",
+      "deviceName": "LG",
+      "category": "phones",
+      "promptFile": "/seo-exports/repair-prompts/lg.json",
+      "astroOutputPath": "src/pages/repair/lg.astro",
+      "canonicalUrl": "https://mobiletechlab.ca/repair/lg"
+    },
+    {
+      "slug": "motorola",
+      "deviceName": "Motorola",
+      "category": "phones",
+      "promptFile": "/seo-exports/repair-prompts/motorola.json",
+      "astroOutputPath": "src/pages/repair/motorola.astro",
+      "canonicalUrl": "https://mobiletechlab.ca/repair/motorola"
+    },
+    {
+      "slug": "oneplus",
+      "deviceName": "OnePlus",
+      "category": "phones",
+      "promptFile": "/seo-exports/repair-prompts/oneplus.json",
+      "astroOutputPath": "src/pages/repair/oneplus.astro",
+      "canonicalUrl": "https://mobiletechlab.ca/repair/oneplus"
+    },
+    {
+      "slug": "infinix",
+      "deviceName": "Infinix",
+      "category": "phones",
+      "promptFile": "/seo-exports/repair-prompts/infinix.json",
+      "astroOutputPath": "src/pages/repair/infinix.astro",
+      "canonicalUrl": "https://mobiletechlab.ca/repair/infinix"
+    },
+    {
+      "slug": "nothing",
+      "deviceName": "Nothing Phone",
+      "category": "phones",
+      "promptFile": "/seo-exports/repair-prompts/nothing.json",
+      "astroOutputPath": "src/pages/repair/nothing.astro",
+      "canonicalUrl": "https://mobiletechlab.ca/repair/nothing"
+    },
+    {
+      "slug": "xiaomi",
+      "deviceName": "Xiaomi",
+      "category": "phones",
+      "promptFile": "/seo-exports/repair-prompts/xiaomi.json",
+      "astroOutputPath": "src/pages/repair/xiaomi.astro",
+      "canonicalUrl": "https://mobiletechlab.ca/repair/xiaomi"
+    },
+    {
+      "slug": "vivo",
+      "deviceName": "Vivo",
+      "category": "phones",
+      "promptFile": "/seo-exports/repair-prompts/vivo.json",
+      "astroOutputPath": "src/pages/repair/vivo.astro",
+      "canonicalUrl": "https://mobiletechlab.ca/repair/vivo"
+    },
+    {
+      "slug": "tcl",
+      "deviceName": "TCL",
+      "category": "phones",
+      "promptFile": "/seo-exports/repair-prompts/tcl.json",
+      "astroOutputPath": "src/pages/repair/tcl.astro",
+      "canonicalUrl": "https://mobiletechlab.ca/repair/tcl"
+    },
+    {
+      "slug": "zte",
+      "deviceName": "ZTE",
+      "category": "phones",
+      "promptFile": "/seo-exports/repair-prompts/zte.json",
+      "astroOutputPath": "src/pages/repair/zte.astro",
+      "canonicalUrl": "https://mobiletechlab.ca/repair/zte"
+    },
+    {
+      "slug": "blackberry",
+      "deviceName": "Blackberry",
+      "category": "phones",
+      "promptFile": "/seo-exports/repair-prompts/blackberry.json",
+      "astroOutputPath": "src/pages/repair/blackberry.astro",
+      "canonicalUrl": "https://mobiletechlab.ca/repair/blackberry"
+    },
+    {
+      "slug": "sony-xperia",
+      "deviceName": "Sony Xperia",
+      "category": "phones",
+      "promptFile": "/seo-exports/repair-prompts/sony-xperia.json",
+      "astroOutputPath": "src/pages/repair/sony-xperia.astro",
+      "canonicalUrl": "https://mobiletechlab.ca/repair/sony-xperia"
+    },
+    {
+      "slug": "ipad",
+      "deviceName": "iPad",
+      "category": "tablets",
+      "promptFile": "/seo-exports/repair-prompts/ipad.json",
+      "astroOutputPath": "src/pages/repair/ipad.astro",
+      "canonicalUrl": "https://mobiletechlab.ca/repair/ipad"
+    },
+    {
+      "slug": "samsung-galaxy-tab",
+      "deviceName": "Samsung Galaxy Tab",
+      "category": "tablets",
+      "promptFile": "/seo-exports/repair-prompts/samsung-galaxy-tab.json",
+      "astroOutputPath": "src/pages/repair/samsung-galaxy-tab.astro",
+      "canonicalUrl": "https://mobiletechlab.ca/repair/samsung-galaxy-tab"
+    },
+    {
+      "slug": "amazon-kindle",
+      "deviceName": "Amazon Kindle & Fire",
+      "category": "tablets",
+      "promptFile": "/seo-exports/repair-prompts/amazon-kindle.json",
+      "astroOutputPath": "src/pages/repair/amazon-kindle.astro",
+      "canonicalUrl": "https://mobiletechlab.ca/repair/amazon-kindle"
+    },
+    {
+      "slug": "macbook",
+      "deviceName": "MacBook",
+      "category": "computers",
+      "promptFile": "/seo-exports/repair-prompts/macbook.json",
+      "astroOutputPath": "src/pages/repair/macbook.astro",
+      "canonicalUrl": "https://mobiletechlab.ca/repair/macbook"
+    },
+    {
+      "slug": "laptop",
+      "deviceName": "Laptop",
+      "category": "computers",
+      "promptFile": "/seo-exports/repair-prompts/laptop.json",
+      "astroOutputPath": "src/pages/repair/laptop.astro",
+      "canonicalUrl": "https://mobiletechlab.ca/repair/laptop"
+    },
+    {
+      "slug": "surface",
+      "deviceName": "Microsoft Surface",
+      "category": "computers",
+      "promptFile": "/seo-exports/repair-prompts/surface.json",
+      "astroOutputPath": "src/pages/repair/surface.astro",
+      "canonicalUrl": "https://mobiletechlab.ca/repair/surface"
+    },
+    {
+      "slug": "apple-watch",
+      "deviceName": "Apple Watch",
+      "category": "wearables",
+      "promptFile": "/seo-exports/repair-prompts/apple-watch.json",
+      "astroOutputPath": "src/pages/repair/apple-watch.astro",
+      "canonicalUrl": "https://mobiletechlab.ca/repair/apple-watch"
+    },
+    {
+      "slug": "ipod",
+      "deviceName": "iPod",
+      "category": "legacy",
+      "promptFile": "/seo-exports/repair-prompts/ipod.json",
+      "astroOutputPath": "src/pages/repair/ipod.astro",
+      "canonicalUrl": "https://mobiletechlab.ca/repair/ipod"
+    },
+    {
+      "slug": "xbox",
+      "deviceName": "Xbox",
+      "category": "consoles",
+      "promptFile": "/seo-exports/repair-prompts/xbox.json",
+      "astroOutputPath": "src/pages/repair/xbox.astro",
+      "canonicalUrl": "https://mobiletechlab.ca/repair/xbox"
+    },
+    {
+      "slug": "ps5",
+      "deviceName": "PS5",
+      "category": "consoles",
+      "promptFile": "/seo-exports/repair-prompts/ps5.json",
+      "astroOutputPath": "src/pages/repair/ps5.astro",
+      "canonicalUrl": "https://mobiletechlab.ca/repair/ps5"
+    },
+    {
+      "slug": "ps4",
+      "deviceName": "PS4",
+      "category": "consoles",
+      "promptFile": "/seo-exports/repair-prompts/ps4.json",
+      "astroOutputPath": "src/pages/repair/ps4.astro",
+      "canonicalUrl": "https://mobiletechlab.ca/repair/ps4"
+    },
+    {
+      "slug": "nintendo-switch",
+      "deviceName": "Nintendo Switch",
+      "category": "consoles",
+      "promptFile": "/seo-exports/repair-prompts/nintendo-switch.json",
+      "astroOutputPath": "src/pages/repair/nintendo-switch.astro",
+      "canonicalUrl": "https://mobiletechlab.ca/repair/nintendo-switch"
+    },
+    {
+      "slug": "steam-deck",
+      "deviceName": "Steam Deck",
+      "category": "consoles",
+      "promptFile": "/seo-exports/repair-prompts/steam-deck.json",
+      "astroOutputPath": "src/pages/repair/steam-deck.astro",
+      "canonicalUrl": "https://mobiletechlab.ca/repair/steam-deck"
+    },
+    {
+      "slug": "controller-repair-winnipeg",
+      "deviceName": "Controller",
+      "category": "consoles",
+      "promptFile": "/seo-exports/repair-prompts/controller-repair-winnipeg.json",
+      "astroOutputPath": "src/pages/repair/controller-repair-winnipeg.astro",
+      "canonicalUrl": "https://mobiletechlab.ca/repair/controller-repair-winnipeg"
+    },
+    {
+      "slug": "water-damage",
+      "deviceName": "Water Damage",
+      "category": "specialty",
+      "promptFile": "/seo-exports/repair-prompts/water-damage.json",
+      "astroOutputPath": "src/pages/repair/water-damage.astro",
+      "canonicalUrl": "https://mobiletechlab.ca/repair/water-damage",
+      "note": "Uses a different template — verify prompt exists or generate separately"
+    }
+  ],
+  "categories": {
+    "phones": { "label": "Phone Repair", "count": 16 },
+    "tablets": { "label": "Tablets & E-Readers", "count": 3 },
+    "computers": { "label": "Computers & Laptops", "count": 3 },
+    "wearables": { "label": "Wearables", "count": 1 },
+    "legacy": { "label": "Legacy Devices", "count": 1 },
+    "consoles": { "label": "Gaming Consoles", "count": 6 },
+    "specialty": { "label": "Specialty Services", "count": 1 }
+  },
+  "batch_instructions": {
+    "step_1": "Run `node public/seo-exports/repair-prompts/generate-all.cjs` to generate all individual JSON prompt files",
+    "step_2": "For each entry in `pages`, read the JSON file at `promptFile`",
+    "step_3": "Pass the full JSON contents to an LLM with the instruction: 'Generate an Astro page from this specification. Follow every constraint exactly.'",
+    "step_4": "Save the LLM output to `astroOutputPath`",
+    "step_5": "Run `astro build` and verify zero errors",
+    "step_6": "Validate each page against the `validation_checklist` in its prompt JSON"
+  }
+}
