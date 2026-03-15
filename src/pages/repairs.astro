@@ -194,3 +194,24 @@ const repairCategories = [
   </section>
 
 </BaseLayout>
+
+<style>
+  .group {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+
+  .group:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 32px rgba(239, 68, 68, 0.12);
+    border-color: #ef4444;
+  }
+
+  .group .mt-4 svg {
+    transition: transform 0.2s ease;
+  }
+
+  .group:hover .mt-4 svg {
+    transform: translateX(5px);
+  }
+</style>
