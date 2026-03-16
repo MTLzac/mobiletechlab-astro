@@ -1,0 +1,1309 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = "Kindle & Fire Tablet Repair Winnipeg | Mobile Tech Lab";
+const description = "Amazon Kindle and Fire tablet repair in Winnipeg. E-Ink screen, battery, charging port repair for all Kindle and Fire models. Same-day service available.";
+const canonical = "https://mobiletechlab.ca/repair/amazon-kindle";
+
+const breadcrumbs = [
+  { label: "Home", href: "/" },
+  { label: "Repairs", href: "/repairs" },
+  { label: "Kindle & Fire Repair", href: null }
+];
+
+const repairServices = [
+  {
+    iconPath: "<rect x='5' y='2' width='14' height='20' rx='2' ry='2'/><line x1='12' y1='18' x2='12.01' y2='18'/>",
+    title: "Screen Replacement",
+    body: "Cracked or unresponsive display? We replace E-Ink electrophoretic screens on all Kindle e-reader models and LCD screens on Fire HD tablets. E-Ink displays use a completely different technology from standard phone or tablet screens — they require model-specific replacement modules and careful handling. We provide an honest assessment of repair cost versus device value before starting any Kindle screen repair."
+  },
+  {
+    iconPath: "<rect x='2' y='7' width='20' height='14' rx='2' ry='2'/><path d='M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2'/>",
+    title: "Battery Replacement",
+    body: "Kindle dying mid-chapter or Fire tablet not lasting the day? We replace batteries on all Kindle and Fire models with quality cells. Kindle e-reader batteries are designed to last weeks between charges — if yours is lasting only hours, a replacement can restore that extended reading life. All battery replacements include a 90-day warranty."
+  },
+  {
+    iconPath: "<path d='M5 12H19M12 5l7 7-7 7'/>",
+    title: "Charging Port Repair",
+    body: "Kindle or Fire tablet not charging or connecting intermittently? We repair USB-C and Micro-USB charging ports on all Amazon devices. Charging port failures are especially common on Fire tablets used by children — we clean the port before recommending replacement since debris is a frequent cause of charging issues. Most charging port repairs are completed same-day."
+  },
+  {
+    iconPath: "<polygon points='11 5 6 9 2 9 2 15 6 15 11 19 11 5'/><path d='M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07'/>",
+    title: "Speaker Repair",
+    body: "Muffled audio or no sound from your Fire tablet? We repair speaker assemblies and earpieces on all Fire HD models. Speaker issues are common on Fire Kids tablets after drops or liquid exposure — we diagnose the specific cause before recommending replacement. Most speaker repairs are completed same-day."
+  },
+  {
+    iconPath: "<path d='M12 2.69l5.66 5.66a8 8 0 11-11.31 0z'/>",
+    title: "Water Damage Recovery",
+    body: "Kindle or Fire tablet dropped in water? We perform component-level diagnostics and cleaning to assess what can be recovered from liquid-damaged devices. Kindle e-readers are not water resistant on older models — we evaluate the extent of damage and give you an honest prognosis before recommending any repair."
+  },
+  {
+    iconPath: "<path d='M1 6s.5-1 2-1 1.5 1 3 1 1.5-1 3-1 1.5 1 3 1 1.5-1 3-1 1.5 1 3 1'/><path d='M1 12s.5-1 2-1 1.5 1 3 1 1.5-1 3-1 1.5 1 3 1 1.5-1 3-1 1.5 1 3 1'/><line x1='12' y1='20' x2='12' y2='20'/>",
+    title: "Wi-Fi & Connectivity Issues",
+    body: "Kindle or Fire tablet dropping Wi-Fi, failing to connect, or showing weak signal? We diagnose and repair wireless antenna and Wi-Fi module issues across all Kindle and Fire models. Connectivity problems are often caused by physical antenna damage from drops — we identify the root cause before recommending any repair."
+  }
+];
+
+const modelGroups = [
+  {
+    iconPath: "<rect x='5' y='2' width='14' height='20' rx='2' ry='2'/><line x1='12' y1='18' x2='12.01' y2='18'/>",
+    title: "Kindle E-Readers",
+    description: "E-Ink screen repairs and battery replacements for all Kindle generations. E-Ink panels are model-specific — contact us to confirm availability for your Kindle before visiting.",
+    models: ["Kindle Scribe", "Kindle Paperwhite Signature Edition", "Kindle Paperwhite (11th Gen)", "Kindle Paperwhite (10th Gen)", "Kindle Oasis (10th Gen)", "Kindle Oasis (9th Gen)", "Kindle (11th Gen)", "Kindle (10th Gen)"]
+  },
+  {
+    iconPath: "<rect x='4' y='2' width='16' height='20' rx='2' ry='2'/><line x1='12' y1='18' x2='12.01' y2='18'/>",
+    title: "Fire Tablets",
+    description: "LCD screen, battery, and charging port repairs for all Fire HD tablet generations. Fire tablet repairs are generally more accessible than Kindle E-Ink repairs with better parts availability.",
+    models: ["Fire Max 11", "Fire HD 10 (2023)", "Fire HD 10 (2021)", "Fire HD 10 Plus", "Fire HD 8 (2022)", "Fire HD 8 (2020)", "Fire HD 8 Plus", "Fire 7 (2022)", "Fire 7 (2019)"]
+  },
+  {
+    iconPath: "<path d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z'/><polyline points='9 12 11 14 15 10'/>",
+    title: "Kids Edition Devices",
+    description: "Kindle Kids and Fire Kids tablet repairs. Kids Edition devices come with rubber bumper cases that offer some drop protection — but internal screens still crack. We repair all Kids Edition models.",
+    models: ["Kindle Kids (2022)", "Fire HD 10 Kids", "Fire HD 10 Kids Pro", "Fire HD 8 Kids", "Fire HD 8 Kids Pro", "Fire 7 Kids"]
+  }
+];
+
+const whyChooseUs = [
+  {
+    iconPath: "<rect x='5' y='2' width='14' height='20' rx='2' ry='2'/><path d='M12 18h.01'/><path d='M8 6h8M8 10h8M8 14h4'/>",
+    title: "E-Ink Display Specialists",
+    body: "E-Ink electrophoretic displays used in Kindle e-readers are fundamentally different from standard LCD or OLED screens — they require model-specific panels and careful disassembly procedures that most general repair shops don't have experience with. We stock E-Ink replacement modules for current Kindle generations and handle the repair correctly."
+  },
+  {
+    iconPath: "<path d='M9 11l3 3L22 4'/><path d='M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11'/>",
+    title: "Honest Repair vs Replace Advice",
+    body: "An E-Ink screen replacement can sometimes approach the cost of a new entry-level Kindle — we'll always tell you that before starting. For Fire tablets, repair almost always makes financial sense. We give you the real numbers upfront so you can decide with full information — we'd rather give you good advice than take your money for a repair that doesn't make sense."
+  },
+  {
+    iconPath: "<circle cx='12' cy='12' r='10'/><polyline points='12 6 12 12 16 14'/>",
+    title: "Same-Day Service Available",
+    body: "Most Fire tablet battery and charging port repairs are completed same-day at our Winnipeg St. Vital location. Kindle E-Ink screen repairs may require parts ordering depending on your model — contact us to confirm availability before visiting so we can have your parts ready."
+  },
+  {
+    iconPath: "<path d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z'/><polyline points='9 12 11 14 15 10'/>",
+    title: "Warranty on Every Repair",
+    body: "Screen repairs carry a 30-day to lifetime warranty depending on part tier. Battery replacements include a 90-day warranty. All other repairs carry a lifetime warranty on parts and labour — so your device keeps working after it leaves our shop."
+  }
+];
+
+const faqs = [
+  {
+    question: "Can you replace a cracked E-Ink screen on my Kindle in Winnipeg?",
+    answer: "Yes — we replace damaged E-Ink electrophoretic displays on most Kindle e-reader models including Kindle Paperwhite, Oasis, Scribe, and standard Kindle generations. E-Ink screens require model-specific replacement modules — contact us to confirm availability for your specific Kindle before visiting."
+  },
+  {
+    question: "How long does a Kindle battery replacement take in Winnipeg?",
+    answer: "Most Kindle battery replacements are completed within 1–2 hours at our Winnipeg St. Vital location. Kindle e-reader batteries are designed to last weeks between charges — if yours is dying in hours, a battery replacement can fully restore that extended reading life."
+  },
+  {
+    question: "My Fire tablet won't charge. Can you fix it in Winnipeg?",
+    answer: "Yes — Fire tablet charging port failures are one of our most common repairs, especially on devices used by children where ports get debris pushed in. We clean the port first before recommending replacement — most Fire tablet charging port repairs are completed same-day."
+  },
+  {
+    question: "Do you repair older Kindle models in Winnipeg?",
+    answer: "We service most current Kindle and Fire generations — parts availability varies for older discontinued models. Contact us with your specific model name and generation so we can confirm whether we have parts in stock before your visit."
+  },
+  {
+    question: "Will I lose my books and content after Kindle or Fire repair?",
+    answer: "No — your Amazon account content including books, magazines, apps, and settings is stored in the cloud and will automatically sync back to your repaired device. Data loss is rarely a concern for Kindle and Fire repairs since everything is tied to your Amazon account."
+  },
+  {
+    question: "Is it worth repairing my Kindle or should I buy a new one?",
+    answer: "It depends on the model and repair needed — a battery replacement on any Kindle almost always makes financial sense, while an E-Ink screen replacement on an older Kindle may approach the cost of a new entry-level model. We always give you an honest comparison before starting so you can make an informed decision."
+  },
+  {
+    question: "Do you repair Fire HD Kids tablets in Winnipeg?",
+    answer: "Yes — we repair all Fire Kids Edition tablets including Fire HD 8 Kids, Fire HD 10 Kids, and Fire 7 Kids. Kids Edition devices have rubber protective cases that help with drops, but the internal screens still crack — we repair all Kids Edition models at our Winnipeg location."
+  },
+  {
+    question: "Can you fix a Kindle that won't turn on?",
+    answer: "Yes — a Kindle that won't power on is usually caused by a fully depleted battery, a software hang, or a charging port fault. We run free diagnostics to identify the root cause before recommending any repair so you know exactly what the issue is before spending anything."
+  },
+  {
+    question: "Do you repair Fire Max 11 tablets in Winnipeg?",
+    answer: "Yes — we repair the Fire Max 11 including screen, battery, and charging port repairs at our Winnipeg St. Vital location. The Fire Max 11 is Amazon's largest and most premium tablet — contact us to confirm current parts availability for your specific repair."
+  },
+  {
+    question: "Do you repair Kindle and Fire tablets in Thompson, MB?",
+    answer: "Yes — our Thompson location at 300 Mystery Lake Rd #1530 accepts Kindle and Fire tablet repairs Monday through Saturday 10AM–6PM. For E-Ink screen repairs or less common models, calling ahead helps us confirm parts availability before your visit."
+  }
+];
+
+const locations = {
+  winnipeg: {
+    name: "St. Vital Location",
+    address: "845 Dakota St #25, Winnipeg, MB R2M 5M3",
+    phone: "(204) 500-9757",
+    phoneHref: "tel:2045009757",
+    hoursWeekday: "Mon–Sat: 9AM – 7PM",
+    hoursSunday: "Sun: 12PM – 7PM",
+    directionsHref: "https://maps.google.com/?q=845+Dakota+St+%2325+Winnipeg+MB+R2M+5M3",
+    walkinNote: "Walk-ins welcome · Same-day repairs available"
+  },
+  thompson: {
+    name: "Thompson Location",
+    address: "300 Mystery Lake Rd #1530, Thompson, MB R8N 0M2",
+    phone: "(204) 410-0262",
+    phoneHref: "tel:2044100262",
+    hoursWeekday: "Mon–Sat: 10AM – 6PM",
+    hoursSunday: "Sun: Closed",
+    directionsHref: "https://maps.google.com/?q=300+Mystery+Lake+Rd+%231530+Thompson+MB+R8N+0M2",
+    badge: "Serving Northern Manitoba",
+    walkinNote: "Walk-ins welcome"
+  }
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://mobiletechlab.ca/" },
+    { "@type": "ListItem", "position": 2, "name": "Repairs", "item": "https://mobiletechlab.ca/repairs" },
+    { "@type": "ListItem", "position": 3, "name": "Kindle & Fire Repair", "item": "https://mobiletechlab.ca/repair/amazon-kindle" }
+  ]
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Amazon Kindle and Fire Tablet Repair Service",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Mobile Tech Lab",
+    "url": "https://mobiletechlab.ca"
+  },
+  "areaServed": { "@type": "City", "name": "Winnipeg" },
+  "serviceType": "E-Reader and Tablet Repair",
+  "url": "https://mobiletechlab.ca/repair/amazon-kindle",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Kindle and Fire Tablet Repair Services",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Screen Replacement" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Battery Replacement" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Charging Port Repair" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Speaker Repair" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Water Damage Recovery" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Wi-Fi and Connectivity Repair" } }
+    ]
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
+
+  <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+    <div class="breadcrumb-container">
+      <ol class="breadcrumb-list">
+        {breadcrumbs.map((crumb, index) => (
+          <li class="breadcrumb-item">
+            {crumb.href ? (
+              <a href={crumb.href} class="breadcrumb-link">{crumb.label}</a>
+            ) : (
+              <span class="breadcrumb-current" aria-current="page">{crumb.label}</span>
+            )}
+            {index < breadcrumbs.length - 1 && (
+              <svg class="breadcrumb-separator" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="9 18 15 12 9 6"/></svg>
+            )}
+          </li>
+        ))}
+      </ol>
+    </div>
+  </nav>
+
+  <section class="hero-section">
+    <div class="hero-container">
+      <div class="hero-content">
+        <span class="hero-badge">Amazon Kindle & Fire Tablet Specialists</span>
+        <div class="hero-location-badges">
+          <span class="location-badge location-open">St. Vital: Open</span>
+          <span class="location-badge location-closed">Thompson: Opens tomorrow 10AM</span>
+        </div>
+        <h1 class="hero-headline">
+          Kindle & Fire Repair <span class="headline-accent">Winnipeg</span> & Manitoba
+        </h1>
+        <p class="hero-subheadline">Kindle E-Reader & Fire Tablet Repair Specialists in Winnipeg</p>
+        <p class="hero-body">Cracked Kindle E-Ink display, dead battery, or Fire tablet that won't charge? We repair all Amazon Kindle and Fire tablet models at our Winnipeg shop — from Kindle Paperwhite and Oasis through Fire HD 8, Fire HD 10, Fire Max 11, and all Kids Edition tablets. Common repairs include E-Ink and LCD screen replacements, battery swaps, USB-C and Micro-USB charging port fixes, speaker repairs, and water damage assessment.</p>
+        <p class="hero-body">E-Ink screen replacement is the most technically involved Kindle repair — the electrophoretic display used in Kindle e-readers is a completely different technology from standard LCD or OLED panels, requiring careful handling and model-specific replacement modules. We stock E-Ink panels for current Kindle generations and provide an honest assessment of whether repair cost makes sense given the device's value before starting any work.</p>
+        <div class="hero-ctas">
+          <a href="https://shop.mobiletechlab.ca/pages/repair2" target="_blank" rel="noopener noreferrer" class="cta-primary">
+            Get a Free Quote
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="tel:2045009757" class="cta-secondary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Call Now
+          </a>
+        </div>
+        <p class="hero-pricing-note">
+          Not sure what affects the cost? <a href="/pricing" class="pricing-link">How repair pricing works</a>
+        </p>
+      </div>
+      <div class="hero-image-wrapper">
+        <img src="/assets/hero-amazon-kindle.png" alt="Amazon Kindle and Fire tablet repair in Winnipeg — E-Ink screen and battery specialists at Mobile Tech Lab" width="520" height="520" loading="eager" class="hero-image" />
+        <div class="hero-annotations">
+          <span class="annotation annotation-1">Cracked E-Ink screen</span>
+          <span class="annotation annotation-2">Battery won't hold charge</span>
+          <span class="annotation annotation-3">Won't charge</span>
+          <span class="annotation annotation-4">Screen unresponsive</span>
+          <span class="annotation annotation-5">Water damage</span>
+          <span class="annotation annotation-6">Speaker not working</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services-section">
+    <div class="services-container">
+      <h2 class="section-heading">Kindle & Fire Tablet Repair Services in Winnipeg</h2>
+      <p class="section-subheading">Expert repairs for all Amazon Kindle and Fire models. Quality parts, honest advice, warranty included.</p>
+      <div class="services-grid">
+        {repairServices.map(service => (
+          <div class="service-card">
+            <div class="service-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" set:html={service.iconPath} />
+            </div>
+            <h3 class="service-title">{service.title}</h3>
+            <p class="service-body">{service.body}</p>
+          </div>
+        ))}
+      </div>
+      <div class="services-cta-wrapper">
+        <a href="https://shop.mobiletechlab.ca/pages/repair2" target="_blank" rel="noopener noreferrer" class="cta-primary">
+          Request Repair
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="models-section">
+    <div class="models-container">
+      <h2 class="section-heading">All Kindle & Fire Models We Repair in Winnipeg</h2>
+      <p class="section-subheading">E-readers, tablets, and Kids Edition devices — all Amazon models serviced</p>
+      <div class="models-grid">
+        {modelGroups.map(group => (
+          <div class="model-group-card">
+            <div class="model-group-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" set:html={group.iconPath} />
+            </div>
+            <h3 class="model-group-title">{group.title}</h3>
+            <p class="model-group-description">{group.description}</p>
+            <div class="model-pills">
+              {group.models.map(model => (
+                <span class="model-pill">{model}</span>
+              ))}
+            </div>
+            <a href="https://shop.mobiletechlab.ca/pages/repair2" target="_blank" rel="noopener noreferrer" class="model-cta">
+              Get Quote
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="why-section">
+    <div class="why-container">
+      <h2 class="section-heading">The Mobile Tech Lab Advantage: Winnipeg's Kindle & Fire Repair Experts</h2>
+      <p class="section-subheading">Why Winnipeg readers and families trust us with their Amazon devices</p>
+      <div class="why-grid">
+        {whyChooseUs.map(pillar => (
+          <div class="why-card">
+            <div class="why-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" set:html={pillar.iconPath} />
+            </div>
+            <h3 class="why-title">{pillar.title}</h3>
+            <p class="why-body">{pillar.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="cost-options-section">
+    <div class="cost-options-container">
+      <h2 class="section-heading">Worried About Repair Cost? You Have Options.</h2>
+      <p class="section-subheading">Most customers use one of these options to lower their repair cost.</p>
+      <div class="cost-options-grid">
+        <div class="cost-option-card">
+          <h3 class="cost-option-title">We'll Match Any Local Repair Price</h3>
+          <p class="cost-option-body">Found a lower price at another Winnipeg repair shop? We'll match it — so you don't overpay. No pressure. No hassle.</p>
+          <a href="sms:2045009757?body=Hey%20Mobile%20Tech%20Lab!%20I%20want%20a%20better%20price%20on%20a%20repair!" class="cost-option-cta">
+            Check If We Can Match Your Price
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+        <div class="cost-option-card cost-option-highlight">
+          <h3 class="cost-option-title">Lower Your Kindle Repair Cost With a Trade-In</h3>
+          <p class="cost-option-body">Trade in phones, tablets, consoles, or laptops — even broken ones — to reduce today's repair cost.</p>
+          <p class="cost-option-secondary">Get paid via Cash, E-Transfer, or Store Credit</p>
+          <a href="/trade-in" class="cost-option-cta-primary">
+            Lower My Kindle Repair Cost
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pricing-context-section">
+    <div class="pricing-context-container">
+      <h2 class="section-heading">Understanding Kindle & Fire Repair Costs</h2>
+      <p class="pricing-paragraph">Kindle and Fire tablet repair costs vary significantly by device type — Fire tablet repairs are generally straightforward with good parts availability, while Kindle E-Ink screen replacements are more expensive due to the specialised display technology involved. An E-Ink screen replacement can sometimes approach the cost of a new entry-level Kindle, which is why we always provide an honest assessment before starting. Amazon's device support pages cover basic troubleshooting that may resolve some issues without a repair.</p>
+      <p class="pricing-paragraph">Many customers are surprised that E-Ink screen replacement costs as much as it does. iFixit's Kindle teardown guides explain exactly why — the E-Ink electrophoretic display module is a precision component that requires careful disassembly and model-specific parts, making it more involved than a standard tablet LCD replacement.</p>
+      <p class="pricing-paragraph">An important note on data: your Amazon account content — books, magazines, apps, and settings — is stored in the cloud and will automatically sync to your repaired device or any replacement device you register. Data loss is rarely a concern for Kindle and Fire repairs.</p>
+      <div class="external-links">
+        <a href="https://www.amazon.ca/gp/help/customer/display.html?nodeId=GKMQC26VQQMM8XSW" target="_blank" rel="noopener noreferrer" class="external-link">
+          Amazon Kindle device support
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+        <a href="https://www.ifixit.com/Search?query=kindle+teardown" target="_blank" rel="noopener noreferrer" class="external-link">
+          iFixit Kindle teardown guides
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="locations-section">
+    <div class="locations-container">
+      <h2 class="section-heading">Visit Us for Kindle & Fire Repair</h2>
+      <div class="locations-grid">
+        <div class="location-card">
+          <h3 class="location-name">{locations.winnipeg.name}</h3>
+          <p class="location-address">{locations.winnipeg.address}</p>
+          <p class="location-hours">{locations.winnipeg.hoursWeekday}</p>
+          <p class="location-hours">{locations.winnipeg.hoursSunday}</p>
+          <p class="location-walkin">{locations.winnipeg.walkinNote}</p>
+          <div class="location-actions">
+            <a href={locations.winnipeg.phoneHref} class="location-phone">{locations.winnipeg.phone}</a>
+            <a href={locations.winnipeg.directionsHref} target="_blank" rel="noopener noreferrer" class="location-directions">Get Directions</a>
+          </div>
+        </div>
+        <div class="location-card">
+          {locations.thompson.badge && <span class="location-badge-tag">{locations.thompson.badge}</span>}
+          <h3 class="location-name">{locations.thompson.name}</h3>
+          <p class="location-address">{locations.thompson.address}</p>
+          <p class="location-hours">{locations.thompson.hoursWeekday}</p>
+          <p class="location-hours">{locations.thompson.hoursSunday}</p>
+          <p class="location-walkin">{locations.thompson.walkinNote}</p>
+          <div class="location-actions">
+            <a href={locations.thompson.phoneHref} class="location-phone">{locations.thompson.phone}</a>
+            <a href={locations.thompson.directionsHref} target="_blank" rel="noopener noreferrer" class="location-directions">Get Directions</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-section">
+    <div class="faq-container">
+      <h2 class="section-heading">Kindle & Fire Tablet Repair FAQs</h2>
+      <p class="section-subheading">Common questions about Kindle and Fire repair at Mobile Tech Lab in Winnipeg</p>
+      <div class="faq-list">
+        {faqs.map(faq => (
+          <details class="faq-item">
+            <summary class="faq-question">
+              {faq.question}
+              <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <p class="faq-answer">{faq.answer}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta-section">
+    <div class="final-cta-container">
+      <h2 class="final-cta-heading">Ready to Fix Your Kindle or Fire Tablet?</h2>
+      <p class="final-cta-subtext">Get a free quote online or walk in to our Winnipeg location.</p>
+      <div class="final-cta-buttons">
+        <a href="https://shop.mobiletechlab.ca/pages/repair2" target="_blank" rel="noopener noreferrer" class="cta-primary cta-large">
+          Get a Free Quote
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+        <a href="tel:2045009757" class="cta-secondary cta-large">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          (204) 500-9757
+        </a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  :root {
+    --color-primary: #ef4444;
+    --color-primary-dark: #dc2626;
+    --color-primary-light: #fff1f1;
+    --color-primary-border: #fde8e8;
+    --color-primary-hover-bg: #fecaca;
+    --color-text-dark: #111827;
+    --color-text-body: #374151;
+    --color-text-muted: #6b7280;
+    --color-text-subtle: #9ca3af;
+    --color-bg-white: #ffffff;
+    --color-bg-section: linear-gradient(135deg, #fff5f5 0%, #ffffff 50%, #fff5f5 100%);
+    --color-bg-dark: #1f2028;
+    --color-card-border: #fde8e8;
+    --border-radius-card: 16px;
+    --border-radius-btn: 10px;
+    --shadow-card: 0 2px 16px rgba(239, 68, 68, 0.07);
+    --shadow-card-hover: 0 12px 32px rgba(239, 68, 68, 0.13);
+    --shadow-btn-hover: 0 6px 20px rgba(239, 68, 68, 0.35);
+  }
+
+  .breadcrumb-nav {
+    background: var(--color-bg-white);
+    border-bottom: 1px solid #f3f4f6;
+    padding: 12px 0;
+  }
+
+  .breadcrumb-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .breadcrumb-list {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+  }
+
+  .breadcrumb-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .breadcrumb-link {
+    color: var(--color-text-muted);
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.15s ease;
+  }
+
+  .breadcrumb-link:hover {
+    color: var(--color-primary);
+  }
+
+  .breadcrumb-current {
+    color: var(--color-text-dark);
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  .breadcrumb-separator {
+    color: var(--color-text-subtle);
+  }
+
+  .hero-section {
+    background: var(--color-bg-section);
+    padding: 64px 0 80px;
+  }
+
+  .hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: var(--color-primary-light);
+    color: var(--color-primary);
+    font-size: 13px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+  }
+
+  .hero-location-badges {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+
+  .location-badge {
+    font-size: 12px;
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 4px;
+  }
+
+  .location-open {
+    background: #dcfce7;
+    color: #166534;
+  }
+
+  .location-closed {
+    background: #f3f4f6;
+    color: var(--color-text-muted);
+  }
+
+  .hero-headline {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--color-text-dark);
+    margin: 0 0 16px;
+  }
+
+  .headline-accent {
+    color: var(--color-primary);
+  }
+
+  .hero-subheadline {
+    font-size: 18px;
+    color: var(--color-text-muted);
+    margin: 0 0 24px;
+    font-weight: 500;
+  }
+
+  .hero-body {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--color-text-body);
+    margin: 0 0 16px;
+  }
+
+  .hero-ctas {
+    display: flex;
+    gap: 12px;
+    margin-top: 32px;
+    flex-wrap: wrap;
+  }
+
+  .cta-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--color-primary);
+    color: var(--color-bg-white);
+    font-size: 15px;
+    font-weight: 600;
+    padding: 14px 28px;
+    border-radius: var(--border-radius-btn);
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .cta-primary:hover {
+    background: var(--color-primary-dark);
+    box-shadow: var(--shadow-btn-hover);
+    transform: translateY(-1px);
+  }
+
+  .cta-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--color-bg-white);
+    color: var(--color-text-dark);
+    font-size: 15px;
+    font-weight: 600;
+    padding: 14px 28px;
+    border-radius: var(--border-radius-btn);
+    border: 1px solid #e5e7eb;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .cta-secondary:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+  }
+
+  .cta-large {
+    padding: 16px 32px;
+    font-size: 16px;
+  }
+
+  .hero-pricing-note {
+    margin-top: 20px;
+    font-size: 13px;
+    color: var(--color-text-muted);
+  }
+
+  .pricing-link {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .pricing-link:hover {
+    text-decoration: underline;
+  }
+
+  .hero-image-wrapper {
+    position: relative;
+  }
+
+  .hero-image {
+    width: 100%;
+    max-width: 520px;
+    height: auto;
+    display: block;
+  }
+
+  .hero-annotations {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+  }
+
+  .annotation {
+    position: absolute;
+    background: var(--color-bg-white);
+    color: var(--color-text-dark);
+    font-size: 11px;
+    font-weight: 500;
+    padding: 6px 10px;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    white-space: nowrap;
+  }
+
+  .annotation-1 { top: 10%; left: 5%; }
+  .annotation-2 { top: 25%; right: 0; }
+  .annotation-3 { top: 45%; left: 0; }
+  .annotation-4 { top: 60%; right: 5%; }
+  .annotation-5 { bottom: 25%; left: 10%; }
+  .annotation-6 { bottom: 10%; right: 10%; }
+
+  .section-heading {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--color-text-dark);
+    text-align: center;
+    margin: 0 0 12px;
+  }
+
+  .section-subheading {
+    font-size: 16px;
+    color: var(--color-text-muted);
+    text-align: center;
+    margin: 0 0 48px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .services-section {
+    padding: 80px 0;
+    background: var(--color-bg-white);
+  }
+
+  .services-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .service-card {
+    background: var(--color-bg-white);
+    border: 1px solid var(--color-card-border);
+    border-radius: var(--border-radius-card);
+    padding: 32px;
+    box-shadow: var(--shadow-card);
+    transition: all 0.2s ease;
+  }
+
+  .service-card:hover {
+    box-shadow: var(--shadow-card-hover);
+    transform: translateY(-4px);
+  }
+
+  .service-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--color-primary-light);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+    margin-bottom: 20px;
+  }
+
+  .service-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--color-text-dark);
+    margin: 0 0 12px;
+  }
+
+  .service-body {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--color-text-body);
+    margin: 0;
+  }
+
+  .services-cta-wrapper {
+    text-align: center;
+    margin-top: 48px;
+  }
+
+  .models-section {
+    padding: 80px 0;
+    background: var(--color-bg-section);
+  }
+
+  .models-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .models-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .model-group-card {
+    background: var(--color-bg-white);
+    border: 1px solid var(--color-card-border);
+    border-radius: var(--border-radius-card);
+    padding: 32px;
+    box-shadow: var(--shadow-card);
+  }
+
+  .model-group-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--color-primary-light);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+    margin-bottom: 20px;
+  }
+
+  .model-group-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--color-text-dark);
+    margin: 0 0 12px;
+  }
+
+  .model-group-description {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--color-text-body);
+    margin: 0 0 20px;
+  }
+
+  .model-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+
+  .model-pill {
+    background: #f9fafb;
+    color: var(--color-text-body);
+    font-size: 12px;
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 20px;
+    border: 1px solid #e5e7eb;
+  }
+
+  .model-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--color-primary);
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: gap 0.2s ease;
+  }
+
+  .model-cta:hover {
+    gap: 10px;
+  }
+
+  .why-section {
+    padding: 80px 0;
+    background: var(--color-bg-white);
+  }
+
+  .why-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .why-card {
+    background: var(--color-bg-white);
+    border: 1px solid var(--color-card-border);
+    border-radius: var(--border-radius-card);
+    padding: 32px;
+    box-shadow: var(--shadow-card);
+  }
+
+  .why-icon {
+    width: 56px;
+    height: 56px;
+    background: var(--color-primary-light);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+    margin-bottom: 20px;
+  }
+
+  .why-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--color-text-dark);
+    margin: 0 0 12px;
+  }
+
+  .why-body {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--color-text-body);
+    margin: 0;
+  }
+
+  .cost-options-section {
+    padding: 80px 0;
+    background: var(--color-bg-section);
+  }
+
+  .cost-options-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .cost-options-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .cost-option-card {
+    background: var(--color-bg-white);
+    border: 1px solid var(--color-card-border);
+    border-radius: var(--border-radius-card);
+    padding: 32px;
+    box-shadow: var(--shadow-card);
+  }
+
+  .cost-option-highlight {
+    border-color: var(--color-primary);
+    border-width: 2px;
+  }
+
+  .cost-option-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--color-text-dark);
+    margin: 0 0 12px;
+  }
+
+  .cost-option-body {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--color-text-body);
+    margin: 0 0 16px;
+  }
+
+  .cost-option-secondary {
+    font-size: 13px;
+    color: var(--color-text-muted);
+    margin: 0 0 20px;
+  }
+
+  .cost-option-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--color-primary);
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .cost-option-cta:hover {
+    text-decoration: underline;
+  }
+
+  .cost-option-cta-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--color-primary);
+    color: var(--color-bg-white);
+    font-size: 14px;
+    font-weight: 600;
+    padding: 12px 20px;
+    border-radius: var(--border-radius-btn);
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .cost-option-cta-primary:hover {
+    background: var(--color-primary-dark);
+  }
+
+  .pricing-context-section {
+    padding: 80px 0;
+    background: var(--color-bg-white);
+  }
+
+  .pricing-context-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .pricing-paragraph {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--color-text-body);
+    margin: 0 0 20px;
+  }
+
+  .external-links {
+    display: flex;
+    gap: 24px;
+    margin-top: 32px;
+    flex-wrap: wrap;
+  }
+
+  .external-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--color-primary);
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  .external-link:hover {
+    text-decoration: underline;
+  }
+
+  .locations-section {
+    padding: 80px 0;
+    background: var(--color-bg-section);
+  }
+
+  .locations-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .locations-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .location-card {
+    background: var(--color-bg-white);
+    border: 1px solid var(--color-card-border);
+    border-radius: var(--border-radius-card);
+    padding: 32px;
+    box-shadow: var(--shadow-card);
+    position: relative;
+  }
+
+  .location-badge-tag {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: var(--color-primary-light);
+    color: var(--color-primary);
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 4px;
+  }
+
+  .location-name {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--color-text-dark);
+    margin: 0 0 8px;
+  }
+
+  .location-address {
+    font-size: 14px;
+    color: var(--color-text-body);
+    margin: 0 0 16px;
+  }
+
+  .location-hours {
+    font-size: 13px;
+    color: var(--color-text-muted);
+    margin: 0 0 4px;
+  }
+
+  .location-walkin {
+    font-size: 13px;
+    color: var(--color-primary);
+    font-weight: 500;
+    margin: 16px 0 20px;
+  }
+
+  .location-actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .location-phone {
+    color: var(--color-text-dark);
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .location-phone:hover {
+    color: var(--color-primary);
+  }
+
+  .location-directions {
+    color: var(--color-primary);
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  .location-directions:hover {
+    text-decoration: underline;
+  }
+
+  .faq-section {
+    padding: 80px 0;
+    background: var(--color-bg-white);
+  }
+
+  .faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .faq-item {
+    background: var(--color-bg-white);
+    border: 1px solid var(--color-card-border);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .faq-item[open] {
+    border-color: var(--color-primary-border);
+  }
+
+  .faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--color-text-dark);
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .faq-question::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-question:hover {
+    color: var(--color-primary);
+  }
+
+  .faq-chevron {
+    color: var(--color-text-muted);
+    transition: transform 0.2s ease;
+    flex-shrink: 0;
+  }
+
+  .faq-item[open] .faq-chevron {
+    transform: rotate(180deg);
+  }
+
+  .faq-answer {
+    padding: 0 24px 20px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--color-text-body);
+    margin: 0;
+  }
+
+  .final-cta-section {
+    padding: 80px 0;
+    background: var(--color-bg-dark);
+  }
+
+  .final-cta-container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 24px;
+    text-align: center;
+  }
+
+  .final-cta-heading {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--color-bg-white);
+    margin: 0 0 12px;
+  }
+
+  .final-cta-subtext {
+    font-size: 16px;
+    color: var(--color-text-subtle);
+    margin: 0 0 32px;
+  }
+
+  .final-cta-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 1024px) {
+    .hero-container {
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+
+    .hero-image-wrapper {
+      order: -1;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    .hero-headline {
+      font-size: 36px;
+    }
+
+    .services-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .models-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .why-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero-section {
+      padding: 48px 0 64px;
+    }
+
+    .hero-headline {
+      font-size: 28px;
+    }
+
+    .section-heading {
+      font-size: 24px;
+    }
+
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .cost-options-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .locations-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-ctas {
+      flex-direction: column;
+    }
+
+    .cta-primary,
+    .cta-secondary {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .final-cta-buttons {
+      flex-direction: column;
+    }
+
+    .annotation {
+      display: none;
+    }
+  }
+</style>

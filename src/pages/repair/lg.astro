@@ -1,0 +1,1419 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = "LG Phone Repair Winnipeg | Screen & Battery | Mobile Tech Lab";
+const description = "LG phone repair specialists in Winnipeg. Screen, battery, charging port repair for LG Velvet, Wing, V series, G series, Stylo & all legacy models. Parts still available.";
+const canonical = "https://mobiletechlab.ca/repair/lg";
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://mobiletechlab.ca/" },
+    { "@type": "ListItem", "position": 2, "name": "Repairs", "item": "https://mobiletechlab.ca/repairs" },
+    { "@type": "ListItem", "position": 3, "name": "LG Phone Repair", "item": "https://mobiletechlab.ca/repair/lg" }
+  ]
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "LG Phone Repair Service",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Mobile Tech Lab",
+    "url": "https://mobiletechlab.ca"
+  },
+  "areaServed": { "@type": "City", "name": "Winnipeg" },
+  "serviceType": "Phone Repair",
+  "url": "https://mobiletechlab.ca/repair/lg",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "LG Phone Repair Services",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Screen Replacement" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Battery Replacement" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Charging Port Repair" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Camera Repair" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Speaker and Boombox Repair" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Power and Button Repair" } }
+    ]
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Do you still repair LG phones in Winnipeg?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — we're one of the few repair shops in Winnipeg still specialising in LG devices after the brand exited the smartphone market in 2021. We maintained our supplier relationships specifically to keep supporting LG owners who don't want to be forced into a replacement." } },
+    { "@type": "Question", "name": "Can you still get LG phone parts in Winnipeg?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — we maintain active supplier relationships for LG Velvet, V series, G series, Stylo, and K series parts. Popular models are often in stock for same-day repairs, while rarer models like the LG Wing may require a short sourcing window — contact us to confirm availability for your specific model." } },
+    { "@type": "Question", "name": "How long does LG screen repair take in Winnipeg?", "acceptedAnswer": { "@type": "Answer", "text": "Most LG screen replacements are completed same-day in 1–2 hours at our Winnipeg St. Vital location once parts are in stock. If your model requires a special order, we'll give you an estimated wait time when you contact us for a quote." } },
+    { "@type": "Question", "name": "Is it worth repairing my LG phone in Winnipeg?", "acceptedAnswer": { "@type": "Answer", "text": "It depends on the model and the repair needed — a battery or screen replacement on an LG Velvet or V60 often makes excellent financial sense given how well-built these devices are. We always give you an honest assessment before starting any repair so you can decide with full information." } },
+    { "@type": "Question", "name": "Can you repair LG Dual Screen accessories and the LG Wing?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — we repair LG Dual Screen cases and the unique LG Wing swivel mechanism. These are specialist repairs that virtually no other Winnipeg shop has experience with — contact us before visiting to discuss your specific issue and confirm we have the required components." } },
+    { "@type": "Question", "name": "Do you repair LG V series phones in Winnipeg?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — we repair all LG V series models from V20 through V60 ThinQ at our Winnipeg location. Screen and battery replacements are the most common V series repairs, and we maintain parts for all current V series generations." } },
+    { "@type": "Question", "name": "Can you fix an LG phone that won't turn on?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — a non-responsive LG is often caused by a depleted battery, a failed display connection, or a software boot issue. We run free diagnostics to identify the root cause before recommending any repair so you know exactly what the problem is before spending anything." } },
+    { "@type": "Question", "name": "Do you repair LG Stylo phones in Winnipeg?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — we repair all LG Stylo models from Stylo 4 through Stylo 6 at our Winnipeg shop. Charging port and screen replacements are the most common Stylo repairs, and parts are readily available for all current Stylo generations." } },
+    { "@type": "Question", "name": "Do you offer a warranty on LG repairs?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — screen repairs carry a 30-day to lifetime warranty depending on part tier. Battery replacements include a 90-day warranty, and most other repairs carry a lifetime warranty on parts and labour — even on legacy LG models." } },
+    { "@type": "Question", "name": "Do you repair LG phones in Thompson, MB?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — our Thompson location at 300 Mystery Lake Rd #1530 accepts LG repairs Monday through Saturday 10AM–6PM. For less common LG models, calling ahead helps us confirm parts availability before your visit." } }
+  ]
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <Fragment slot="head">
+    <meta name="robots" content="index, follow" />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
+
+  <nav class="lg-breadcrumb-nav" aria-label="Breadcrumb">
+    <div class="lg-container">
+      <ol class="lg-breadcrumb-list">
+        <li><a href="/" class="lg-breadcrumb-link">Home</a></li>
+        <li><svg xmlns="http://www.w3.org/2000/svg" class="lg-breadcrumb-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m9 18 6-6-6-6"/></svg></li>
+        <li><a href="/repairs" class="lg-breadcrumb-link">Repairs</a></li>
+        <li><svg xmlns="http://www.w3.org/2000/svg" class="lg-breadcrumb-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m9 18 6-6-6-6"/></svg></li>
+        <li class="lg-breadcrumb-current" aria-current="page">LG Phone Repair</li>
+      </ol>
+    </div>
+  </nav>
+
+  <section class="lg-hero-section" id="hero">
+    <div class="lg-hero-inner">
+      <div class="lg-hero-content">
+        <div class="lg-hero-badge-row">
+          <span class="lg-service-badge">LG Legacy Repair Specialists</span>
+          <span class="lg-location-badge">
+            <span class="lg-badge-dot"></span>
+            St. Vital — Open
+          </span>
+          <span class="lg-location-badge">
+            <span class="lg-badge-dot"></span>
+            Thompson — Opens tomorrow 10AM
+          </span>
+        </div>
+
+        <h1 class="lg-hero-headline">
+          LG Phone Repair <span class="lg-highlight">Winnipeg</span> &amp; Manitoba
+        </h1>
+        <p class="lg-hero-subheadline">LG Velvet, Wing, V Series, G Series & Stylo Repair Specialists</p>
+
+        <div class="lg-hero-body">
+          <p>LG exited the smartphone market in 2021 — but your phone didn't stop working, and neither did we. We repair all LG models at our Winnipeg shop including the LG Velvet, Wing, V60, V50, G8, G7, Stylo series, and all K series devices. Common repairs include screen replacements, battery swaps, USB-C and Micro-USB charging port fixes, camera repairs, speaker issues, and power button repairs.</p>
+          <p>Parts availability is the biggest challenge with LG repairs in Canada — most shops stopped stocking LG components when the brand exited the market. We've maintained supplier relationships specifically for LG parts so we can keep servicing devices that other Winnipeg shops turn away. We'll always confirm parts availability and give you an honest quote before starting any repair.</p>
+        </div>
+
+        <div class="lg-hero-cta-group">
+          <a href="https://shop.mobiletechlab.ca/pages/repair2" target="_blank" rel="noopener noreferrer" class="lg-cta-primary">
+            Get a Free Quote &rarr;
+          </a>
+          <a href="tel:2045009757" class="lg-cta-secondary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Call Now
+          </a>
+        </div>
+        <p class="lg-pricing-note">Not sure what affects the cost? <a href="/pricing">How repair pricing works</a></p>
+      </div>
+
+      <div class="lg-hero-image-wrapper">
+        <img
+          src="/assets/hero-lg-C59VkA4q.png"
+          alt="LG phone repair in Winnipeg — Velvet, Wing, V series and G series specialists at Mobile Tech Lab"
+          width="500"
+          height="500"
+          loading="eager"
+        />
+        <ul class="lg-annotations-list" aria-label="Common LG issues we fix">
+          <li class="lg-annotation">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+            Cracked screen
+          </li>
+          <li class="lg-annotation">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+            Battery draining fast
+          </li>
+          <li class="lg-annotation">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            Charging port issues
+          </li>
+          <li class="lg-annotation">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
+            Camera not working
+          </li>
+          <li class="lg-annotation">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            Won't turn on
+          </li>
+          <li class="lg-annotation">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07"/></svg>
+            Speaker not working
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="lg-services-section" id="services">
+    <div class="lg-container">
+      <div class="lg-section-header">
+        <h2 class="lg-section-title">LG Phone Repair Services in Winnipeg</h2>
+        <p class="lg-section-subtitle">Specialist repairs for all LG models. Legacy parts sourced, honest advice, warranty included.</p>
+      </div>
+      <div class="lg-services-grid">
+        <div class="lg-service-card">
+          <div class="lg-service-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+          </div>
+          <h3 class="lg-service-title">Screen Replacement</h3>
+          <p class="lg-service-body">Cracked or unresponsive LG display? We replace OLED and LCD screens on all LG Velvet, Wing, V series, G series, Stylo, and K series devices. LG flagship screens use P-OLED and OLED panels that require model-specific parts — we source them through specialist suppliers for models that standard channels no longer carry.</p>
+        </div>
+        <div class="lg-service-card">
+          <div class="lg-service-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+          </div>
+          <h3 class="lg-service-title">Battery Replacement</h3>
+          <p class="lg-service-body">LG phone not lasting the day? We replace degraded batteries with quality cells on all LG models. Older LG phones with removable batteries are some of the easiest replacements in the industry — newer sealed models like the Velvet require careful disassembly. All battery replacements include a 90-day warranty.</p>
+        </div>
+        <div class="lg-service-card">
+          <div class="lg-service-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12H19M12 5l7 7-7 7"/></svg>
+          </div>
+          <h3 class="lg-service-title">Charging Port Repair</h3>
+          <p class="lg-service-body">LG not charging or connecting intermittently? We repair USB-C ports on newer LG models and Micro-USB on older devices. We clean the port before recommending replacement since debris is a common cause of charging failures — particularly on the LG Stylo and K series which are heavy daily-use devices.</p>
+        </div>
+        <div class="lg-service-card">
+          <div class="lg-service-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
+          </div>
+          <h3 class="lg-service-title">Camera Repair</h3>
+          <p class="lg-service-body">Blurry photos, black camera screen, or cracked lens on your LG? We repair front, rear, and wide-angle cameras on all LG models. The LG V60 and G8 feature wide-angle and depth cameras that require precise module replacement to maintain the full camera system functionality.</p>
+        </div>
+        <div class="lg-service-card">
+          <div class="lg-service-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07"/></svg>
+          </div>
+          <h3 class="lg-service-title">Speaker & Boombox Repair</h3>
+          <p class="lg-service-body">Muffled audio, crackling speakers, or a dead earpiece on your LG? We repair speaker assemblies across all LG models including the Boombox speaker system on select V and G series devices. Most speaker repairs are completed same-day.</p>
+        </div>
+        <div class="lg-service-card">
+          <div class="lg-service-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          </div>
+          <h3 class="lg-service-title">Power & Button Repair</h3>
+          <p class="lg-service-body">Stuck, unresponsive, or broken power button or volume rocker on your LG? We repair and replace buttons across all LG models. The LG Wing's unique swivel mechanism and Dual Screen case connectors are also serviced — contact us for these specialist repairs.</p>
+        </div>
+      </div>
+      <div class="lg-section-cta">
+        <a href="https://shop.mobiletechlab.ca/pages/repair2" target="_blank" rel="noopener noreferrer" class="lg-cta-primary">
+          Request Repair &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="lg-models-section" id="models">
+    <div class="lg-container">
+      <div class="lg-section-header">
+        <h2 class="lg-section-title">All LG Phone Models We Repair in Winnipeg</h2>
+        <p class="lg-section-subtitle">Velvet, Wing, V series, G series, Stylo, K series and all legacy LG devices</p>
+      </div>
+      <div class="lg-models-grid">
+        <div class="lg-model-card">
+          <div class="lg-model-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+          </div>
+          <h3 class="lg-model-title">LG Velvet & Wing</h3>
+          <p class="lg-model-description">LG's innovative final flagship devices. The Wing's unique swivel mechanism is a specialist repair — contact us to confirm parts availability before visiting.</p>
+          <div class="lg-model-pills">
+            <span class="lg-pill">LG Velvet 5G</span>
+            <span class="lg-pill">LG Wing 5G</span>
+          </div>
+          <a href="https://shop.mobiletechlab.ca/pages/repair2" target="_blank" rel="noopener noreferrer" class="lg-model-cta">
+            Get Quote &rarr;
+          </a>
+        </div>
+        <div class="lg-model-card">
+          <div class="lg-model-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+          </div>
+          <h3 class="lg-model-title">LG V Series</h3>
+          <p class="lg-model-description">Premium V series phones with Quad DAC audio and wide-angle cameras. Screen and battery repairs are the most common V series fixes — parts available for V30 through V60.</p>
+          <div class="lg-model-pills">
+            <span class="lg-pill">V60 ThinQ</span>
+            <span class="lg-pill">V50 ThinQ</span>
+            <span class="lg-pill">V40 ThinQ</span>
+            <span class="lg-pill">V35 ThinQ</span>
+            <span class="lg-pill">V30</span>
+            <span class="lg-pill">V20</span>
+          </div>
+          <a href="https://shop.mobiletechlab.ca/pages/repair2" target="_blank" rel="noopener noreferrer" class="lg-model-cta">
+            Get Quote &rarr;
+          </a>
+        </div>
+        <div class="lg-model-card">
+          <div class="lg-model-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+          </div>
+          <h3 class="lg-model-title">LG G Series</h3>
+          <p class="lg-model-description">Classic G series flagship lineup from G3 through G8X ThinQ. Battery and screen replacements are the most common repairs across all G series generations.</p>
+          <div class="lg-model-pills">
+            <span class="lg-pill">G8X ThinQ</span>
+            <span class="lg-pill">G8 ThinQ</span>
+            <span class="lg-pill">G7 ThinQ</span>
+            <span class="lg-pill">G6</span>
+            <span class="lg-pill">G5</span>
+            <span class="lg-pill">G4</span>
+            <span class="lg-pill">G3</span>
+          </div>
+          <a href="https://shop.mobiletechlab.ca/pages/repair2" target="_blank" rel="noopener noreferrer" class="lg-model-cta">
+            Get Quote &rarr;
+          </a>
+        </div>
+        <div class="lg-model-card">
+          <div class="lg-model-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+          </div>
+          <h3 class="lg-model-title">LG Stylo & K Series</h3>
+          <p class="lg-model-description">Budget-friendly LG devices with large screens and stylus support. Charging port and screen repairs are the most common issues — parts available for most Stylo and K series models.</p>
+          <div class="lg-model-pills">
+            <span class="lg-pill">Stylo 6</span>
+            <span class="lg-pill">Stylo 5</span>
+            <span class="lg-pill">Stylo 4</span>
+            <span class="lg-pill">K92</span>
+            <span class="lg-pill">K71</span>
+            <span class="lg-pill">K62</span>
+            <span class="lg-pill">K51</span>
+            <span class="lg-pill">K42</span>
+          </div>
+          <a href="https://shop.mobiletechlab.ca/pages/repair2" target="_blank" rel="noopener noreferrer" class="lg-model-cta">
+            Get Quote &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="lg-why-section" id="why-choose-us">
+    <div class="lg-container">
+      <div class="lg-section-header">
+        <h2 class="lg-section-title">The Mobile Tech Lab Advantage: Winnipeg's LG Repair Experts</h2>
+        <p class="lg-section-subtitle">Why Winnipeg LG owners come to us when every other shop says no</p>
+      </div>
+      <div class="lg-pillars-grid">
+        <div class="lg-pillar-card">
+          <div class="lg-pillar-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <h3 class="lg-pillar-title">LG Legacy Specialists</h3>
+          <p class="lg-pillar-body">Most Winnipeg repair shops stopped stocking LG parts when the brand exited the smartphone market in 2021. We kept our supplier relationships specifically so we could keep servicing LG owners who love their devices and don't want to be forced into a replacement.</p>
+        </div>
+        <div class="lg-pillar-card">
+          <div class="lg-pillar-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+          </div>
+          <h3 class="lg-pillar-title">Parts Still Available</h3>
+          <p class="lg-pillar-body">We maintain active supplier relationships for LG Velvet, V series, G series, and Stylo components. Contact us with your specific model to confirm availability — popular models are often in stock while rarer models may require a short sourcing window.</p>
+        </div>
+        <div class="lg-pillar-card">
+          <div class="lg-pillar-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10 3H6a2 2 0 00-2 2v14c0 1.1.9 2 2 2h12a2 2 0 002-2V9l-6-6z"/><path d="M13 3v6h6"/></svg>
+          </div>
+          <h3 class="lg-pillar-title">Wing & Dual Screen Experts</h3>
+          <p class="lg-pillar-body">The LG Wing's swivel mechanism and LG Dual Screen case are unique hardware innovations that virtually no other repair shop in Winnipeg has experience with. We've serviced both — contact us to discuss your specific Wing or Dual Screen issue before visiting.</p>
+        </div>
+        <div class="lg-pillar-card">
+          <div class="lg-pillar-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+          </div>
+          <h3 class="lg-pillar-title">Warranty on Every Repair</h3>
+          <p class="lg-pillar-body">Screen repairs carry a 30-day to lifetime warranty depending on part tier. Battery replacements include a 90-day warranty. All other repairs carry a lifetime warranty on parts and labour — even on legacy LG models that other shops won't touch.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="lg-cost-section" id="pricing">
+    <div class="lg-container">
+      <div class="lg-section-header">
+        <h2 class="lg-section-title">Worried About Repair Cost? You Have Options.</h2>
+        <p class="lg-section-subtitle">Most customers use one of these options to lower their repair cost.</p>
+      </div>
+      <div class="lg-cost-grid">
+        <div class="lg-cost-card">
+          <div class="lg-cost-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="12" x2="12" y1="1" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <h3 class="lg-cost-title">We'll Match Any Local Repair Price</h3>
+          <p class="lg-cost-body">Found a lower price at another Winnipeg repair shop? We'll match it — so you don't overpay. No pressure. No hassle.</p>
+          <a href="sms:2045009757?body=Hey%20Mobile%20Tech%20Lab!%20I%20want%20a%20better%20price%20on%20a%20repair!" class="lg-price-match-btn">
+            Check If We Can Match Your Price
+          </a>
+        </div>
+        <div class="lg-cost-card">
+          <div class="lg-cost-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l4 2"/></svg>
+          </div>
+          <h3 class="lg-cost-title">Lower Your LG Repair Cost With a Trade-In</h3>
+          <p class="lg-cost-body">Trade in phones, tablets, consoles, or laptops — even broken ones — to reduce today's repair cost.</p>
+          <p class="lg-cost-note">Get paid via Cash, E-Transfer, or Store Credit</p>
+          <a href="/trade-in" class="lg-trade-in-btn">
+            Lower My LG Repair Cost &rarr;
+          </a>
+        </div>
+      </div>
+      <div class="lg-pricing-context">
+        <p class="lg-context-paragraph">LG repair costs depend on the model and parts availability — as a discontinued brand, some LG components require specialty sourcing that adds to the cost compared to Samsung or iPhone repairs. Popular models like the LG Velvet and V60 have better parts availability than older or rarer devices like the LG Wing. <a href="https://www.lg.com/ca_en/support" target="_blank" rel="noopener noreferrer" class="lg-context-link">LG's Canadian support portal</a> still provides basic documentation for reference.</p>
+        <p class="lg-context-paragraph">Many customers are surprised that repairing an older LG device can sometimes cost more than expected due to limited parts supply. <a href="https://www.ifixit.com/Search?query=lg+phone+teardown" target="_blank" rel="noopener noreferrer" class="lg-context-link">iFixit's LG phone teardown guides</a> explain why certain models are more difficult to source parts for — the LG Wing in particular uses a unique motorised swivel mechanism that has no equivalent in any other device.</p>
+        <p class="lg-context-paragraph">If the repair cost doesn't make financial sense for your LG model's current value, we'll tell you honestly and walk you through alternatives — including trade-in options toward a newer device or data recovery if the phone can't be economically repaired.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="lg-locations-section" id="locations">
+    <div class="lg-container">
+      <div class="lg-section-header">
+        <h2 class="lg-section-title">LG Repair Locations in Winnipeg & Thompson</h2>
+        <p class="lg-section-subtitle">Two Manitoba locations. Walk-ins welcome at both.</p>
+      </div>
+      <div class="lg-locations-grid">
+        <div class="lg-location-card">
+          <span class="lg-walkin-badge">Walk-ins welcome · Same-day repairs available</span>
+          <h3 class="lg-location-name">St. Vital Location</h3>
+          <p class="lg-location-address">845 Dakota St #25, Winnipeg, MB R2M 5M3</p>
+          <div class="lg-location-hours">
+            <p>Mon–Sat: 9AM – 7PM</p>
+            <p>Sun: 12PM – 7PM</p>
+          </div>
+          <div class="lg-location-actions">
+            <a href="tel:2045009757" class="lg-location-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              (204) 500-9757
+            </a>
+            <a href="https://maps.google.com/?q=845+Dakota+St+%2325+Winnipeg+MB+R2M+5M3" target="_blank" rel="noopener noreferrer" class="lg-location-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              Get Directions
+            </a>
+          </div>
+        </div>
+        <div class="lg-location-card">
+          <span class="lg-location-badge-tag">Serving Northern Manitoba</span>
+          <h3 class="lg-location-name">Thompson Location</h3>
+          <p class="lg-location-address">300 Mystery Lake Rd #1530, Thompson, MB R8N 0M2</p>
+          <div class="lg-location-hours">
+            <p>Mon–Sat: 10AM – 6PM</p>
+            <p>Sun: Closed</p>
+          </div>
+          <div class="lg-location-actions">
+            <a href="tel:2044100262" class="lg-location-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              (204) 410-0262
+            </a>
+            <a href="https://maps.google.com/?q=300+Mystery+Lake+Rd+%231530+Thompson+MB+R8N+0M2" target="_blank" rel="noopener noreferrer" class="lg-location-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              Get Directions
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="lg-faq-section" id="faqs">
+    <div class="lg-container">
+      <div class="lg-section-header">
+        <h2 class="lg-section-title">LG Phone Repair FAQs</h2>
+        <p class="lg-section-subtitle">Common questions about LG repair at Mobile Tech Lab in Winnipeg</p>
+      </div>
+      <div class="lg-faq-list">
+        <details class="lg-faq-item">
+          <summary class="lg-faq-summary">
+            <span>Do you still repair LG phones in Winnipeg?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="lg-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <p class="lg-faq-answer">Yes — we're one of the few repair shops in Winnipeg still specialising in LG devices after the brand exited the smartphone market in 2021. We maintained our supplier relationships specifically to keep supporting LG owners who don't want to be forced into a replacement.</p>
+        </details>
+        <details class="lg-faq-item">
+          <summary class="lg-faq-summary">
+            <span>Can you still get LG phone parts in Winnipeg?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="lg-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <p class="lg-faq-answer">Yes — we maintain active supplier relationships for LG Velvet, V series, G series, Stylo, and K series parts. Popular models are often in stock for same-day repairs, while rarer models like the LG Wing may require a short sourcing window — contact us to confirm availability for your specific model.</p>
+        </details>
+        <details class="lg-faq-item">
+          <summary class="lg-faq-summary">
+            <span>How long does LG screen repair take in Winnipeg?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="lg-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <p class="lg-faq-answer">Most LG screen replacements are completed same-day in 1–2 hours at our Winnipeg St. Vital location once parts are in stock. If your model requires a special order, we'll give you an estimated wait time when you contact us for a quote.</p>
+        </details>
+        <details class="lg-faq-item">
+          <summary class="lg-faq-summary">
+            <span>Is it worth repairing my LG phone in Winnipeg?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="lg-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <p class="lg-faq-answer">It depends on the model and the repair needed — a battery or screen replacement on an LG Velvet or V60 often makes excellent financial sense given how well-built these devices are. We always give you an honest assessment before starting any repair so you can decide with full information.</p>
+        </details>
+        <details class="lg-faq-item">
+          <summary class="lg-faq-summary">
+            <span>Can you repair LG Dual Screen accessories and the LG Wing?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="lg-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <p class="lg-faq-answer">Yes — we repair LG Dual Screen cases and the unique LG Wing swivel mechanism. These are specialist repairs that virtually no other Winnipeg shop has experience with — contact us before visiting to discuss your specific issue and confirm we have the required components.</p>
+        </details>
+        <details class="lg-faq-item">
+          <summary class="lg-faq-summary">
+            <span>Do you repair LG V series phones in Winnipeg?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="lg-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <p class="lg-faq-answer">Yes — we repair all LG V series models from V20 through V60 ThinQ at our Winnipeg location. Screen and battery replacements are the most common V series repairs, and we maintain parts for all current V series generations.</p>
+        </details>
+        <details class="lg-faq-item">
+          <summary class="lg-faq-summary">
+            <span>Can you fix an LG phone that won't turn on?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="lg-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <p class="lg-faq-answer">Yes — a non-responsive LG is often caused by a depleted battery, a failed display connection, or a software boot issue. We run free diagnostics to identify the root cause before recommending any repair so you know exactly what the problem is before spending anything.</p>
+        </details>
+        <details class="lg-faq-item">
+          <summary class="lg-faq-summary">
+            <span>Do you repair LG Stylo phones in Winnipeg?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="lg-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <p class="lg-faq-answer">Yes — we repair all LG Stylo models from Stylo 4 through Stylo 6 at our Winnipeg shop. Charging port and screen replacements are the most common Stylo repairs, and parts are readily available for all current Stylo generations.</p>
+        </details>
+        <details class="lg-faq-item">
+          <summary class="lg-faq-summary">
+            <span>Do you offer a warranty on LG repairs?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="lg-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <p class="lg-faq-answer">Yes — screen repairs carry a 30-day to lifetime warranty depending on part tier. Battery replacements include a 90-day warranty, and most other repairs carry a lifetime warranty on parts and labour — even on legacy LG models.</p>
+        </details>
+        <details class="lg-faq-item">
+          <summary class="lg-faq-summary">
+            <span>Do you repair LG phones in Thompson, MB?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="lg-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <p class="lg-faq-answer">Yes — our Thompson location at 300 Mystery Lake Rd #1530 accepts LG repairs Monday through Saturday 10AM–6PM. For less common LG models, calling ahead helps us confirm parts availability before your visit.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="lg-final-cta-section">
+    <div class="lg-container">
+      <div class="lg-final-cta-inner">
+        <h2 class="lg-final-cta-title">Ready to Fix Your LG?</h2>
+        <p class="lg-final-cta-subtitle">Get a free quote online or walk in to either of our Manitoba locations.</p>
+        <div class="lg-final-cta-group">
+          <a href="https://shop.mobiletechlab.ca/pages/repair2" target="_blank" rel="noopener noreferrer" class="lg-cta-primary">
+            Get a Free Quote
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="tel:2045009757" class="lg-cta-secondary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Call Now
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    :root {
+      --color-primary: #ef4444;
+      --color-primary-dark: #dc2626;
+      --color-primary-light: #fff1f1;
+      --color-primary-border: #fde8e8;
+      --color-primary-hover-bg: #fecaca;
+      --color-text-dark: #111827;
+      --color-text-body: #374151;
+      --color-text-muted: #6b7280;
+      --color-text-subtle: #9ca3af;
+      --color-bg-white: #ffffff;
+      --color-bg-section: linear-gradient(135deg, #fff5f5 0%, #ffffff 50%, #fff5f5 100%);
+      --color-bg-dark: #1f2028;
+      --color-card-border: #fde8e8;
+      --border-radius-card: 16px;
+      --border-radius-btn: 10px;
+      --shadow-card: 0 2px 16px rgba(239, 68, 68, 0.07);
+      --shadow-card-hover: 0 12px 32px rgba(239, 68, 68, 0.13);
+      --shadow-btn-hover: 0 6px 20px rgba(239, 68, 68, 0.35);
+    }
+
+    .lg-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .lg-section-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .lg-section-title {
+      font-size: clamp(1.5rem, 3vw, 1.875rem);
+      font-weight: 700;
+      color: var(--color-text-dark);
+      margin: 0 0 12px 0;
+    }
+
+    .lg-section-subtitle {
+      font-size: 15px;
+      color: var(--color-text-muted);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .lg-breadcrumb-nav {
+      border-bottom: 1px solid #e5e7eb;
+      background: var(--color-bg-white);
+    }
+
+    .lg-breadcrumb-nav .lg-container {
+      padding-top: 12px;
+      padding-bottom: 12px;
+    }
+
+    .lg-breadcrumb-list {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      color: var(--color-text-muted);
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .lg-breadcrumb-link {
+      color: var(--color-text-muted);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .lg-breadcrumb-link:hover {
+      color: var(--color-text-dark);
+    }
+
+    .lg-breadcrumb-chevron {
+      width: 12px;
+      height: 12px;
+      flex-shrink: 0;
+    }
+
+    .lg-breadcrumb-current {
+      color: var(--color-text-dark);
+      font-weight: 500;
+    }
+
+    .lg-hero-section {
+      background: var(--color-bg-section);
+      width: 100%;
+      padding: 60px 24px 80px;
+    }
+
+    .lg-hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .lg-hero-content {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .lg-hero-badge-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .lg-service-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 5px 14px;
+      background: var(--color-primary-light);
+      border: 1px solid var(--color-primary-border);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--color-primary);
+    }
+
+    .lg-location-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 500;
+      color: #16a34a;
+    }
+
+    .lg-badge-dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: #16a34a;
+      flex-shrink: 0;
+    }
+
+    .lg-hero-headline {
+      font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+      font-weight: 900;
+      line-height: 1.1;
+      color: var(--color-text-dark);
+      margin: 0;
+    }
+
+    .lg-highlight {
+      color: var(--color-text-dark);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      text-decoration-color: var(--color-primary);
+    }
+
+    .lg-hero-subheadline {
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--color-text-body);
+      margin: 0;
+    }
+
+    .lg-hero-body {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .lg-hero-body p {
+      font-size: 15px;
+      color: #4b5563;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .lg-hero-body a {
+      color: var(--color-primary);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .lg-hero-cta-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .lg-cta-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      background: var(--color-primary);
+      color: var(--color-bg-white);
+      border: none;
+      border-radius: var(--border-radius-btn);
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+    }
+
+    .lg-cta-primary:hover {
+      background-color: var(--color-primary-dark);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-btn-hover);
+    }
+
+    .lg-cta-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 24px;
+      background: var(--color-bg-white);
+      color: var(--color-text-body);
+      border: 1.5px solid #e5e7eb;
+      border-radius: var(--border-radius-btn);
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: border-color 0.2s ease, color 0.2s ease;
+      cursor: pointer;
+    }
+
+    .lg-cta-secondary:hover {
+      border-color: var(--color-primary);
+      color: var(--color-primary);
+    }
+
+    .lg-pricing-note {
+      font-size: 13px;
+      color: var(--color-text-subtle);
+      margin: 0;
+    }
+
+    .lg-pricing-note a {
+      color: var(--color-primary);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .lg-hero-image-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .lg-hero-image-wrapper img {
+      width: 100%;
+      max-width: 420px;
+      height: auto;
+      display: block;
+      object-fit: contain;
+    }
+
+    .lg-annotations-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+    }
+
+    .lg-annotation {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      background: var(--color-primary-light);
+      border: 1px solid var(--color-primary-border);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--color-primary);
+    }
+
+    .lg-annotation svg {
+      flex-shrink: 0;
+      stroke: var(--color-primary);
+    }
+
+    .lg-services-section {
+      background: var(--color-bg-white);
+      padding: 80px 0;
+    }
+
+    .lg-services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .lg-service-card {
+      background: var(--color-bg-white);
+      border: 1px solid var(--color-card-border);
+      border-left: 4px solid var(--color-primary);
+      border-radius: var(--border-radius-card);
+      padding: 24px;
+      box-shadow: var(--shadow-card);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .lg-service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-card-hover);
+    }
+
+    .lg-service-icon-wrapper {
+      background-color: var(--color-primary-light);
+      border-radius: 10px;
+      padding: 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      width: 44px;
+      height: 44px;
+    }
+
+    .lg-service-icon-wrapper svg {
+      stroke: var(--color-primary);
+      width: 22px;
+      height: 22px;
+    }
+
+    .lg-service-card:hover .lg-service-icon-wrapper {
+      background-color: var(--color-primary-hover-bg);
+    }
+
+    .lg-service-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--color-text-dark);
+      margin: 0 0 10px 0;
+    }
+
+    .lg-service-body {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .lg-section-cta {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .lg-models-section {
+      background: linear-gradient(135deg, #fafafa 0%, #f9fafb 100%);
+      padding: 80px 0;
+    }
+
+    .lg-models-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .lg-model-card {
+      background: var(--color-bg-white);
+      border: 1px solid var(--color-card-border);
+      border-left: 4px solid var(--color-primary);
+      border-radius: var(--border-radius-card);
+      padding: 28px;
+      box-shadow: var(--shadow-card);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .lg-model-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-card-hover);
+    }
+
+    .lg-model-icon-wrapper {
+      background-color: var(--color-primary-light);
+      border-radius: 10px;
+      padding: 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      width: 44px;
+      height: 44px;
+    }
+
+    .lg-model-icon-wrapper svg {
+      stroke: var(--color-primary);
+      width: 22px;
+      height: 22px;
+    }
+
+    .lg-model-card:hover .lg-model-icon-wrapper {
+      background-color: var(--color-primary-hover-bg);
+    }
+
+    .lg-model-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--color-text-dark);
+      margin: 0 0 8px 0;
+    }
+
+    .lg-model-description {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      line-height: 1.6;
+      margin: 0 0 16px 0;
+      flex: 1;
+    }
+
+    .lg-model-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 20px;
+    }
+
+    .lg-pill {
+      padding: 4px 10px;
+      background: #f3f4f6;
+      border: 1px solid #e5e7eb;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--color-text-body);
+    }
+
+    .lg-model-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--color-primary);
+      text-decoration: none;
+      transition: gap 0.2s ease;
+    }
+
+    .lg-model-cta:hover {
+      gap: 10px;
+    }
+
+    .lg-why-section {
+      background: var(--color-bg-white);
+      padding: 80px 0;
+    }
+
+    .lg-pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .lg-pillar-card {
+      background: var(--color-bg-white);
+      border: 1px solid var(--color-card-border);
+      border-left: 4px solid var(--color-primary);
+      border-radius: var(--border-radius-card);
+      padding: 24px;
+      box-shadow: var(--shadow-card);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .lg-pillar-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-card-hover);
+    }
+
+    .lg-pillar-icon-wrapper {
+      background-color: var(--color-primary-light);
+      border-radius: 10px;
+      padding: 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      width: 44px;
+      height: 44px;
+    }
+
+    .lg-pillar-icon-wrapper svg {
+      stroke: var(--color-primary);
+      width: 22px;
+      height: 22px;
+    }
+
+    .lg-pillar-card:hover .lg-pillar-icon-wrapper {
+      background-color: var(--color-primary-hover-bg);
+    }
+
+    .lg-pillar-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--color-text-dark);
+      margin: 0 0 8px 0;
+    }
+
+    .lg-pillar-body {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .lg-cost-section {
+      background: var(--color-bg-section);
+      width: 100%;
+      padding: 80px 24px;
+    }
+
+    .lg-cost-section .lg-container {
+      padding: 0;
+    }
+
+    .lg-cost-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .lg-cost-card {
+      background: var(--color-bg-white);
+      border: 1px solid var(--color-card-border);
+      border-left: 4px solid var(--color-primary);
+      border-radius: var(--border-radius-card);
+      padding: 28px;
+      box-shadow: var(--shadow-card);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .lg-cost-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-card-hover);
+    }
+
+    .lg-cost-icon-wrapper {
+      background-color: var(--color-primary-light);
+      border-radius: 10px;
+      padding: 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      width: 44px;
+      height: 44px;
+    }
+
+    .lg-cost-icon-wrapper svg {
+      stroke: var(--color-primary);
+      width: 22px;
+      height: 22px;
+    }
+
+    .lg-cost-card:hover .lg-cost-icon-wrapper {
+      background-color: var(--color-primary-hover-bg);
+    }
+
+    .lg-cost-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--color-text-dark);
+      margin: 0 0 12px 0;
+    }
+
+    .lg-cost-body {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      margin: 0 0 16px 0;
+      flex: 1;
+    }
+
+    .lg-cost-note {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--color-text-subtle);
+      margin: 0 0 20px 0;
+    }
+
+    .lg-price-match-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 14px 20px;
+      border: 1.5px solid #d1d5db;
+      border-radius: var(--border-radius-btn);
+      background: var(--color-bg-white);
+      color: var(--color-text-body);
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+      box-sizing: border-box;
+    }
+
+    .lg-price-match-btn:hover {
+      border-color: var(--color-primary);
+      color: var(--color-primary);
+      box-shadow: 0 2px 12px rgba(239, 68, 68, 0.1);
+    }
+
+    .lg-trade-in-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 14px 20px;
+      background: var(--color-primary-light);
+      color: var(--color-primary);
+      border: 1.5px solid #fca5a5;
+      border-radius: var(--border-radius-btn);
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+      box-sizing: border-box;
+    }
+
+    .lg-trade-in-btn:hover {
+      background-color: var(--color-primary-hover-bg);
+      border-color: var(--color-primary);
+      box-shadow: 0 2px 12px rgba(239, 68, 68, 0.15);
+    }
+
+    .lg-pricing-context {
+      max-width: 800px;
+      margin: 40px auto 0 auto;
+    }
+
+    .lg-context-paragraph {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .lg-context-link {
+      color: var(--color-primary);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .lg-locations-section {
+      background: #fafafa;
+      padding: 80px 0;
+    }
+
+    .lg-locations-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .lg-location-card {
+      background: var(--color-bg-white);
+      border: 1px solid var(--color-card-border);
+      border-radius: var(--border-radius-card);
+      padding: 28px;
+      box-shadow: var(--shadow-card);
+    }
+
+    .lg-walkin-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 12px;
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #16a34a;
+      margin-bottom: 16px;
+    }
+
+    .lg-location-badge-tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 12px;
+      background: var(--color-primary-light);
+      border: 1px solid var(--color-primary-border);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--color-primary);
+      margin-bottom: 16px;
+    }
+
+    .lg-location-name {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--color-text-dark);
+      margin: 0 0 6px 0;
+    }
+
+    .lg-location-address {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      margin: 0 0 16px 0;
+    }
+
+    .lg-location-hours {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      margin-bottom: 20px;
+      line-height: 1.7;
+    }
+
+    .lg-location-hours p {
+      margin: 0;
+    }
+
+    .lg-location-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .lg-location-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--color-primary);
+      text-decoration: none;
+      transition: gap 0.2s ease;
+    }
+
+    .lg-location-link:hover {
+      gap: 10px;
+    }
+
+    .lg-location-link svg {
+      stroke: var(--color-primary);
+    }
+
+    .lg-faq-section {
+      background: var(--color-bg-white);
+      padding: 80px 0;
+    }
+
+    .lg-faq-list {
+      max-width: 760px;
+      margin: 0 auto;
+      border-top: 1px solid #e5e7eb;
+    }
+
+    .lg-faq-item {
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .lg-faq-summary {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 20px 0;
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--color-text-dark);
+      list-style: none;
+    }
+
+    .lg-faq-summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .lg-faq-chevron {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      stroke: var(--color-text-muted);
+      transition: transform 0.2s ease;
+      margin-top: 2px;
+    }
+
+    details[open] .lg-faq-chevron {
+      transform: rotate(180deg);
+    }
+
+    .lg-faq-answer {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      margin: 0 0 20px 0;
+      padding-right: 34px;
+    }
+
+    .lg-final-cta-section {
+      background: var(--color-primary-light);
+      border-top: 1px solid var(--color-primary-border);
+      padding: 80px 0;
+    }
+
+    .lg-final-cta-inner {
+      text-align: center;
+    }
+
+    .lg-final-cta-title {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 700;
+      color: var(--color-text-dark);
+      margin: 0 0 12px 0;
+    }
+
+    .lg-final-cta-subtitle {
+      font-size: 15px;
+      color: var(--color-text-muted);
+      margin: 0 0 32px 0;
+    }
+
+    .lg-final-cta-group {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 1200px) {
+      .lg-models-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 1024px) {
+      .lg-pillars-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .lg-hero-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .lg-services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .lg-services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .lg-models-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .lg-cost-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .lg-locations-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .lg-pillars-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
+</BaseLayout>
