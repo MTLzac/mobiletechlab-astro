@@ -4,48 +4,38 @@ const phones = [
   { name: "Samsung", href: "/repairs/samsung" },
   { name: "Google Pixel", href: "/repairs/google-pixel" },
   { name: "Motorola", href: "/repairs/motorola" },
-  { name: "OnePlus", href: "/repairs/oneplus" },
   { name: "LG", href: "/repairs/lg" },
   { name: "Huawei", href: "/repairs/huawei" },
-  { name: "Xiaomi", href: "/repairs/xiaomi" },
-  { name: "Oppo", href: "/repairs/oppo" },
-  { name: "Nothing", href: "/repairs/nothing" },
-  { name: "Infinix", href: "/repairs/infinix" },
-  { name: "TCL", href: "/repairs/tcl" },
-  { name: "ZTE", href: "/repairs/zte" },
-  { name: "Blackberry", href: "/repairs/blackberry" },
+  { name: "Oppo", href: "/repair/oppo" },
+  { name: "TCL", href: "/repair/tcl" },
+  { name: "ZTE", href: "/repair/zte" },
 ];
 
 const tablets = [
   { name: "iPad", href: "/repairs/ipad" },
-  { name: "Galaxy Tab", href: "/repairs/galaxy-tab" },
+  { name: "Galaxy Tab", href: "/repair/samsung-galaxy-tab" },
   { name: "Amazon Kindle/Fire", href: "/repairs/amazon-kindle" },
 ];
 
 const gaming = [
-  { name: "All Console Repairs", href: "/repairs/consoles" },
-  { name: "Nintendo Switch", href: "/repairs/nintendo-switch" },
+  { name: "All Console Repairs", href: "/consoles" },
+  { name: "Nintendo Switch", href: "/repair/nintendo-switch" },
   { name: "PlayStation 5", href: "/repairs/playstation-5" },
   { name: "PlayStation 4", href: "/repairs/playstation-4" },
-  { name: "Xbox", href: "/repairs/xbox" },
-  { name: "Steam Deck", href: "/repairs/steam-deck" },
+  { name: "Xbox", href: "/repair/xbox" },
+  { name: "Steam Deck", href: "/repair/steam-deck" },
 ];
 
 const computers = [
   { name: "MacBook", href: "/repairs/macbook" },
-  { name: "Microsoft Surface", href: "/repairs/microsoft-surface" },
-  { name: "Laptop Repair", href: "/repairs/laptop" },
+  { name: "Surface", href: "/repair/surface" },
+  { name: "Laptop Repair", href: "/repair/laptop" },
 ];
 
 const otherDevices = [
   { name: "Apple Watch", href: "/repairs/apple-watch" },
   { name: "iPod", href: "/repairs/ipod" },
-  { name: "Water Damage", href: "/repairs/water-damage" },
-];
-
-const specialty = [
-  { name: "CAT S62 Charging Port", href: "/repairs/cat-s62-charging-port" },
-  { name: "BlackMagic HDMI", href: "/repairs/blackmagic-hdmi" },
+  { name: "Water Damage", href: "/repair/water-damage" },
 ];
 ---
 
@@ -137,15 +127,6 @@ const specialty = [
         ))}
       </div>
 
-      <div class="mega-menu-col">
-        <div class="mega-menu-category-header">
-          <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/></svg>
-          <span class="mega-menu-category-label">Specialty Repairs</span>
-        </div>
-        {specialty.map(item => (
-          <a class="mega-menu-item" href={item.href}>{item.name}</a>
-        ))}
-      </div>
     </div>
   </div>
 </div>
