@@ -1,0 +1,520 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = "BlackMagic Pocket 4K/6K HDMI Port Repair | BMPCC HDMI Fix";
+const description = "BMPCC 4K or 6K HDMI not working? We repair BlackMagic Pocket Cinema Camera HDMI ports and controller IC chips. Mail-in service available Canada-wide.";
+const canonical = "https://mobiletechlab.ca/repair/blackmagic-hdmi";
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://mobiletechlab.ca/" },
+    { "@type": "ListItem", "position": 2, "name": "Repairs", "item": "https://mobiletechlab.ca/repairs" },
+    { "@type": "ListItem", "position": 3, "name": "BlackMagic HDMI Repair", "item": "https://mobiletechlab.ca/repair/blackmagic-hdmi" }
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can you really fix a BlackMagic Pocket 4K HDMI port?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we've successfully repaired BMPCC 4K and 6K cameras with HDMI port and controller IC failures. The HDMI components are similar to those we repair on gaming consoles daily, and our micro-soldering experience translates directly to BlackMagic camera repairs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "My BMPCC 4K has no HDMI output - is it the port or something else?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "HDMI output failure on the BlackMagic Pocket Cinema Camera can be caused by either the physical HDMI port or the HDMI controller IC chip on the motherboard. We perform board-level diagnosis to identify the exact failure point before recommending repair."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you repair the BlackMagic Pocket 6K as well?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, both the BMPCC 4K and 6K use similar HDMI port and controller IC components. Whether your BlackMagic Pocket 6K has intermittent HDMI or complete output failure, we can diagnose and repair both models."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you know if it's the HDMI port or the controller IC?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We use board-level diagnostic equipment to test the HDMI signal path. This includes checking continuity on the port, testing the controller IC output, and verifying the communication between components. This dual diagnosis prevents wasted repairs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why can't I get my BMPCC HDMI fixed elsewhere?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "BlackMagic doesn't offer component-level repairs — they typically suggest replacement cameras. Most local repair shops lack the specialized micro-soldering equipment and experience needed for professional cinema camera board-level repair. Our console HDMI repair experience gives us the skills to tackle these jobs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you accept mail-in BlackMagic camera repairs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we regularly receive BMPCC 4K and 6K cameras from filmmakers and content creators across Canada. We provide guidance on proper packaging to ensure your camera arrives safely for HDMI port or controller IC repair."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How should I ship my BlackMagic camera for HDMI repair?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Remove any accessories (lens, cage, handle, SSD). Use the original box if available, or pack securely with foam or bubble wrap in a sturdy box. We recommend insured shipping with tracking. Contact us before shipping and we'll provide detailed packaging instructions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if both the HDMI port and controller IC need replacement?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If diagnosis reveals both the HDMI port and controller IC have failed, we can replace both components. We'll provide a quote for the full repair before proceeding, so you know exactly what's needed to restore HDMI output on your BlackMagic camera."
+      }
+    }
+  ]
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "BlackMagic Pocket Cinema Camera HDMI Repair",
+  "description": "Professional HDMI port and controller IC repair for BlackMagic Pocket Cinema Camera 4K and 6K. Board-level micro-soldering by experienced technicians.",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Mobile Tech Lab",
+    "url": "https://mobiletechlab.ca"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "Canada"
+  },
+  "serviceType": "Electronics Repair"
+};
+
+const repairSteps = [
+  { step: 1, title: "HDMI Diagnosis", description: "Board-level inspection to determine if the failure is the HDMI port itself or the HDMI controller IC chip on the motherboard. We test both failure points before recommending repair." },
+  { step: 2, title: "Component Sourcing", description: "Locating compatible HDMI ports or controller ICs — often cross-referencing with similar components we already use for PS5, Xbox, and Switch HDMI repairs." },
+  { step: 3, title: "Micro-Soldering Repair", description: "Precision removal and replacement of the failed HDMI port or controller IC using professional BGA rework equipment and proper thermal management." },
+  { step: 4, title: "Signal & Output Testing", description: "Full HDMI output testing at multiple resolutions including 4K/6K to verify clean signal and proper handshake before returning your camera." }
+];
+
+const problems = [
+  { icon: "ban", title: "No Manufacturer Support", description: "BlackMagic doesn't offer HDMI port repair — a replacement camera is often the only 'official' option for BMPCC 4K or 6K HDMI failures." },
+  { icon: "x-circle", title: "Repair Shops Decline", description: "Most electronics repair shops don't have experience with professional cinema cameras or the micro-soldering skills required for BMPCC HDMI repair." },
+  { icon: "help-circle", title: "Two Possible Failure Points", description: "The HDMI issue could be the port OR the controller IC chip — misdiagnosis leads to wasted repairs. Most shops can't properly diagnose both." }
+];
+
+const pillars = [
+  { icon: "search", title: "Dual Diagnosis Capability", description: "We identify whether your BMPCC HDMI failure is the port or the controller IC before starting repair." },
+  { icon: "gamepad-2", title: "Console HDMI Experience", description: "We repair similar HDMI ports on PS5, Xbox, and Nintendo Switch daily — the same skills apply to your BlackMagic camera." },
+  { icon: "package", title: "Mail-In Friendly", description: "Professional packaging guidance for shipping your BMPCC 4K or 6K camera safely from anywhere in Canada." },
+  { icon: "heart", title: "Pro Equipment Respect", description: "We understand this is your production tool and livelihood, not just another gadget to fix." }
+];
+
+const relatedRepairs = [
+  { label: "PS5 HDMI Repair", href: "/repairs/playstation-5" },
+  { label: "Xbox HDMI Repair", href: "/repair/xbox" },
+  { label: "Nintendo Switch Repair", href: "/repair/nintendo-switch" }
+];
+
+const faqItems = [
+  { question: "Can you really fix a BlackMagic Pocket 4K HDMI port?", answer: "Yes, we've successfully repaired BMPCC 4K and 6K cameras with HDMI port and controller IC failures. The HDMI components are similar to those we repair on gaming consoles daily, and our micro-soldering experience translates directly to BlackMagic camera repairs." },
+  { question: "My BMPCC 4K has no HDMI output - is it the port or something else?", answer: "HDMI output failure on the BlackMagic Pocket Cinema Camera can be caused by either the physical HDMI port or the HDMI controller IC chip on the motherboard. We perform board-level diagnosis to identify the exact failure point before recommending repair." },
+  { question: "Do you repair the BlackMagic Pocket 6K as well?", answer: "Yes, both the BMPCC 4K and 6K use similar HDMI port and controller IC components. Whether your BlackMagic Pocket 6K has intermittent HDMI or complete output failure, we can diagnose and repair both models." },
+  { question: "How do you know if it's the HDMI port or the controller IC?", answer: "We use board-level diagnostic equipment to test the HDMI signal path. This includes checking continuity on the port, testing the controller IC output, and verifying the communication between components. This dual diagnosis prevents wasted repairs." },
+  { question: "Why can't I get my BMPCC HDMI fixed elsewhere?", answer: "BlackMagic doesn't offer component-level repairs — they typically suggest replacement cameras. Most local repair shops lack the specialized micro-soldering equipment and experience needed for professional cinema camera board-level repair. Our console HDMI repair experience gives us the skills to tackle these jobs." },
+  { question: "Do you accept mail-in BlackMagic camera repairs?", answer: "Yes, we regularly receive BMPCC 4K and 6K cameras from filmmakers and content creators across Canada. We provide guidance on proper packaging to ensure your camera arrives safely for HDMI port or controller IC repair." },
+  { question: "How should I ship my BlackMagic camera for HDMI repair?", answer: "Remove any accessories (lens, cage, handle, SSD). Use the original box if available, or pack securely with foam or bubble wrap in a sturdy box. We recommend insured shipping with tracking. Contact us before shipping and we'll provide detailed packaging instructions." },
+  { question: "What if both the HDMI port and controller IC need replacement?", answer: "If diagnosis reveals both the HDMI port and controller IC have failed, we can replace both components. We'll provide a quote for the full repair before proceeding, so you know exactly what's needed to restore HDMI output on your BlackMagic camera." }
+];
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+
+  <main class="flex-1 pb-20 md:pb-0">
+    <!-- Visible Breadcrumbs -->
+    <nav aria-label="Breadcrumb" class="border-b border-border bg-muted/30">
+      <div class="container mx-auto px-4 py-3">
+        <ol class="flex items-center gap-2 text-sm text-muted-foreground">
+          <li><a href="/" class="hover:text-primary transition-colors">Home</a></li>
+          <li class="text-muted-foreground/60">/</li>
+          <li><a href="/repairs" class="hover:text-primary transition-colors">Repairs</a></li>
+          <li class="text-muted-foreground/60">/</li>
+          <li class="text-foreground font-medium">BlackMagic HDMI Repair</li>
+        </ol>
+      </div>
+    </nav>
+
+    <!-- Section 1: Hero -->
+    <section id="hero" class="relative overflow-hidden bg-gradient-to-b from-background via-background to-primary/5 py-16 md:py-24">
+      <div class="absolute -bottom-24 -right-24 h-64 w-64 rounded-full bg-primary/5 blur-3xl"></div>
+      <div class="absolute -top-24 -left-24 h-64 w-64 rounded-full bg-primary/5 blur-3xl"></div>
+      <div class="container relative mx-auto px-4 text-center">
+        <div class="mb-6 flex flex-wrap items-center justify-center gap-3">
+          <span class="inline-flex items-center gap-2 rounded-full bg-destructive/10 px-4 py-2 text-sm font-medium text-destructive">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+            Pro Video Equipment Specialist
+          </span>
+          <span class="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
+            Mail-In Service Available
+          </span>
+        </div>
+        <h1 class="mb-4 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl">
+          BlackMagic Pocket 4K/6K HDMI Repair
+        </h1>
+        <p class="mb-4 text-xl font-medium text-primary">
+          HDMI Port & Controller IC Replacement
+        </p>
+        <p class="mx-auto mb-8 max-w-2xl text-muted-foreground">
+          Is your BMPCC 4K or 6K showing no HDMI output? We fix BlackMagic Pocket Cinema Camera HDMI ports and the controller IC chip when others can't. Based in Winnipeg, MB - mail-in repairs welcome from anywhere in Canada.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+          <a href="tel:2045009757" class="inline-flex items-center gap-2 rounded-md bg-primary px-8 py-3 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Call Now: (204) 500-9757
+          </a>
+          <a href="sms:+12045009757?body=Hi%2C%20I%20found%20your%20site%20searching%20for%20BlackMagic%20Pocket%20Cinema%20Camera%20repair.%20Can%20you%20help%3F" class="inline-flex items-center gap-2 rounded-md border border-input bg-background px-8 py-3 text-sm font-medium hover:bg-accent transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+            Text Us: (204) 500-9757
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Proof Video -->
+    <section id="proof" class="border-y border-border bg-muted/30 py-16 md:py-20">
+      <div class="container mx-auto px-4">
+        <div class="grid gap-8 md:grid-cols-2 md:items-center">
+          <div class="overflow-hidden rounded-xl border border-border bg-card shadow-lg">
+            <div class="aspect-video">
+              <iframe
+                src="https://www.youtube.com/embed/nlnYBiuD6VU"
+                title="Watch Our BMPCC HDMI Repair Process"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+                loading="lazy"
+                class="h-full w-full"
+              ></iframe>
+            </div>
+          </div>
+          <div>
+            <h2 class="mb-4 text-2xl font-bold md:text-3xl">Watch the Repair Process</h2>
+            <p class="mb-6 text-muted-foreground">
+              Our professional micro-soldering workstation where we diagnose and repair BMPCC 4K and 6K HDMI port and controller IC failures. We use the same precision equipment for gaming console HDMI repairs.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-3">
+              <a href="tel:2045009757" class="inline-flex items-center justify-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                Call to Get Started
+              </a>
+              <a href="sms:+12045009757?body=Hi%2C%20I%20found%20your%20site%20searching%20for%20BlackMagic%20Pocket%20Cinema%20Camera%20repair.%20Can%20you%20help%3F" class="inline-flex items-center justify-center gap-2 rounded-md border border-input bg-background px-6 py-3 text-sm font-medium hover:bg-accent transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+                Text Us
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Repair Process -->
+    <section id="process" class="py-16 md:py-20">
+      <div class="container mx-auto px-4">
+        <div class="mb-12 text-center">
+          <h2 class="mb-3 text-2xl font-bold md:text-3xl">Our Repair Process</h2>
+          <p class="text-muted-foreground">How we tackle repairs that others won't even attempt</p>
+        </div>
+        <div class="mx-auto grid max-w-4xl gap-6 sm:grid-cols-2">
+          {repairSteps.map(item => (
+            <div class="rounded-xl border border-border bg-card p-6 shadow-sm">
+              <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-primary text-primary-foreground font-bold">
+                {item.step}
+              </div>
+              <h3 class="mb-2 text-lg font-semibold text-foreground">{item.title}</h3>
+              <p class="text-sm text-muted-foreground">{item.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Why Others Can't Help -->
+    <section id="why-others-cant" class="border-y border-border bg-muted/30 py-16 md:py-20">
+      <div class="container mx-auto px-4">
+        <div class="mb-12 text-center">
+          <h2 class="mb-3 text-2xl font-bold md:text-3xl">Why Others Can't Help</h2>
+          <p class="text-muted-foreground">Most repair shops turn away these devices — here's why we don't</p>
+        </div>
+        <div class="mx-auto grid max-w-5xl gap-6 sm:grid-cols-3">
+          {problems.map(item => (
+            <div class="rounded-xl border border-destructive/20 bg-destructive/5 p-6">
+              <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-destructive/10 text-destructive">
+                {item.icon === "ban" && <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m4.9 4.9 14.2 14.2"/></svg>}
+                {item.icon === "x-circle" && <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/></svg>}
+                {item.icon === "help-circle" && <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>}
+              </div>
+              <h3 class="mb-2 text-lg font-semibold text-foreground">{item.title}</h3>
+              <p class="text-sm text-muted-foreground">{item.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Related Repairs -->
+    <section class="py-12 md:py-16">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="mb-3 text-xl font-bold md:text-2xl">Related HDMI Repairs</h2>
+        <p class="mb-6 text-muted-foreground">We fix HDMI ports on other devices too</p>
+        <div class="flex flex-wrap items-center justify-center gap-3">
+          {relatedRepairs.map(repair => (
+            <a href={repair.href} class="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-primary hover:text-primary-foreground hover:border-primary">
+              {repair.label}
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: Why Choose Us -->
+    <section id="why-choose-us" class="border-t border-border bg-muted/30 py-16 md:py-20">
+      <div class="container mx-auto px-4">
+        <div class="mb-12 text-center">
+          <h2 class="mb-3 text-2xl font-bold md:text-3xl">The Mobile Tech Lab Advantage</h2>
+          <p class="text-muted-foreground">Why Winnipeg customers consistently choose us for their repairs</p>
+        </div>
+        <div class="mx-auto grid max-w-5xl gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          {pillars.map(item => (
+            <div class="text-center">
+              <div class="mx-auto mb-4 inline-flex rounded-full bg-primary/10 p-4 text-primary">
+                {item.icon === "search" && <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>}
+                {item.icon === "gamepad-2" && <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" x2="10" y1="11" y2="11"/><line x1="8" x2="8" y1="9" y2="13"/><line x1="15" x2="15.01" y1="12" y2="12"/><line x1="18" x2="18.01" y1="10" y2="10"/><path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"/></svg>}
+                {item.icon === "package" && <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>}
+                {item.icon === "heart" && <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>}
+              </div>
+              <h3 class="mb-2 text-lg font-semibold">{item.title}</h3>
+              <p class="text-sm text-muted-foreground">{item.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 7: Mail-In Callout -->
+    <section class="bg-primary/5 py-16 md:py-20">
+      <div class="container mx-auto px-4 text-center">
+        <span class="mb-4 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 font-medium text-primary">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
+          Mail-In Repairs
+        </span>
+        <h2 class="mb-4 text-2xl font-bold md:text-3xl">Can't Find Anyone Local?</h2>
+        <p class="mx-auto mb-8 max-w-2xl text-muted-foreground">
+          Ship your BMPCC 4K or 6K from anywhere in Canada for professional HDMI port or controller IC repair. We provide packaging guidance and quick turnaround for filmmakers who can't be without their camera.
+        </p>
+        <a href="/contact" class="inline-flex items-center gap-2 rounded-md bg-primary px-8 py-3 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors">
+          Get Mail-In Quote
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- Section 8: Locations -->
+    <section id="locations" class="py-16 md:py-20">
+      <div class="container mx-auto px-4">
+        <div class="mb-12 text-center">
+          <h2 class="mb-3 text-2xl font-bold md:text-3xl">Visit Us or Mail It In</h2>
+          <p class="text-muted-foreground">Two walk-in locations in Winnipeg, or ship your device to us from anywhere.</p>
+        </div>
+        <div class="mx-auto grid max-w-5xl gap-6 md:grid-cols-3">
+          <!-- St. Vital Location -->
+          <div class="rounded-xl border border-border bg-card p-6">
+            <div class="mb-4 flex items-center gap-3">
+              <div class="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <h3 class="font-semibold">St. Vital Location</h3>
+            </div>
+            <div class="space-y-3 text-sm">
+              <p class="text-muted-foreground">845 Dakota St #25, Winnipeg, MB R2M 5M3</p>
+              <div class="flex items-center gap-2 text-muted-foreground">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                <span>Mon-Sat: 9AM - 7PM<br/>Sun: 12PM - 7PM</span>
+              </div>
+              <a href="tel:2045009757" class="flex items-center gap-2 font-medium text-primary hover:underline">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                (204) 500-9757
+              </a>
+            </div>
+            <a href="https://maps.google.com/?q=845+Dakota+St+%2325+Winnipeg+MB+R2M+5M3" target="_blank" rel="noopener noreferrer" class="mt-4 flex w-full items-center justify-center gap-2 rounded-md border border-input bg-background px-4 py-2 text-sm font-medium hover:bg-accent transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+              Get Directions
+            </a>
+          </div>
+
+          <!-- Thompson Location -->
+          <div class="rounded-xl border border-border bg-card p-6">
+            <div class="mb-4 flex items-center gap-3">
+              <div class="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <h3 class="font-semibold">Thompson Location</h3>
+            </div>
+            <div class="space-y-3 text-sm">
+              <p class="text-muted-foreground">300 Mystery Lake Rd #1530, Thompson, MB R8N 0M2</p>
+              <div class="flex items-center gap-2 text-muted-foreground">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                <span>Mon-Sat: 10AM - 6PM<br/>Sun: Closed</span>
+              </div>
+              <a href="tel:2044100262" class="flex items-center gap-2 font-medium text-primary hover:underline">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                (204) 410-0262
+              </a>
+            </div>
+            <a href="https://maps.google.com/?q=300+Mystery+Lake+Rd+%231530+Thompson+MB+R8N+0M2" target="_blank" rel="noopener noreferrer" class="mt-4 flex w-full items-center justify-center gap-2 rounded-md border border-input bg-background px-4 py-2 text-sm font-medium hover:bg-accent transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+              Get Directions
+            </a>
+          </div>
+
+          <!-- Mail-In Card -->
+          <div class="rounded-xl border border-primary/30 bg-primary/5 p-6">
+            <div class="mb-4 flex items-center gap-3">
+              <div class="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>
+              </div>
+              <h3 class="font-semibold">Mail-In Repairs</h3>
+            </div>
+            <p class="mb-4 text-sm text-muted-foreground">
+              Ship your device to us from anywhere in Canada or internationally. We'll diagnose, repair, and ship it back.
+            </p>
+            <ul class="mb-4 space-y-2 text-sm">
+              <li class="flex items-center gap-2 text-muted-foreground">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                Free diagnostic
+              </li>
+              <li class="flex items-center gap-2 text-muted-foreground">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                Secure packaging provided
+              </li>
+              <li class="flex items-center gap-2 text-muted-foreground">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                Insured return shipping
+              </li>
+            </ul>
+            <a href="/contact" class="flex w-full items-center justify-center gap-2 rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors">
+              Get a Quote
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 9: FAQ -->
+    <section id="faqs" class="border-t border-border bg-muted/30 py-16 md:py-20">
+      <div class="container mx-auto px-4">
+        <div class="mb-12 text-center">
+          <h2 class="mb-3 text-2xl font-bold md:text-3xl">BlackMagic Pocket Cinema Camera Repair FAQs</h2>
+          <p class="text-muted-foreground">Common questions about BlackMagic Pocket Cinema Camera repair at Mobile Tech Lab</p>
+        </div>
+        <div class="mx-auto max-w-3xl divide-y divide-border">
+          {faqItems.map((item, index) => (
+            <details class="group" open={index === 0}>
+              <summary class="cursor-pointer py-4 text-left font-medium text-foreground hover:text-primary transition-colors flex items-center justify-between">
+                <span>{item.question}</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-muted-foreground transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+              </summary>
+              <p class="pb-4 text-sm text-muted-foreground leading-relaxed">{item.answer}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Section 10: Sticky CTA (Mobile Only) -->
+  <div class="fixed bottom-0 left-0 right-0 z-50 border-t border-border bg-background/95 p-4 backdrop-blur-sm md:hidden">
+    <div class="flex gap-3">
+      <a href="tel:2045009757" class="flex flex-1 items-center justify-center gap-2 rounded-md bg-primary px-4 py-3 text-sm font-medium text-primary-foreground">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call
+      </a>
+      <a href="sms:+12045009757?body=Hi%2C%20I%20found%20your%20site%20and%20need%20a%20repair.%20Can%20you%20help%3F" class="flex flex-1 items-center justify-center gap-2 rounded-md border border-input bg-background px-4 py-3 text-sm font-medium">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+        Text
+      </a>
+    </div>
+  </div>
+
+  <!-- Section 11: Table of Contents (Floating) -->
+  <div id="toc-container" class="fixed bottom-24 right-4 z-40 md:bottom-8">
+    <button id="toc-toggle" class="flex h-12 w-12 items-center justify-center rounded-full border border-border bg-card shadow-lg hover:bg-accent transition-colors" aria-label="Table of contents">
+      <svg id="toc-icon-closed" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" x2="21" y1="6" y2="6"/><line x1="8" x2="21" y1="12" y2="12"/><line x1="8" x2="21" y1="18" y2="18"/><line x1="3" x2="3.01" y1="6" y2="6"/><line x1="3" x2="3.01" y1="12" y2="12"/><line x1="3" x2="3.01" y1="18" y2="18"/></svg>
+      <svg id="toc-icon-open" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+    </button>
+    <div id="toc-popover" class="absolute bottom-14 right-0 hidden w-48 rounded-lg border border-border bg-card p-2 shadow-lg">
+      <p class="mb-2 px-2 text-xs font-medium text-muted-foreground">Jump to section</p>
+      <nav class="space-y-1">
+        <a href="#proof" class="toc-link block rounded-md px-2 py-1.5 text-sm text-muted-foreground hover:bg-muted transition-colors" data-section="proof">Proof</a>
+        <a href="#process" class="toc-link block rounded-md px-2 py-1.5 text-sm text-muted-foreground hover:bg-muted transition-colors" data-section="process">Process</a>
+        <a href="#why-choose-us" class="toc-link block rounded-md px-2 py-1.5 text-sm text-muted-foreground hover:bg-muted transition-colors" data-section="why-choose-us">Why Us</a>
+        <a href="#locations" class="toc-link block rounded-md px-2 py-1.5 text-sm text-muted-foreground hover:bg-muted transition-colors" data-section="locations">Locations</a>
+        <a href="#faqs" class="toc-link block rounded-md px-2 py-1.5 text-sm text-muted-foreground hover:bg-muted transition-colors" data-section="faqs">FAQs</a>
+      </nav>
+    </div>
+  </div>
+
+  <script>
+    const toggle = document.getElementById('toc-toggle');
+    const popover = document.getElementById('toc-popover');
+    const iconClosed = document.getElementById('toc-icon-closed');
+    const iconOpen = document.getElementById('toc-icon-open');
+    let isOpen = false;
+
+    toggle?.addEventListener('click', () => {
+      isOpen = !isOpen;
+      popover?.classList.toggle('hidden', !isOpen);
+      iconClosed?.classList.toggle('hidden', isOpen);
+      iconOpen?.classList.toggle('hidden', !isOpen);
+    });
+
+    const sections = ['proof', 'process', 'why-choose-us', 'locations', 'faqs'];
+    const links = document.querySelectorAll('.toc-link');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          links.forEach((link) => {
+            const isActive = link.getAttribute('data-section') === entry.target.id;
+            link.classList.toggle('bg-primary/10', isActive);
+            link.classList.toggle('font-medium', isActive);
+            link.classList.toggle('text-primary', isActive);
+          });
+        }
+      });
+    }, { rootMargin: '-20% 0px -70% 0px' });
+
+    sections.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+  </script>
+</BaseLayout>
