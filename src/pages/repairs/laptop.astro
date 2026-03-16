@@ -1,0 +1,1382 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = "Laptop Repair Winnipeg | All Brands | Mobile Tech Lab";
+const description = "Expert laptop repair in Winnipeg. Screen, battery, keyboard, charging port, SSD upgrades for Asus, Acer, Lenovo, HP, Dell, Chromebook & all brands. Same-day available.";
+const canonical = "https://mobiletechlab.ca/repairs/laptop";
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://mobiletechlab.ca/" },
+    { "@type": "ListItem", "position": 2, "name": "Repairs", "item": "https://mobiletechlab.ca/repairs" },
+    { "@type": "ListItem", "position": 3, "name": "Laptop Repair", "item": "https://mobiletechlab.ca/repairs/laptop" }
+  ]
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Laptop Repair Service",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Mobile Tech Lab",
+    "url": "https://mobiletechlab.ca"
+  },
+  "areaServed": { "@type": "City", "name": "Winnipeg" },
+  "serviceType": "Laptop Repair",
+  "url": "https://mobiletechlab.ca/repairs/laptop",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Laptop Repair Services",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Screen Replacement" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Battery Replacement" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Keyboard Replacement" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Charging Port Repair" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Overheating and Fan Repair" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SSD and RAM Upgrades" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Hinge Repair" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Motherboard Repair" } }
+    ]
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "How long does a laptop screen replacement take in Winnipeg?", "acceptedAnswer": { "@type": "Answer", "text": "Most laptop screen replacements are completed within 1–2 hours at our Winnipeg St. Vital location when parts are in stock. For less common laptop models or premium display panels, we may need to order a part — we'll give you an estimated wait time when you contact us." } },
+    { "@type": "Question", "name": "Can you upgrade my laptop's RAM and SSD in Winnipeg?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — we perform SSD and RAM upgrades on most laptops at our Winnipeg location. An SSD upgrade is the single most impactful performance improvement you can make on an older laptop — replacing a spinning hard drive with an NVMe SSD can make a years-old machine boot in seconds and feel completely new again." } },
+    { "@type": "Question", "name": "My laptop won't turn on. Can you fix it in Winnipeg?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — we diagnose and repair laptop power failures ranging from simple battery or charger problems through to complex motherboard-level faults. We perform component-level diagnostics and micro-soldering for charging IC failures, power delivery faults, and display connection issues that most Winnipeg laptop shops won't attempt." } },
+    { "@type": "Question", "name": "Do you repair Chromebooks in Winnipeg?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — we service all Chromebook brands including Asus, Acer, Lenovo, HP, Dell, and Google Pixelbook at our Winnipeg location. Chromebook screen replacements and keyboard repairs are the most common Chromebook fixes we perform." } },
+    { "@type": "Question", "name": "Is it worth repairing my old laptop?", "acceptedAnswer": { "@type": "Answer", "text": "It depends on the repair cost versus the laptop's current value and remaining useful life — a battery replacement or SSD upgrade on a well-built 5-year-old laptop almost always makes sense, while a motherboard repair on a budget 7-year-old machine may not. We provide a free diagnostic and honest assessment at our Winnipeg location before you commit to anything." } },
+    { "@type": "Question", "name": "Do you repair gaming laptops in Winnipeg?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — we repair Asus ROG, Acer Nitro and Predator, Lenovo Legion, HP Omen, Dell Alienware, Razer Blade, and MSI gaming laptops at our Winnipeg shop. Gaming laptops frequently need thermal paste replacement and heatsink cleaning due to the high sustained loads they run under — overheating is by far the most common gaming laptop repair we perform." } },
+    { "@type": "Question", "name": "Can you fix a laptop with a broken or loose hinge?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — hinge repairs are a common laptop fix we perform at our Winnipeg location. Loose or broken hinges often cause the screen to wobble or crack the plastic chassis around the hinge mounting points. We repair hinges and reinforce or replace the chassis damage they cause on all laptop brands." } },
+    { "@type": "Question", "name": "Do you repair laptop charging ports in Winnipeg?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — we repair both DC barrel jack charging ports on older laptops and USB-C charging ports on modern thin-and-light models at our Winnipeg shop. Most charging port repairs are completed same-day and we always test the full charging chain before recommending a port replacement." } },
+    { "@type": "Question", "name": "Do you offer free laptop diagnostics in Winnipeg?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — we provide free diagnostics on all laptops at our Winnipeg St. Vital location. Walk in any time during business hours and we'll assess your laptop and give you a clear upfront quote before starting any repair — no obligation and no fee for the diagnostic itself." } },
+    { "@type": "Question", "name": "Do you repair laptops in Thompson, MB?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — our Thompson location at 300 Mystery Lake Rd #1530 accepts laptop repairs Monday through Saturday 10AM–6PM. For screen replacements or less common brands, calling ahead helps us confirm parts availability before your visit." } }
+  ]
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <Fragment slot="head">
+    <meta name="robots" content="index, follow" />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
+
+  <nav class="lp-breadcrumb-nav" aria-label="Breadcrumb">
+    <div class="lp-container">
+      <ol class="lp-breadcrumb-list">
+        <li><a href="/" class="lp-breadcrumb-link">Home</a></li>
+        <li><svg xmlns="http://www.w3.org/2000/svg" class="lp-breadcrumb-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m9 18 6-6-6-6"/></svg></li>
+        <li><a href="/repairs" class="lp-breadcrumb-link">Repairs</a></li>
+        <li><svg xmlns="http://www.w3.org/2000/svg" class="lp-breadcrumb-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m9 18 6-6-6-6"/></svg></li>
+        <li class="lp-breadcrumb-current" aria-current="page">Laptop Repair</li>
+      </ol>
+    </div>
+  </nav>
+
+  <section class="lp-hero-section" id="hero">
+    <div class="lp-hero-inner">
+      <div class="lp-hero-content">
+        <div class="lp-hero-badge-row">
+          <span class="lp-service-badge">All Laptop Brands Serviced in Winnipeg</span>
+          <span class="lp-location-badge">
+            <span class="lp-badge-dot"></span>
+            St. Vital — Open
+          </span>
+          <span class="lp-location-badge">
+            <span class="lp-badge-dot"></span>
+            Thompson — Opens tomorrow 10AM
+          </span>
+        </div>
+
+        <h1 class="lp-hero-headline">
+          Laptop Repair <span class="lp-highlight">Winnipeg</span> &amp; Manitoba
+        </h1>
+
+        <p class="lp-hero-subhead">Asus, Acer, Lenovo, HP, Dell, Chromebook &amp; All Brands — Same-Day Service Available</p>
+
+        <div class="lp-hero-body">
+          <p>Cracked laptop screen, dead battery, overheating, or keyboard not working? We repair all Windows laptops and Chromebooks at our Winnipeg shop — Asus, Acer, Lenovo, HP, Dell, Toshiba, MSI, Razer, Samsung Galaxy Book, LG Gram, Huawei MateBook, and every Chromebook brand. Common repairs include screen replacements, battery swaps, keyboard replacements, charging port fixes, overheating cleans, hinge repairs, and SSD and RAM upgrades. We also repair <a href="/repairs/macbook">MacBooks</a> and <a href="/repair/surface">Microsoft Surface</a> devices.</p>
+          <p>Not sure what's wrong? Walk in for a free diagnostic and we'll give you a clear assessment and upfront quote before starting any work. Most screen and battery repairs are completed same-day. We perform component-level motherboard diagnostics and micro-soldering for laptops that won't turn on — repairs that most Winnipeg laptop shops send out or refuse entirely.</p>
+        </div>
+
+        <div class="lp-hero-cta-row">
+          <a href="https://shop.mobiletechlab.ca/pages/repair2" target="_blank" rel="noopener noreferrer" class="lp-btn-primary">
+            Get a Free Quote
+            <svg xmlns="http://www.w3.org/2000/svg" class="lp-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="tel:2045009757" class="lp-btn-secondary">
+            <svg xmlns="http://www.w3.org/2000/svg" class="lp-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Call Now
+          </a>
+        </div>
+
+        <p class="lp-pricing-note">
+          Not sure what affects the cost? <a href="/repair-pricing" class="lp-pricing-link">How repair pricing works</a>
+        </p>
+      </div>
+
+      <div class="lp-hero-image-wrap">
+        <img
+          src="/assets/hero-laptop.png"
+          alt="Laptop repair in Winnipeg — all brands including Asus, Acer, Lenovo, HP, Dell and Chromebook at Mobile Tech Lab"
+          width="520"
+          height="400"
+          loading="eager"
+          class="lp-hero-image"
+        />
+        <div class="lp-hero-annotations">
+          <span class="lp-annotation lp-annotation-1">Cracked screen</span>
+          <span class="lp-annotation lp-annotation-2">Battery won't hold charge</span>
+          <span class="lp-annotation lp-annotation-3">Keyboard not working</span>
+          <span class="lp-annotation lp-annotation-4">Won't turn on</span>
+          <span class="lp-annotation lp-annotation-5">Overheating</span>
+          <span class="lp-annotation lp-annotation-6">Hinge broken</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="lp-services-section" id="services">
+    <div class="lp-container">
+      <div class="lp-section-header">
+        <h2 class="lp-section-heading">Laptop Repair Services in Winnipeg</h2>
+        <p class="lp-section-subheading">Every repair your laptop needs — all brands, all models, free diagnostics, warranty included.</p>
+      </div>
+
+      <div class="lp-services-grid">
+        <div class="lp-service-card">
+          <div class="lp-service-icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" class="lp-service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <h3 class="lp-service-title">Screen Replacement &amp; Hinge Repair</h3>
+          <p class="lp-service-body">Cracked, flickering, or dead laptop screen? We replace LCD and LED displays on all laptop brands and sizes — from budget 15-inch Acer Aspire screens through premium Dell XPS OLED panels. We also repair broken and loose hinges that prevent the screen from staying open or closed properly, and reinforce hinge mounting points that have cracked the chassis. Most screen replacements are completed within 1–2 hours when parts are in stock.</p>
+        </div>
+
+        <div class="lp-service-card">
+          <div class="lp-service-icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" class="lp-service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+          </div>
+          <h3 class="lp-service-title">Battery Replacement</h3>
+          <p class="lp-service-body">Laptop dying after 30 minutes or not charging at all? We replace batteries on all laptop brands with quality cells that restore original runtime. Battery replacement is one of the most cost-effective ways to extend the life of a laptop that still has years of use left in it. All battery replacements include a 90-day warranty.</p>
+        </div>
+
+        <div class="lp-service-card">
+          <div class="lp-service-icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" class="lp-service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M6 8h.01M10 8h.01M14 8h.01M18 8h.01M8 12h.01M12 12h.01M16 12h.01M7 16h10"/></svg>
+          </div>
+          <h3 class="lp-service-title">Keyboard Replacement</h3>
+          <p class="lp-service-body">Broken keys, keys not registering, or liquid damage to the keyboard? We replace full keyboard assemblies on all laptop brands. We also diagnose and address trackpad issues, palm rest damage, and USB port failures that often occur alongside keyboard damage from liquid spills. Most keyboard replacements are completed within 1–2 business days.</p>
+        </div>
+
+        <div class="lp-service-card">
+          <div class="lp-service-icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" class="lp-service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12H19M12 5l7 7-7 7"/></svg>
+          </div>
+          <h3 class="lp-service-title">Charging Port &amp; Power Repair</h3>
+          <p class="lp-service-body">Laptop not charging, power brick getting hot, or USB-C not working? We diagnose and repair DC barrel jacks on older laptops and USB-C charging ports on modern thin-and-light models. We test the full charging chain — adapter, cable, port, and charging IC — before recommending any replacement to avoid unnecessary repairs.</p>
+        </div>
+
+        <div class="lp-service-card">
+          <div class="lp-service-icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" class="lp-service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96-.44l-2.1-8.4A4 4 0 0 1 9.5 2Z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96-.44l2.1-8.4A4 4 0 0 0 14.5 2Z"/></svg>
+          </div>
+          <h3 class="lp-service-title">Overheating &amp; Fan Repair</h3>
+          <p class="lp-service-body">Laptop shutting down mid-use, fan running at full speed constantly, or chassis hot to the touch? Overheating is almost always caused by dust-clogged heatsink fins and degraded thermal paste. We fully disassemble the cooling system, deep clean the heatsink and fan, and apply fresh high-performance thermal paste. Gaming laptops from Asus ROG, Acer Nitro, Lenovo Legion, HP Omen, and Dell Alienware are especially prone to thermal degradation.</p>
+        </div>
+
+        <div class="lp-service-card">
+          <div class="lp-service-icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" class="lp-service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M22 10H2"/></svg>
+          </div>
+          <h3 class="lp-service-title">SSD, RAM Upgrades &amp; Motherboard Repair</h3>
+          <p class="lp-service-body">Slow laptop? An SSD upgrade is the single most impactful performance improvement you can make — replacing a spinning hard drive with an NVMe SSD can make a 5-year-old laptop feel new again. We also perform RAM upgrades on laptops with upgradeable memory. For laptops that won't turn on at all, we perform component-level motherboard diagnostics and micro-soldering to identify and repair power delivery failures, broken charging IC chips, and display connector issues.</p>
+        </div>
+      </div>
+
+      <div class="lp-services-cta-wrap">
+        <a href="https://shop.mobiletechlab.ca/pages/repair2" target="_blank" rel="noopener noreferrer" class="lp-btn-primary">
+          Request Repair
+          <svg xmlns="http://www.w3.org/2000/svg" class="lp-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="lp-models-section" id="models">
+    <div class="lp-container">
+      <div class="lp-section-header">
+        <h2 class="lp-section-heading">All Laptop Brands We Repair in Winnipeg</h2>
+        <p class="lp-section-subheading">Every Windows laptop and Chromebook brand — if it has a screen and a keyboard, we service it</p>
+      </div>
+
+      <div class="lp-models-grid">
+        <div class="lp-model-card">
+          <div class="lp-model-icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" class="lp-model-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <h3 class="lp-model-title">Asus &amp; Acer</h3>
+          <p class="lp-model-desc">Gaming, ultrabook, and budget laptop repairs. Asus ROG and Acer Nitro gaming laptops are especially common for overheating and screen repairs. All Chromebook models from both brands also serviced.</p>
+          <div class="lp-model-pills">
+            <span class="lp-pill">ROG Zephyrus</span>
+            <span class="lp-pill">ROG Strix</span>
+            <span class="lp-pill">TUF Gaming</span>
+            <span class="lp-pill">ZenBook</span>
+            <span class="lp-pill">VivoBook</span>
+            <span class="lp-pill">Acer Aspire</span>
+            <span class="lp-pill">Acer Swift</span>
+            <span class="lp-pill">Acer Nitro 5</span>
+            <span class="lp-pill">Predator Helios</span>
+            <span class="lp-pill">Chromebook</span>
+          </div>
+          <a href="https://shop.mobiletechlab.ca/pages/repair2" target="_blank" rel="noopener noreferrer" class="lp-model-cta">
+            Get Quote
+            <svg xmlns="http://www.w3.org/2000/svg" class="lp-btn-icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <div class="lp-model-card">
+          <div class="lp-model-icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" class="lp-model-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <h3 class="lp-model-title">Lenovo &amp; HP</h3>
+          <p class="lp-model-desc">Business, consumer, and gaming laptops. ThinkPad keyboard and screen repairs are among our most common Lenovo repairs. HP Spectre and Envy hinge repairs are frequently needed on premium thin-and-light models.</p>
+          <div class="lp-model-pills">
+            <span class="lp-pill">ThinkPad X1</span>
+            <span class="lp-pill">ThinkPad T Series</span>
+            <span class="lp-pill">IdeaPad</span>
+            <span class="lp-pill">Lenovo Legion</span>
+            <span class="lp-pill">Yoga</span>
+            <span class="lp-pill">HP Spectre x360</span>
+            <span class="lp-pill">HP Envy</span>
+            <span class="lp-pill">HP Pavilion</span>
+            <span class="lp-pill">HP EliteBook</span>
+            <span class="lp-pill">HP Omen</span>
+            <span class="lp-pill">Chromebook Duet</span>
+          </div>
+          <a href="https://shop.mobiletechlab.ca/pages/repair2" target="_blank" rel="noopener noreferrer" class="lp-model-cta">
+            Get Quote
+            <svg xmlns="http://www.w3.org/2000/svg" class="lp-btn-icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <div class="lp-model-card">
+          <div class="lp-model-icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" class="lp-model-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <h3 class="lp-model-title">Dell</h3>
+          <p class="lp-model-desc">Consumer, business, and workstation laptops. Dell XPS hinges and screens are common repairs. Alienware gaming laptops frequently need thermal paste replacement and overheating fixes.</p>
+          <div class="lp-model-pills">
+            <span class="lp-pill">Dell XPS 13</span>
+            <span class="lp-pill">Dell XPS 15</span>
+            <span class="lp-pill">Dell XPS 17</span>
+            <span class="lp-pill">Dell Inspiron</span>
+            <span class="lp-pill">Dell Latitude</span>
+            <span class="lp-pill">Dell Precision</span>
+            <span class="lp-pill">Alienware</span>
+            <span class="lp-pill">Dell Chromebook</span>
+          </div>
+          <a href="https://shop.mobiletechlab.ca/pages/repair2" target="_blank" rel="noopener noreferrer" class="lp-model-cta">
+            Get Quote
+            <svg xmlns="http://www.w3.org/2000/svg" class="lp-btn-icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <div class="lp-model-card">
+          <div class="lp-model-icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" class="lp-model-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <h3 class="lp-model-title">Other Brands</h3>
+          <p class="lp-model-desc">We service virtually every Windows laptop and Chromebook brand. If your laptop brand isn't listed, contact us — if it runs Windows or ChromeOS, we almost certainly repair it.</p>
+          <div class="lp-model-pills">
+            <span class="lp-pill">Toshiba / Dynabook</span>
+            <span class="lp-pill">MSI</span>
+            <span class="lp-pill">Razer Blade</span>
+            <span class="lp-pill">Samsung Galaxy Book</span>
+            <span class="lp-pill">LG Gram</span>
+            <span class="lp-pill">Huawei MateBook</span>
+            <span class="lp-pill">Google Pixelbook</span>
+            <span class="lp-pill">Any other brand</span>
+          </div>
+          <a href="https://shop.mobiletechlab.ca/pages/repair2" target="_blank" rel="noopener noreferrer" class="lp-model-cta">
+            Get Quote
+            <svg xmlns="http://www.w3.org/2000/svg" class="lp-btn-icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="lp-why-section" id="why-choose-us">
+    <div class="lp-container">
+      <div class="lp-section-header">
+        <h2 class="lp-section-heading">The Mobile Tech Lab Advantage: Winnipeg's Laptop Repair Experts</h2>
+        <p class="lp-section-subheading">Why Winnipeg brings us laptops that other shops can't fix</p>
+      </div>
+
+      <div class="lp-why-grid">
+        <div class="lp-why-card">
+          <div class="lp-why-icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" class="lp-why-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <h3 class="lp-why-title">All Brands Welcome</h3>
+          <p class="lp-why-body">Asus, Acer, Lenovo, HP, Dell, Toshiba, MSI, Razer, Samsung, LG, Huawei, and every Chromebook brand — we service them all. You don't need a brand-specific shop in Winnipeg. Walk in with whatever laptop you have and we'll tell you exactly what's wrong and what it costs before we start.</p>
+        </div>
+
+        <div class="lp-why-card">
+          <div class="lp-why-icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" class="lp-why-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M22 10H2"/></svg>
+          </div>
+          <h3 class="lp-why-title">Upgrades That Transform Old Laptops</h3>
+          <p class="lp-why-body">Replacing a spinning hard drive with an NVMe SSD is the single most impactful laptop upgrade available — it can make a 5-year-old laptop boot in seconds and feel completely new. We also perform RAM upgrades on laptops with upgradeable memory slots. An SSD upgrade often costs less than buying a new laptop and delivers a better result.</p>
+        </div>
+
+        <div class="lp-why-card">
+          <div class="lp-why-icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" class="lp-why-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
+          </div>
+          <h3 class="lp-why-title">Component-Level Motherboard Repair</h3>
+          <p class="lp-why-body">Most laptop shops in Winnipeg refuse motherboard repairs or quote a full board replacement. We perform component-level diagnostics and micro-soldering to identify and repair specific failures — charging IC chips, power mosfets, broken USB controllers, and display connector damage — often at a fraction of the cost of a board swap.</p>
+        </div>
+
+        <div class="lp-why-card">
+          <div class="lp-why-icon-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" class="lp-why-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+          </div>
+          <h3 class="lp-why-title">Warranty on Every Repair</h3>
+          <p class="lp-why-body">Screen repairs carry a 30-day to lifetime warranty depending on part tier. Battery replacements include a 90-day warranty. All other repairs carry a lifetime warranty on parts and labour. We run free diagnostics before any repair and give you a clear upfront quote — no surprises.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="lp-cost-section" id="cost-options">
+    <div class="lp-container">
+      <div class="lp-section-header">
+        <h2 class="lp-section-heading">Worried About Repair Cost? You Have Options.</h2>
+        <p class="lp-section-subheading">Most customers use one of these options to lower their repair cost.</p>
+      </div>
+
+      <div class="lp-cost-grid">
+        <div class="lp-cost-card">
+          <h3 class="lp-cost-title">We'll Match Any Local Repair Price</h3>
+          <p class="lp-cost-body">Found a lower price at another Winnipeg repair shop? We'll match it — so you don't overpay. No pressure. No hassle.</p>
+          <a href="sms:2045009757?body=Hey%20Mobile%20Tech%20Lab!%20I%20want%20a%20better%20price%20on%20a%20repair!" class="lp-cost-cta">Check If We Can Match Your Price</a>
+        </div>
+
+        <div class="lp-cost-card lp-cost-card-alt">
+          <h3 class="lp-cost-title">Lower Your Laptop Repair Cost With a Trade-In</h3>
+          <p class="lp-cost-body">Trade in phones, tablets, consoles, or laptops — even broken ones — to reduce today's repair cost.</p>
+          <p class="lp-cost-secondary">Get paid via Cash, E-Transfer, or Store Credit</p>
+          <a href="/trade-in" class="lp-cost-cta">
+            Lower My Laptop Repair Cost
+            <svg xmlns="http://www.w3.org/2000/svg" class="lp-btn-icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="lp-pricing-context-section">
+    <div class="lp-container">
+      <div class="lp-pricing-context-content">
+        <p>Laptop repair costs vary significantly by brand, model, and repair type — a screen replacement on a budget Acer Aspire costs considerably less than a Dell XPS OLED panel replacement, and a simple battery swap is almost always cost-effective regardless of brand. <a href="https://www.ifixit.com/Search?query=laptop+repair+guide" target="_blank" rel="noopener noreferrer">iFixit's laptop repair guides</a> rate repairability across brands, showing why some laptops are significantly cheaper to repair than others.</p>
+        <p>Many customers are surprised when a laptop screen replacement costs nearly as much as a budget replacement laptop. This is most common with premium ultrabooks and gaming laptops — the displays are proprietary, high-resolution, and expensive to source. We always provide an honest comparison of repair cost versus current device value before starting.</p>
+        <p>If the repair cost exceeds your laptop's current market value, we'll explain that clearly and walk you through alternatives — including data recovery and transfer to a new machine, or trade-in value toward a replacement. We'd rather give you the right advice than take money for a repair that doesn't make financial sense. See also: <a href="/repairs/macbook">MacBook repair in Winnipeg</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="lp-locations-section" id="locations">
+    <div class="lp-container">
+      <h2 class="lp-section-heading lp-locations-heading">Our Locations</h2>
+      <div class="lp-locations-grid">
+        <div class="lp-location-card">
+          <h3 class="lp-location-name">St. Vital Location</h3>
+          <p class="lp-location-address">845 Dakota St #25, Winnipeg, MB R2M 5M3</p>
+          <p class="lp-location-hours">Mon–Sat: 9AM – 7PM</p>
+          <p class="lp-location-hours">Sun: 12PM – 7PM</p>
+          <p class="lp-location-note">Walk-ins welcome · Diagnostics while you wait</p>
+          <div class="lp-location-actions">
+            <a href="tel:2045009757" class="lp-location-phone">(204) 500-9757</a>
+            <a href="https://maps.google.com/?q=845+Dakota+St+%2325+Winnipeg+MB+R2M+5M3" target="_blank" rel="noopener noreferrer" class="lp-location-directions">Get Directions</a>
+          </div>
+        </div>
+
+        <div class="lp-location-card">
+          <span class="lp-location-badge-tag">Serving Northern Manitoba</span>
+          <h3 class="lp-location-name">Thompson Location</h3>
+          <p class="lp-location-address">300 Mystery Lake Rd #1530, Thompson, MB R8N 0M2</p>
+          <p class="lp-location-hours">Mon–Sat: 10AM – 6PM</p>
+          <p class="lp-location-hours">Sun: Closed</p>
+          <p class="lp-location-note">Walk-ins welcome</p>
+          <div class="lp-location-actions">
+            <a href="tel:2044100262" class="lp-location-phone">(204) 410-0262</a>
+            <a href="https://maps.google.com/?q=300+Mystery+Lake+Rd+%231530+Thompson+MB+R8N+0M2" target="_blank" rel="noopener noreferrer" class="lp-location-directions">Get Directions</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="lp-faq-section" id="faq">
+    <div class="lp-container">
+      <div class="lp-section-header">
+        <h2 class="lp-section-heading">Laptop Repair FAQs</h2>
+        <p class="lp-section-subheading">Common questions about laptop repair at Mobile Tech Lab in Winnipeg</p>
+      </div>
+
+      <div class="lp-faq-list">
+        <details class="lp-faq-item">
+          <summary class="lp-faq-question">How long does a laptop screen replacement take in Winnipeg?</summary>
+          <div class="lp-faq-answer">
+            <p>Most laptop screen replacements are completed within 1–2 hours at our Winnipeg St. Vital location when parts are in stock. For less common laptop models or premium display panels, we may need to order a part — we'll give you an estimated wait time when you contact us.</p>
+          </div>
+        </details>
+
+        <details class="lp-faq-item">
+          <summary class="lp-faq-question">Can you upgrade my laptop's RAM and SSD in Winnipeg?</summary>
+          <div class="lp-faq-answer">
+            <p>Yes — we perform SSD and RAM upgrades on most laptops at our Winnipeg location. An SSD upgrade is the single most impactful performance improvement you can make on an older laptop — replacing a spinning hard drive with an NVMe SSD can make a years-old machine boot in seconds and feel completely new again.</p>
+          </div>
+        </details>
+
+        <details class="lp-faq-item">
+          <summary class="lp-faq-question">My laptop won't turn on. Can you fix it in Winnipeg?</summary>
+          <div class="lp-faq-answer">
+            <p>Yes — we diagnose and repair laptop power failures ranging from simple battery or charger problems through to complex motherboard-level faults. We perform component-level diagnostics and micro-soldering for charging IC failures, power delivery faults, and display connection issues that most Winnipeg laptop shops won't attempt.</p>
+          </div>
+        </details>
+
+        <details class="lp-faq-item">
+          <summary class="lp-faq-question">Do you repair Chromebooks in Winnipeg?</summary>
+          <div class="lp-faq-answer">
+            <p>Yes — we service all Chromebook brands including Asus, Acer, Lenovo, HP, Dell, and Google Pixelbook at our Winnipeg location. Chromebook screen replacements and keyboard repairs are the most common Chromebook fixes we perform.</p>
+          </div>
+        </details>
+
+        <details class="lp-faq-item">
+          <summary class="lp-faq-question">Is it worth repairing my old laptop?</summary>
+          <div class="lp-faq-answer">
+            <p>It depends on the repair cost versus the laptop's current value and remaining useful life — a battery replacement or SSD upgrade on a well-built 5-year-old laptop almost always makes sense, while a motherboard repair on a budget 7-year-old machine may not. We provide a free diagnostic and honest assessment at our Winnipeg location before you commit to anything.</p>
+          </div>
+        </details>
+
+        <details class="lp-faq-item">
+          <summary class="lp-faq-question">Do you repair gaming laptops in Winnipeg?</summary>
+          <div class="lp-faq-answer">
+            <p>Yes — we repair Asus ROG, Acer Nitro and Predator, Lenovo Legion, HP Omen, Dell Alienware, Razer Blade, and MSI gaming laptops at our Winnipeg shop. Gaming laptops frequently need thermal paste replacement and heatsink cleaning due to the high sustained loads they run under — overheating is by far the most common gaming laptop repair we perform.</p>
+          </div>
+        </details>
+
+        <details class="lp-faq-item">
+          <summary class="lp-faq-question">Can you fix a laptop with a broken or loose hinge?</summary>
+          <div class="lp-faq-answer">
+            <p>Yes — hinge repairs are a common laptop fix we perform at our Winnipeg location. Loose or broken hinges often cause the screen to wobble or crack the plastic chassis around the hinge mounting points. We repair hinges and reinforce or replace the chassis damage they cause on all laptop brands.</p>
+          </div>
+        </details>
+
+        <details class="lp-faq-item">
+          <summary class="lp-faq-question">Do you repair laptop charging ports in Winnipeg?</summary>
+          <div class="lp-faq-answer">
+            <p>Yes — we repair both DC barrel jack charging ports on older laptops and USB-C charging ports on modern thin-and-light models at our Winnipeg shop. Most charging port repairs are completed same-day and we always test the full charging chain before recommending a port replacement.</p>
+          </div>
+        </details>
+
+        <details class="lp-faq-item">
+          <summary class="lp-faq-question">Do you offer free laptop diagnostics in Winnipeg?</summary>
+          <div class="lp-faq-answer">
+            <p>Yes — we provide free diagnostics on all laptops at our Winnipeg St. Vital location. Walk in any time during business hours and we'll assess your laptop and give you a clear upfront quote before starting any repair — no obligation and no fee for the diagnostic itself.</p>
+          </div>
+        </details>
+
+        <details class="lp-faq-item">
+          <summary class="lp-faq-question">Do you repair laptops in Thompson, MB?</summary>
+          <div class="lp-faq-answer">
+            <p>Yes — our Thompson location at 300 Mystery Lake Rd #1530 accepts laptop repairs Monday through Saturday 10AM–6PM. For screen replacements or less common brands, calling ahead helps us confirm parts availability before your visit.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="lp-final-cta-section">
+    <div class="lp-container">
+      <div class="lp-final-cta-content">
+        <h2 class="lp-final-cta-heading">Ready to Get Your Laptop Fixed?</h2>
+        <p class="lp-final-cta-body">Free diagnostics, upfront pricing, and warranty on every repair. Walk in or request a quote online.</p>
+        <div class="lp-final-cta-actions">
+          <a href="https://shop.mobiletechlab.ca/pages/repair2" target="_blank" rel="noopener noreferrer" class="lp-btn-primary lp-btn-lg">
+            Get a Free Quote
+            <svg xmlns="http://www.w3.org/2000/svg" class="lp-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="tel:2045009757" class="lp-btn-secondary lp-btn-lg">
+            <svg xmlns="http://www.w3.org/2000/svg" class="lp-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            (204) 500-9757
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  :root {
+    --color-primary: #ef4444;
+    --color-primary-dark: #dc2626;
+    --color-primary-light: #fff1f1;
+    --color-primary-border: #fde8e8;
+    --color-primary-hover-bg: #fecaca;
+    --color-text-dark: #111827;
+    --color-text-body: #374151;
+    --color-text-muted: #6b7280;
+    --color-text-subtle: #9ca3af;
+    --color-bg-white: #ffffff;
+    --color-bg-section: linear-gradient(135deg, #fff5f5 0%, #ffffff 50%, #fff5f5 100%);
+    --color-bg-dark: #1f2028;
+    --color-card-border: #fde8e8;
+    --border-radius-card: 16px;
+    --border-radius-btn: 10px;
+    --shadow-card: 0 2px 16px rgba(239, 68, 68, 0.07);
+    --shadow-card-hover: 0 12px 32px rgba(239, 68, 68, 0.13);
+    --shadow-btn-hover: 0 6px 20px rgba(239, 68, 68, 0.35);
+  }
+
+  .lp-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .lp-breadcrumb-nav {
+    background: var(--color-bg-white);
+    border-bottom: 1px solid var(--color-card-border);
+    padding: 1rem 0;
+  }
+
+  .lp-breadcrumb-list {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 0.875rem;
+  }
+
+  .lp-breadcrumb-link {
+    color: var(--color-text-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .lp-breadcrumb-link:hover {
+    color: var(--color-primary);
+  }
+
+  .lp-breadcrumb-chevron {
+    width: 1rem;
+    height: 1rem;
+    color: var(--color-text-subtle);
+  }
+
+  .lp-breadcrumb-current {
+    color: var(--color-text-dark);
+    font-weight: 500;
+  }
+
+  .lp-hero-section {
+    background: var(--color-bg-section);
+    padding: 4rem 0;
+  }
+
+  .lp-hero-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  @media (max-width: 900px) {
+    .lp-hero-inner {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+  }
+
+  .lp-hero-badge-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  @media (max-width: 900px) {
+    .lp-hero-badge-row {
+      justify-content: center;
+    }
+  }
+
+  .lp-service-badge {
+    display: inline-block;
+    background: var(--color-primary);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.375rem 0.875rem;
+    border-radius: 100px;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+  }
+
+  .lp-location-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    background: var(--color-bg-white);
+    border: 1px solid var(--color-card-border);
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.375rem 0.75rem;
+    border-radius: 100px;
+    color: var(--color-text-body);
+  }
+
+  .lp-badge-dot {
+    width: 6px;
+    height: 6px;
+    background: #22c55e;
+    border-radius: 50%;
+  }
+
+  .lp-hero-headline {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--color-text-dark);
+    margin: 0 0 1rem;
+  }
+
+  @media (max-width: 600px) {
+    .lp-hero-headline {
+      font-size: 2.25rem;
+    }
+  }
+
+  .lp-highlight {
+    color: var(--color-primary);
+  }
+
+  .lp-hero-subhead {
+    font-size: 1.25rem;
+    color: var(--color-text-muted);
+    margin: 0 0 1.5rem;
+    line-height: 1.5;
+  }
+
+  .lp-hero-body {
+    margin-bottom: 2rem;
+  }
+
+  .lp-hero-body p {
+    color: var(--color-text-body);
+    line-height: 1.7;
+    margin: 0 0 1rem;
+  }
+
+  .lp-hero-body a {
+    color: var(--color-primary);
+    text-decoration: underline;
+  }
+
+  .lp-hero-body a:hover {
+    color: var(--color-primary-dark);
+  }
+
+  .lp-hero-cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  @media (max-width: 900px) {
+    .lp-hero-cta-row {
+      justify-content: center;
+    }
+  }
+
+  .lp-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--color-primary);
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.875rem 1.75rem;
+    border-radius: var(--border-radius-btn);
+    text-decoration: none;
+    transition: background 0.2s, box-shadow 0.2s;
+  }
+
+  .lp-btn-primary:hover {
+    background: var(--color-primary-dark);
+    box-shadow: var(--shadow-btn-hover);
+  }
+
+  .lp-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--color-bg-white);
+    color: var(--color-text-dark);
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.875rem 1.75rem;
+    border-radius: var(--border-radius-btn);
+    border: 1px solid var(--color-card-border);
+    text-decoration: none;
+    transition: background 0.2s, border-color 0.2s;
+  }
+
+  .lp-btn-secondary:hover {
+    background: var(--color-primary-light);
+    border-color: var(--color-primary);
+  }
+
+  .lp-btn-lg {
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+  }
+
+  .lp-btn-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  .lp-btn-icon-sm {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .lp-pricing-note {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  .lp-pricing-link {
+    color: var(--color-primary);
+    text-decoration: underline;
+  }
+
+  .lp-pricing-link:hover {
+    color: var(--color-primary-dark);
+  }
+
+  .lp-hero-image-wrap {
+    position: relative;
+  }
+
+  .lp-hero-image {
+    width: 100%;
+    height: auto;
+    max-width: 520px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .lp-hero-annotations {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+  }
+
+  .lp-annotation {
+    position: absolute;
+    background: var(--color-bg-white);
+    border: 1px solid var(--color-card-border);
+    font-size: 0.7rem;
+    font-weight: 500;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    color: var(--color-text-body);
+    box-shadow: var(--shadow-card);
+    white-space: nowrap;
+  }
+
+  .lp-annotation-1 { top: 5%; left: 5%; }
+  .lp-annotation-2 { top: 25%; right: 0; }
+  .lp-annotation-3 { bottom: 35%; left: 0; }
+  .lp-annotation-4 { top: 50%; right: 5%; }
+  .lp-annotation-5 { bottom: 20%; left: 10%; }
+  .lp-annotation-6 { bottom: 5%; right: 15%; }
+
+  @media (max-width: 600px) {
+    .lp-hero-annotations {
+      display: none;
+    }
+  }
+
+  .lp-section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .lp-section-heading {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: var(--color-text-dark);
+    margin: 0 0 0.75rem;
+    line-height: 1.2;
+  }
+
+  @media (max-width: 600px) {
+    .lp-section-heading {
+      font-size: 1.75rem;
+    }
+  }
+
+  .lp-section-subheading {
+    font-size: 1.125rem;
+    color: var(--color-text-muted);
+    margin: 0;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .lp-services-section {
+    padding: 5rem 0;
+    background: var(--color-bg-white);
+  }
+
+  .lp-services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  @media (max-width: 900px) {
+    .lp-services-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .lp-services-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .lp-service-card {
+    background: var(--color-bg-white);
+    border: 1px solid var(--color-card-border);
+    border-radius: var(--border-radius-card);
+    padding: 2rem;
+    transition: box-shadow 0.3s, transform 0.3s;
+  }
+
+  .lp-service-card:hover {
+    box-shadow: var(--shadow-card-hover);
+    transform: translateY(-4px);
+  }
+
+  .lp-service-icon-wrap {
+    width: 48px;
+    height: 48px;
+    background: var(--color-primary-light);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+  }
+
+  .lp-service-icon {
+    width: 24px;
+    height: 24px;
+    color: var(--color-primary);
+  }
+
+  .lp-service-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-text-dark);
+    margin: 0 0 0.75rem;
+  }
+
+  .lp-service-body {
+    font-size: 0.9375rem;
+    color: var(--color-text-body);
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  .lp-services-cta-wrap {
+    text-align: center;
+  }
+
+  .lp-models-section {
+    padding: 5rem 0;
+    background: var(--color-bg-section);
+  }
+
+  .lp-models-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .lp-models-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .lp-model-card {
+    background: var(--color-bg-white);
+    border: 1px solid var(--color-card-border);
+    border-radius: var(--border-radius-card);
+    padding: 2rem;
+    transition: box-shadow 0.3s;
+  }
+
+  .lp-model-card:hover {
+    box-shadow: var(--shadow-card-hover);
+  }
+
+  .lp-model-icon-wrap {
+    width: 40px;
+    height: 40px;
+    background: var(--color-primary-light);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  .lp-model-icon {
+    width: 20px;
+    height: 20px;
+    color: var(--color-primary);
+  }
+
+  .lp-model-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-text-dark);
+    margin: 0 0 0.5rem;
+  }
+
+  .lp-model-desc {
+    font-size: 0.9375rem;
+    color: var(--color-text-body);
+    line-height: 1.6;
+    margin: 0 0 1.25rem;
+  }
+
+  .lp-model-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .lp-pill {
+    display: inline-block;
+    background: var(--color-primary-light);
+    color: var(--color-primary-dark);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    padding: 0.375rem 0.75rem;
+    border-radius: 100px;
+  }
+
+  .lp-model-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    color: var(--color-primary);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .lp-model-cta:hover {
+    color: var(--color-primary-dark);
+  }
+
+  .lp-why-section {
+    padding: 5rem 0;
+    background: var(--color-bg-white);
+  }
+
+  .lp-why-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .lp-why-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .lp-why-card {
+    background: var(--color-bg-white);
+    border: 1px solid var(--color-card-border);
+    border-radius: var(--border-radius-card);
+    padding: 2rem;
+    transition: box-shadow 0.3s;
+  }
+
+  .lp-why-card:hover {
+    box-shadow: var(--shadow-card-hover);
+  }
+
+  .lp-why-icon-wrap {
+    width: 48px;
+    height: 48px;
+    background: var(--color-primary-light);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+  }
+
+  .lp-why-icon {
+    width: 24px;
+    height: 24px;
+    color: var(--color-primary);
+  }
+
+  .lp-why-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-text-dark);
+    margin: 0 0 0.75rem;
+  }
+
+  .lp-why-body {
+    font-size: 0.9375rem;
+    color: var(--color-text-body);
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  .lp-cost-section {
+    padding: 5rem 0;
+    background: var(--color-bg-section);
+  }
+
+  .lp-cost-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .lp-cost-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .lp-cost-card {
+    background: var(--color-bg-white);
+    border: 1px solid var(--color-card-border);
+    border-radius: var(--border-radius-card);
+    padding: 2rem;
+  }
+
+  .lp-cost-card-alt {
+    background: var(--color-primary-light);
+    border-color: var(--color-primary-border);
+  }
+
+  .lp-cost-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-text-dark);
+    margin: 0 0 0.75rem;
+  }
+
+  .lp-cost-body {
+    font-size: 0.9375rem;
+    color: var(--color-text-body);
+    line-height: 1.6;
+    margin: 0 0 1rem;
+  }
+
+  .lp-cost-secondary {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    margin: 0 0 1rem;
+  }
+
+  .lp-cost-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    color: var(--color-primary);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .lp-cost-cta:hover {
+    color: var(--color-primary-dark);
+  }
+
+  .lp-pricing-context-section {
+    padding: 3rem 0;
+    background: var(--color-bg-white);
+    border-top: 1px solid var(--color-card-border);
+    border-bottom: 1px solid var(--color-card-border);
+  }
+
+  .lp-pricing-context-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .lp-pricing-context-content p {
+    font-size: 0.9375rem;
+    color: var(--color-text-body);
+    line-height: 1.7;
+    margin: 0 0 1rem;
+  }
+
+  .lp-pricing-context-content p:last-child {
+    margin-bottom: 0;
+  }
+
+  .lp-pricing-context-content a {
+    color: var(--color-primary);
+    text-decoration: underline;
+  }
+
+  .lp-pricing-context-content a:hover {
+    color: var(--color-primary-dark);
+  }
+
+  .lp-locations-section {
+    padding: 5rem 0;
+    background: var(--color-bg-section);
+  }
+
+  .lp-locations-heading {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .lp-locations-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .lp-locations-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .lp-location-card {
+    background: var(--color-bg-white);
+    border: 1px solid var(--color-card-border);
+    border-radius: var(--border-radius-card);
+    padding: 2rem;
+    position: relative;
+  }
+
+  .lp-location-badge-tag {
+    position: absolute;
+    top: -0.75rem;
+    left: 1.5rem;
+    background: var(--color-primary);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.75rem;
+    border-radius: 100px;
+  }
+
+  .lp-location-name {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-text-dark);
+    margin: 0 0 0.75rem;
+  }
+
+  .lp-location-address {
+    font-size: 0.9375rem;
+    color: var(--color-text-body);
+    margin: 0 0 0.5rem;
+  }
+
+  .lp-location-hours {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    margin: 0 0 0.25rem;
+  }
+
+  .lp-location-note {
+    font-size: 0.8125rem;
+    color: var(--color-primary);
+    font-weight: 500;
+    margin: 0.75rem 0 1.25rem;
+  }
+
+  .lp-location-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .lp-location-phone {
+    color: var(--color-text-dark);
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.9375rem;
+  }
+
+  .lp-location-phone:hover {
+    color: var(--color-primary);
+  }
+
+  .lp-location-directions {
+    color: var(--color-primary);
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 0.9375rem;
+  }
+
+  .lp-location-directions:hover {
+    text-decoration: underline;
+  }
+
+  .lp-faq-section {
+    padding: 5rem 0;
+    background: var(--color-bg-white);
+  }
+
+  .lp-faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .lp-faq-item {
+    border: 1px solid var(--color-card-border);
+    border-radius: var(--border-radius-card);
+    margin-bottom: 1rem;
+    overflow: hidden;
+    background: var(--color-bg-white);
+  }
+
+  .lp-faq-item[open] {
+    box-shadow: var(--shadow-card);
+  }
+
+  .lp-faq-question {
+    padding: 1.25rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text-dark);
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .lp-faq-question::-webkit-details-marker {
+    display: none;
+  }
+
+  .lp-faq-question::after {
+    content: '+';
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--color-primary);
+    transition: transform 0.2s;
+  }
+
+  .lp-faq-item[open] .lp-faq-question::after {
+    transform: rotate(45deg);
+  }
+
+  .lp-faq-answer {
+    padding: 0 1.5rem 1.5rem;
+  }
+
+  .lp-faq-answer p {
+    font-size: 0.9375rem;
+    color: var(--color-text-body);
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  .lp-final-cta-section {
+    padding: 5rem 0;
+    background: var(--color-bg-dark);
+  }
+
+  .lp-final-cta-content {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .lp-final-cta-heading {
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    margin: 0 0 1rem;
+  }
+
+  .lp-final-cta-body {
+    font-size: 1.125rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0 0 2rem;
+    line-height: 1.6;
+  }
+
+  .lp-final-cta-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .lp-final-cta-section .lp-btn-secondary {
+    background: transparent;
+    border-color: rgba(255, 255, 255, 0.3);
+    color: white;
+  }
+
+  .lp-final-cta-section .lp-btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+</style>
