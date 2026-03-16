@@ -2,147 +2,448 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const title = "Business & Wholesale Device Repair | Mobile Tech Lab Winnipeg";
-const description = "Volume device repair and wholesale services for businesses in Winnipeg and Manitoba. Fast turnaround, priority service, and flexible pricing for bulk repairs.";
+const description = "B2B device repair and buyback for schools, IT resellers, and repair shops. Volume pricing, free shipping, and fleet trade-in programs. No minimums.";
 const canonical = "https://mobiletechlab.ca/business";
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is there a minimum order for volume pricing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No minimum. We welcome any volume, from a handful of devices to hundreds. Volume pricing applies automatically—the more you send, the more you save."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does the shipping work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We offer free one-way shipping on all B2B orders. Choose a prepaid label to send devices to us, or we'll cover return shipping back to you—whichever works best for your workflow."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What devices do you repair for businesses?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "iPads, Chromebooks, corporate phones (iPhone, Samsung, Pixel), laptops (Surface, Dell, HP, Lenovo), and more. If you have it, we can likely fix it. Contact us for any device not listed."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How fast is turnaround for bulk orders?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most repairs are completed within 24-48 hours. Business accounts get priority processing. For large fleet orders, we'll provide a timeline estimate upfront."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer ITAD or device recycling?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we provide secure device disposal with destruction certificates available for compliance. All recycling is done environmentally responsibly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you handle repairs other shops can't do?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely. We specialize in board-level repairs, microsoldering, and data recovery. If another shop turned you away, bring it to us."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does the bulk device buyback work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Upgrading your fleet? We'll quote your old devices and often pay significantly more than carrier trade-in programs. We accept working, damaged, or broken devices—phones, tablets, laptops, and Chromebooks. Fast payment via E-Transfer or check."
+      }
+    }
+  ]
+};
+
+const services = [
+  { icon: "monitor", title: "Fleet Screen Repairs", description: "High-volume screen replacements for iPads, Chromebooks, and phones. Bulk pricing available." },
+  { icon: "battery", title: "Battery Fleet Refresh", description: "Keep your device fleet running at full capacity with bulk battery replacements." },
+  { icon: "cpu", title: "Board-Level Repairs", description: "Advanced microsoldering and logic board repairs that other shops can't handle." },
+  { icon: "droplets", title: "Water & Liquid Damage", description: "Professional recovery for devices exposed to liquid. Data recovery options available." },
+  { icon: "sparkles", title: "Device Refurbishment", description: "Complete device overhauls—cleaning, repairs, and testing—ready for redeployment." },
+  { icon: "recycle", title: "Recycling & ITAD", description: "Secure device disposal with asset destruction certificates. Environmentally responsible." },
+  { icon: "arrow-left-right", title: "Bulk Device Buyback", description: "Upgrading your fleet? Get more than carrier trade-in programs for your old devices." }
+];
+
+const modelGroups = [
+  {
+    icon: "tablet",
+    title: "Education Devices",
+    description: "Bulk classroom device repairs at competitive rates",
+    visiblePills: ["iPad 7th Gen", "iPad 8th Gen", "iPad 9th Gen"],
+    moreCount: 8
+  },
+  {
+    icon: "tablet-smartphone",
+    title: "Corporate & Enterprise",
+    description: "Keep your workforce connected with fast turnaround",
+    visiblePills: ["iPhone SE", "iPhone 11", "iPhone 12"],
+    moreCount: 9
+  },
+  {
+    icon: "monitor",
+    title: "Repair Shop Overflow",
+    description: "We handle the jobs others can't—microsoldering, data recovery, and more",
+    visiblePills: ["Complex Repairs", "Board-Level Work", "Water Damage Recovery"],
+    moreCount: 3
+  }
+];
+
+const pillars = [
+  { icon: "badge-dollar-sign", title: "Volume Pricing", description: "Competitive bulk rates with no minimum order. The more you send, the more you save." },
+  { icon: "truck", title: "Free One-Way Shipping", description: "We cover shipping one way—choose a prepaid label to us, or free return shipping to you." },
+  { icon: "clock", title: "Fast Turnaround", description: "Priority processing for business accounts. Most repairs completed in 24-48 hours." },
+  { icon: "star", title: "Trusted Experience", description: "500+ 5-star reviews. Trusted by schools, businesses, and repair shops across Manitoba." }
+];
+
+const faqItems = [
+  { question: "Is there a minimum order for volume pricing?", answer: "No minimum. We welcome any volume, from a handful of devices to hundreds. Volume pricing applies automatically—the more you send, the more you save." },
+  { question: "How does the shipping work?", answer: "We offer free one-way shipping on all B2B orders. Choose a prepaid label to send devices to us, or we'll cover return shipping back to you—whichever works best for your workflow." },
+  { question: "What devices do you repair for businesses?", answer: "iPads, Chromebooks, corporate phones (iPhone, Samsung, Pixel), laptops (Surface, Dell, HP, Lenovo), and more. If you have it, we can likely fix it. Contact us for any device not listed." },
+  { question: "How fast is turnaround for bulk orders?", answer: "Most repairs are completed within 24-48 hours. Business accounts get priority processing. For large fleet orders, we'll provide a timeline estimate upfront." },
+  { question: "Do you offer ITAD or device recycling?", answer: "Yes, we provide secure device disposal with destruction certificates available for compliance. All recycling is done environmentally responsibly." },
+  { question: "Can you handle repairs other shops can't do?", answer: "Absolutely. We specialize in board-level repairs, microsoldering, and data recovery. If another shop turned you away, bring it to us." },
+  { question: "How does the bulk device buyback work?", answer: "Upgrading your fleet? We'll quote your old devices and often pay significantly more than carrier trade-in programs. We accept working, damaged, or broken devices—phones, tablets, laptops, and Chromebooks. Fast payment via E-Transfer or check." }
+];
 ---
 
 <BaseLayout title={title} description={description} canonical={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
-  <section class="bg-gradient-to-b from-secondary/50 to-background py-20 md:py-28">
-    <div class="container mx-auto px-4 text-center">
-      <h1 class="mb-5 text-4xl font-bold tracking-tight md:text-5xl">
-        Business &amp; Wholesale Device Repair
-      </h1>
-      <p class="mx-auto mb-8 max-w-2xl text-lg text-muted-foreground">
-        We partner with businesses, schools, and organizations across Manitoba to provide fast, reliable, and cost-effective device repair and refurbishment services.
-      </p>
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
-        <a
-          href="https://shop.mobiletechlab.ca/pages/repair2"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 rounded-md bg-primary px-8 py-3 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
-        >
-          Get a Business Quote
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-        </a>
-        <a
-          href="tel:2045009757"
-          class="inline-flex items-center gap-2 rounded-md border border-input bg-background px-8 py-3 text-sm font-medium hover:bg-accent transition-colors"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          (204) 500-9757
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <section class="py-16 md:py-20">
-    <div class="container mx-auto px-4">
-      <h2 class="mb-3 text-center text-2xl font-bold md:text-3xl">Business Services We Offer</h2>
-      <p class="mb-10 text-center text-muted-foreground">Tailored solutions for organizations of all sizes</p>
-      <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        {[
-          {
-            title: "Bulk Device Repair",
-            description: "Send multiple devices at once for volume pricing and priority turnaround. Ideal for businesses, schools, and repair fleets.",
-          },
-          {
-            title: "Corporate Account Setup",
-            description: "Establish a business account for streamlined billing, repair tracking, and dedicated support for your organization.",
-          },
-          {
-            title: "Wholesale Refurbishment",
-            description: "We buy, refurbish, and resell used devices. Great for businesses upgrading their fleet or clearing old inventory.",
-          },
-          {
-            title: "On-Site Assessment",
-            description: "For large volume orders, we can arrange an on-site assessment of your devices before repair.",
-          },
-          {
-            title: "Data Management",
-            description: "Certified data wiping and transfer services to ensure your business data is handled securely.",
-          },
-          {
-            title: "Priority Turnaround",
-            description: "Business clients receive priority service to minimize downtime and keep your team productive.",
-          },
-        ].map(service => (
-          <div class="rounded-lg border border-border bg-card p-6">
-            <h3 class="mb-2 font-semibold">{service.title}</h3>
-            <p class="text-sm text-muted-foreground">{service.description}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section id="trade-in" class="bg-secondary/40 py-16 md:py-20">
-    <div class="container mx-auto px-4">
-      <div class="mx-auto max-w-3xl text-center">
-        <h2 class="mb-4 text-2xl font-bold md:text-3xl">Sell or Trade In Your Old Devices</h2>
-        <p class="mb-8 text-muted-foreground">
-          Upgrading your business fleet? We buy used phones, tablets, and laptops. Get instant cash or credit toward repairs and new devices. Contact us to discuss bulk trade-in pricing.
+  <main class="flex-1 pb-20 md:pb-0">
+    <!-- Section 1: Hero -->
+    <section class="bg-gradient-to-b from-background via-background to-primary/5 py-16 md:py-24">
+      <div class="container mx-auto px-4 text-center">
+        <h1 class="mb-4 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl">
+          Business & Wholesale Repairs
+        </h1>
+        <p class="mb-4 text-xl font-medium text-primary">
+          Your Trusted Partner for Fleet & Bulk Device Services
         </p>
-        <a
-          href="/trade-in"
-          class="inline-flex items-center gap-2 rounded-md border border-input bg-background px-6 py-3 text-sm font-medium hover:bg-accent transition-colors"
-        >
-          Learn About Trade-In
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-        </a>
+        <p class="mx-auto mb-8 max-w-2xl text-muted-foreground">
+          From school iPad fleets to corporate upgrades—we handle bulk repairs, refurbishment, and device buyback with volume pricing and free one-way shipping. No minimums.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-3 mb-6">
+          <a
+            href="https://shop.mobiletechlab.ca/pages/repair2"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 rounded-md bg-primary px-8 py-3 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
+          >
+            Get a Free Quote
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a
+            href="tel:2045009757"
+            class="inline-flex items-center gap-2 rounded-md border border-input bg-background px-8 py-3 text-sm font-medium hover:bg-accent transition-colors"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Call Now
+          </a>
+        </div>
+        <p class="text-sm text-muted-foreground">
+          Not sure what affects the cost? <a href="/repair-pricing" class="text-primary hover:underline">How repair pricing works</a>
+        </p>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="py-16 md:py-20">
-    <div class="container mx-auto px-4">
-      <div class="mx-auto max-w-4xl">
-        <h2 class="mb-10 text-center text-2xl font-bold md:text-3xl">Why Businesses Choose Mobile Tech Lab</h2>
-        <div class="grid gap-4 sm:grid-cols-2">
-          {[
-            "Competitive volume pricing for bulk repairs",
-            "Fast turnaround to minimize business downtime",
-            "Certified, experienced technicians",
-            "Secure data handling and certified wiping",
-            "Flexible pickup and drop-off arrangements",
-            "Serving Winnipeg, Thompson, and all of Manitoba",
-          ].map(point => (
-            <div class="flex items-center gap-3 rounded-lg border border-border bg-background p-4">
-              <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+    <!-- Section 2: Services Grid -->
+    <section id="services" class="bg-secondary/30 py-16 md:py-20">
+      <div class="container mx-auto px-4">
+        <div class="mb-12 text-center">
+          <h2 class="mb-3 text-2xl font-bold md:text-3xl">Business Repair Services in Winnipeg</h2>
+          <p class="text-muted-foreground">Expert repairs for all Business issues. Fast turnaround, quality parts, and warranty included.</p>
+        </div>
+        <div class="mb-10 flex flex-wrap justify-center gap-6">
+          {services.map(service => (
+            <div class="group w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] rounded-lg border border-border/50 bg-card p-6 transition-all hover:border-primary/30 hover:shadow-lg">
+              <div class="mb-4 inline-flex rounded-lg bg-primary/10 p-3 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+                {service.icon === "monitor" && <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>}
+                {service.icon === "battery" && <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="10" x="2" y="7" rx="2" ry="2"/><line x1="22" x2="22" y1="11" y2="13"/></svg>}
+                {service.icon === "cpu" && <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M15 2v2"/><path d="M15 20v2"/><path d="M2 15h2"/><path d="M2 9h2"/><path d="M20 15h2"/><path d="M20 9h2"/><path d="M9 2v2"/><path d="M9 20v2"/></svg>}
+                {service.icon === "droplets" && <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z"/><path d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97"/></svg>}
+                {service.icon === "sparkles" && <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>}
+                {service.icon === "recycle" && <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5"/><path d="M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12"/><path d="m14 16-3 3 3 3"/><path d="M8.293 13.596 7.196 9.5 3.1 10.598"/><path d="m9.344 5.811 1.093-1.892A1.83 1.83 0 0 1 11.985 3a1.784 1.784 0 0 1 1.546.888l3.943 6.843"/><path d="m13.378 9.633 4.096 1.098 1.097-4.096"/></svg>}
+                {service.icon === "arrow-left-right" && <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg>}
               </div>
-              <span class="text-sm font-medium">{point}</span>
+              <h3 class="mb-2 text-lg font-semibold">{service.title}</h3>
+              <p class="text-sm text-muted-foreground">{service.description}</p>
+            </div>
+          ))}
+        </div>
+        <div class="text-center">
+          <a
+            href="https://shop.mobiletechlab.ca/pages/repair2"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 rounded-md bg-gradient-to-r from-primary to-primary/80 px-8 py-3 text-sm font-medium text-primary-foreground hover:from-primary/90 hover:to-primary/70 transition-all"
+          >
+            Request Repair
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Bulk Buyback -->
+    <section class="bg-primary/5 py-16 md:py-20">
+      <div class="container mx-auto px-4">
+        <div class="mx-auto max-w-4xl rounded-xl border border-primary/20 bg-card p-8 shadow-lg md:p-12">
+          <div class="mb-6 inline-flex rounded-full bg-primary/10 p-4 text-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg>
+          </div>
+          <h2 class="mb-2 text-2xl font-bold md:text-3xl">Upgrading Your Fleet? We'll Buy Your Old Devices</h2>
+          <p class="mb-4 text-lg font-medium text-primary">Get More Than Carrier Trade-In Programs</p>
+          <p class="mb-6 text-muted-foreground">
+            When your organization upgrades from iPhone 8 to iPhone SE, or swaps out aging iPads for new models, don't leave money on the table. We offer competitive bulk buyback pricing—often significantly more than carrier trade-in programs.
+          </p>
+          <ul class="mb-8 space-y-3">
+            {["Phones, tablets, laptops, and Chromebooks accepted", "Working, damaged, or broken devices—we quote them all", "Fast payment via E-Transfer or check", "Free shipping on bulk trade-ins"].map(benefit => (
+              <li class="flex items-center gap-3">
+                <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                </span>
+                <span class="text-sm text-muted-foreground">{benefit}</span>
+              </li>
+            ))}
+          </ul>
+          <a
+            href="https://shop.mobiletechlab.ca/pages/repair2"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 rounded-md bg-gradient-to-r from-primary to-primary/80 px-8 py-3 text-sm font-medium text-primary-foreground hover:from-primary/90 hover:to-primary/70 transition-all"
+          >
+            Get a Bulk Buyback Quote
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Model Categories -->
+    <section id="models" class="py-16 md:py-20">
+      <div class="container mx-auto px-4">
+        <div class="mb-12 text-center">
+          <h2 class="mb-3 text-2xl font-bold md:text-3xl">All Business Models We Repair in Winnipeg</h2>
+          <p class="text-muted-foreground">We specialize in the unique architecture of each Business generation</p>
+        </div>
+        <div class="mx-auto flex max-w-5xl flex-wrap justify-center gap-6">
+          {modelGroups.map(group => (
+            <div class="group w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] rounded-lg border border-border/50 bg-card p-6 transition-all hover:border-primary/50 hover:shadow-lg">
+              <div class="mb-4 flex justify-center">
+                <div class="inline-flex rounded-full bg-primary/10 p-3 text-primary">
+                  {group.icon === "tablet" && <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><line x1="12" x2="12.01" y1="18" y2="18"/></svg>}
+                  {group.icon === "tablet-smartphone" && <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="10" height="14" x="3" y="8" rx="2"/><path d="M5 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2h-8"/><path d="M15 18h.01"/></svg>}
+                  {group.icon === "monitor" && <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>}
+                </div>
+              </div>
+              <h3 class="mb-2 text-center text-lg font-semibold">{group.title}</h3>
+              <p class="mb-4 text-center text-sm leading-relaxed text-muted-foreground">{group.description}</p>
+              <div class="mb-4 flex flex-wrap justify-center gap-2">
+                {group.visiblePills.map(pill => (
+                  <span class="rounded-full bg-secondary px-3 py-1 text-xs font-normal">{pill}</span>
+                ))}
+                <span class="rounded-full border border-border px-3 py-1 text-xs font-normal text-muted-foreground">+{group.moreCount} more</span>
+              </div>
+              <a
+                href="https://shop.mobiletechlab.ca/pages/repair2"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex w-full items-center justify-center gap-2 rounded-md border border-border bg-transparent px-4 py-2 text-sm font-medium transition-colors group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary"
+              >
+                Get Quote
+              </a>
             </div>
           ))}
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="border-t border-border bg-primary/5 py-16">
-    <div class="container mx-auto px-4 text-center">
-      <h2 class="mb-3 text-2xl font-bold md:text-3xl">Ready to Partner with Us?</h2>
-      <p class="mb-8 text-muted-foreground">Contact us to discuss your business repair needs and get a custom quote.</p>
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
-        <a
-          href="https://shop.mobiletechlab.ca/pages/repair2"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 rounded-md bg-primary px-8 py-3 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
-        >
-          Get a Business Quote
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-        </a>
-        <a
-          href="tel:2045009757"
-          class="inline-flex items-center gap-2 rounded-md border border-input bg-background px-8 py-3 text-sm font-medium hover:bg-accent transition-colors"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          Call Us
-        </a>
+    <!-- Section 5: Why Choose Us -->
+    <section id="why-choose-us" class="border-t border-border bg-muted/30 py-16 md:py-20">
+      <div class="container mx-auto px-4">
+        <div class="mb-12 text-center">
+          <h2 class="mb-3 text-2xl font-bold md:text-3xl">The Mobile Tech Lab Advantage</h2>
+          <p class="text-muted-foreground">Why Winnipeg customers consistently choose us for their repairs</p>
+        </div>
+        <div class="mx-auto grid max-w-5xl gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          {pillars.map(pillar => (
+            <div class="text-center">
+              <div class="mx-auto mb-4 inline-flex rounded-full bg-primary/10 p-4 text-primary">
+                {pillar.icon === "badge-dollar-sign" && <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/></svg>}
+                {pillar.icon === "truck" && <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>}
+                {pillar.icon === "clock" && <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>}
+                {pillar.icon === "star" && <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>}
+              </div>
+              <h3 class="mb-2 text-lg font-semibold">{pillar.title}</h3>
+              <p class="text-sm text-muted-foreground">{pillar.description}</p>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
+    <!-- Section 6: Ways to Save -->
+    <section class="border-t border-border/50 bg-muted/30 py-16 md:py-20">
+      <div class="container mx-auto px-4">
+        <div class="mb-12 text-center">
+          <h2 class="mb-3 text-2xl font-bold md:text-3xl">Worried About Repair Cost? <span class="text-primary">You Have Options.</span></h2>
+          <p class="text-muted-foreground">Most customers use one of these options to lower their repair cost.</p>
+        </div>
+        <div class="mx-auto grid max-w-4xl gap-6 md:grid-cols-2">
+          <!-- Price Match Card -->
+          <div class="rounded-2xl border border-border/50 bg-card p-6 shadow-sm transition-shadow hover:shadow-md">
+            <div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+            </div>
+            <h3 class="mb-3 text-center text-lg font-semibold">We'll Match Any Local Repair Price</h3>
+            <p class="mb-6 text-center text-sm text-muted-foreground">
+              Found a lower price at another Winnipeg repair shop? We'll match it — so you don't overpay. No pressure. No hassle.
+            </p>
+            <a
+              href="tel:2045009757"
+              class="flex w-full items-center justify-center gap-2 rounded-md border border-input bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              Check If We Can Match Your Price
+            </a>
+          </div>
+
+          <!-- Trade-In Card -->
+          <div class="rounded-2xl border border-border/50 bg-card p-6 shadow-sm transition-shadow hover:shadow-md">
+            <div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg>
+            </div>
+            <h3 class="mb-3 text-center text-lg font-semibold">Lower Your Business Repair Cost With a Trade-In</h3>
+            <p class="mb-2 text-center text-sm text-muted-foreground">
+              Trade in phones, tablets, consoles, or laptops — even broken ones — to reduce today's repair cost.
+            </p>
+            <p class="mb-6 text-center text-xs text-muted-foreground">
+              Get paid via Cash, E-Transfer, or Store Credit
+            </p>
+            <a
+              href="/trade-in"
+              class="flex w-full items-center justify-center gap-2 rounded-md border border-primary/40 bg-primary/10 px-4 py-2 text-sm font-medium text-primary transition-colors hover:bg-primary/15"
+            >
+              Lower My Business Repair Cost
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 7: Locations -->
+    <section id="locations" class="py-16 md:py-20">
+      <div class="container mx-auto px-4">
+        <div class="mb-12 text-center">
+          <h2 class="mb-3 text-2xl font-bold md:text-3xl">Device Repair Locations in Winnipeg & Manitoba</h2>
+          <p class="mb-4 text-muted-foreground">Two convenient locations to serve you. Walk-ins welcome or book your appointment online.</p>
+          <div class="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm text-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>
+            We serve businesses across Manitoba and Canada. Free one-way shipping on all B2B orders.
+          </div>
+        </div>
+        <div class="mx-auto grid max-w-4xl gap-6 md:grid-cols-2">
+          <!-- St. Vital Location -->
+          <div class="rounded-xl border border-border bg-card p-6">
+            <div class="mb-4 flex items-center gap-3">
+              <div class="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <h3 class="font-semibold">St. Vital Location</h3>
+            </div>
+            <div class="space-y-3 text-sm">
+              <p class="text-muted-foreground">845 Dakota St #25, Winnipeg, MB R2M 5M3</p>
+              <div class="flex items-center gap-2 text-muted-foreground">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                <span>Mon-Sat: 9AM - 7PM<br/>Sun: 12PM - 7PM</span>
+              </div>
+              <a href="tel:2045009757" class="flex items-center gap-2 font-medium text-primary hover:underline">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                (204) 500-9757
+              </a>
+            </div>
+            <a href="https://maps.google.com/?q=845+Dakota+St+%2325+Winnipeg+MB+R2M+5M3" target="_blank" rel="noopener noreferrer" class="mt-4 flex w-full items-center justify-center gap-2 rounded-md border border-input bg-background px-4 py-2 text-sm font-medium hover:bg-accent transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+              Get Directions
+            </a>
+          </div>
+
+          <!-- Thompson Location -->
+          <div class="rounded-xl border border-border bg-card p-6">
+            <div class="mb-4 flex items-center gap-3">
+              <div class="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <h3 class="font-semibold">Thompson Location</h3>
+            </div>
+            <div class="space-y-3 text-sm">
+              <p class="text-muted-foreground">300 Mystery Lake Rd #1530, Thompson, MB R8N 0M2</p>
+              <div class="flex items-center gap-2 text-muted-foreground">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                <span>Mon-Sat: 10AM - 6PM<br/>Sun: Closed</span>
+              </div>
+              <a href="tel:2044100262" class="flex items-center gap-2 font-medium text-primary hover:underline">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                (204) 410-0262
+              </a>
+            </div>
+            <a href="https://maps.google.com/?q=300+Mystery+Lake+Rd+%231530+Thompson+MB+R8N+0M2" target="_blank" rel="noopener noreferrer" class="mt-4 flex w-full items-center justify-center gap-2 rounded-md border border-input bg-background px-4 py-2 text-sm font-medium hover:bg-accent transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+              Get Directions
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 8: FAQ -->
+    <section id="faqs" class="border-t border-border bg-muted/30 py-16 md:py-20">
+      <div class="container mx-auto px-4">
+        <div class="mb-12 text-center">
+          <h2 class="mb-3 text-2xl font-bold md:text-3xl">Business Repair FAQs</h2>
+          <p class="text-muted-foreground">Common questions about Business repair at Mobile Tech Lab</p>
+        </div>
+        <div class="mx-auto max-w-3xl divide-y divide-border">
+          {faqItems.map((item, index) => (
+            <details class="group" open={index === 0}>
+              <summary class="cursor-pointer py-4 text-left font-medium text-foreground hover:text-primary transition-colors flex items-center justify-between">
+                <span>{item.question}</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 shrink-0 text-muted-foreground transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+              </summary>
+              <p class="pb-4 text-sm text-muted-foreground leading-relaxed">{item.answer}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Section 9: Sticky CTA (Mobile Only) -->
+  <div class="fixed bottom-0 left-0 right-0 z-50 border-t border-border bg-background/95 p-4 backdrop-blur-sm md:hidden">
+    <div class="flex gap-3">
+      <a href="tel:2045009757" class="flex flex-1 items-center justify-center gap-2 rounded-md bg-primary px-4 py-3 text-sm font-medium text-primary-foreground">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call
+      </a>
+      <a href="sms:+12045009757?body=Hi%2C%20I%20found%20your%20site%20and%20need%20a%20repair.%20Can%20you%20help%3F" class="flex flex-1 items-center justify-center gap-2 rounded-md border border-input bg-background px-4 py-3 text-sm font-medium">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+        Text
+      </a>
+    </div>
+  </div>
 </BaseLayout>
