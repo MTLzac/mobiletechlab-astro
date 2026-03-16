@@ -2,140 +2,1578 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const title = "Sell Your Phone Winnipeg | Get Cash for Used Devices | Mobile Tech Lab";
-const description = "Sell or trade in your used phone, tablet, or laptop in Winnipeg. Mobile Tech Lab pays cash for used devices. Fast, fair offers on iPhones, Samsung, and more.";
+const description = "Sell your used phone, tablet, or laptop in Winnipeg. Get cash or store credit same-day. Price match guarantee. Free shipping on mail-ins. Working or damaged devices accepted.";
 const canonical = "https://mobiletechlab.ca/trade-in";
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://mobiletechlab.ca/" },
+    { "@type": "ListItem", "position": 2, "name": "Trade-In", "item": "https://mobiletechlab.ca/trade-in" }
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Should I repair or sell my phone?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on the damage, device age, and current part costs. Minor issues like cracked screens are often worth repairing—compare repair vs. sell to see what makes sense. Our offers are based on current replacement part prices, so you'll always get a fair deal either way."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you recover data from my phone before I sell it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! We offer Data Recovery & Transfer services for phones, tablets, and laptops. Bundle it with your trade-in for a discount. We'll transfer your photos, contacts, and files to a USB drive or cloud backup before processing your device."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why won't you buy locked phones?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "iCloud-locked or Google FRP-locked devices can't be resold or refurbished legally. We need devices that you can sign out of and unlock before selling. Our payouts are based on current part costs—if parts get cheaper, your payout goes up."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I ship my phone to sell?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "After accepting your quote, we'll send you a free prepaid shipping label with tracking. Pack your device securely (we recommend bubble wrap or the original box) and drop it off at any Canada Post location. Our offers reflect real-time part pricing, so you'll get a fair value."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How fast do I get cash for my phone?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Drop off in Winnipeg and get paid same-day via cash or E-Transfer. Mail-in devices are processed and paid within 24-48 hours of inspection. Payouts are based on current part costs—we adjust fairly as market prices change."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to erase my phone before selling?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can, but you don't have to. Our team securely wipes or destroys all data from every device during intake. Either way, your personal information is fully protected before we refurbish or recycle the device."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I sell my phone in Winnipeg?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Submit your device details through our quote form or drop by our Winnipeg location. We'll assess your phone and provide a cash offer based on the model, condition, and current part costs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I get cash for my used phone?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! In-store drop-offs receive same-day cash or E-Transfer. You can also use your payout as store credit toward repairs or a pre-owned device. Our offers are based on real replacement part prices and may change over time."
+      }
+    }
+  ]
+};
+
+const howItWorksSteps = [
+  { number: 1, icon: "clipboard-list", title: "Get a Quote", description: "Tell us your device's make, model & condition. We send a cash offer right away." },
+  { number: 2, icon: "package", title: "Drop Off or Ship", description: "Bring it to our Winnipeg shop or mail it in with free, trackable shipping." },
+  { number: 3, icon: "search", title: "We Inspect & Confirm", description: "Our techs verify the device and confirm your payout. If our part cost drops, your payout increases; if parts get more expensive, we adjust fairly." },
+  { number: 4, icon: "credit-card", title: "Get Paid Fast", description: "Choose cash, e-transfer or store credit and get paid the same day." }
+];
+
+const deviceCategories = [
+  {
+    icon: "smartphone",
+    title: "Sell iPhone & Android Phones",
+    description: "We buy working or broken phones—cracked screens, battery issues, water damage. We securely wipe all data before processing.",
+    pills: ["iPhone", "Samsung Galaxy", "Google Pixel", "OnePlus", "and more"],
+    repairLink: "/repairs/samsung",
+    repairLabel: "phone repair"
+  },
+  {
+    icon: "tablet",
+    title: "Sell iPad & Tablets",
+    description: "Sell your tablet in any condition. We handle data wiping and accept devices with damaged screens or batteries.",
+    pills: ["iPad", "Samsung Galaxy Tab", "Surface", "Amazon Fire", "and more"],
+    repairLink: "/repairs/ipad",
+    repairLabel: "tablet repair"
+  },
+  {
+    icon: "laptop",
+    title: "Sell MacBook & Laptops",
+    description: "Get cash for your laptop—even older models have value. We securely erase all personal data during intake.",
+    pills: ["MacBook", "Windows laptops", "Chromebooks", "Desktop PCs", "and more"],
+    repairLink: "/repairs/macbook",
+    repairLabel: "laptop repair"
+  },
+  {
+    icon: "gamepad",
+    title: "Sell Game Consoles & Games",
+    description: "Sell PlayStation, Xbox, Nintendo Switch, Steam Deck, and game discs. Working or with issues.",
+    pills: ["PlayStation", "Xbox", "Nintendo Switch", "Steam Deck", "and more"],
+    repairLink: "/repair/nintendo-switch",
+    repairLabel: "console repair"
+  },
+  {
+    icon: "watch",
+    title: "Sell Apple Watch & Wearables",
+    description: "Sell your smartwatch or fitness tracker. We buy devices in any cosmetic or functional condition.",
+    pills: ["Apple Watch", "Samsung Galaxy Watch", "Fitbit", "and more"],
+    repairLink: "/repairs/apple-watch",
+    repairLabel: "wearable repair"
+  }
+];
+
+const advantages = [
+  { icon: "dollar-sign", title: "Best Price Guarantee", description: "We use real-time part pricing and beat any advertised local offer. If a competitor publishes a higher payout, show us and we'll match it." },
+  { icon: "zap", title: "Fast Payment", description: "Cash, e-transfer or store credit—paid on the same day we receive your device." },
+  { icon: "truck", title: "Free Shipping & Drop-Off", description: "Mail it in on us or stop by our convenient Winnipeg locations.", hasLink: true },
+  { icon: "recycle", title: "Eco-Friendly Upcycling", description: "Broken tech still has value. We refurbish or responsibly recycle every device to reduce e-waste." }
+];
+
+const caseStudySteps = [
+  { number: 1, icon: "search", title: "Assessed the Damage", description: "Inspected the bent frame and shattered display to determine if data recovery was possible." },
+  { number: 2, icon: "wrench", title: "Installed a Temp Screen", description: "Fitted a working screen temporarily to power on the device and access the data." },
+  { number: 3, icon: "hard-drive", title: "Backed Up Everything", description: "Transferred photos, contacts, and files to a secure backup before any further processing." },
+  { number: 4, icon: "dollar-sign", title: "Paid Out & Recycled", description: "Confirmed trade-in eligibility, paid the customer same-day, and responsibly recycled the parts." }
+];
+
+const faqItems = [
+  { question: "Should I repair or sell my phone?", answer: "It depends on the damage, device age, and current part costs. Minor issues like cracked screens are often worth repairing—<a href='/repair-pricing#should-i-repair-or-sell-my-device'>compare repair vs. sell</a> to see what makes sense. Our offers are based on current replacement part prices, so you'll always get a fair deal either way." },
+  { question: "Can you recover data from my phone before I sell it?", answer: "Yes! We offer Data Recovery & Transfer services for phones, tablets, and laptops. Bundle it with your trade-in for a discount. We'll transfer your photos, contacts, and files to a USB drive or cloud backup before processing your device." },
+  { question: "Why won't you buy locked phones?", answer: "iCloud-locked or Google FRP-locked devices can't be resold or refurbished legally. We need devices that you can sign out of and unlock before selling. Our payouts are based on current part costs—if parts get cheaper, your payout goes up." },
+  { question: "How do I ship my phone to sell?", answer: "After accepting your quote, we'll send you a free prepaid shipping label with tracking. Pack your device securely (we recommend bubble wrap or the original box) and drop it off at any Canada Post location. Our offers reflect real-time part pricing, so you'll get a fair value." },
+  { question: "How fast do I get cash for my phone?", answer: "Drop off in Winnipeg and get paid same-day via cash or E-Transfer. Mail-in devices are processed and paid within 24-48 hours of inspection. Payouts are based on current part costs—we adjust fairly as market prices change." },
+  { question: "Do I need to erase my phone before selling?", answer: "You can, but you don't have to. Our team securely wipes or destroys all data from every device during intake. Either way, your personal information is fully protected before we refurbish or recycle the device." },
+  { question: "How do I sell my phone in Winnipeg?", answer: "Submit your device details through our <a href='https://shop.mobiletechlab.ca/pages/repair2' target='_blank' rel='noopener noreferrer'>quote form</a> or drop by our Winnipeg location. We'll assess your phone and provide a cash offer based on the model, condition, and current part costs." },
+  { question: "Can I get cash for my used phone?", answer: "Yes! In-store drop-offs receive same-day cash or E-Transfer. You can also use your payout as store credit toward repairs or a <a href='/pre-owned'>pre-owned device</a>. Our offers are based on real replacement part prices and may change over time." }
+];
 ---
 
 <BaseLayout title={title} description={description} canonical={canonical}>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
-  <section class="bg-gradient-to-b from-secondary/50 to-background py-20 md:py-28">
-    <div class="container mx-auto px-4 text-center">
-      <h1 class="mb-5 text-4xl font-bold tracking-tight md:text-5xl">
-        Sell Your Device for Cash
-      </h1>
-      <p class="mx-auto mb-8 max-w-2xl text-lg text-muted-foreground">
-        Got an old phone, tablet, or laptop sitting around? Mobile Tech Lab pays fair cash prices for used devices — walk in to our Winnipeg or Thompson location today.
-      </p>
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
-        <a
-          href="tel:2045009757"
-          class="inline-flex items-center gap-2 rounded-md bg-primary px-8 py-3 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          Call for a Quote
+  <!-- Section 1: Hero -->
+  <section class="hero-section">
+    <div class="hero-circle hero-circle-1"></div>
+    <div class="hero-circle hero-circle-2"></div>
+    <div class="hero-container">
+      <span class="hero-badge">Device Trade-In Program</span>
+      <h1 class="hero-headline">Sell Your Phone, Tablet & Laptop in Winnipeg</h1>
+      <p class="hero-subheadline">Get top dollar for used, broken or unwanted devices with fast quotes, price match guarantee, and same-day payout.</p>
+      <p class="hero-body">We buy iPhones, Androids, iPads, MacBooks and more—even with cracked screens or water damage. Our offers are based on real part costs: if parts get cheaper, your payout goes up, and if they rise, we adjust honestly.</p>
+      <div class="hero-ctas">
+        <a href="https://shop.mobiletechlab.ca/pages/repair2" target="_blank" rel="noopener noreferrer" class="btn-primary">
+          Get Cash Quote
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
         </a>
-        <a
-          href="https://shop.mobiletechlab.ca/pages/repair2"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 rounded-md border border-input bg-background px-8 py-3 text-sm font-medium hover:bg-accent transition-colors"
-        >
-          Get a Repair Quote Instead
+        <a href="tel:2045009757" class="btn-secondary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Call For Quote
         </a>
       </div>
     </div>
   </section>
 
-  <section class="py-16 md:py-20">
-    <div class="container mx-auto px-4">
-      <h2 class="mb-3 text-center text-2xl font-bold md:text-3xl">What Devices We Buy</h2>
-      <p class="mb-10 text-center text-muted-foreground">We accept most smartphones, tablets, and laptops — working or not</p>
-      <div class="mx-auto max-w-3xl grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {[
-          "iPhones (all models)",
-          "Samsung Galaxy phones",
-          "Google Pixel phones",
-          "iPads (all models)",
-          "MacBooks",
-          "Windows Laptops",
-          "Samsung Galaxy Tabs",
-          "Other Android phones",
-          "Broken or damaged devices",
-        ].map(item => (
-          <div class="flex items-center gap-3 rounded-lg border border-border bg-card p-4">
-            <div class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+  <!-- Section 2: How It Works -->
+  <section class="section-muted">
+    <div class="section-container">
+      <h2 class="section-heading">How to Sell Your Device</h2>
+      <p class="section-subheading">Selling your device is quick and easy—just four simple steps.</p>
+      <div class="steps-grid">
+        {howItWorksSteps.map(step => (
+          <div class="step-card">
+            <div class="step-number">{step.number}</div>
+            <div class="step-icon">
+              {step.icon === "clipboard-list" && <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></svg>}
+              {step.icon === "package" && <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>}
+              {step.icon === "search" && <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>}
+              {step.icon === "credit-card" && <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>}
             </div>
-            <span class="text-sm font-medium">{item}</span>
+            <h3 class="step-title">{step.title}</h3>
+            <p class="step-description">{step.description}</p>
+          </div>
+        ))}
+      </div>
+      <p class="comparison-link">
+        Questions about repair versus selling? <a href="/repair-pricing#should-i-repair-or-sell-my-device">Compare repair vs. sell</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 3: Device Categories -->
+  <section class="section-white" id="quote-form">
+    <div class="section-container">
+      <h2 class="section-heading">Devices We Buy</h2>
+      <p class="section-subheading">We buy a wide range of used devices in any condition—working, cracked, or damaged.</p>
+      <div class="categories-grid">
+        {deviceCategories.map(cat => (
+          <div class="category-card">
+            <div class="category-icon">
+              {cat.icon === "smartphone" && <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>}
+              {cat.icon === "tablet" && <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><line x1="12" x2="12.01" y1="18" y2="18"/></svg>}
+              {cat.icon === "laptop" && <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16"/></svg>}
+              {cat.icon === "gamepad" && <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" x2="10" y1="11" y2="11"/><line x1="8" x2="8" y1="9" y2="13"/><line x1="15" x2="15.01" y1="12" y2="12"/><line x1="18" x2="18.01" y1="10" y2="10"/><path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"/></svg>}
+              {cat.icon === "watch" && <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="6"/><polyline points="12 10 12 12 13 13"/><path d="m16.13 7.66-.81-4.05a2 2 0 0 0-2-1.61h-2.68a2 2 0 0 0-2 1.61l-.78 4.05"/><path d="m7.88 16.36.8 4a2 2 0 0 0 2 1.61h2.72a2 2 0 0 0 2-1.61l.81-4.05"/></svg>}
+            </div>
+            <h3 class="category-title">{cat.title}</h3>
+            <p class="category-description">{cat.description}</p>
+            <div class="category-pills">
+              {cat.pills.map(pill => <span class="pill">{pill}</span>)}
+            </div>
+            <div class="category-actions">
+              <a href="https://shop.mobiletechlab.ca/pages/repair2" target="_blank" rel="noopener noreferrer" class="btn-primary-small">
+                Get Cash Quote
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </a>
+              <a href={cat.repairLink} class="category-repair-link">or get {cat.repairLabel} instead</a>
+            </div>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <section class="bg-secondary/40 py-16 md:py-20">
-    <div class="container mx-auto px-4">
-      <div class="mx-auto max-w-3xl">
-        <h2 class="mb-3 text-center text-2xl font-bold md:text-3xl">How the Trade-In Process Works</h2>
-        <p class="mb-10 text-center text-muted-foreground">Simple, fast, and transparent</p>
-        <div class="grid gap-6 md:grid-cols-3">
-          <div class="flex flex-col items-center text-center rounded-lg border border-border bg-background p-6">
-            <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary text-xl font-bold">1</div>
-            <h3 class="mb-2 font-semibold">Bring Your Device</h3>
-            <p class="text-sm text-muted-foreground">Walk in to our Winnipeg or Thompson location with your device. No appointment needed.</p>
-          </div>
-          <div class="flex flex-col items-center text-center rounded-lg border border-border bg-background p-6">
-            <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary text-xl font-bold">2</div>
-            <h3 class="mb-2 font-semibold">Get an Offer</h3>
-            <p class="text-sm text-muted-foreground">We'll assess your device on the spot and give you a fair cash offer within minutes.</p>
-          </div>
-          <div class="flex flex-col items-center text-center rounded-lg border border-border bg-background p-6">
-            <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary text-xl font-bold">3</div>
-            <h3 class="mb-2 font-semibold">Get Paid</h3>
-            <p class="text-sm text-muted-foreground">Accept the offer and walk out with cash, or apply it as credit toward a repair or new device.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="py-16 md:py-20">
-    <div class="container mx-auto px-4">
-      <div class="mx-auto max-w-2xl text-center">
-        <h2 class="mb-4 text-2xl font-bold md:text-3xl">Factors That Affect Your Trade-In Value</h2>
-        <p class="mb-8 text-muted-foreground">Understanding what we look at helps you get the best value for your device.</p>
-        <div class="grid gap-3 text-left sm:grid-cols-2">
-          {[
-            "Device model and age",
-            "Screen and body condition",
-            "Whether it powers on",
-            "Storage capacity",
-            "Whether iCloud/Google account is removed",
-            "Whether original box and accessories are included",
-          ].map(factor => (
-            <div class="flex items-center gap-2 rounded-lg border border-border bg-card p-3">
-              <div class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-              </div>
-              <span class="text-sm">{factor}</span>
+  <!-- Section 4: Why Trade-In -->
+  <section class="section-white">
+    <div class="section-container">
+      <h2 class="section-heading">Why Sell to Mobile Tech Lab?</h2>
+      <p class="section-subheading">Get more cash for your used devices with our straightforward sell program.</p>
+      <div class="advantages-grid">
+        {advantages.map(adv => (
+          <div class="advantage-card">
+            <div class="advantage-icon">
+              {adv.icon === "dollar-sign" && <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="2" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>}
+              {adv.icon === "zap" && <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>}
+              {adv.icon === "truck" && <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>}
+              {adv.icon === "recycle" && <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5"/><path d="M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12"/><path d="m14 16-3 3 3 3"/><path d="M8.293 13.596 4.875 9.5l3.418-4.096"/><path d="m7.078 9.5 5.588 9.5"/><path d="m11.5 5 3.418 4.096"/><path d="M11.5 5H7.078l2.156 3.714"/><path d="m14 5 3 3-3 3"/></svg>}
             </div>
-          ))}
+            <h3 class="advantage-title">{adv.title}</h3>
+            {adv.hasLink ? (
+              <p class="advantage-description">Mail it in on us or stop by our convenient <a href="/contact">Winnipeg locations</a>.</p>
+            ) : (
+              <p class="advantage-description">{adv.description}</p>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Case Study -->
+  <section class="section-muted">
+    <div class="section-container">
+      <span class="case-study-badge">Real Customer Story</span>
+      <h2 class="section-heading">Data Rescued, Device Bought — Even in This Condition</h2>
+      <p class="section-subheading">This iPhone XR came to us completely bent and shattered—front and back. The customer just wanted their photos and contacts recovered, not a full repair. Here's how we helped.</p>
+
+      <div class="case-study-images">
+        <div class="case-study-image-card">
+          <div class="image-badge badge-destructive">Before</div>
+          <img src="/assets/trade-in/bent-xr-damaged.png" alt="Severely bent and shattered iPhone XR on Mobile Tech Lab's glass display counter" width="400" height="300" loading="lazy" />
+          <p class="image-caption">Device arrived with a completely bent frame and shattered display — seemed beyond repair.</p>
+        </div>
+        <div class="case-study-image-card">
+          <div class="image-badge badge-primary">After</div>
+          <img src="/assets/trade-in/bent-xr-recovered.png" alt="Same iPhone XR with temporary screen installed on workbench, powered on after successful data recovery" width="400" height="300" loading="lazy" />
+          <p class="image-caption">Temporary screen installed, device powered on, and all data successfully backed up at our workstation.</p>
+        </div>
+      </div>
+
+      <h3 class="process-heading">How We Did It</h3>
+      <div class="process-grid">
+        {caseStudySteps.map(step => (
+          <div class="process-step">
+            <div class="process-number">{step.number}</div>
+            <div class="process-icon">
+              {step.icon === "search" && <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>}
+              {step.icon === "wrench" && <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>}
+              {step.icon === "hard-drive" && <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" x2="2" y1="12" y2="12"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/><line x1="6" x2="6.01" y1="16" y2="16"/><line x1="10" x2="10.01" y1="16" y2="16"/></svg>}
+              {step.icon === "dollar-sign" && <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="2" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>}
+            </div>
+            <h4 class="process-title">{step.title}</h4>
+            <p class="process-description">{step.description}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="case-study-cta">
+        <h3 class="cta-heading">Think your device is too damaged to sell?</h3>
+        <p class="cta-body">You might be surprised. Get a free quote and find out what your device is worth.</p>
+        <div class="cta-buttons">
+          <a href="https://shop.mobiletechlab.ca/pages/repair2" target="_blank" rel="noopener noreferrer" class="btn-primary">
+            Get a Quote
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="tel:+12048691044" class="btn-secondary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Call Us
+          </a>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="border-t border-border bg-primary/5 py-16">
-    <div class="container mx-auto px-4 text-center">
-      <h2 class="mb-3 text-2xl font-bold md:text-3xl">Ready to Sell Your Device?</h2>
-      <p class="mb-8 text-muted-foreground">Walk in to our Winnipeg location or call us to discuss your device.</p>
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
-        <a
-          href="tel:2045009757"
-          class="inline-flex items-center gap-2 rounded-md bg-primary px-8 py-3 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          Call Winnipeg: (204) 500-9757
-        </a>
-        <a
-          href="tel:2044100262"
-          class="inline-flex items-center gap-2 rounded-md border border-input bg-background px-8 py-3 text-sm font-medium hover:bg-accent transition-colors"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          Call Thompson: (204) 410-0262
+  <!-- Section 6: Requirements -->
+  <section class="section-white">
+    <div class="section-container">
+      <h2 class="section-heading">Sell Requirements</h2>
+      <p class="section-subheading">Before selling your device, please review what we can and cannot buy.</p>
+
+      <div class="requirements-grid">
+        <div class="requirements-card requirements-accepted">
+          <h3 class="requirements-heading">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            Accepted
+          </h3>
+          <ul class="requirements-list">
+            <li>We accept fully paid, unlocked devices (working or broken)</li>
+            <li>Original or third-party chargers welcomed</li>
+            <li>All personal data removed (we can assist) — <a href="/repair/water-damage">prefer to fix it?</a></li>
+          </ul>
+        </div>
+        <div class="requirements-card requirements-not-accepted">
+          <h3 class="requirements-heading">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+            Not Accepted
+          </h3>
+          <ul class="requirements-list">
+            <li>We do not purchase blacklisted, stolen or financed devices</li>
+            <li>We cannot buy iCloud-locked phones</li>
+            <li>Severely water-damaged devices may be recycled rather than paid out</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="callout-cards">
+        <div class="callout-card callout-primary">
+          <div class="callout-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+          </div>
+          <div class="callout-content">
+            <h4 class="callout-heading">Your Data is Safe</h4>
+            <p class="callout-body">Our team securely wipes or destroys all data from every device we receive. You can erase it yourself before sending, or leave it to us—either way, your personal information is fully protected.</p>
+          </div>
+        </div>
+        <div class="callout-card callout-amber">
+          <div class="callout-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" x2="2" y1="12" y2="12"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/><line x1="6" x2="6.01" y1="16" y2="16"/><line x1="10" x2="10.01" y1="16" y2="16"/></svg>
+          </div>
+          <div class="callout-content">
+            <h4 class="callout-heading">Need Your Data First?</h4>
+            <p class="callout-body">Selling a phone with photos, contacts, or files you haven't backed up? We offer Data Recovery & Transfer services—bundle it with your trade-in for a discount.</p>
+            <a href="https://shop.mobiletechlab.ca/pages/repair2" target="_blank" rel="noopener noreferrer" class="callout-cta">
+              Ask About Data Recovery
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 7: B2B Callout -->
+  <section class="b2b-section">
+    <div class="section-container">
+      <div class="b2b-card">
+        <div class="b2b-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg>
+        </div>
+        <div class="b2b-content">
+          <h3 class="b2b-heading">Fleet & Business Trade-Ins</h3>
+          <p class="b2b-body">Upgrading a fleet of devices? We offer bulk device buyback for schools, businesses, and IT departments with competitive pricing, scheduled pick-up, and dedicated corporate accounts.</p>
+          <div class="b2b-badges">
+            <span class="b2b-badge">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>
+              Scheduled pick-up
+            </span>
+            <span class="b2b-badge">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              Corporate accounts
+            </span>
+          </div>
+        </div>
+        <a href="/business#trade-in" class="b2b-cta">
+          Request Bulk Quote
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
         </a>
       </div>
     </div>
   </section>
 
+  <!-- Section 8: Locations -->
+  <section class="locations-section">
+    <div class="section-container">
+      <h2 class="section-heading">Device Repair Locations in Winnipeg & Manitoba</h2>
+      <p class="section-subheading">Two convenient locations to serve you. Walk-ins welcome or book your appointment online.</p>
+      <p class="locations-note">Drop off your trade-in at our Winnipeg location for same-day quotes and payment.</p>
+
+      <div class="locations-grid">
+        <div class="location-card">
+          <div class="location-header">
+            <div class="location-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <h3 class="location-name">St. Vital Location</h3>
+          </div>
+          <a class="location-address" href="https://maps.google.com/?q=845+Dakota+St+%2325+Winnipeg+MB+R2M+5M3" target="_blank" rel="noopener noreferrer">
+            845 Dakota St #25, Winnipeg, MB R2M 5M3
+          </a>
+          <div class="location-hours">
+            <p>Mon-Sat: 9AM - 7PM</p>
+            <p>Sun: 12PM - 7PM</p>
+          </div>
+          <div class="location-actions">
+            <a href="tel:2045009757" class="btn-call">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              (204) 500-9757
+            </a>
+            <a href="https://maps.google.com/?q=845+Dakota+St+%2325+Winnipeg+MB+R2M+5M3" target="_blank" rel="noopener noreferrer" class="btn-directions">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              Directions
+            </a>
+          </div>
+        </div>
+
+        <div class="location-card">
+          <div class="location-header">
+            <div class="location-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <h3 class="location-name">Thompson Location</h3>
+          </div>
+          <a class="location-address" href="https://maps.google.com/?q=300+Mystery+Lake+Rd+%231530+Thompson+MB+R8N+0M2" target="_blank" rel="noopener noreferrer">
+            300 Mystery Lake Rd #1530, Thompson, MB R8N 0M2
+          </a>
+          <div class="location-hours">
+            <p>Mon-Sat: 10AM - 6PM</p>
+            <p>Sun: Closed</p>
+          </div>
+          <div class="location-actions">
+            <a href="tel:2044100262" class="btn-call">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              (204) 410-0262
+            </a>
+            <a href="https://maps.google.com/?q=300+Mystery+Lake+Rd+%231530+Thompson+MB+R8N+0M2" target="_blank" rel="noopener noreferrer" class="btn-directions">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              Directions
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 9: FAQ -->
+  <section class="section-white">
+    <div class="section-container">
+      <h2 class="section-heading">Frequently Asked Questions</h2>
+      <p class="section-subheading">Common questions about selling your device to Mobile Tech Lab</p>
+
+      <div class="faq-container">
+        {faqItems.map((item, index) => (
+          <details class="faq-item" open={index === 0}>
+            <summary class="faq-question">
+              <span>{item.question}</span>
+              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <div class="faq-answer" set:html={item.answer} />
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 10: Sticky Mobile CTA -->
+  <div class="sticky-cta">
+    <a href="tel:2049001054" class="sticky-btn sticky-btn-call">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      Call
+    </a>
+    <a href="sms:+12045009757?body=Hi%2C%20I%20found%20your%20site%20and%20need%20a%20repair.%20Can%20you%20help%3F" class="sticky-btn sticky-btn-text">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+      Text
+    </a>
+  </div>
 </BaseLayout>
+
+<style>
+  :root {
+    --primary: #ef4444;
+    --primary-hover: #dc2626;
+    --text-dark: #111827;
+    --text-muted: #6b7280;
+    --text-light: #9ca3af;
+    --border: #e5e7eb;
+    --bg-muted: #f9fafb;
+    --bg-red-light: #fef2f2;
+    --green: #22c55e;
+    --amber: #f59e0b;
+  }
+
+  .hero-section {
+    position: relative;
+    background: linear-gradient(135deg, var(--bg-red-light) 0%, #ffffff 50%, var(--bg-red-light) 100%);
+    padding: 5rem 1.5rem 4rem;
+    overflow: hidden;
+  }
+
+  .hero-circle {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(64px);
+    pointer-events: none;
+  }
+
+  .hero-circle-1 {
+    top: -3rem;
+    right: -3rem;
+    width: 18rem;
+    height: 18rem;
+    background: rgba(239, 68, 68, 0.1);
+  }
+
+  .hero-circle-2 {
+    bottom: 25%;
+    left: -3rem;
+    width: 14rem;
+    height: 14rem;
+    background: rgba(239, 68, 68, 0.05);
+  }
+
+  .hero-container {
+    max-width: 48rem;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 9999px;
+    padding: 0.375rem 1rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-headline {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    color: var(--text-dark);
+    line-height: 1.15;
+    margin: 0 0 1rem;
+    letter-spacing: -0.02em;
+  }
+
+  .hero-subheadline {
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    font-weight: 500;
+    color: var(--text-dark);
+    margin: 0 0 1rem;
+  }
+
+  .hero-body {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    max-width: 36rem;
+    margin: 0 auto 2rem;
+  }
+
+  .hero-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--primary);
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    transition: background 0.15s ease, transform 0.15s ease;
+  }
+
+  .btn-primary:hover {
+    background: var(--primary-hover);
+    transform: translateY(-1px);
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #ffffff;
+    color: var(--text-dark);
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--border);
+    text-decoration: none;
+    transition: border-color 0.15s ease, color 0.15s ease;
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+  }
+
+  .section-container {
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .section-muted {
+    background: var(--bg-muted);
+    padding: 5rem 0;
+  }
+
+  .section-white {
+    background: #ffffff;
+    padding: 5rem 0;
+  }
+
+  .section-heading {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 700;
+    color: var(--text-dark);
+    text-align: center;
+    margin: 0 0 0.75rem;
+  }
+
+  .section-subheading {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    text-align: center;
+    margin: 0 0 3rem;
+    max-width: 36rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  @media (max-width: 900px) {
+    .steps-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 540px) {
+    .steps-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .step-card {
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    text-align: center;
+    position: relative;
+  }
+
+  .step-number {
+    position: absolute;
+    top: -0.75rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1.75rem;
+    height: 1.75rem;
+    background: var(--primary);
+    color: #ffffff;
+    font-size: 0.8rem;
+    font-weight: 700;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .step-icon {
+    width: 3rem;
+    height: 3rem;
+    margin: 0.5rem auto 1rem;
+    background: var(--bg-red-light);
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+  }
+
+  .step-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin: 0 0 0.5rem;
+  }
+
+  .step-description {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .comparison-link {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+  }
+
+  .comparison-link a {
+    color: var(--primary);
+    text-decoration: underline;
+  }
+
+  .categories-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 900px) {
+    .categories-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .categories-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .category-card {
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .category-card:hover {
+    border-color: rgba(239, 68, 68, 0.3);
+    box-shadow: 0 4px 20px rgba(239, 68, 68, 0.08);
+  }
+
+  .category-icon {
+    width: 3rem;
+    height: 3rem;
+    background: var(--bg-red-light);
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    margin-bottom: 1rem;
+  }
+
+  .category-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin: 0 0 0.5rem;
+  }
+
+  .category-description {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0 0 1rem;
+    flex: 1;
+  }
+
+  .category-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.375rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .pill {
+    background: var(--bg-muted);
+    color: var(--text-muted);
+    font-size: 0.7rem;
+    font-weight: 500;
+    padding: 0.25rem 0.625rem;
+    border-radius: 9999px;
+  }
+
+  .category-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .btn-primary-small {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.375rem;
+    background: var(--primary);
+    color: #ffffff;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.625rem 1rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    transition: background 0.15s ease;
+  }
+
+  .btn-primary-small:hover {
+    background: var(--primary-hover);
+  }
+
+  .category-repair-link {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .category-repair-link:hover {
+    color: var(--primary);
+    text-decoration: underline;
+  }
+
+  .advantages-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 900px) {
+    .advantages-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 540px) {
+    .advantages-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .advantage-card {
+    text-align: center;
+  }
+
+  .advantage-icon {
+    width: 3.5rem;
+    height: 3.5rem;
+    margin: 0 auto 1rem;
+    background: var(--bg-red-light);
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+  }
+
+  .advantage-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin: 0 0 0.5rem;
+  }
+
+  .advantage-description {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .advantage-description a {
+    color: var(--primary);
+    text-decoration: underline;
+  }
+
+  .case-study-badge {
+    display: inline-block;
+    background: var(--primary);
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.375rem 0.875rem;
+    border-radius: 9999px;
+    margin-bottom: 1rem;
+  }
+
+  .case-study-images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin: 3rem 0;
+  }
+
+  @media (max-width: 700px) {
+    .case-study-images {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .case-study-image-card {
+    position: relative;
+    background: #ffffff;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  .case-study-image-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .image-badge {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.375rem 0.75rem;
+    border-radius: 9999px;
+  }
+
+  .badge-destructive {
+    background: #fee2e2;
+    color: #dc2626;
+  }
+
+  .badge-primary {
+    background: #dcfce7;
+    color: #16a34a;
+  }
+
+  .image-caption {
+    padding: 1rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .process-heading {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    text-align: center;
+    margin: 0 0 2rem;
+  }
+
+  .process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  @media (max-width: 900px) {
+    .process-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 540px) {
+    .process-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .process-step {
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    padding: 1.25rem;
+    text-align: center;
+    position: relative;
+  }
+
+  .process-number {
+    position: absolute;
+    top: -0.625rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1.5rem;
+    height: 1.5rem;
+    background: var(--primary);
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .process-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin: 0.5rem auto 0.75rem;
+    background: var(--bg-red-light);
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+  }
+
+  .process-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin: 0 0 0.375rem;
+  }
+
+  .process-description {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .case-study-cta {
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .cta-heading {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin: 0 0 0.5rem;
+  }
+
+  .cta-body {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin: 0 0 1.5rem;
+  }
+
+  .cta-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+
+  .requirements-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  @media (max-width: 700px) {
+    .requirements-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .requirements-card {
+    border-radius: 1rem;
+    padding: 1.5rem;
+  }
+
+  .requirements-accepted {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+  }
+
+  .requirements-not-accepted {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+  }
+
+  .requirements-heading {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 0 1rem;
+  }
+
+  .requirements-accepted .requirements-heading {
+    color: #16a34a;
+  }
+
+  .requirements-not-accepted .requirements-heading {
+    color: #dc2626;
+  }
+
+  .requirements-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .requirements-list li {
+    font-size: 0.9rem;
+    color: var(--text-dark);
+    line-height: 1.6;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .requirements-list li:last-child {
+    border-bottom: none;
+  }
+
+  .requirements-list a {
+    color: var(--primary);
+    text-decoration: underline;
+  }
+
+  .callout-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 700px) {
+    .callout-cards {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .callout-card {
+    display: flex;
+    gap: 1rem;
+    border-radius: 1rem;
+    padding: 1.5rem;
+  }
+
+  .callout-primary {
+    background: var(--bg-red-light);
+    border: 1px solid #fecaca;
+  }
+
+  .callout-amber {
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+  }
+
+  .callout-icon {
+    width: 3rem;
+    height: 3rem;
+    flex-shrink: 0;
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .callout-primary .callout-icon {
+    background: #ffffff;
+    color: var(--primary);
+  }
+
+  .callout-amber .callout-icon {
+    background: #ffffff;
+    color: var(--amber);
+  }
+
+  .callout-content {
+    flex: 1;
+  }
+
+  .callout-heading {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin: 0 0 0.5rem;
+  }
+
+  .callout-body {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .callout-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    margin-top: 0.75rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--amber);
+    text-decoration: none;
+  }
+
+  .callout-cta:hover {
+    text-decoration: underline;
+  }
+
+  .b2b-section {
+    background: linear-gradient(135deg, var(--bg-red-light) 0%, #ffffff 100%);
+    padding: 3rem 0;
+  }
+
+  .b2b-card {
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 800px) {
+    .b2b-card {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  .b2b-icon {
+    width: 4rem;
+    height: 4rem;
+    background: var(--bg-red-light);
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    flex-shrink: 0;
+  }
+
+  .b2b-content {
+    flex: 1;
+  }
+
+  .b2b-heading {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin: 0 0 0.5rem;
+  }
+
+  .b2b-body {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0 0 1rem;
+  }
+
+  .b2b-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  @media (max-width: 800px) {
+    .b2b-badges {
+      justify-content: center;
+    }
+  }
+
+  .b2b-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    background: var(--bg-muted);
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 0.375rem 0.75rem;
+    border-radius: 9999px;
+  }
+
+  .b2b-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--primary);
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    flex-shrink: 0;
+    transition: background 0.15s ease;
+  }
+
+  .b2b-cta:hover {
+    background: var(--primary-hover);
+  }
+
+  .locations-section {
+    background: linear-gradient(135deg, var(--bg-red-light) 0%, #ffffff 50%, var(--bg-red-light) 100%);
+    padding: 5rem 0;
+  }
+
+  .locations-note {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--primary);
+    font-weight: 500;
+    margin: -1.5rem 0 2.5rem;
+  }
+
+  .locations-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    max-width: 56rem;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 700px) {
+    .locations-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .location-card {
+    background: #ffffff;
+    border: 1px solid #fde8e8;
+    border-left: 4px solid var(--primary);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 2px 16px rgba(239, 68, 68, 0.07);
+  }
+
+  .location-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .location-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    background: var(--bg-red-light);
+    border: 1px solid #fde8e8;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    flex-shrink: 0;
+  }
+
+  .location-name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin: 0;
+  }
+
+  .location-address {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    margin-bottom: 0.75rem;
+    transition: color 0.15s ease;
+  }
+
+  .location-address:hover {
+    color: var(--primary);
+  }
+
+  .location-hours {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+  }
+
+  .location-hours p {
+    margin: 0 0 0.25rem;
+  }
+
+  .location-actions {
+    display: flex;
+    gap: 0.75rem;
+  }
+
+  .btn-call,
+  .btn-directions {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.375rem;
+    padding: 0.625rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  }
+
+  .btn-call {
+    background: var(--primary);
+    color: #ffffff;
+    border: 1px solid var(--primary);
+  }
+
+  .btn-call:hover {
+    background: var(--primary-hover);
+    border-color: var(--primary-hover);
+  }
+
+  .btn-directions {
+    background: #ffffff;
+    color: var(--text-dark);
+    border: 1px solid var(--border);
+  }
+
+  .btn-directions:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+  }
+
+  .faq-container {
+    max-width: 48rem;
+    margin: 0 auto;
+  }
+
+  .faq-item {
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    margin-bottom: 0.75rem;
+    overflow: hidden;
+  }
+
+  .faq-item[open] {
+    border-color: rgba(239, 68, 68, 0.3);
+  }
+
+  .faq-question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    cursor: pointer;
+    list-style: none;
+    transition: background 0.15s ease;
+  }
+
+  .faq-question::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-question:hover {
+    background: var(--bg-muted);
+  }
+
+  .faq-chevron {
+    flex-shrink: 0;
+    color: var(--text-muted);
+    transition: transform 0.2s ease;
+  }
+
+  .faq-item[open] .faq-chevron {
+    transform: rotate(180deg);
+  }
+
+  .faq-answer {
+    padding: 0 1.25rem 1.25rem;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+
+  .faq-answer a {
+    color: var(--primary);
+    text-decoration: underline;
+  }
+
+  .sticky-cta {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.75rem;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    border-top: 1px solid var(--border);
+  }
+
+  @media (min-width: 768px) {
+    .sticky-cta {
+      display: none;
+    }
+  }
+
+  .sticky-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.875rem;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .sticky-btn-call {
+    background: var(--primary);
+    color: #ffffff;
+  }
+
+  .sticky-btn-text {
+    background: #ffffff;
+    color: var(--text-dark);
+    border: 1px solid var(--border);
+  }
+</style>
